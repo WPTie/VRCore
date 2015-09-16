@@ -4,15 +4,19 @@
  *
  * @link    http://example.com
  * @since   0.0.1
- * @package AA (Globals) or aa (file name and namespace) // Replace these
+ * @package AA // Replace these
+ *              AA // Globals
+ *              aa // file name and namespace
+ *              AA_Plugin // Plugin Name
+ *
  *
  * @wordpress-plugin
- * Plugin Name: Contact Form 7 Themes
- * Plugin URI : http://WPTie.com/
- * Description: Contact Form 7 Themes.
- * Author     : WPTie, mrahmadawais
- * Author URI : http://WPTie.com/
- * Text Domain: contact-form-7-themes
+ * Plugin Name: AA_Plugin
+ * Plugin URI : http://AhmadAwais.com/
+ * Description: Short Description.
+ * Author     : mrahmadawais
+ * Author URI : http://AhmadAwais.com/
+ * Text Domain: aa_plugin
  * Version    : 0.0.1
  * License    : GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
