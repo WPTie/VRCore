@@ -1,4 +1,5 @@
-##`aa_plugin` is a simple WordPress plugin boilerplate
+## What is it?
+`aa_plugin` is a simple WordPress plugin boilerplate
 
 
 ##License GPL v2+
