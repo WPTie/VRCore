@@ -1,0 +1,8 @@
+{
+	"name"           : "AA",
+	"version"        : "0.0.1",
+	"homepage"       : "http://AhmadAwais.com",
+	"authors"        : ["Ahmad Awais"],
+	"dependencies"   : {},
+	"devDependencies": {}
+}
