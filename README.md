@@ -1,5 +1,5 @@
 ## What is it?
-`aa_plugin` is a simple WordPress plugin boilerplate
+`aa_plugin` is a simple WordPress plugin boilerplate with advanced Gulp workflow.
 
 
 ##License GPL v2+
