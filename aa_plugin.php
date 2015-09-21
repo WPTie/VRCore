@@ -1,25 +1,16 @@
 <?php
 /**
- * The plugin bootstrap file
- *
- * @link    http://example.com
- * @since   0.0.1
- * @package AA // Replace these
- *              AA // Globals
- *              aa // file name and namespace
- *              AA_Plugin // Plugin Name
- *
- *
- * @wordpress-plugin
  * Plugin Name: AA_Plugin
- * Plugin URI : http://AhmadAwais.com/
- * Description: Short Description.
- * Author     : mrahmadawais
- * Author URI : http://AhmadAwais.com/
+ * Plugin URI: http://WPTie.com/
+ * Description: Short Description
+ * Author: mrahmadawais, WPTie
+ * Author URI: http://WPTie.com/
  * Text Domain: aa_plugin
- * Version    : 0.0.1
- * License    : GPL-2.0+
+ * Version: 0.0.1
+ * License: GPL v2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ * @package CFC
  *
  */
 
@@ -53,6 +44,11 @@ if ( ! defined( 'WPINC' ) ) {
  *
  */
 
+// Plugin version
+if ( ! defined( 'AA_VERSION' ) ) {
+    define( 'AA_VERSION', '0.0.1' );
+}
+
 if ( ! defined( 'AA_NAME' ) ) {
     define( 'AA_NAME', trim( dirname( plugin_basename( __FILE__ ) ), '/' ) );
 }
@@ -80,3 +76,14 @@ $cft_assets  = AA_URL . '/assets/';
 if ( file_exists( AA_DIR . '/assets/inc/aa.php' ) ) {
     require_once( AA_DIR . '/assets/inc/aa.php' );
 }
+
+/**
+ * Plugin Activation
+ *
+ * @since 0.0.1
+ *
+ */
+// register_activation_hook( __FILE__, 'aa_welcome_screen_activate' );
+// function aa_welcome_screen_activate() {
+//   set_transient( '_welcome_redirect', true );
+// }

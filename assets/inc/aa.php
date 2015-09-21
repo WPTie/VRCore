@@ -9,6 +9,17 @@
  *
  */
 
+/**
+ * Welcome Page
+ *
+ * @since 0.0.1
+ *
+ */
+// if ( file_exists( AA_DIR . '/assets/admin/inc/welcome/welcome.php' ) ) {
+//     require_once( AA_DIR . '/assets/admin/inc/welcome/welcome.php' );
+// }
+
+
 
 
 /**
