@@ -42,7 +42,6 @@ if ( ! defined( 'WPINC' ) ) {
  * @package VRC
  * @since 0.0.1
  */
-// Plugin version.
 if ( ! defined( 'VRC_VERSION' ) ) {
     define( 'VRC_VERSION', '0.0.1' );
 }
