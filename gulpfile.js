@@ -20,7 +20,7 @@
   * Edit the variables as per your project requirements.
   */
 
-	var project             = 'vrplugin'; // Name
+	var project             = 'vrcore'; // Name
 
 	var styleSRC            = './assets/css/style.scss'; // Path to main .scss file
 	var styleDestination    = './'; // Path to place the compiled CSS file

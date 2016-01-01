@@ -1,7 +1,7 @@
 /**
 * Custom JS
 *
-* @package AA
+* @package VRC
 *
 */
 

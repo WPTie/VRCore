@@ -5,7 +5,7 @@
  *
  */
 
-	$aa_plugin_version = AA_VERSION;
+	$aa_plugin_version = VRC_VERSION;
  ?>
 
 
@@ -52,14 +52,14 @@
 		</div>
 
 		<div class="col">
-			<img src="<?php echo AA_URL . '/assets/admin/inc/welcome/assets/img/step1.gif'; ?>" />
+			<img src="<?php echo VRC_URL . '/assets/admin/inc/welcome/assets/img/step1.gif'; ?>" />
 		</div>
 	</div>
 
 
 	<div class="feature-section two-col">
 		<div class="col">
-			<img src="<?php echo AA_URL . '/assets/admin/inc/welcome/assets/img/dragndrop.gif'; ?>" />
+			<img src="<?php echo VRC_URL . '/assets/admin/inc/welcome/assets/img/dragndrop.gif'; ?>" />
 		</div>
 		<div class="col">
 			<h3><?php _e( 'Drag & Drop Social Blocks' ); ?></h3>
@@ -71,13 +71,13 @@
 
 	<div class="changelog feature-section two-col">
 		<div class="col">
-			<img src="<?php echo AA_URL . '/assets/admin/inc/welcome/assets/img/options.png'; ?>" />
+			<img src="<?php echo VRC_URL . '/assets/admin/inc/welcome/assets/img/options.png'; ?>" />
 			<h3><?php _e( 'Customizable Options' ); ?></h3>
 			<p><?php _e( 'All Social blocks come with separate sub-menus where you can customize and add options as you desire.' ); ?></p>
 		</div>
 
 		<div class="col">
-			<img src="<?php echo AA_URL . '/assets/admin/inc/welcome/assets/img/design.png'; ?>" />
+			<img src="<?php echo VRC_URL . '/assets/admin/inc/welcome/assets/img/design.png'; ?>" />
 			<h3><?php _e( 'Even more styles' ); ?></h3>
 			<p><?php _e( 'Easily change styles of every social block be it there color or background color.' ); ?></p>
 		</div>

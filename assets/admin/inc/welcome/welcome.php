@@ -3,7 +3,7 @@
  * Weclome Page Class
  *
  * @since 0.0.1
- * @package AA
+ * @package VRC
  *
  */
 
@@ -35,7 +35,7 @@ add_action('admin_menu', 'aa_welcome_screen_pages');
 function aa_welcome_screen_pages() {
 	add_submenu_page(
 		'tools.php',
-		'AA_PLUGIN',
+		'VRC_PLUGIN',
 		'Welcome',
 		'read',
 		'aa_welcome_page',
@@ -45,8 +45,8 @@ function aa_welcome_screen_pages() {
 function aa_welcome_screen_content() {
 
 	// Welcome Page
-	if (file_exists( AA_DIR . '/assets/admin/inc/welcome/welcome_page.php') ) {
-	   require_once( AA_DIR . '/assets/admin/inc/welcome/welcome_page.php' );
+	if (file_exists( VRC_DIR . '/assets/admin/inc/welcome/welcome_page.php') ) {
+	   require_once( VRC_DIR . '/assets/admin/inc/welcome/welcome_page.php' );
 	}
 }
 

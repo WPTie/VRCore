@@ -2,9 +2,9 @@
 /**
  * Scripts and Styles
  *
- * Enqueue all the scripts and styles through this file
+ * Enqueue all the scripts and styles through this file.
  *
- * @package AA
+ * @package VRC
  * @since 	0.0.1
  */
 
@@ -31,10 +31,10 @@ function aa_scripts_stlyes() {
          * @since 0.0.1
          *
          */
-        wp_register_script( 'aa_vendorsJs', AA_URL . '/assets/js/vendors.min.js' ); // Custom scripts
+        wp_register_script( 'aa_vendorsJs', VRC_URL . '/assets/js/vendors.min.js' ); // Custom scripts
         wp_enqueue_script( 'aa_vendorsJs' ); // Enqueue it!
 
-        wp_register_script( 'aa_customJs', AA_URL . '/assets/js/custom.min.js' ); // Custom scripts
+        wp_register_script( 'aa_customJs', VRC_URL . '/assets/js/custom.min.js' ); // Custom scripts
         wp_enqueue_script( 'aa_customJs' ); // Enqueue it!
 
 
@@ -47,7 +47,7 @@ function aa_scripts_stlyes() {
          */
 
         // CSS
-        wp_register_style( 'aa_g_style', AA_URL . '/assets/css/style.min.css', array() , '1.0', 'all' );
+        wp_register_style( 'aa_g_style', VRC_URL . '/assets/css/style.min.css', array() , '1.0', 'all' );
         wp_enqueue_style( 'aa_g_style' ); // Enqueue it!
 
         // Font
@@ -75,7 +75,7 @@ function aa_scripts_stlyes() {
 // add_action( 'admin_enqueue_scripts', 'aa_admin_header_scripts' ); // Add Custom Scripts to wp_head
 // function aa_admin_header_scripts() ) {
 
-//         wp_register_style( 'aa_admin_css', AA_URL . '/assets/admin/css/aa_admin.css' );
+//         wp_register_style( 'aa_admin_css', VRC_URL . '/assets/admin/css/aa_admin.css' );
 //         wp_enqueue_style(  'aa_admin_css' );
 // }
 
@@ -89,7 +89,7 @@ function aa_scripts_stlyes() {
 // add_action( 'admin_head', 'aa_admin_dynamic_css' );
 // function aa_admin_dynamic_css() ) {
 
-//     if ( file_exists(  AA_URL .'/assets/admin/css/aa_admin_css.php' )  ) {
-//         require_once(  AA_URL .'/assets/admin/css/aa_admin_css.php'  );
+//     if ( file_exists(  VRC_URL .'/assets/admin/css/aa_admin_css.php' )  ) {
+//         require_once(  VRC_URL .'/assets/admin/css/aa_admin_css.php'  );
 //     }
 // }

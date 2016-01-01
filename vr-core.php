@@ -1,16 +1,16 @@
 <?php
 /**
- * Plugin Name: AA_Plugin
+ * Plugin Name: VR Core
  * Plugin URI: http://WPTie.com/
- * Description: Short Description
+ * Description: VR Core.
  * Author: mrahmadawais, WPTie
  * Author URI: http://WPTie.com/
- * Text Domain: aa_plugin
+ * Text Domain: VR
  * Version: 0.0.1
  * License: GPL v2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
- * @package CFC
+ * @package VRC
  */
 
 /*
@@ -39,29 +39,25 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Define global constants
  *
- * @package AA
+ * @package VRC
  * @since 0.0.1
  */
 // Plugin version.
-if ( ! defined( 'AA_VERSION' ) ) {
-    define( 'AA_VERSION', '0.0.1' );
+if ( ! defined( 'VRC_VERSION' ) ) {
+    define( 'VRC_VERSION', '0.0.1' );
 }
 
-if ( ! defined( 'AA_NAME' ) ) {
-    define( 'AA_NAME', trim( dirname( plugin_basename( __FILE__ ) ), '/' ) );
+if ( ! defined( 'VRC_NAME' ) ) {
+    define( 'VRC_NAME', trim( dirname( plugin_basename( __FILE__ ) ), '/' ) );
 }
 
-if ( ! defined('AA_DIR' ) ) {
-    define( 'AA_DIR', WP_PLUGIN_DIR . '/' . AA_NAME );
+if ( ! defined('VRC_DIR' ) ) {
+    define( 'VRC_DIR', WP_PLUGIN_DIR . '/' . VRC_NAME );
 }
 
-if ( ! defined('AA_URL' ) ) {
-    define( 'AA_URL', WP_PLUGIN_URL . '/' . AA_NAME );
+if ( ! defined('VRC_URL' ) ) {
+    define( 'VRC_URL', WP_PLUGIN_URL . '/' . VRC_NAME );
 }
-
-// Assets Path.
-$cft_assets  = AA_URL . '/assets/';
-
 
 /**
  * AA Main File
@@ -70,15 +66,14 @@ $cft_assets  = AA_URL . '/assets/';
  *
  * @since 0.0.1
  */
-if ( file_exists( AA_DIR . '/assets/inc/aa.php' ) ) {
-    require_once( AA_DIR . '/assets/inc/aa.php' );
+if ( file_exists( VRC_DIR . '/assets/inc/vrc.php' ) ) {
+    require_once( VRC_DIR . '/assets/inc/vrc.php' );
 }
 
 /**
  * Plugin Activation
  *
  * @since 0.0.1
- *
  */
 // register_activation_hook( __FILE__, 'aa_welcome_screen_activate' );
 // function aa_welcome_screen_activate() {
