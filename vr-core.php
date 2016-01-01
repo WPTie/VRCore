@@ -11,10 +11,10 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
  * @package CFC
- *
  */
 
-/*  Copyright 2015-2020 WPTie ( email: support at wptie.com )
+/*
+    Copyright 2015-2020 WPTie ( email: support at wptie.com )
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -41,10 +41,8 @@ if ( ! defined( 'WPINC' ) ) {
  *
  * @package AA
  * @since 0.0.1
- *
  */
-
-// Plugin version
+// Plugin version.
 if ( ! defined( 'AA_VERSION' ) ) {
     define( 'AA_VERSION', '0.0.1' );
 }
@@ -61,7 +59,7 @@ if ( ! defined('AA_URL' ) ) {
     define( 'AA_URL', WP_PLUGIN_URL . '/' . AA_NAME );
 }
 
-// Assets Path
+// Assets Path.
 $cft_assets  = AA_URL . '/assets/';
 
 
@@ -71,7 +69,6 @@ $cft_assets  = AA_URL . '/assets/';
  * This is the main file of AA which controls everything in this plugin
  *
  * @since 0.0.1
- *
  */
 if ( file_exists( AA_DIR . '/assets/inc/aa.php' ) ) {
     require_once( AA_DIR . '/assets/inc/aa.php' );
