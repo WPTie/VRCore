@@ -6,7 +6,7 @@
  * Author: mrahmadawais, WPTie
  * Author URI: http://WPTie.com/
  * Text Domain: VR
- * Version: 0.0.1
+ * Version: 1.0.0
  * License: GPL v2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
@@ -42,18 +42,23 @@ if ( ! defined( 'WPINC' ) ) {
  * @package VRC
  * @since 0.0.1
  */
+
+// VRC Version.
 if ( ! defined( 'VRC_VERSION' ) ) {
-    define( 'VRC_VERSION', '0.0.1' );
+    define( 'VRC_VERSION', '1.0.0' );
 }
 
+// VRC Name.
 if ( ! defined( 'VRC_NAME' ) ) {
     define( 'VRC_NAME', trim( dirname( plugin_basename( __FILE__ ) ), '/' ) );
 }
 
+// VRC Dir.
 if ( ! defined('VRC_DIR' ) ) {
     define( 'VRC_DIR', WP_PLUGIN_DIR . '/' . VRC_NAME );
 }
 
+// VRC URL.
 if ( ! defined('VRC_URL' ) ) {
     define( 'VRC_URL', WP_PLUGIN_URL . '/' . VRC_NAME );
 }
