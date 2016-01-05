@@ -46,6 +46,10 @@ if ( file_exists( VRC_DIR . '/assets/admin/rentals/ct-rental-feature.php' ) ) {
     require_once( VRC_DIR . '/assets/admin/rentals/ct-rental-feature.php' );
 }
 
+if ( file_exists( VRC_DIR . '/assets/admin/rentals/rental-custom-columns.php' ) ) {
+    require_once( VRC_DIR . '/assets/admin/rentals/rental-custom-columns.php' );
+}
+
 /**
  * Scripts and Styles
  *
@@ -112,10 +116,10 @@ class VR_Core {
 	 */
 	public function __construct() {
 
-		$this->rental             = new VR_CPT_Rental();
-		$this->rental_type        = new VR_CT_Rental_Type();
-		$this->rental_destination = new VR_Rental_Destination();
-		$this->rental_feature     = new VR_Rental_Feature();
+		$this->rental                = new VR_CPT_Rental();
+		$this->rental_type           = new VR_CT_Rental_Type();
+		$this->rental_destination    = new VR_Rental_Destination();
+		$this->rental_feature        = new VR_Rental_Feature();
 
 	}
 
@@ -172,6 +176,8 @@ class VR_Core {
 	}
 
 
+
+
 }
 
 endif;
@@ -181,9 +187,11 @@ endif;
  */
 $vrcore = new VR_Core();
 
+// Rental Custom Colums.
+$vr_rental_custom_columns = new VR_Rental_Custom_Columns();
 
 /**
- * VRC Actions.
+ * VRC Actions/Filters.
  */
 
 // Create rental post type
@@ -200,3 +208,9 @@ add_action( 'init', array( $vrcore, 'create_rental_destination' ) );
 
 // Create rental-feature CT.
 add_action( 'init', array( $vrcore, 'create_rental_feature' ) );
+
+// Rental Custom Columns Registered
+add_filter( 'manage_edit-rental_columns', array( $vr_rental_custom_columns, 'register' ) ) ;
+
+// Rental Custom Columns Display custom stuff
+add_action( 'manage_rental_posts_custom_column', array( $vr_rental_custom_columns, 'display' ) ) ;
