@@ -21,16 +21,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 if ( ! class_exists( 'RW_Meta_Box' ) ) {
 
-	define( 'RWMB_DIR', plugin_dir_path( __FILE__ ) . '/plugins/meta-box/' );
-	define( 'RWMB_URL', plugin_dir_url( __FILE__ ) . '/plugins/meta-box/' );
-
 	/**
-	 * meta-box.php.
+	 * Main `meta-box` plugin.
 	 *
 	 * @since 1.0.0
 	 */
-	if ( file_exists( RWMB_DIR . 'meta-box.php' ) ) {
-	    require_once( RWMB_DIR . 'meta-box.php' );
+	if ( file_exists( VRC_DIR . '/assets/admin/metaboxes/meta-box/meta-box.php' ) ) {
+	    require_once( VRC_DIR . '/assets/admin/metaboxes/meta-box/meta-box.php' );
 	}
 
 }
