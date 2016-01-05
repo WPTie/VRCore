@@ -11,187 +11,66 @@
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-/**
- * Welcome Page.
- *
- * @since 0.0.1
- */
-
-// if ( file_exists( VRC_DIR . '/assets/admin/inc/welcome/welcome.php' ) ) {
-//     require_once( VRC_DIR . '/assets/admin/inc/welcome/welcome.php' );
-// }
-
 
 /**
- * Admin/Renatals.
- *
- * Rentals related files.
+ * Rental initializer.
  *
  * @since 1.0.0
  */
-
-if ( file_exists( VRC_DIR . '/assets/admin/rentals/cpt-rental.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/rentals/cpt-rental.php' );
+if ( file_exists( VRC_DIR . '/assets/admin/rental/rental-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/admin/rental/rental-init.php' );
 }
 
-if ( file_exists( VRC_DIR . '/assets/admin/rentals/ct-rental-type.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/rentals/ct-rental-type.php' );
-}
-
-if ( file_exists( VRC_DIR . '/assets/admin/rentals/ct-rental-destination.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/rentals/ct-rental-destination.php' );
-}
-
-if ( file_exists( VRC_DIR . '/assets/admin/rentals/ct-rental-feature.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/rentals/ct-rental-feature.php' );
-}
-
-if ( file_exists( VRC_DIR . '/assets/admin/rentals/rental-custom-columns.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/rentals/rental-custom-columns.php' );
-}
 
 /**
- * Scripts and Styles
- *
- * @since 0.0.1
- */
-if ( file_exists( VRC_DIR . '/assets/inc/cft_scripts_styles.php' ) ) {
-    require_once( VRC_DIR . '/assets/inc/cft_scripts_styles.php' );
-}
-
-/**
- * VR Core Class.
- *
- * Class that handles all the classes.
- *
- * Methods:
- * 			1. Rentals - Deals with all the rentals related stuff.
+ * Metaboxes initializer.
  *
  * @since 1.0.0
  */
-
-if ( ! class_exists( 'VR_Core' ) ) :
-
-class VR_Core {
-
-	/**
-	 * VR Rentals Object.
-	 *
-	 * @var 	object
-	 * @since 	1.0.0
-	 */
-	private $rental;
-
-
-	/**
-	 * Rental Type Object.
-	 *
-	 * @var 	object
-	 * @since 	1.0.0
-	 */
-	 public $rental_type;
-
-
-	 /**
-	  * Rental Destination Object.
-	  *
-	  * @var 	object
-	  * @since 	1.0.0
-	  */
-	  public $rental_destination;
-
-
-	  /**
-	   * Rental Features Object.
-	   *
-	   * @var 		object
-	   * @since 	1.0.0
-	   */
-	   public $rental_feature;
-
-
-
-	/**
-	 * Constructor.
-	 */
-	public function __construct() {
-
-		$this->rental                = new VR_CPT_Rental();
-		$this->rental_type           = new VR_CT_Rental_Type();
-		$this->rental_destination    = new VR_Rental_Destination();
-		$this->rental_feature        = new VR_Rental_Feature();
-
-	}
-
-
-	/**
-	 * Create Rental.
-	 *
-	 * Custom Post type: `rental`
-	 *
-	 * @since  1.0.0
-	 */
-	public function create_rental() {
-		$this->rental->register_cpt();
-	}
-
-
-	/**
-	 * Fake Rental Content.
-	 *
-	 * @since 1.0.0
-	 */
-	public function fake_rental_content() {
-		$this->rental->fake_content();
-	}
-
-
-	/**
-	 * Create CT Rental Type.
-	 *
-	 * @since 1.0.0
-	 */
-	public function create_rental_type() {
-		$this->rental_type->register();
-	}
-
-
-	/**
-	 * Create CT Rental Destination.
-	 *
-	 * @since 1.0.0
-	 */
-	public function create_rental_destination() {
-		$this->rental_destination->register();
-	}
-
-
-	/**
-	 * Create CT Rental Feature.
-	 *
-	 * @since 1.0.0
-	 */
-	public function create_rental_feature() {
-		$this->rental_feature->register();
-	}
-
-
-
-
+if ( file_exists( VRC_DIR . '/assets/admin/metaboxes/metabox-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/admin/metaboxes/metabox-init.php' );
 }
 
-endif;
+/**
+ * Class: VR_Core.
+ *
+ * Main Class of VRC plugin.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/inc/class-vrcore.php' ) ) {
+    require_once( VRC_DIR . '/assets/inc/class-vrcore.php' );
+}
+
 
 /**
- * VR Core Object.
+ * Object: VR_Core class.
+ *
+ * @since 1.0.0
  */
 $vrcore = new VR_Core();
 
-// Rental Custom Colums.
+/**
+ * Object: VR_Rental_Custom_Columns class.
+ *
+ * @since 1.0.0
+ */
 $vr_rental_custom_columns = new VR_Rental_Custom_Columns();
 
 /**
- * VRC Actions/Filters.
+ * Object: VR_Metaboxes class.
+ *
+ * @since 1.0.0
+ */
+$vr_metaboxes = new VR_Metaboxes();
+
+
+/**
+ * Actions/Filters.
+ */
+
+/**
+ * Actions/Filters for rental.
  */
 
 // Create rental post type
@@ -214,3 +93,11 @@ add_filter( 'manage_edit-rental_columns', array( $vr_rental_custom_columns, 'reg
 
 // Rental Custom Columns Display custom stuff
 add_action( 'manage_rental_posts_custom_column', array( $vr_rental_custom_columns, 'display' ) ) ;
+
+
+/**
+ * Actions/Filters for metaboxes.
+ */
+
+// Deactivate Meta Box Plugin if present.
+add_action( 'init', array( $vr_metaboxes, 'disable_metabox_plugin' ) );

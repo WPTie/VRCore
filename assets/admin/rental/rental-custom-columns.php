@@ -4,6 +4,8 @@
  *
  * Custom Columns for post type `rental`.
  *
+ * TODO: Create filters http://justintadlock.com/archives/2011/06/27/custom-columns-for-custom-post-types
+ *
  * @since 	1.0.0
  * @package VRC
  */
