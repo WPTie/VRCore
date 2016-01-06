@@ -82,23 +82,23 @@ if ( class_exists( 'VR_Rental' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	$vr_rental = new VR_Rental();
+	$vr_rental_init = new VR_Rental();
 
 
 	// Create rental post type
-	add_action( 'init', array( $vr_rental, 'create_rental' ) );
+	add_action( 'init', array( $vr_rental_init, 'create_rental' ) );
 
 	// Create fake rental content.
-	add_action( 'init', array( $vr_rental, 'fake_rental_content' ) );
+	add_action( 'init', array( $vr_rental_init, 'fake_rental_content' ) );
 
 	// Create rental-type CT.
-	add_action( 'init', array( $vr_rental, 'create_rental_type' ) );
+	add_action( 'init', array( $vr_rental_init, 'create_rental_type' ) );
 
 	// Create rental-destination CT.
-	add_action( 'init', array( $vr_rental, 'create_rental_destination' ) );
+	add_action( 'init', array( $vr_rental_init, 'create_rental_destination' ) );
 
 	// Create rental-feature CT.
-	add_action( 'init', array( $vr_rental, 'create_rental_feature' ) );
+	add_action( 'init', array( $vr_rental_init, 'create_rental_feature' ) );
 
 }
 
@@ -114,13 +114,10 @@ if ( class_exists( 'VR_Rental_Custom_Columns' ) ) {
 	$vr_rental_custom_columns = new VR_Rental_Custom_Columns();
 
 	// Rental Custom Columns Registered
-	add_filter( 'manage_edit-rental_columns', array( $vr_rental_custom_columns, 'register' ) ) ;
+	add_filter( 'manage_edit-vr_rental_columns', array( $vr_rental_custom_columns, 'register' ) ) ;
 
 	// Rental Custom Columns Display custom stuff
-	add_action( 'manage_rental_posts_custom_column', array( $vr_rental_custom_columns, 'display' ) ) ;
-
-	// Meta-boxes for rental.
-	// add_filter( 'rwmb_meta_boxes', $vr_rental_meta_boxes, 'register' );
+	add_action( 'manage_vr_rental_posts_custom_column', array( $vr_rental_custom_columns, 'display' ) ) ;
 
 }
 
@@ -137,7 +134,6 @@ if ( class_exists( 'VR_Rental_Meta_Boxes' ) ) {
 	$vr_rental_meta_boxes = new VR_Rental_Meta_Boxes();
 
 	// Register rental meta boxes.
-    // add_filter( 'rwmb_meta_boxes', $vr_rental_meta_boxes, 'register' );
     add_filter( 'rwmb_meta_boxes', array( $vr_rental_meta_boxes, 'register' ) );
 
 }

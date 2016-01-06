@@ -68,7 +68,7 @@ class VR_Rental_Destination {
 	        'rewrite'                    => $rewrite
 	    );
 
-	    register_taxonomy( 'rental-destination', array( 'rental' ), $args );
+	    register_taxonomy( 'vr_rental-destination', array( 'vr_rental' ), $args );
 
 	}
 

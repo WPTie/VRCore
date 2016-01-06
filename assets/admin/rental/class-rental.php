@@ -86,7 +86,7 @@ class VR_Rental {
 	 * @since  1.0.0
 	 */
 	public function create_rental() {
-		$this->rental->register_cpt();
+		$this->rental->register();
 	}
 
 

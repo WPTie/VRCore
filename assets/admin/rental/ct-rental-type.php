@@ -69,7 +69,7 @@ class VR_CT_Rental_Type {
 			'rewrite'           => $rewrite,
 	    );
 
-	    register_taxonomy( 'rental-type', array( 'rental' ), $args );
+	    register_taxonomy( 'vr_rental-type', array( 'vr_rental' ), $args );
 
 	}
 }

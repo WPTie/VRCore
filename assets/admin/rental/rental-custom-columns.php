@@ -59,9 +59,9 @@ class VR_Rental_Custom_Columns {
             $last_columns = array_splice( $defaults, 3, 3 ); // TODO: What?
 
     		// Rename the default columns
-    		$last_columns[ 'title' ]                       = __( 'Rentals', 'VRC' );
-    		$last_columns[ 'taxonomy-rental-type' ]        = __( 'Types', 'VRC' );
-    		$last_columns[ 'taxonomy-rental-destination' ] = __( 'Destination', 'VRC' );
+			$last_columns[ 'title' ]                          = __( 'Rentals', 'VRC' );
+			$last_columns[ 'taxonomy-vr_rental-type' ]        = __( 'Types', 'VRC' );
+			$last_columns[ 'taxonomy-vr_rental-destination' ] = __( 'Destination', 'VRC' );
     		// $last_columns[ 'taxonomy-rental-feature' ]  = __( 'Features', 'VRC' );
 
         }
@@ -102,7 +102,7 @@ class VR_Rental_Custom_Columns {
 
 	        case 'customid':
 
-	            $rental_id = get_post_meta ( $post->ID, 'REAL_HOMES_rental_id', true );
+	            $rental_id = get_post_meta ( $post->ID, 'vr_rental_id', true );
 	            if( ! empty ( $rental_id ) ) {
 	                echo $rental_id;
 	            } else {
@@ -114,11 +114,12 @@ class VR_Rental_Custom_Columns {
 
 	        case 'price':
 
-	            $rental_price = get_post_meta ( $post->ID, 'REAL_HOMES_rental_price', true );
+	            $rental_price = get_post_meta ( $post->ID, 'vr_rental_price', true );
 	            if ( !empty ( $rental_price ) ) {
 	                $price_amount = doubleval( $rental_price );
-	                $price_postfix = get_post_meta ( $post->ID, 'REAL_HOMES_rental_price_postfix', true );
-	                echo Inspiry_Property::format_price( $price_amount, $price_postfix );
+	                $price_postfix = get_post_meta ( $post->ID, 'vr_rental_price_postfix', true );
+	                // echo Inspiry_Property::format_price( $price_amount, $price_postfix );
+	                echo $price_amount . ' ' . $price_postfix;
 	            } else {
 	                // _e ( 'Price Not Available.', 'VRC' );
 	                echo "—";

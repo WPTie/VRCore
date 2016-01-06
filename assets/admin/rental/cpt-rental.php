@@ -23,7 +23,7 @@ class VR_CPT_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function register_cpt() {
+	public function register() {
 
 	    $labels = array(
 			'name'               => _x( 'Rentals', 'Post Type General Name', 'VRC' ),
@@ -72,7 +72,7 @@ class VR_CPT_Rental {
 	        'capability_type'     => 'post'
 	    );
 
-	    register_post_type( 'rental', $args );
+	    register_post_type( 'vr_rental', $args );
 
 	}
 
@@ -85,18 +85,18 @@ class VR_CPT_Rental {
 	function fake_content() {
 
        // Check if fake content created, if not create 10 fake posts for 'rental' post type.
-       if( get_option( 'created_fake_content_rental' ) ) { return; }
+       if( get_option( 'vr_created_fake_content_rental' ) ) { return; }
 
        $i = 0;
        while( $i < 11 ) {
            $post = array( 'post_title' => 'Rental ' . $i );
            $post['post_content'] = '<p>Testing some amazing content here...</p>';
-           $post['post_type'] = 'rental';
+           $post['post_type'] = 'vr_rental';
            $post['post_status'] = 'publish';
            $new_post = wp_insert_post( $post );
            $i++;
        }
-       update_option( 'created_fake_content_rental', true );
+       update_option( 'vr_created_fake_content_rental', true );
 
    }
 
