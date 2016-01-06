@@ -441,6 +441,15 @@ class VR_Rental_Meta_Boxes {
 	            ),
 
 
+	            // Divider.
+	            array(
+	            	'id'      => '{$prefix}misc_one_divider', // Not used, but needed.
+	            	'type'    => 'divider',
+	            	'columns' => 12,
+	            	'tab'     => 'misc'
+	            ),
+
+
 	            // Attachments.
 	            array(
 					'id'        => "{$prefix}attachments",
@@ -452,6 +461,15 @@ class VR_Rental_Meta_Boxes {
 					'mime_type' => '',
 					'columns'   => 12,
 					'tab'       => 'misc'
+	            ),
+
+
+	            // Divider.
+	            array(
+	            	'id'      => '{$prefix}misc_two_divider', // Not used, but needed.
+	            	'type'    => 'divider',
+	            	'columns' => 12,
+	            	'tab'     => 'misc'
 	            ),
 
 
@@ -482,7 +500,7 @@ class VR_Rental_Meta_Boxes {
 					'type'    => 'radio',
 
 					'name'    => __('Do you want to add this rental in the Homepage Slider?', 'VRC'),
-					'desc'    => __('If yes, Then you need to provide a slider image below.', 'VRC'),
+					'desc'    => __('If yes, then you need to provide a slider image below.', 'VRC'),
 
 					'std'     => 'no',
 					'options' => array(
@@ -500,7 +518,7 @@ class VR_Rental_Meta_Boxes {
 	            	'id'      => '{$prefix}slider_divider', // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12,
-	            	'tab'     => 'details'
+	            	'tab'     => 'home-slider'
 	            ),
 
 
