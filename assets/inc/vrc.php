@@ -37,6 +37,7 @@ function your_prefix_meta_boxes( $meta_boxes ) {
     $meta_boxes[] = array(
         'title'      => __( 'Test Meta Box', 'textdomain' ),
         'post_types' => 'post',
+
         'fields'     => array(
             array(
                 'id'   => 'name',

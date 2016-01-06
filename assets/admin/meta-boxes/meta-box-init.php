@@ -22,6 +22,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'RW_Meta_Box' ) ) {
 
 	/**
+	 * Path Definitions.
+	 */
+	// define( 'RWMB_DIR', VRC_DIR . '/assets/admin/meta-boxes/meta-box/' );
+	// define( 'RWMB_URL', VRC_URL . '/assets/admin/meta-boxes/meta-box/' );
+
+	/**
 	 * Main `meta-box` plugin.
 	 *
 	 * @since 1.0.0

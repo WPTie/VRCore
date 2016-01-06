@@ -137,6 +137,7 @@ if ( class_exists( 'VR_Rental_Meta_Boxes' ) ) {
 	$vr_rental_meta_boxes = new VR_Rental_Meta_Boxes();
 
 	// Register rental meta boxes.
-    add_filter( 'rwmb_meta_boxes', $vr_rental_meta_boxes, 'register' );
+    // add_filter( 'rwmb_meta_boxes', $vr_rental_meta_boxes, 'register' );
+    add_filter( 'rwmb_meta_boxes', $vr_rental_meta_boxes, 'register_test' );
 
 }

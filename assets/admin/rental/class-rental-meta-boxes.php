@@ -34,7 +34,7 @@ class VR_Rental_Meta_Boxes {
 	 * @since   1.0.0
 	 * @return  array   $meta_boxes
 	 */
-	public function register( $meta_boxes ) {
+	// public function register( $meta_boxes ) {
 
 	 //    $prefix = 'vr_';
 
@@ -333,10 +333,42 @@ class VR_Rental_Meta_Boxes {
 
 	 //    return $meta_boxes;
 
-	} // Regist function End.
+	// } // Regist function End.
 
 
-
+	public function register_test( $meta_boxes ) {
+	    $meta_boxes[] = array(
+	        'title'      => __( 'Test Meta Box', 'textdomain' ),
+	        'post_types' => 'rental',
+	        'fields'     => array(
+	            array(
+	                'id'   => 'name',
+	                'name' => __( 'Name', 'textdomain' ),
+	                'type' => 'text',
+	            ),
+	            array(
+	                'id'      => 'gender',
+	                'name'    => __( 'Gender', 'textdomain' ),
+	                'type'    => 'radio',
+	                'options' => array(
+	                    'm' => __( 'Male', 'textdomain' ),
+	                    'f' => __( 'Female', 'textdomain' ),
+	                ),
+	            ),
+	            array(
+	                'id'   => 'email',
+	                'name' => __( 'Email', 'textdomain' ),
+	                'type' => 'email',
+	            ),
+	            array(
+	                'id'   => 'bio',
+	                'name' => __( 'Biography', 'textdomain' ),
+	                'type' => 'textarea',
+	            ),
+	        ),
+	    );
+	    return $meta_boxes;
+	}
 } // Class end.
 
 endif;
