@@ -119,6 +119,12 @@ if ( class_exists( 'VR_Rental_Custom_Columns' ) ) {
 	// Rental Custom Columns Display custom stuff
 	add_action( 'manage_vr_rental_posts_custom_column', array( $vr_rental_custom_columns, 'display' ) ) ;
 
+	// Sortable Columns.
+	add_filter( 'manage_edit-vr_rental_sortable_columns', array( $vr_rental_custom_columns, 'sortable_price' ) );
+
+	// Sort Price by numbers.
+	add_action( 'load-edit.php', array( $vr_rental_custom_columns, 'sort_it' ) );
+
 }
 
 

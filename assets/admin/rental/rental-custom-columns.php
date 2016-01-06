@@ -132,6 +132,59 @@ class VR_Rental_Custom_Columns {
 	    }
 	}
 
+
+	/**
+	 * Sortable Columns.
+	 *
+	 * @since 1.0.0
+	 */
+	public function sortable_price( $columns ) {
+
+			$columns['price'] = 'price';
+			return $columns;
+
+	}
+
+
+
+	/**
+	 * Only run our customization on the 'edit.php' page in the admin.
+	 *
+	 * @since 1.0.0
+	 */
+	function sort_it() {
+		add_filter( 'request', array( $this, 'sort_price_num' ) );
+	}
+
+
+	/**
+	 * Sort Price by numbers value.
+	 *
+	 * @since 1.0.0
+	 */
+	public function sort_price_num( $vars ) {
+
+		/* Check if we're viewing the 'movie' post type. */
+		if ( isset( $vars['post_type'] ) && 'vr_rental' == $vars['post_type'] ) {
+
+			/* Check if 'orderby' is set to 'duration'. */
+			if ( isset( $vars['orderby'] ) && 'price' == $vars['orderby'] ) {
+
+				/* Merge the query vars with our custom variables. */
+				$vars = array_merge(
+					$vars,
+					array(
+						'meta_key' => 'vr_rental_price',
+						'orderby'  => 'meta_value_num'
+					)
+				);
+			}
+		}
+
+		return $vars;
+
+	}
+
 }
 
 endif;

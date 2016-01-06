@@ -206,7 +206,7 @@ class VR_Rental_Meta_Boxes {
 
 				// Rental ID.
 				array(
-					'id'      => "{$prefix}rental_id",
+					'id'      => "{$prefix}rental_customid",
 					'type'    => 'text',
 
 					'name'    => __('Rental ID', 'VRC'),
