@@ -14,16 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * VR_Metaboxes.
+ * VR_Meta_Boxes.
  *
  * Class that handles metaboxes.
  *
  * @since 1.0.0
  */
 
-if ( ! class_exists( 'VR_Metaboxes' ) ) :
+if ( ! class_exists( 'VR_Meta_Boxes' ) ) :
 
-class VR_Metaboxes {
+class VR_Meta_Boxes {
 
 	/**
 	 * Disable Metabox plugin if present.

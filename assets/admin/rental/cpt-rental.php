@@ -10,7 +10,9 @@
 
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 if ( ! class_exists( 'VR_CPT_Rental' ) ) :
 
@@ -21,7 +23,7 @@ class VR_CPT_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	function register_cpt() {
+	public function register_cpt() {
 
 	    $labels = array(
 			'name'               => _x( 'Rentals', 'Post Type General Name', 'VRC' ),
