@@ -2,7 +2,7 @@
 /**
  * Rental related metaboxes
  *
- * Metaboxes for `rental` post type.
+ * Metaboxes for `vr_rental` post type.
  *
  * @since 	1.0.0
  * @package VRC
@@ -31,8 +31,8 @@ class VR_Rental_Meta_Boxes {
 	 * TODO: Needs major refactoring!
 	 *
 	 * @param   array   $meta_boxes
-	 * @since   1.0.0
 	 * @return  array   $meta_boxes
+	 * @since   1.0.0
 	 */
 	public function register( $meta_boxes ) {
 

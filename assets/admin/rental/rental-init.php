@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 
-// Custom Post Type: `rental`.
+// Custom Post Type: `vr_rental`.
 if ( file_exists( VRC_DIR . '/assets/admin/rental/cpt-rental.php' ) ) {
     require_once( VRC_DIR . '/assets/admin/rental/cpt-rental.php' );
 }

@@ -30,3 +30,13 @@ if ( file_exists( VRC_DIR . '/assets/admin/rental/rental-init.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/admin/meta-boxes/meta-box-init.php' ) ) {
     require_once( VRC_DIR . '/assets/admin/meta-boxes/meta-box-init.php' );
 }
+
+
+/**
+ * Agent initializer.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/admin/agent/agent-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/admin/agent/agent-init.php' );
+}

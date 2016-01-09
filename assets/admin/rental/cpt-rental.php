@@ -84,7 +84,7 @@ class VR_CPT_Rental {
 	 */
 	function fake_content() {
 
-       // Check if fake content created, if not create 10 fake posts for 'rental' post type.
+       // Check if fake content created, if not create 10 fake posts for 'vr_rental' post type.
        if( get_option( 'vr_created_fake_content_rental' ) ) { return; }
 
        $i = 0;

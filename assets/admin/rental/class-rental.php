@@ -34,7 +34,7 @@ class VR_Rental {
 	 * @var 	object
 	 * @since 	1.0.0
 	 */
-	private $rental;
+	public $rental;
 
 
 	/**
@@ -81,7 +81,7 @@ class VR_Rental {
 	/**
 	 * Create Rental.
 	 *
-	 * Custom Post type: `rental`
+	 * Custom Post type: `vr_rental`
 	 *
 	 * @since  1.0.0
 	 */
