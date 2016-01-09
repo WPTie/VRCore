@@ -201,6 +201,7 @@ class VR_Rental_Custom_Columns {
 
 
 			if ( $typenow == $post_type ) {
+
 				$selected      = isset( $_GET[ $taxonomy ] ) ? $_GET[ $taxonomy ] : '';
 				$info_taxonomy = get_taxonomy( $taxonomy );
 				wp_dropdown_categories( array(
@@ -212,9 +213,12 @@ class VR_Rental_Custom_Columns {
 					'show_count'      => true,
 					'hide_empty'      => true,
 				) );
-			};
-		}
-	}
+
+			} // if ended.
+
+		} // foreach ended.
+
+	} // function ended.
 
 
 	/**
@@ -225,10 +229,10 @@ class VR_Rental_Custom_Columns {
 	function convert_id_to_term_in_query( $query ) {
 		global $pagenow;
 		$post_type = 'vr_rental';
-		// $taxonomy  = 'vr_rental-type';
 		$taxonomies  = array( 'vr_rental-type', 'vr_rental-destination', 'vr_rental-feature' );
 
 		foreach( $taxonomies as $taxonomy ) {
+
 			$q_vars    = &$query->query_vars;
 			if ( $pagenow == 'edit.php'
 					&& isset( $q_vars['post_type'] )
@@ -239,10 +243,13 @@ class VR_Rental_Custom_Columns {
 
 				$term = get_term_by( 'id', $q_vars[ $taxonomy ], $taxonomy );
 				$q_vars[ $taxonomy ] = $term->slug;
-			}
-		}
-	}
 
-} // Class ended here.
+			} // if ended.
+
+		} // foreach ended.
+
+	} // function ended.
+
+} // class ended.
 
 endif;
