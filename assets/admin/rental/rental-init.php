@@ -147,4 +147,8 @@ if ( class_exists( 'VR_Rental_Meta_Boxes' ) ) {
 	// Register rental meta boxes.
     add_filter( 'rwmb_meta_boxes', array( $vr_rental_meta_boxes, 'register' ) );
 
+    // Amenities Button.
+	add_filter( 'rwmb_group_add_clone_button_text', array( $vr_rental_meta_boxes, 'amenities_button' ), 10, 2 );
+
+
 }

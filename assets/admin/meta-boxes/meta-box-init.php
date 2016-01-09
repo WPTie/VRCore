@@ -66,6 +66,14 @@ if ( ! class_exists( 'RWMB_Tabs' ) ) {
 	}
 }
 
+
+// Groups extension.
+if ( ! class_exists( 'RWMB_Group' ) ) {
+	if ( file_exists( VRC_DIR . '/assets/admin/meta-boxes/metabox-extensions/meta-box-group/meta-box-group.php' ) ) {
+	    require_once( VRC_DIR . '/assets/admin/meta-boxes/metabox-extensions/meta-box-group/meta-box-group.php' );
+	}
+}
+
 /**
  * Class: VR_Meta_Boxes.
  *
@@ -91,6 +99,8 @@ if ( class_exists( 'VR_Meta_Boxes' ) ) {
 	 */
 	$vr_meta_boxes = new VR_Meta_Boxes();
 
+	// Disable meta-box plugin.
 	add_action( 'init', array( $vr_meta_boxes, 'disable_metabox_plugin' ) );
+
 
 }

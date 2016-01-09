@@ -62,8 +62,8 @@ class VR_Rental_Meta_Boxes {
 		$slider_image_desc   = __( 'Consult theme documentation for required image size.', 'VRC' );
 
 	    $meta_boxes[] = array(
-			'id'         => 'vr_rental_meta_box_id',
-			'title'      => __('Rental', 'VRC'),
+			'id'         => 'vr_rental_meta_box_details_id',
+			'title'      => __('Rental Details', 'VRC'),
 
 			'post_types' => array('vr_rental'),
 
@@ -87,6 +87,10 @@ class VR_Rental_Meta_Boxes {
 					'label' => __('Rental Video', 'VRC'),
 					'icon'  => 'dashicons-format-video'
 	            ),
+                'amenities' => array(
+    				'label' => __('Additional Amenities', 'VRC'),
+    				'icon'  => 'dashicons-palmtree'
+                ),
 	            'agent' => array(
 					'label' => __('Agent Information', 'VRC'),
 					'icon'  => 'dashicons-businessman'
@@ -322,7 +326,53 @@ class VR_Rental_Meta_Boxes {
 	            ),
 
 
-	            /**
+                /**
+                 * Tab: `amenities`
+                 * 		Additional Amenities
+                 *
+                 * @since 1.0.0
+                 */
+
+                // Group.
+                array(
+					'id'         => '{$prefix}group_amenities',
+					'type'       => 'group',
+
+					'clone'      => true,
+					// 'sort_clone' => true,
+
+					'tab'        => 'amenities',
+					'fields'     => array(
+
+            			// Name of the amenity.
+            			array(
+							'id'   => '{$prefix}group_amenities_name',
+							'type' => 'text',
+
+							'name' => __( 'Name', 'rwmb' ),
+							'desc' => 'Example Value: Pool',
+
+							'columns' => 6
+            			),
+
+						// Image Icon.
+            			array(
+							'id'               => '{$prefix}group_amenities_img',
+							'type'             => 'image_advanced',
+
+							'name'             => __( 'Icon Image', 'rwmb' ),
+							'desc'             => "Add amenity's Icon image.",
+
+							'columns'          => 6,
+							'max_file_uploads' => 1
+            			)
+
+            		) // Sub-Fields ended.
+
+                ), // Field Group ended.
+
+
+                /**
 	             * Tab: `agent`
 	             * 		Agent Information
 	             *
@@ -535,12 +585,26 @@ class VR_Rental_Meta_Boxes {
 					'tab'              => 'home-slider'
 	            )
 
+
+
 	        ) // Fields ended.
+
 	    ); // Metboxes array ended.
 
 	    return $meta_boxes;
 
 	} // Register function End.
+
+
+
+	/**
+	 * Add More Amenities Button.
+	 *
+	 * @since 1.0.0
+	 */
+	public function amenities_button( $text, $field ) {
+		    return __( '+ Add New Amenity', 'VRC' );
+	}
 
 
 } // Class end.
