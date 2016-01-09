@@ -125,6 +125,11 @@ if ( class_exists( 'VR_Rental_Custom_Columns' ) ) {
 	// Sort Price by numbers.
 	add_action( 'load-edit.php', array( $vr_rental_custom_columns, 'sort_it' ) );
 
+	// Add CT Filters in the admin and convert ID to term titles.
+	add_action('restrict_manage_posts', array( $vr_rental_custom_columns, 'filter_rentals_by_taxonomies' ) );
+	add_filter('parse_query', array( $vr_rental_custom_columns, 'convert_id_to_term_in_query' ) );
+
+
 }
 
 

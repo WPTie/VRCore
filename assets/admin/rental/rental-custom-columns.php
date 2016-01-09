@@ -146,14 +146,13 @@ class VR_Rental_Custom_Columns {
 	}
 
 
-
 	/**
 	 * Only run our customization on the 'edit.php' page in the admin.
 	 *
 	 * @since 1.0.0
 	 */
 	function sort_it() {
-		add_filter( 'request', array( $this, 'sort_price_num' ) );
+		add_filter( 'request', array( $this, 'sort_price_by_num' ) );
 	}
 
 
@@ -162,7 +161,7 @@ class VR_Rental_Custom_Columns {
 	 *
 	 * @since 1.0.0
 	 */
-	public function sort_price_num( $vars ) {
+	public function sort_price_by_num( $vars ) {
 
 		/* Check if we're viewing the 'movie' post type. */
 		if ( isset( $vars['post_type'] ) && 'vr_rental' == $vars['post_type'] ) {
@@ -185,6 +184,65 @@ class VR_Rental_Custom_Columns {
 
 	}
 
-}
+
+	/**
+	 * Filter in admin.
+	 *
+	 * Display a custom taxonomy dropdown filter in admin.
+	 *
+	 * @since 1.0.0
+	 */
+	function filter_rentals_by_taxonomies() {
+		global $typenow; // to check the post type
+		$post_type = 'vr_rental';
+		$taxonomies  = array( 'vr_rental-type', 'vr_rental-destination', 'vr_rental-feature' );
+
+		foreach( $taxonomies as $taxonomy ) {
+
+
+			if ( $typenow == $post_type ) {
+				$selected      = isset( $_GET[ $taxonomy ] ) ? $_GET[ $taxonomy ] : '';
+				$info_taxonomy = get_taxonomy( $taxonomy );
+				wp_dropdown_categories( array(
+					'show_option_all' => __( "Show All {$info_taxonomy->label}" ),
+					'taxonomy'        => $taxonomy,
+					'name'            => $taxonomy,
+					'orderby'         => 'name',
+					'selected'        => $selected,
+					'show_count'      => true,
+					'hide_empty'      => true,
+				) );
+			};
+		}
+	}
+
+
+	/**
+	 * Convert ID to term Title.
+	 *
+	 * @since 1.0.0
+	 */
+	function convert_id_to_term_in_query( $query ) {
+		global $pagenow;
+		$post_type = 'vr_rental';
+		// $taxonomy  = 'vr_rental-type';
+		$taxonomies  = array( 'vr_rental-type', 'vr_rental-destination', 'vr_rental-feature' );
+
+		foreach( $taxonomies as $taxonomy ) {
+			$q_vars    = &$query->query_vars;
+			if ( $pagenow == 'edit.php'
+					&& isset( $q_vars['post_type'] )
+					&& $q_vars['post_type'] == $post_type
+					&& isset( $q_vars[ $taxonomy ] )
+					&& is_numeric( $q_vars[ $taxonomy ] )
+					&& $q_vars[ $taxonomy ] != 0 ) {
+
+				$term = get_term_by( 'id', $q_vars[ $taxonomy ], $taxonomy );
+				$q_vars[ $taxonomy ] = $term->slug;
+			}
+		}
+	}
+
+} // Class ended here.
 
 endif;
