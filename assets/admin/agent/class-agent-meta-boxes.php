@@ -59,7 +59,7 @@ class VR_Agent_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}divider_id0', // Not used, but needed.
+	            	'id'      => "{$prefix}divider_id0", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12
 	            ),
@@ -77,7 +77,7 @@ class VR_Agent_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}divider_id1', // Not used, but needed.
+	            	'id'      => "{$prefix}divider_id1", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12
 	            ),
@@ -94,7 +94,7 @@ class VR_Agent_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}divider_id2', // Not used, but needed.
+	            	'id'      => "{$prefix}divider_id2", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12
 	            ),
@@ -110,7 +110,7 @@ class VR_Agent_Meta_Boxes {
 
 	           // Divider.
 	           array(
-	           	'id'      => '{$prefix}divider_id3', // Not used, but needed.
+	           	'id'      => "{$prefix}divider_id3", // Not used, but needed.
 	           	'type'    => 'divider',
 	           	'columns' => 12
 	           ),
@@ -127,7 +127,7 @@ class VR_Agent_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}divider_id4', // Not used, but needed.
+	            	'id'      => "{$prefix}divider_id4", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12
 	            ),
@@ -144,7 +144,7 @@ class VR_Agent_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}divider_id5', // Not used, but needed.
+	            	'id'      => "{$prefix}divider_id5", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12
 	            ),
@@ -161,7 +161,7 @@ class VR_Agent_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}divider_id6', // Not used, but needed.
+	            	'id'      => "{$prefix}divider_id6", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12
 	            ),
@@ -178,7 +178,7 @@ class VR_Agent_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}divider_id7', // Not used, but needed.
+	            	'id'      => "{$prefix}divider_id7", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12
 	            ),
@@ -195,7 +195,7 @@ class VR_Agent_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}divider_id8', // Not used, but needed.
+	            	'id'      => "{$prefix}divider_id8", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12
 	            ),
@@ -212,7 +212,7 @@ class VR_Agent_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}divider_id9', // Not used, but needed.
+	            	'id'      => "{$prefix}divider_id9", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12
 	            ),
@@ -229,7 +229,7 @@ class VR_Agent_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}divider_id10', // Not used, but needed.
+	            	'id'      => "{$prefix}divider_id10", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12
 	            ),

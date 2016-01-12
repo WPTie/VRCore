@@ -39,17 +39,17 @@ class VR_Partner_Meta_Boxes {
 
 	    $meta_boxes[] = array(
 			'id'       => 'vr_partner_meta_box_details_id',
-			'title'    => __('Partner Information', 'inspiry-real-estate'),
+			'title'    => __('Partner Information', 'VRC'),
 			'pages'    => array( 'vr_partner' ),
 			'context'  => 'normal',
 			'priority' => 'high',
 			'fields'   => array(
 	            array(
 					'id'   => "{$prefix}url",
-					'type' => 'text',
+					'type' => 'url',
 
-					'name' => __('Website URL', 'inspiry-real-estate'),
-					'desc' => __('Provide partner website URL', 'inspiry-real-estate')
+					'name' => __('Website URL', 'VRC'),
+					'desc' => __('Provide partner website URL. Example Value: http://Google.com (Must have http://)', 'VRC')
 	            )
 	        )
 	    );

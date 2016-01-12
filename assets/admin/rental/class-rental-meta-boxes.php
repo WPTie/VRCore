@@ -36,30 +36,37 @@ class VR_Rental_Meta_Boxes {
 	 */
 	public function register( $meta_boxes ) {
 
-	    $prefix = 'vr_';
+	    $prefix = 'vr_rental_';
 
-	    // Agents
-	    $agents_array = array( -1 => __( 'None', 'VRC' ) );
-	    $agents_posts = get_posts( array (
-			'post_type'        => 'vr_agent', // TODO: Add `vr_agent` CPT.
-			'posts_per_page'   => -1,
-			'suppress_filters' => 0,
-	        ) );
-	    if ( ! empty ( $agents_posts ) ) {
-	        foreach ( $agents_posts as $agent_post ) {
-	            $agents_array[ $agent_post->ID ] = $agent_post->post_title;
-	        }
-	    }
+	// TODO: Ask SBhai why this way?
+	    // Agent posts and ID to title conversion.
+	  //   $agent_array = array( -1 => __( 'None', 'VRC' ) );
+	  //   $agent_posts = get_posts( array (
+			// 'post_type'        => 'vr_agent',
+			// 'posts_per_page'   => -1,
+			// 'suppress_filters' => 0
+	  //       ) );
+	  //   if ( ! empty ( $agent_posts ) ) {
+	  //       foreach ( $agent_posts as $agent_post ) {
+	  //           $agent_array[ $agent_post->ID ] = $agent_post->post_title;
+	  //       }
+	  //   }
 
-	    // Rental Details Meta Box
-		// $default_desc        = __( 'Consult theme documentation for required image size.', 'VRC' );
-		// $gallery_images_desc = apply_filters( 'inspiry_gallery_description', $default_desc );
-		// $video_image_desc    = apply_filters( 'inspiry_video_description', $default_desc );
 
-		$default_desc        = __( 'Consult theme documentation for required image size.', 'VRC' );
-		$gallery_images_desc = __( 'Consult theme documentation for required image size.', 'VRC' );
-		$video_image_desc    = __( 'Consult theme documentation for required image size.', 'VRC' );
-		$slider_image_desc   = __( 'Consult theme documentation for required image size.', 'VRC' );
+	    // Booking posts and ID to title conversion.
+	  //   $booking_array = array( -1 => __( 'None', 'VRC' ) );
+	  //   $booking_posts = get_posts( array (
+			// 'post_type'        => 'vr_booking',
+			// 'posts_per_page'   => -1,
+			// 'suppress_filters' => 0
+	  //       ) );
+	  //   if ( ! empty ( $booking_posts ) ) {
+	  //       foreach ( $booking_posts as $booking_post ) {
+	  //           $booking_array[ $booking_post->ID ] = $booking_post->post_title;
+	  //       }
+	  //   }
+
+
 
 	    $meta_boxes[] = array(
 			'id'         => 'vr_rental_meta_box_details_id',
@@ -121,8 +128,8 @@ class VR_Rental_Meta_Boxes {
 				// Price.
 				array(
 
-					'id'      => "{$prefix}rental_price",
-					'type'    => 'text',
+					'id'      => "{$prefix}price", // use double quotes with {$prefix}
+					'type'    => 'number',
 
 					'name'    => __('Price: Rent  ( Only digits )', 'VRC'),
 					'desc'    => __('Example Value: 450', 'VRC'),
@@ -136,7 +143,7 @@ class VR_Rental_Meta_Boxes {
 
 				//  Price Postfix.
 				array(
-					'id'      => "{$prefix}rental_price_postfix",
+					'id'      => "{$prefix}price_postfix",
 					'type'    => 'text',
 
 					'name'    => __('Price Postfix', 'VRC'),
@@ -150,7 +157,7 @@ class VR_Rental_Meta_Boxes {
 
 				// Divider.
 				array(
-					'id'      => '{$prefix}price_divider', // Not used, but needed.
+					'id'      => "{$prefix}price_divider", // Not used, but needed.
 					'type'    => 'divider',
 					'columns' => 12,
 					'tab'     => 'details'
@@ -159,8 +166,8 @@ class VR_Rental_Meta_Boxes {
 
 				// Bedrooms.
 				array(
-					'id'      => "{$prefix}rental_bedrooms",
-					'type'    => 'text',
+					'id'      => "{$prefix}bedrooms",
+					'type'    => 'number',
 
 					'name'    => __('Bedrooms', 'VRC'),
 					'desc'    => __('Example Value: 4', 'VRC'),
@@ -173,8 +180,8 @@ class VR_Rental_Meta_Boxes {
 
 				// Bathrooms.
 				array(
-					'id'      => "{$prefix}rental_bathrooms",
-					'type'    => 'text',
+					'id'      => "{$prefix}bathrooms",
+					'type'    => 'number',
 
 					'name'    => __('Bathrooms', 'VRC'),
 					'desc'    => __('Example Value: 2', 'VRC'),
@@ -187,7 +194,7 @@ class VR_Rental_Meta_Boxes {
 
 				// Divider.
 				array(
-					'id'      => '{$prefix}bed_bath_divider', // Not used, but needed.
+					'id'      => "{$prefix}bed_bath_divider", // Not used, but needed.
 					'type'    => 'divider',
 					'columns' => 12,
 					'tab'     => 'details'
@@ -196,8 +203,8 @@ class VR_Rental_Meta_Boxes {
 
 				// Guests.
 				array(
-					'id'      => "{$prefix}rental_guests",
-					'type'    => 'text',
+					'id'      => "{$prefix}guests",
+					'type'    => 'number',
 
 					'name'    => __('Guests', 'VRC'),
 					'desc'    => __('Example Value: 2', 'VRC'),
@@ -210,7 +217,7 @@ class VR_Rental_Meta_Boxes {
 
 				// Rental ID.
 				array(
-					'id'      => "{$prefix}rental_customid",
+					'id'      => "{$prefix}customid",
 					'type'    => 'text',
 
 					'name'    => __('Rental ID', 'VRC'),
@@ -224,7 +231,7 @@ class VR_Rental_Meta_Boxes {
 
 				// Divider.
 				array(
-					'id'      => '{$prefix}google_map_divider', // Not used, but needed.
+					'id'      => "{$prefix}google_map_divider", // Not used, but needed.
 					'type'    => 'divider',
 					'columns' => 12,
 					'tab'     => 'details'
@@ -233,7 +240,7 @@ class VR_Rental_Meta_Boxes {
 
 				// Address on Google Maps.
 				array(
-					'id'      => "{$prefix}rental_address",
+					'id'      => "{$prefix}address",
 					'type'    => 'text',
 
 					'name'    => __('Rental Address', 'VRC'),
@@ -247,7 +254,7 @@ class VR_Rental_Meta_Boxes {
 
 				// Google Maps.
 				array(
-					'id'            => "{$prefix}rental_location",
+					'id'            => "{$prefix}location",
 					'type'          => 'map',
 
 					'name'          => __('Rental Location at Google Map*', 'VRC'),
@@ -256,7 +263,7 @@ class VR_Rental_Meta_Boxes {
 					'std'           => '25.761680,-80.191790,14',   // 'latitude,longitude[,zoom]' (zoom is optional)
 					'style'         => 'width: 95%; height: 400px',
 
-					'address_field' => "{$prefix}rental_address",
+					'address_field' => "{$prefix}address",
 					'columns'       => 12,
 					'tab'           => 'details'
 				),
@@ -271,11 +278,11 @@ class VR_Rental_Meta_Boxes {
 
 				// Gallery Images.
 	            array(
-					'id'               => "{$prefix}rental_images",
+					'id'               => "{$prefix}images",
 					'type'             => 'image_advanced',
 
 					'name'             => __('Rental Gallery Images', 'VRC'),
-					'desc'             => $gallery_images_desc,
+					'desc'             => __('Check documentation for image sizes', 'VRC'),
 
 					'max_file_uploads' => 48,
 					'columns'          => 12,
@@ -305,7 +312,7 @@ class VR_Rental_Meta_Boxes {
 
 	            // Divider.
 	            array(
-					'id'      => '{$prefix}video_divider', // Not used, but needed.
+					'id'      => "{$prefix}video_divider", // Not used, but needed.
 					'type'    => 'divider',
 					'columns' => 12,
 					'tab'     => 'video'
@@ -318,7 +325,7 @@ class VR_Rental_Meta_Boxes {
 					'type'             => 'image_advanced',
 
 					'name'             => __('Virtual Tour Video Image', 'VRC'),
-					'desc'             => $video_image_desc,
+					'desc'             => __( 'Consult the documentation for required image size.', 'VRC' ),
 
 					'max_file_uploads' => 1,
 					'columns'          => 12,
@@ -335,7 +342,7 @@ class VR_Rental_Meta_Boxes {
 
                 // Group.
                 array(
-					'id'         => '{$prefix}group_amenities',
+					'id'         => "{$prefix}group_amenities",
 					'type'       => 'group',
 
 					'clone'      => true,
@@ -346,7 +353,7 @@ class VR_Rental_Meta_Boxes {
 
             			// Name of the amenity.
             			array(
-							'id'   => '{$prefix}group_amenities_name',
+							'id'   => "{$prefix}group_amenities_name",
 							'type' => 'text',
 
 							'name' => __( 'Name', 'rwmb' ),
@@ -357,7 +364,7 @@ class VR_Rental_Meta_Boxes {
 
 						// Image Icon.
             			array(
-							'id'               => '{$prefix}group_amenities_img',
+							'id'               => "{$prefix}group_amenities_img",
 							'type'             => 'image_advanced',
 
 							'name'             => __( 'Icon Image', 'rwmb' ),
@@ -399,7 +406,7 @@ class VR_Rental_Meta_Boxes {
 
                 // Divider.
                 array(
-    				'id'      => '{$prefix}agent_divider', // Not used, but needed.
+    				'id'      => "{$prefix}agent_divider", // Not used, but needed.
     				'type'    => 'divider',
     				'columns' => 12,
     				'tab'     => 'agent'
@@ -407,16 +414,38 @@ class VR_Rental_Meta_Boxes {
 
 
 	            // Select the agent.
-	            array(
-				    'id'      => "{$prefix}agents",
-				    'type'    => 'select',
+	       //      array(
+				    // 'id'      => "{$prefix}the_agent",
+				    // 'type'    => 'select_advanced',
 
-				    'name'    => __('Agent', 'VRC'),
+				    // 'name'    => __('Agent', 'VRC'),
 
-				    'options' => $agents_array,
-				    'columns' => 12,
+				    // 'options' => $agent_array,
+				    // 'columns' => 12,
+				    // 'tab'     => 'agent'
+	       //      ),
+
+	            // Select the agent.
+				array(
+					'id'          => "{$prefix}the_agent",
+					'type'        => 'post',
+
+					'post_type'   => 'vr_agent',
+					'field_type'  => 'select_advanced',
+
+					'name'        => __( 'Select the Agent', 'VRC' ),
+					'placeholder' => __( 'Select the agent', 'VRC' ),
+
+					// Query arguments (optional). No settings means get all published posts.
+					'query_args'  => array(
+						'post_status'    => 'publish',
+						'posts_per_page' => - 1,
+					),
+
+					'columns' => 12,
 				    'tab'     => 'agent'
-	            ),
+				),
+
 
 
 	            /**
@@ -445,7 +474,7 @@ class VR_Rental_Meta_Boxes {
 
                 // Divider.
                 array(
-    				'id'      => '{$prefix}booking_divider', // Not used, but needed.
+    				'id'      => "{$prefix}booking_divider", // Not used, but needed.
     				'type'    => 'divider',
     				'columns' => 12,
     				'tab'     => 'booking'
@@ -453,17 +482,38 @@ class VR_Rental_Meta_Boxes {
 
 
 	            // Select the booking.
-	            array(
-				    'id'      => "{$prefix}bookings",
-				    'type'    => 'select',
+	       //      array(
+				    // 'id'      => "{$prefix}bookings",
+				    // 'type'    => 'select_advanced',
 
-				    'name'    => __('Select the Booking ', 'VRC'),
-				    'desc'    => __('Select only if the rental is booked.', 'VRC'),
+				    // 'name'    => __('Select the Booking ', 'VRC'),
+				    // 'desc'    => __('Select only if the rental is booked.', 'VRC'),
 
-				    'options' => $agents_array,
-				    'columns' => 12,
+				    // 'options' => $booking_array,
+				    // 'columns' => 12,
+				    // 'tab'     => 'booking'
+	       //      ),
+	       //
+	            // Select the booking.
+				array(
+					'id'          => "{$prefix}the_booking",
+					'type'        => 'post',
+
+					'post_type'   => 'vr_booking',
+					'field_type'  => 'select_advanced',
+
+					'name'        => __( 'Select the Booking', 'VRC' ),
+					'placeholder' => __( 'Select a booking', 'VRC' ),
+
+					// Query arguments (optional). No settings means get all published posts.
+					'query_args'  => array(
+						'post_status'    => 'publish',
+						'posts_per_page' => - 1,
+					),
+
+					'columns' => 12,
 				    'tab'     => 'booking'
-	            ),
+				),
 
 
 	            /**
@@ -493,7 +543,7 @@ class VR_Rental_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}misc_one_divider', // Not used, but needed.
+	            	'id'      => "{$prefix}misc_one_divider", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12,
 	            	'tab'     => 'misc'
@@ -516,7 +566,7 @@ class VR_Rental_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}misc_two_divider', // Not used, but needed.
+	            	'id'      => "{$prefix}misc_two_divider", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12,
 	            	'tab'     => 'misc'
@@ -525,7 +575,7 @@ class VR_Rental_Meta_Boxes {
 
 	            // Private Notes.
 	            array(
-					'id'      => "{$prefix}rental_private_note",
+					'id'      => "{$prefix}private_note",
 					'type'    => 'textarea',
 
 					'name'    => __('Private Note', 'VRC'),
@@ -565,7 +615,7 @@ class VR_Rental_Meta_Boxes {
 
 	            // Divider.
 	            array(
-	            	'id'      => '{$prefix}slider_divider', // Not used, but needed.
+	            	'id'      => "{$prefix}slider_divider", // Not used, but needed.
 	            	'type'    => 'divider',
 	            	'columns' => 12,
 	            	'tab'     => 'home-slider'
@@ -578,7 +628,7 @@ class VR_Rental_Meta_Boxes {
 					'type'             => 'image_advanced',
 
 					'name'             => __('Slider Image', 'VRC'),
-					'desc'             => $slider_image_desc,
+					'desc'             => __( 'Consult theme documentation for required image size.', 'VRC' ),
 
 					'max_file_uploads' => 1,
 					'columns'          => 12,

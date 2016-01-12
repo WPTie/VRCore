@@ -89,7 +89,7 @@ class VR_Partner_Custom_Columns {
 
 	        case 'url':
 
-	            $url = get_post_meta ( $post->ID, 'vr_partner_url', true );
+	            $url = get_post_meta( $post->ID, 'vr_partner_url', true );
 	            if( ! empty ( $url ) ) {
 	                echo $url;
 	            } else {
