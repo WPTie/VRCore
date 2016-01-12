@@ -49,7 +49,7 @@ if ( file_exists( VRC_DIR . '/assets/admin/agent/class-agent-meta-boxes.php' ) )
 
 
 /**
- * Class: `VR_Rental_Custom_Columns`.
+ * Class: `VR_Agent_Custom_Columns`.
  *
  * @since 1.0.0
  */
@@ -95,10 +95,10 @@ if ( class_exists( 'VR_Agent_Custom_Columns' ) ) {
 	 */
 	$vr_agent_custom_columns = new VR_Agent_Custom_Columns();
 
-	// Rental Custom Columns Registered
+	// Agent Custom Columns Registered
 	add_filter( 'manage_edit-vr_agent_columns', array( $vr_agent_custom_columns, 'register' ) ) ;
 
-	// Rental Custom Columns Display custom stuff
+	// Agent Custom Columns Display custom stuff
 	add_action( 'manage_vr_agent_posts_custom_column', array( $vr_agent_custom_columns, 'display' ) ) ;
 
 }

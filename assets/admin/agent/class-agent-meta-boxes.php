@@ -38,7 +38,7 @@ class VR_Agent_Meta_Boxes {
 	    $prefix = 'vr_agent_';
 
 	    $meta_boxes[] = array(
-			'id'         => 'vr_meta_box_details_id',
+			'id'         => 'vr_agent_meta_box_details_id',
 			'title'      => __('Contact Details', 'VRC'),
 
 			'post_types' => array( 'vr_agent' ),

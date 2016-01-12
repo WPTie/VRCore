@@ -41,7 +41,7 @@ class VR_Rental_Meta_Boxes {
 	    // Agents
 	    $agents_array = array( -1 => __( 'None', 'VRC' ) );
 	    $agents_posts = get_posts( array (
-			'post_type'        => 'vr_rental', // TODO: Add `vr_agent` CPT.
+			'post_type'        => 'vr_agent', // TODO: Add `vr_agent` CPT.
 			'posts_per_page'   => -1,
 			'suppress_filters' => 0,
 	        ) );
