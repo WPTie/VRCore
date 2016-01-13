@@ -83,7 +83,7 @@ class VR_Booking_Meta_Boxes {
 						$rental_title         = $rental_post->post_title;
 						$rental_img           = get_the_post_thumbnail( $rental_id, 'thumbnail' );
 						$rental_price         = get_post_meta( $rental_id, 'vr_rental_price', true );
-						$rental_agent_id         = get_post_meta( $rental_id, 'vr_rental_the_agent', true );
+						$rental_agent_id      = get_post_meta( $rental_id, 'vr_rental_the_agent', true );
 						$rental_price_postfix = get_post_meta( $rental_id, 'vr_rental_price_postfix', true );
 
 						// Rental The Agent.

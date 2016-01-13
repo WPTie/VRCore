@@ -37,9 +37,9 @@ class VR_Booking_Custom_Columns {
 		 * Register new columns.
 		 */
         $new_columns = array(
-			"rental_id" => __( 'Rental ID', 'VRC' ),
-			"guest"     => __( 'Guests', 'VRC' ),
-			"date_checkin"   => __( 'Checkin Date', 'VRC' ),
+			"rental_id"     => __( 'Rental Property', 'VRC' ),
+			"guest"         => __( 'Guests', 'VRC' ),
+			"date_checkin"  => __( 'Checkin Date', 'VRC' ),
 			"date_checkout" => __( 'Checkout Date', 'VRC' )
         );
 
@@ -81,7 +81,22 @@ class VR_Booking_Custom_Columns {
 	        case 'rental_id':
 	            $rental_id = get_post_meta( $post->ID, 'vr_booking_rental_id', true );
 	            if( ! empty ( $rental_id ) ) {
-	                echo $rental_id;
+
+	            	// Get WP_Post object from the ID.
+	            	$rental_post = get_post( $rental_id );
+
+	            	// Rental Post Data.
+					$rental_title  = $rental_post->post_title;
+					$booking_title = 	'
+	            						Booking for: %s
+	            							<a href="/wp-admin/post.php?post=%s&action=edit">
+	            								 <span class="dashicons dashicons-edit"></span>
+	            							</a>
+		            				';
+
+					echo sprintf( $booking_title, $rental_title, $rental_id );
+
+	                // echo $rental_id;
 	            } else {
 	                echo "—";
 	            }

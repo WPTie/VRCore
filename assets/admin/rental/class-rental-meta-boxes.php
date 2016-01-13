@@ -641,6 +641,68 @@ class VR_Rental_Meta_Boxes {
 
 	    ); // Metboxes array ended.
 
+		$meta_boxes[] = array(
+			'id'         => 'vr_rental_meta_box_booking_id',
+			'title'      => __('Bookings for this Rental Property', 'VRC'),
+
+			'post_types' => array( 'vr_rental' ),
+
+			'context'    => 'normal',
+			'priority'   => 'high',
+
+			'fields'     => array(
+
+								 // Display the rental of this booking.
+				array(
+					'id'   => "{$prefix}bookings_list",
+					'type' => 'custom_html',
+
+					'callback' => function (){
+
+						global $post;
+
+						// Get the bookings where `vr_booking_rental_id` is this rental property.
+						// That is get the bookings for this rental property.
+						$args = array(
+							'post_type'  => 'vr_booking',
+							'orderby'    => 'meta_value_num',
+							'meta_key'   => 'vr_booking_rental_id',
+							'meta_value' => $post->ID
+						);
+
+						$the_rentals = new WP_Query( $args );
+
+						echo '<div class="rwmb-field">';
+
+							if ( $the_rentals->have_posts() ) {
+								echo '<ol>';
+								while ( $the_rentals->have_posts() ) {
+									$the_rentals->the_post();
+
+									// Frontend link.
+									// $li_format = '<li><a href="%s"> %s </a></li>';
+									// echo sprintf( $li_format, get_the_permalink() , get_the_title() );
+
+									// Backend link.
+									$li_format = '<li><a href="/wp-admin/post.php?post=%s&action=edit"> %s </a></li>';
+									echo sprintf( $li_format, get_the_id() , get_the_title() );
+								}
+								echo '</ol>';
+							} else {
+								echo "No rental property owned by this agent.";
+							}
+
+						echo '</div>';
+
+
+					} // Callback function ended.
+
+				), // Field ended.
+
+		   ) // Fields array ended.
+
+	    );// Metboxes array ended.
+
 	    return $meta_boxes;
 
 	} // Register function End.

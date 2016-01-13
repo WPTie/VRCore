@@ -62,7 +62,7 @@ class VR_CPT_Agent {
 		    'label'               => __( 'agent', 'inspiry-real-estate' ),
 		    'description'         => __( 'Real Estate Agent', 'inspiry-real-estate' ),
 		    'labels'              => $labels,
-		    'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions', ),
+		    'supports'            => array( 'title', 'thumbnail' ),
 		    'hierarchical'        => false, // Just like `post`.
 		    'public'              => true,
 		    'show_ui'             => true,
