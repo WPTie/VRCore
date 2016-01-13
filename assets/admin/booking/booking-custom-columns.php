@@ -3,6 +3,7 @@
  * Custom Columns
  *
  * Custom Columns for post type `vr_booking`.
+ * TODO: Order by date added on. Most recent at the top.
  *
  * @since 	1.0.0
  * @package VRC

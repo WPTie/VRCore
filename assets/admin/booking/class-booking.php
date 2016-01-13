@@ -66,6 +66,16 @@ class VR_Booking {
 	}
 
 
+	/**
+	 * Generate the booking title.
+	 *
+	 * @since 1.0.0
+	 */
+	public function generate_title() {
+		$this->booking->set_booking_title();
+	}
+
+
 }
 
 endif;

@@ -3,6 +3,7 @@
  * Custom Columns
  *
  * Custom Columns for post type `rental`.
+ * TODO: Order by date added on. Most recent at the top. Try https://www.smashingmagazine.com/2013/12/modifying-admin-post-lists-in-wordpress/
  *
  * @since 	1.0.0
  * @package VRC
