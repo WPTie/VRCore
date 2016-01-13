@@ -43,9 +43,6 @@ if ( is_user_logged_in() ) {
 
 ?>
 
-<a class="login-register-link" href="#login-modal" data-toggle="modal">
-                    <i class="fa fa-sign-in"></i>Login / Sign up
-</a>
 <div class="form-wrapper">
 
     <div class="form-heading clearfix">
