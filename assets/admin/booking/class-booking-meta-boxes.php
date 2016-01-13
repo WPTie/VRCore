@@ -75,44 +75,59 @@ class VR_Booking_Meta_Boxes {
 							update_post_meta( $post->ID, 'vr_booking_rental_id', $rental_id );
 						}
 
+						if ( $rental_id != 0 ) {
 
-						// Get WP_Post object from the ID.
-						$rental_post = get_post( $rental_id );
+							// Get WP_Post object from the ID.
+							$rental_post = get_post( $rental_id );
 
-						// Rental Post Data.
-						$rental_title         = $rental_post->post_title;
-						$rental_img           = get_the_post_thumbnail( $rental_id, 'thumbnail' );
-						$rental_price         = get_post_meta( $rental_id, 'vr_rental_price', true );
-						$rental_agent_id      = get_post_meta( $rental_id, 'vr_rental_the_agent', true );
-						$rental_price_postfix = get_post_meta( $rental_id, 'vr_rental_price_postfix', true );
-
-						// Rental The Agent.
-						$rental_the_agent  = get_post( $rental_agent_id );
-						$rental_agent_name = $rental_the_agent->post_title;
-
-						$div_title = 	'
-										<div class="rwmb-field">
-											<h1>%s: %s
-												<a href="/wp-admin/post.php?post=%s&action=edit">
-													 <span class="dashicons dashicons-edit"></span>
-												</a>
-											</h1>
-										</div>
-									';
-
-						$div_one = '<div class="rwmb-field"> %s </div>';
-						$div_two = '<div class="rwmb-field"> %s %s </div>';
+							// Rental Post Data.
+							$rental_title         = $rental_post->post_title;
+							$rental_img           = get_the_post_thumbnail( $rental_id, 'thumbnail' );
+							$rental_price         = get_post_meta( $rental_id, 'vr_rental_price', true );
+							$rental_agent_id      = get_post_meta( $rental_id, 'vr_rental_the_agent', true );
+							$rental_price_postfix = get_post_meta( $rental_id, 'vr_rental_price_postfix', true );
 
 
-						echo sprintf( $div_title, 'Rental', $rental_title, $rental_id );
-						echo sprintf( $div_one, $rental_img );
-						echo sprintf( $div_two, $rental_price , $rental_price_postfix );
 
-						echo sprintf( $div_title, 'Agent', $rental_agent_name, $rental_agent_id );
+							$div_title = 	'
+											<div class="rwmb-field">
+												<h1>%s: %s
+													<a href="/wp-admin/post.php?post=%s&action=edit">
+														 <span class="dashicons dashicons-edit"></span>
+													</a>
+												</h1>
+											</div>
+										';
+
+							$div_one = '<div class="rwmb-field"> %s </div>';
+							$div_two = '<div class="rwmb-field"> %s %s </div>';
 
 
-					}
-				),
+							echo sprintf( $div_title, 'Rental', $rental_title, $rental_id );
+							echo sprintf( $div_one, $rental_img );
+							echo sprintf( $div_two, $rental_price , $rental_price_postfix );
+
+							if ( $rental_agent_id != 0 ) {
+
+								// Rental The Agent.
+								$rental_the_agent  = get_post( $rental_agent_id );
+								$rental_agent_name = $rental_the_agent->post_title;
+								echo sprintf( $div_title, 'Agent', $rental_agent_name, $rental_agent_id );
+							} else {
+
+								echo '<div class="rwmb-field">No Agent selected!</div>';
+
+							} // if/else ended.
+
+						} else {
+
+							echo '<div class="rwmb-field">No rental property selected!</div>';
+
+						} // if/else ended.
+
+					} // Callback annonymous funtion ended.
+
+				), // field ended.
 
 			) // fields array ended.
 
