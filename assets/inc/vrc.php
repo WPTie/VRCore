@@ -20,3 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 if ( file_exists( VRC_DIR . '/assets/admin/admin-init.php' ) ) {
     require_once( VRC_DIR . '/assets/admin/admin-init.php' );
 }
+
+
+/**
+ * Member Initializer.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/member/member-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/member/member-init.php' );
+}
