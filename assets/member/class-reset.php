@@ -67,22 +67,22 @@ class VR_Reset {
         $get_by = "";
 
         if( empty( $account ) ) {
-            $error = __( 'Provide a valid username or email address!', 'inspiry' );
+            $error = __( 'Provide a valid username or email address!', 'VRC' );
         } else {
             if( is_email( $account ) ) {
                 if( email_exists( $account ) ) {
                     $get_by = 'email';
                 } else {
-                    $error = __( 'No user found for given email!', 'inspiry' );
+                    $error = __( 'No user found for given email!', 'VRC' );
                 }
             } elseif( validate_username( $account ) ) {
                 if( username_exists( $account ) ) {
                     $get_by = 'login';
                 } else {
-                    $error = __( 'No user found for given username!', 'inspiry' );
+                    $error = __( 'No user found for given username!', 'VRC' );
                 }
             } else {
-                $error = __( 'Invalid username or email!', 'inspiry' );
+                $error = __( 'Invalid username or email!', 'VRC' );
             }
         }
 
@@ -114,9 +114,9 @@ class VR_Reset {
 
                 $to = $target_user->user_email;
                 $website_name = get_bloginfo( 'name' );
-                $subject = sprintf( __('Your New Password For %s', 'inspiry'), $website_name );
-                $sender = sprintf( __( 'From: %s <%s>', 'inspiry' ), $website_name , $from ) . "\r\n";
-                $message = sprintf( __( 'Your new password is: %s', 'inspiry' ), $random_password );
+                $subject = sprintf( __('Your New Password For %s', 'VRC'), $website_name );
+                $sender = sprintf( __( 'From: %s <%s>', 'VRC' ), $website_name , $from ) . "\r\n";
+                $message = sprintf( __( 'Your new password is: %s', 'VRC' ), $random_password );
 
                 // email header
                 $header = 'Content-type: text/html; charset=utf-8' . "\r\n";
@@ -126,13 +126,13 @@ class VR_Reset {
                 $mail = wp_mail( $to, $subject, $message, $header );
 
                 if( $mail ) {
-                    $success = __( 'Check your email for new password', 'inspiry' );
+                    $success = __( 'Check your email for new password', 'VRC' );
                 } else {
-                    $error = __( 'Failed to send you new password email!', 'inspiry' );
+                    $error = __( 'Failed to send you new password email!', 'VRC' );
                 }
 
             } else {
-                $error = __( 'Oops! Something went wrong while resetting your password!', 'inspiry' );
+                $error = __( 'Oops! Something went wrong while resetting your password!', 'VRC' );
             }
         }
 

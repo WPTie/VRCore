@@ -83,12 +83,12 @@ class VR_Register {
             } elseif( in_array( 'existing_user_login', $error ) ) {
                 echo json_encode( array(
                     'success' => false,
-                    'message' => __( 'This username already exists.', 'inspiry' )
+                    'message' => __( 'This username already exists.', 'VRC' )
                 ) );
             } elseif( in_array( 'existing_user_email', $error ) ) {
                 echo json_encode( array(
                     'success' => false,
-                    'message' => __( 'This email is already registered.', 'inspiry' )
+                    'message' => __( 'This email is already registered.', 'VRC' )
                 ) );
             }
 
@@ -100,7 +100,7 @@ class VR_Register {
         	 * @since 1.0.0
         	 */
 			$vr_member_object = new VR_Member();
-            $vr_member_object->ajax_user_authenticate( $info['user_login'], $info['user_pass'], __( 'Registration', 'inspiry' ) );
+            $vr_member_object->ajax_user_authenticate( $info['user_login'], $info['user_pass'], __( 'Registration', 'VRC' ) );
         }
 
         die();
