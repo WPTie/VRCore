@@ -77,6 +77,26 @@ class VR_Member {
 
 
 	/**
+	 * AJAX Login.
+	 *
+	 * @since  1.0.0
+	 */
+	public function ajax_login() {
+		$this->login->ajax_login();
+	}
+
+
+	/**
+	 * AJAX User Authentication.
+	 *
+	 * @since  1.0.0
+	 */
+	public function ajax_user_authenticate( $user_login, $password, $login ) {
+		$this->login->ajax_user_authenticate( $user_login, $password, $login );
+	}
+
+
+	/**
 	 * Register.
 	 *
 	 * Shortcode: `[vr_register]`
@@ -89,6 +109,16 @@ class VR_Member {
 
 
 	/**
+	 * AJAX Register.
+	 *
+	 * @since  1.0.0
+	 */
+	public function ajax_register() {
+		$this->register->ajax_register();
+	}
+
+
+	/**
 	 * Reset.
 	 *
 	 * Shortcode: `[vr_reset]`
@@ -97,6 +127,16 @@ class VR_Member {
 	 */
 	public function reset() {
 		$this->reset->reset();
+	}
+
+
+	/**
+	 * AJAX Reset.
+	 *
+	 * @since  1.0.0
+	 */
+	public function ajax_reset() {
+		$this->reset->ajax_reset();
 	}
 
 
@@ -143,6 +183,16 @@ class VR_Member {
     		    VRC_URL . '/assets/member/js/jquery.validate.min.js',
     		    array( 'jquery' ),
     		    '1.13.1',
+    		    true
+    		);
+
+
+    		// CustomJS.
+    		wp_enqueue_script(
+    		    'vr_member_customJS',
+    		    VRC_URL . '/assets/member/js/member-custom.js',
+    		    array( 'jquery', 'vr_form', 'vr_modal', 'vr_validate' ),
+    		    'VRC_VERSION',
     		    true
     		);
 

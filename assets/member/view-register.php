@@ -13,6 +13,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+
+/**
+ * Display a message if user is already logged in.
+ */
+if ( is_user_logged_in() ) {
+
+    $current_user = wp_get_current_user();
+    $first_name   = esc_html( $current_user->user_firstname );
+    $user_login   = esc_html( $current_user->user_login );
+    $name = ( empty( $first_name ) ) ? $user_login : $first_name;
+    ?>
+
+    <div>
+
+        <h2>Hey, <?php echo $name; ?>!</h2>
+
+        <p class="message">
+            You are already registered and logged in. Go back to <a href="/">Home!</a> or <a href="<?php echo wp_logout_url( home_url() ); ?>">Logout!</a>
+
+        </p>
+        <!-- /.message -->
+
+    </div>
+
+    <?php
+
+} else {
+
 ?>
 
 <div class="form-wrapper">
@@ -54,7 +82,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <div class="form-element clearfix">
             <input type="submit" id="register-button" name="user-submit" class="login-form-submit login-form-input-common" value="<?php _e( 'Register', 'VRC' ); ?>" />
-            <input type="hidden" name="action" value="inspiry_ajax_register" />
+            <input type="hidden" name="action" value="vr_ajax_register" />
             <?php  // nonce for security
             wp_nonce_field( 'vr-ajax-register-nonce', 'vr-secure-register' );
 
@@ -68,7 +96,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div class="text-center">
                 <div id="register-message" class="modal-message"></div>
                 <div id="register-error" class="modal-error"></div>
-                <img id="register-loader" class="modal-loader" src="<?php echo get_template_directory_uri(); ?>/images/ajax-loader.gif" alt="Working...">
+                <img id="register-loader" class="modal-loader" src="<?php echo VRC_URL ?>/assets/member/img/ajax-loader.gif" alt="Working...">
             </div>
         </div>
 
@@ -84,3 +112,5 @@ if ( ! defined( 'ABSPATH' ) ) {
     </div>
 
 </div>
+
+<?php } // if/else ended. ?>
