@@ -1,7 +1,7 @@
 /**
- * Custom JS
+ * Login Register Reset JS
  *
- * Custom JS for memberships stuff.
+ * Login Register Reset JS for memberships stuff.
  *
  * @since 	1.0.0
  * @package VRC

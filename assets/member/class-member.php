@@ -53,13 +53,23 @@ class VR_Member {
 
 
 	/**
+	 * VR_Edit_Profile Object.
+	 *
+	 * @var 	object
+	 * @since 	1.0.0
+	 */
+	public $edit_profile;
+
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
 
-		$this->login    = new VR_Login();
-		$this->register = new VR_Register();
-		$this->reset    = new VR_Reset();
+		$this->login          = new VR_Login();
+		$this->register       = new VR_Register();
+		$this->reset          = new VR_Reset();
+		$this->edit_profile   = new VR_Edit_Profile();
 
 	}
 
@@ -141,6 +151,49 @@ class VR_Member {
 
 
 	/**
+	 * Edit Profile.
+	 *
+	 * Shortcode: `[vr_edit_profile]`.
+	 *
+	 * @since  1.0.0
+	 */
+	public function edit_profile() {
+		$this->edit_profile->edit_profile();
+	}
+
+
+	/**
+	 * Edit Profile Update.
+	 *
+	 * @since  1.0.0
+	 */
+	public function update() {
+		$this->edit_profile->update_profile();
+	}
+
+
+	/**
+	 * Upload Profile Image.
+	 *
+	 * @since  1.0.0
+	 */
+	public function upload_profile_image() {
+		$this->edit_profile->upload_profile_image();
+	}
+
+
+	/**
+	 * Get Profile Image URL.
+	 *
+	 * @since  1.0.0
+	 */
+	public function get_profile_image_url() {
+		$this->edit_profile->get_profile_image_url();
+	}
+
+
+
+	/**
 	 * Scripts.
 	 *
 	 * Static public function. Object has no access to it
@@ -160,7 +213,7 @@ class VR_Member {
     		// jQuery Form Plugin.
     		wp_enqueue_script(
     		    'vr_form',
-    		    VRC_URL . '/assets/member/js/jquery.form.js',
+    		    VRC_URL . '/assets/member/js/vendor/jquery.form.js',
     		    array( 'jquery' ),
     		    '3.51.0',
     		    true
@@ -170,7 +223,7 @@ class VR_Member {
     		// Bootstrap: `modal.js`.
     		wp_enqueue_script(
     		    'vr_modal',
-    		    VRC_URL . '/assets/member/js/modal.js',
+    		    VRC_URL . '/assets/member/js/vendor/modal.js',
     		    array( 'jquery' ),
     		    '3.3.4',
     		    true
@@ -180,21 +233,43 @@ class VR_Member {
     		// jQuery Validation Plugin.
     		wp_enqueue_script(
     		    'vr_validate',
-    		    VRC_URL . '/assets/member/js/jquery.validate.min.js',
+    		    VRC_URL . '/assets/member/js/vendor/jquery.validate.min.js',
     		    array( 'jquery' ),
     		    '1.13.1',
     		    true
     		);
 
 
-    		// CustomJS.
+    		// login-register-reset.js.
     		wp_enqueue_script(
     		    'vr_member_customJS',
-    		    VRC_URL . '/assets/member/js/member-custom.js',
+    		    VRC_URL . '/assets/member/js/custom/login-register-reset.js',
     		    array( 'jquery', 'vr_form', 'vr_modal', 'vr_validate' ),
     		    'VRC_VERSION',
     		    true
     		);
+
+
+    		// Edit Profile JS.
+    		// TODO: has_shortcode() check.
+            wp_enqueue_script( 'plupload' );
+
+    		wp_enqueue_script(
+    		    'vr_edit_profileJS',
+    		    VRC_URL . '/assets/member/js/custom/edit-profile.js',
+    		    array( 'jquery', 'plupload' ),
+    		    'VRC_VERSION',
+    		    true
+    		);
+
+    		$edit_profile_data = array(
+				'ajaxURL'       => admin_url( 'admin-ajax.php' ),
+				'uploadNonce'   => wp_create_nonce ( 'vr_allow_upload_profile_image' ),
+				'fileTypeTitle' => __( 'Valid file formats.', 'inspiry' ),
+    		);
+
+    		wp_localize_script( 'vr_edit_profileJS', 'editProfile', $edit_profile_data );
+
 
 
 		endif;

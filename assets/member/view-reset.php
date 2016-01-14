@@ -22,7 +22,7 @@ if ( is_user_logged_in() ) {
     $current_user = wp_get_current_user();
     $first_name   = esc_html( $current_user->user_firstname );
     $user_login   = esc_html( $current_user->user_login );
-    $name = ( empty( $first_name ) ) ? $user_login : $first_name;
+    $name         = ( empty( $first_name ) ) ? $user_login : $first_name;
     ?>
 
     <div>
@@ -67,7 +67,7 @@ if ( is_user_logged_in() ) {
             <div class="text-center">
                 <div id="forgot-message" class="modal-message"></div>
                 <div id="forgot-error" class="modal-error"></div>
-                <img id="forgot-loader" class="modal-loader" src="<?php echo VRC_URL ?>/assets/member/img/ajax-loader.gif" alt="Working...">
+                <img id="forgot-loader" class="modal-loader" src="<?php echo VRC_URL; ?>/assets/member/img/ajax-loader.gif" alt="Working...">
             </div>
         </div>
 
@@ -94,3 +94,4 @@ if ( is_user_logged_in() ) {
 
 </div>
 
+<?php } // if/else ended. ?>

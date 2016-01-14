@@ -31,7 +31,6 @@ if ( is_user_logged_in() ) {
 
         <p class="message">
             You are already logged in. Go back to <a href="/">Home!</a> or <a href="<?php echo wp_logout_url( home_url() ); ?>">Logout!</a>
-
         </p>
         <!-- /.message -->
 
@@ -88,7 +87,7 @@ if ( is_user_logged_in() ) {
             <div class="text-center">
                 <div id="login-message" class="modal-message"></div>
                 <div id="login-error" class="modal-error"></div>
-                <img id="login-loader" class="modal-loader" src="<?php echo VRC_URL ?>/assets/member/img/ajax-loader.gif" alt="Working...">
+                <img id="login-loader" class="modal-loader" src="<?php echo VRC_URL; ?>/assets/member/img/ajax-loader.gif" alt="Working...">
             </div>
         </div>
 
