@@ -56,6 +56,15 @@ jQuery(document).ready(function($) {
             };
 
             $( '#inspiry-edit-user' ).validate({
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    pass2: {
+                        equalTo: "#pass1"
+                    }
+                },
                 submitHandler: function( form ) {
                     $( form ).ajaxSubmit( edit_form_options );
                 }

@@ -218,7 +218,7 @@ class VR_Edit_Profile {
 
                 $response = array(
                     'success' => true,
-                    'message' => __( 'Profile information is updated successfully!', 'inspiry' ),
+                    'message' => __( 'Yay! Your profile information was  successfully updated!', 'inspiry' ),
                 );
                 echo json_encode( $response );
                 die;
