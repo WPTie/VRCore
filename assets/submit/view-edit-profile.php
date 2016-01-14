@@ -223,7 +223,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             <div class="form-option">
                 <input type="submit" id="update-user" name="update-user" class="btn-small btn-orange" value="<?php _e( 'Save Changes', 'inspiry' ); ?>">
-                <img src="<?php echo VRC_URL; ?>/assets/member/img/ajax-loader.gif" id="ajax-loader" alt="Loading...">
+                <img src="<?php echo VRC_URL; ?>/assets/img/ajax-loader.gif" id="ajax-loader" alt="Loading...">
             </div>
 
             <p id="form-message"></p>

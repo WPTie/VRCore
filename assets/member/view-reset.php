@@ -67,7 +67,7 @@ if ( is_user_logged_in() ) {
             <div class="text-center">
                 <div id="forgot-message" class="modal-message"></div>
                 <div id="forgot-error" class="modal-error"></div>
-                <img id="forgot-loader" class="modal-loader" src="<?php echo VRC_URL; ?>/assets/member/img/ajax-loader.gif" alt="Working...">
+                <img id="forgot-loader" class="modal-loader" src="<?php echo VRC_URL; ?>/assets/img/ajax-loader.gif" alt="Working...">
             </div>
         </div>
 

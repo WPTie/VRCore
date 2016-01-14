@@ -63,6 +63,16 @@ if ( file_exists( VRC_DIR . '/assets/partner/partner-init.php' ) ) {
 
 
 /**
+ * Member initializer.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/member/member-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/member/member-init.php' );
+}
+
+
+/**
  * Admin Menu Order.
  *
  * @since 1.0.0
