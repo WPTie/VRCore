@@ -20,7 +20,8 @@ jQuery( function( $ ) {
 			loginError      = $("#login-error" ),
 			loginMessage    = $('#login-message');
 
-            loginAjaxLoader.fadeOut('fast'); // TODO: WHY?
+			// No loader to begin with.
+            loginAjaxLoader.fadeOut(); // TODO: WHY?
 
 
 	    var loginOptions = {

@@ -12,23 +12,31 @@ jQuery(document).ready(function($) {
 
     if ( typeof editProfile !== "undefined" ) {
 
-        var ajaxURL = editProfile.ajaxURL;
-        var uploadNonce = editProfile.uploadNonce;
+        var ajaxURL       = editProfile.ajaxURL;
+        var uploadNonce   = editProfile.uploadNonce;
         var fileTypeTitle = editProfile.fileTypeTitle;
 
-        /* Validate Edit Profile Form */
+        /**
+         * Validate Edit Profile Form.
+         *
+         * @since 1.0.0
+         */
         if ( jQuery().validate && jQuery().ajaxSubmit ) {
 
-            var form_loader = $('#ajax-loader');
-            var form_message = $('#form-message');
+            var form_loader      = $('#ajax-loader');
+            var form_message     = $('#form-message');
             var errors_container = $( '#form-errors' );
 
-            // Edit User Profile Form
+            // No loader to begin with.
+            form_loader.fadeOut();
+
+
+            // Edit User Profile Form.
             var edit_form_options = {
-                url: editProfile.ajaxURL,
-                type: 'post',
-                dataType: 'json',
-                timeout: 30000,
+                url         : editProfile.ajaxURL,
+                type        : 'post',
+                dataType    : 'json',
+                timeout     : 30000,
                 beforeSubmit: function( formData, jqForm, options ){
                     form_loader.fadeIn();
                     form_message.empty().fadeOut();
@@ -54,10 +62,14 @@ jQuery(document).ready(function($) {
             });
         }
 
-        /* initialize uploader */
+        /**
+         * Initialize uploader.
+         *
+         * @since 1.0.0
+         */
         var uploader = new plupload.Uploader({
 
-            // this can be an id of a DOM element or the DOM element itself.
+            // This can be an id of a DOM element or the DOM element itself.
             browse_button  : 'select-profile-image',
 
              // Used in `upload_profile_image()` Line# 262.
@@ -78,7 +90,11 @@ jQuery(document).ready(function($) {
         uploader.init();
 
 
-        /* Run after adding file */
+        /**
+         * Run after adding file.
+         *
+         * @since 1.0.0
+         */
         uploader.bind('FilesAdded', function(up, files) {
             var html = '';
             var profileThumb = "";
@@ -91,19 +107,31 @@ jQuery(document).ready(function($) {
         });
 
 
-        /* Run during upload */
+        /**
+         * Run during upload.
+         *
+         * @since 1.0.0
+         */
         uploader.bind('UploadProgress', function(up, file) {
             document.getElementById( "holder-" + file.id ).innerHTML = '<span>' + file.percent + "%</span>";
         });
 
 
-        /* In case of error */
+        /**
+         * In case of error.
+         *
+         * @since 1.0.0
+         */
         uploader.bind('Error', function( up, err ) {
             document.getElementById('errors-log').innerHTML += "<br/>" + "Error #" + err.code + ": " + err.message;
         });
 
 
-        /* If files are uploaded successfully */
+        /**
+         * If files are uploaded successfully.
+         *
+         * @since 1.0.0
+         */
         uploader.bind('FileUploaded', function ( up, file, ajax_response ) {
             var response = $.parseJSON( ajax_response.response );
 
@@ -126,10 +154,10 @@ jQuery(document).ready(function($) {
         });
 
         /* Check if IE9 - As image upload does not works in ie9 */
-        var ie = (function(){
+        var ie = ( function() {
 
             var undef,
-                v = 3,
+                v   = 3,
                 div = document.createElement('div'),
                 all = div.getElementsByTagName('i');
 
@@ -140,12 +168,12 @@ jQuery(document).ready(function($) {
 
             return v > 4 ? v : undef;
 
-        }());
+        } () );
 
         if ( ie <= 9 ) {
             $('#inspiry-edit-user').before( '<div class="ie9-message"><i class="fa fa-info-circle"></i>&nbsp; <strong>Current browser is not fully supported:</strong> Please update your browser or use a different one to enjoy all features on this page. </div>' );
         }
 
-    }   // validate localized data
+    }   // validate localized data.
 
 });
