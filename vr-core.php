@@ -70,8 +70,8 @@ if ( ! defined('VRC_URL' ) ) {
  *
  * @since 0.0.1
  */
-if ( file_exists( VRC_DIR . '/assets/inc/vrc.php' ) ) {
-    require_once( VRC_DIR . '/assets/inc/vrc.php' );
+if ( file_exists( VRC_DIR . '/assets/vrc-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/vrc-init.php' );
 }
 
 /**

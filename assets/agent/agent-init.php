@@ -23,8 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 // Custom Post Type: `vr_agent`.
-if ( file_exists( VRC_DIR . '/assets/admin/agent/cpt-agent.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/agent/cpt-agent.php' );
+if ( file_exists( VRC_DIR . '/assets/agent/cpt-agent.php' ) ) {
+    require_once( VRC_DIR . '/assets/agent/cpt-agent.php' );
 }
 
 
@@ -33,8 +33,8 @@ if ( file_exists( VRC_DIR . '/assets/admin/agent/cpt-agent.php' ) ) {
  *
  * @since 1.0.0
  */
-if ( file_exists( VRC_DIR . '/assets/admin/agent/class-agent.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/agent/class-agent.php' );
+if ( file_exists( VRC_DIR . '/assets/agent/class-agent.php' ) ) {
+    require_once( VRC_DIR . '/assets/agent/class-agent.php' );
 }
 
 
@@ -43,8 +43,8 @@ if ( file_exists( VRC_DIR . '/assets/admin/agent/class-agent.php' ) ) {
  *
  * @since 1.0.0
  */
-if ( file_exists( VRC_DIR . '/assets/admin/agent/class-agent-meta-boxes.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/agent/class-agent-meta-boxes.php' );
+if ( file_exists( VRC_DIR . '/assets/agent/class-agent-meta-boxes.php' ) ) {
+    require_once( VRC_DIR . '/assets/agent/class-agent-meta-boxes.php' );
 }
 
 
@@ -53,8 +53,8 @@ if ( file_exists( VRC_DIR . '/assets/admin/agent/class-agent-meta-boxes.php' ) )
  *
  * @since 1.0.0
  */
-if ( file_exists( VRC_DIR . '/assets/admin/agent/agent-custom-columns.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/agent/agent-custom-columns.php' );
+if ( file_exists( VRC_DIR . '/assets/agent/agent-custom-columns.php' ) ) {
+    require_once( VRC_DIR . '/assets/agent/agent-custom-columns.php' );
 }
 
 

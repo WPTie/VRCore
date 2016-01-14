@@ -22,8 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 // Custom Post Type: `vr_booking`.
-if ( file_exists( VRC_DIR . '/assets/admin/booking/cpt-booking.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/booking/cpt-booking.php' );
+if ( file_exists( VRC_DIR . '/assets/booking/cpt-booking.php' ) ) {
+    require_once( VRC_DIR . '/assets/booking/cpt-booking.php' );
 }
 
 
@@ -32,8 +32,8 @@ if ( file_exists( VRC_DIR . '/assets/admin/booking/cpt-booking.php' ) ) {
  *
  * @since 1.0.0
  */
-if ( file_exists( VRC_DIR . '/assets/admin/booking/class-booking.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/booking/class-booking.php' );
+if ( file_exists( VRC_DIR . '/assets/booking/class-booking.php' ) ) {
+    require_once( VRC_DIR . '/assets/booking/class-booking.php' );
 }
 
 
@@ -42,8 +42,8 @@ if ( file_exists( VRC_DIR . '/assets/admin/booking/class-booking.php' ) ) {
  *
  * @since 1.0.0
  */
-if ( file_exists( VRC_DIR . '/assets/admin/booking/class-booking-meta-boxes.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/booking/class-booking-meta-boxes.php' );
+if ( file_exists( VRC_DIR . '/assets/booking/class-booking-meta-boxes.php' ) ) {
+    require_once( VRC_DIR . '/assets/booking/class-booking-meta-boxes.php' );
 }
 
 
@@ -52,8 +52,8 @@ if ( file_exists( VRC_DIR . '/assets/admin/booking/class-booking-meta-boxes.php'
  *
  * @since 1.0.0
  */
-if ( file_exists( VRC_DIR . '/assets/admin/booking/booking-custom-columns.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/booking/booking-custom-columns.php' );
+if ( file_exists( VRC_DIR . '/assets/booking/booking-custom-columns.php' ) ) {
+    require_once( VRC_DIR . '/assets/booking/booking-custom-columns.php' );
 }
 
 

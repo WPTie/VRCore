@@ -22,8 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 // Custom Post Type: `vr_partner`.
-if ( file_exists( VRC_DIR . '/assets/admin/partner/cpt-partner.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/partner/cpt-partner.php' );
+if ( file_exists( VRC_DIR . '/assets/partner/cpt-partner.php' ) ) {
+    require_once( VRC_DIR . '/assets/partner/cpt-partner.php' );
 }
 
 
@@ -32,8 +32,8 @@ if ( file_exists( VRC_DIR . '/assets/admin/partner/cpt-partner.php' ) ) {
  *
  * @since 1.0.0
  */
-if ( file_exists( VRC_DIR . '/assets/admin/partner/class-partner.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/partner/class-partner.php' );
+if ( file_exists( VRC_DIR . '/assets/partner/class-partner.php' ) ) {
+    require_once( VRC_DIR . '/assets/partner/class-partner.php' );
 }
 
 
@@ -42,8 +42,8 @@ if ( file_exists( VRC_DIR . '/assets/admin/partner/class-partner.php' ) ) {
  *
  * @since 1.0.0
  */
-if ( file_exists( VRC_DIR . '/assets/admin/partner/class-partner-meta-boxes.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/partner/class-partner-meta-boxes.php' );
+if ( file_exists( VRC_DIR . '/assets/partner/class-partner-meta-boxes.php' ) ) {
+    require_once( VRC_DIR . '/assets/partner/class-partner-meta-boxes.php' );
 }
 
 
@@ -52,8 +52,8 @@ if ( file_exists( VRC_DIR . '/assets/admin/partner/class-partner-meta-boxes.php'
  *
  * @since 1.0.0
  */
-if ( file_exists( VRC_DIR . '/assets/admin/partner/partner-custom-columns.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/partner/partner-custom-columns.php' );
+if ( file_exists( VRC_DIR . '/assets/partner/partner-custom-columns.php' ) ) {
+    require_once( VRC_DIR . '/assets/partner/partner-custom-columns.php' );
 }
 
 
