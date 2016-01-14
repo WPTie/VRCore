@@ -20,7 +20,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <?php
 
-    if( is_user_logged_in() ) {
+    if( ! is_user_logged_in() ) {
+
+        echo "Login Required! You need to login to be able edit your profile!";
+
+    } else {
 
         // get user information
         global $current_user;
@@ -233,9 +237,8 @@ if ( ! defined( 'ABSPATH' ) ) {
         <!-- #inspiry-edit-user -->
         <?php
 
-    } else {
-        echo "Login Required! You need to login to be able edit your profile!";
-    }
+        } // Else ended.
+
     ?>
 
 </div>

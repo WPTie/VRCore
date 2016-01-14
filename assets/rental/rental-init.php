@@ -68,6 +68,16 @@ if ( file_exists( VRC_DIR . '/assets/rental/class-rental-meta-boxes.php' ) ) {
 
 
 /**
+ * Frontend Rental Iniatializer.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/rental/frontend/frontend-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/rental/frontend/frontend-init.php' );
+}
+
+
+/**
  * Actions/Filters for rental.
  *
  * Classes:

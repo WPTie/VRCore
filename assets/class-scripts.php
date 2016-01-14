@@ -84,7 +84,7 @@ class VR_Scripts {
 	    		    'vr_member_customJS',
 	    		    VRC_URL . '/assets/js/custom/login-register-reset.js',
 	    		    array( 'jquery', 'vr_form', 'vr_modal', 'vr_validate' ),
-	    		    'VRC_VERSION',
+	    		    VRC_VERSION,
 	    		    true
 	    		);
 
@@ -100,7 +100,7 @@ class VR_Scripts {
 	    		    'vr_edit_profileJS',
 	    		    VRC_URL . '/assets/js/custom/edit-profile.js',
 	    		    array( 'jquery', 'plupload' ),
-	    		    'VRC_VERSION',
+	    		    VRC_VERSION,
 	    		    true
 	    		);
 
@@ -112,6 +112,63 @@ class VR_Scripts {
 
 	    		wp_localize_script( 'vr_edit_profileJS', 'editProfile', $edit_profile_data );
 
+
+	    		// Rental Submit/Edit
+	    		// if ( is_page_template( 'page-templates/submit-property.php' ) ) {
+	    		//
+
+	    		    wp_enqueue_script( 'plupload' );
+	    		    wp_enqueue_script( 'jquery-ui-core' );
+	    		    wp_enqueue_script( 'jquery-ui-autocomplete' );
+	    		    wp_enqueue_script( 'jquery-ui-sortable' );
+
+	    		    $google_map_arguments = array();
+
+	    		    global $inspiry_options;
+
+	    		    // Get Google Map API Key if available
+	    		    if ( isset( $inspiry_options[ 'inspiry_google_map_api_key' ] ) && !empty( $inspiry_options[ 'inspiry_google_map_api_key' ] ) ) {
+	    		        $google_map_arguments[ 'key' ] = urlencode( $inspiry_options[ 'inspiry_google_map_api_key' ] );
+	    		    }
+
+	    		    // Change the map based on language if enabled from theme options
+	    		    if ( $inspiry_options[ 'inspiry_google_map_auto_lang' ] ) {
+	    		        if ( function_exists( 'wpml_object_id_filter' ) ) {
+	    		            $google_map_arguments[ 'language' ] = urlencode( ICL_LANGUAGE_CODE );
+	    		        } else {
+	    		            $google_map_arguments[ 'language' ] = urlencode( get_locale() );
+	    		        }
+	    		    }
+
+	    		    $google_map_api_uri = add_query_arg( apply_filters( 'inspiry_google_map_arguments', $google_map_arguments ) ,  '//maps.google.com/maps/api/js' );
+
+	    		    wp_enqueue_script(
+	    		        'google-map-api',
+	    		        esc_url_raw( $google_map_api_uri ),
+	    		        array(),
+	    		        '3.21',
+	    		        false
+	    		    );
+
+
+
+
+	    		    wp_enqueue_script(
+	    		        'inspiry-property-submit',
+	    		        VRC_URL . '/assets/js/custom/edit-rental.js',
+	    		        array( 'jquery', 'plupload', 'jquery-ui-sortable' ),
+	    		        VRC_VERSION,
+	    		        true
+	    		    );
+
+	    		    $property_submit_data = array(
+						'ajaxURL'       => admin_url( 'admin-ajax.php' ),
+						'uploadNonce'   => wp_create_nonce ( 'inspiry_allow_upload' ),
+						'fileTypeTitle' => __( 'Valid file formats', 'inspiry' ),
+	    		    );
+	    		    wp_localize_script( 'inspiry-property-submit', 'propertySubmit', $property_submit_data );
+
+	    		// }
 
 
 			endif;

@@ -90,3 +90,13 @@ if ( file_exists( VRC_DIR . '/assets/admin/admin-menu-order.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/class-scripts.php' ) ) {
     require_once( VRC_DIR . '/assets/class-scripts.php' );
 }
+
+
+/**
+ * CLASS: VR_Functions.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/class-functions.php' ) ) {
+    require_once( VRC_DIR . '/assets/class-functions.php' );
+}
