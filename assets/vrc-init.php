@@ -80,3 +80,13 @@ if ( file_exists( VRC_DIR . '/assets/member/member-init.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/admin/admin-menu-order.php' ) ) {
     require_once( VRC_DIR . '/assets/admin/admin-menu-order.php' );
 }
+
+
+/**
+ * CLASS: VR_Scripts.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/class-scripts.php' ) ) {
+    require_once( VRC_DIR . '/assets/class-scripts.php' );
+}

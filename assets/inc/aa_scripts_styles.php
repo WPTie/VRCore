@@ -31,10 +31,10 @@ function aa_scripts_stlyes() {
          * @since 0.0.1
          *
          */
-        wp_register_script( 'aa_vendorsJs', VRC_URL . '/assets/js/vendors.min.js' ); // Custom scripts
+        wp_register_script( 'aa_vendorsJs', VRC_URL . '/js/vendors.min.js' ); // Custom scripts
         wp_enqueue_script( 'aa_vendorsJs' ); // Enqueue it!
 
-        wp_register_script( 'aa_customJs', VRC_URL . '/assets/js/custom.min.js' ); // Custom scripts
+        wp_register_script( 'aa_customJs', VRC_URL . '/js/custom.min.js' ); // Custom scripts
         wp_enqueue_script( 'aa_customJs' ); // Enqueue it!
 
 

@@ -104,14 +104,6 @@ if ( class_exists( 'VR_Member' ) ) {
 	// Register the shortcode [vr_edit_profile]
 	add_action( 'init', array( $vr_member_init, 'edit_profile' ) ) ;
 
-	// Enqueue scripts.
-	// Static function `scripts`,
-	// Object has no access to it, a call from an object
-	// can lead to a Fatal error in $this context
-	// So, calling it via the classname.
-	add_action( 'wp_enqueue_scripts', array( 'VR_Member' , 'scripts' ) );
-
-
 	// Enable the user with no privileges to request ajax login
 	add_action( 'wp_ajax_nopriv_vr_ajax_login', array( $vr_member_init, 'ajax_login' ) );
 

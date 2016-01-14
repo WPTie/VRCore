@@ -213,7 +213,7 @@ class VR_Member {
     		// jQuery Form Plugin.
     		wp_enqueue_script(
     		    'vr_form',
-    		    VRC_URL . '/assets/member/js/vendor/jquery.form.js',
+    		    VRC_URL . '/assets/js/vendor/jquery.form.js',
     		    array( 'jquery' ),
     		    '3.51.0',
     		    true
@@ -223,7 +223,7 @@ class VR_Member {
     		// Bootstrap: `modal.js`.
     		wp_enqueue_script(
     		    'vr_modal',
-    		    VRC_URL . '/assets/member/js/vendor/modal.js',
+    		    VRC_URL . '/assets/js/vendor/modal.js',
     		    array( 'jquery' ),
     		    '3.3.4',
     		    true
@@ -233,7 +233,7 @@ class VR_Member {
     		// jQuery Validation Plugin.
     		wp_enqueue_script(
     		    'vr_validate',
-    		    VRC_URL . '/assets/member/js/vendor/jquery.validate.min.js',
+    		    VRC_URL . '/assets/js/vendor/jquery.validate.min.js',
     		    array( 'jquery' ),
     		    '1.13.1',
     		    true
@@ -243,7 +243,7 @@ class VR_Member {
     		// login-register-reset.js.
     		wp_enqueue_script(
     		    'vr_member_customJS',
-    		    VRC_URL . '/assets/member/js/custom/login-register-reset.js',
+    		    VRC_URL . '/assets/js/custom/login-register-reset.js',
     		    array( 'jquery', 'vr_form', 'vr_modal', 'vr_validate' ),
     		    'VRC_VERSION',
     		    true
@@ -256,7 +256,7 @@ class VR_Member {
 
     		wp_enqueue_script(
     		    'vr_edit_profileJS',
-    		    VRC_URL . '/assets/member/js/custom/edit-profile.js',
+    		    VRC_URL . '/assets/js/custom/edit-profile.js',
     		    array( 'jquery', 'plupload' ),
     		    'VRC_VERSION',
     		    true
