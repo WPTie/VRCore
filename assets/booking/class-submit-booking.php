@@ -64,6 +64,9 @@ class VR_Submit_Booking {
         // Errors array.
         $errors = array();
 
+        // Get user info.
+        global $current_user;
+        get_currentuserinfo();
 
 		// Verify the nonce.
         if( wp_verify_nonce( $_POST['vr_submit_booking_nonce'], 'vr_submit_booking' ) ) {
@@ -75,7 +78,7 @@ class VR_Submit_Booking {
             // Check In date via `vr_booking_date_checkin`.
             if ( ! empty( $_POST['vr_booking_date_checkin'] ) ) {
 
-                $user_vr_booking_date_checkin = sanitize_text_field( $_POST['vr_booking_date_checkin'] );
+                $user_vr_booking_date_checkin = sanitize_text_field ( $_POST['vr_booking_date_checkin'] );
 
             }
 
@@ -94,13 +97,36 @@ class VR_Submit_Booking {
             }
 
 
+            // Guest via `rental_id_for_booking`.
+            if ( ! empty( $_POST['rental_id_for_booking'] ) ) {
+
+                $user_rental_id_for_booking = inval( $_POST['rental_id_for_booking'] );
+
+            }
+
+
             // If everything is fine.
             if ( count( $errors ) == 0 ) {
+
+                $meta_array = array(
+                    // 'vr_booking_date_checkin'  => $user_vr_booking_date_checkin,
+                    // 'vr_booking_date_checkout' => $user_vr_booking_date_checkout,
+                    'vr_booking_guests'           => $user_vr_booking_guests,
+                    'vr_booking_name'             => $current_user->user_login,
+                    'vr_booking_email'            => $current_user->user_email,
+                    // 'vr_booking_rental_id'        => $user_rental_id_for_booking,
+                    // 'vr_booking_the_rental'       => user_rental_id_for_booking,
+                    // 'vr_booking_the_rental'    => $current_user->user_email,
+                    // 'vr_booking_email'         => $current_user->user_email,
+                    // 'vr_booking_email'         => $current_user->user_email,
+                    );
 
                 $submitted_booking = array(
                     'post_title'   => $booking_title,
                     'post_status'  => 'pending', // publish|Pending|draft.
-                    'post_type'    => 'vr_booking'
+                    'post_type'    => 'vr_booking',
+                    'post_author'  => $current_user->ID,
+                    'meta_input'   => $meta_array,
                 );
 
                 $output_message = __( 'Yay! Your booking was successfully submitted! Awaiting confirmation!', 'VRC' );
@@ -136,39 +162,6 @@ class VR_Submit_Booking {
     	die;
 
 	} // submit function ended.
-
-
-    /**
-     * Check and Sanitize Data.
-     *
-     * If there is $data, then sanitize it and return
-     * else return 0
-     *
-     * @param  string   $key    | meta key.
-     * @param  string   $data   | $_POST[ 'stuff' ]
-     * @since  1.0.0
-     */
-    public function check_and_sanitize_data( $key, $data ) {
-
-        if ( ! empty( $data ) ) {
-
-            if( $key == 'profile_image_id' ) {
-
-                $value = intval( $data );
-
-            } else {
-
-                $value = sanitize_text_field( $data );
-
-            }
-
-
-        } else {
-
-            return 0;
-        } // if/else ended.
-
-    } // function ended.
 
 
 } // Class ended.

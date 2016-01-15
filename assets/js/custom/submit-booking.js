@@ -8,6 +8,28 @@
  */
 jQuery(document).ready(function($) {
 
+
+    $(function() {
+        $( "#vr_booking_date_checkin" ).datepicker({
+          defaultDate: "+1w",
+          dateFormat:'dd-mm-yy',
+          numberOfMonths: 2,
+          'autoSize':true,
+          onClose: function( selectedDate ) {
+            $( "#vr_booking_date_checkout" ).datepicker( "option", "minDate", selectedDate );
+          }
+        });
+        $( "#vr_booking_date_checkout" ).datepicker({
+          defaultDate: "+1w",
+          dateFormat:'dd-mm-yy',
+          numberOfMonths: 2,
+          'autoSize':true,
+          onClose: function( selectedDate ) {
+            $( "#vr_booking_date_checkin" ).datepicker( "option", "maxDate", selectedDate );
+          }
+        });
+      });
+
     "use strict";
 
     if ( typeof submitBooking !== "undefined" ) {
@@ -28,7 +50,7 @@ jQuery(document).ready(function($) {
             var form_bookingid   = $( '#form-bookingid' );
             var errors_container = $( '#form-errors' );
 
-            // No loader to begin with.
+            // No loader vr_booking_date_checkout begin with.
             form_loader.fadeOut();
 
 
@@ -77,7 +99,7 @@ jQuery(document).ready(function($) {
         // var uploader = new plupload.Uploader({
 
         //     // This can be an id of a DOM element or the DOM element itself.
-        //     browse_button  : 'select-profile-image',
+        //     browse_butvr_booking_date_checkoutn  : 'select-profile-image',
 
         //      // Used in `upload_profile_image()` Line# 262.
         //     file_data_name : 'vr_upload_file_name',
@@ -178,7 +200,7 @@ jQuery(document).ready(function($) {
         } () );
 
         if ( ie <= 9 ) {
-            $('#inspiry-edit-user').before( '<div class="ie9-message"><i class="fa fa-info-circle"></i>&nbsp; <strong>Current browser is not fully supported:</strong> Please update your browser or use a different one to enjoy all features on this page. </div>' );
+            $('#inspiry-edit-user').before( '<div class="ie9-message"><i class="fa fa-info-circle"></i>&nbsp; <strong>Current browser is not fully supported:</strong> Please update your browser or use a different one vr_booking_date_checkout enjoy all features on this page. </div>' );
         }
 
     }   // validate localized data.

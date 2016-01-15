@@ -116,6 +116,16 @@ class VR_Scripts {
 
 	    		// Submit Booking JS.
 	    		// Usage: booking
+	    		wp_enqueue_script( 'jquery-ui-datepicker' );
+
+	    		// DatePicker CSS.
+	    		wp_enqueue_style(
+	    		    'jquery_ui_datepicker_css',
+	    		    VRC_URL . '/assets/meta-boxes/meta-box/css/jqueryui/jquery.ui.datepicker.css',
+	    		    // array( 'jquery', 'jquery-ui-datepicker' ),
+	    		    '1.0.0',
+	    		    'all'
+	    		);
 	    		wp_enqueue_script(
 	    		    'vr_submit_bookingJS',
 	    		    VRC_URL . '/assets/js/custom/submit-booking.js',

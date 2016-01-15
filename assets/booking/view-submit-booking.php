@@ -31,8 +31,9 @@ if ( ! defined( 'ABSPATH' ) ) {
         get_currentuserinfo();
         $current_user_meta = get_user_meta( $current_user->ID );
 
+        $rental_id_for_booking = get_the_ID();
         ?>
-
+        <?php echo 'Post Type: ' . get_post_type( get_the_ID() ) .'<br>Post ID: '. get_the_ID() ; ?>
         <form
             id      ="vr-submit-booking"
             method  ="post"
@@ -48,16 +49,9 @@ if ( ! defined( 'ABSPATH' ) ) {
                     </label>
 
                     <input
-                        type  ="date"
+                        type  ="text"
                         name  ="vr_booking_date_checkin"
                         id    ="vr_booking_date_checkin"
-                        class ="rwmb-date hasDatepicker"
-                        data-options="{ 'dateFormat':'dd-mm-yy',
-                                        'showButtonPanel':false,
-                                        'appendText':' (Day-Month-Year)',
-                                        'autoSize':true,
-                                        'numberOfMonths':2
-                                        }"
                     />
 
                 </div>
@@ -67,20 +61,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <?php _e('Check Out:', 'VRC'); ?>
                     </label>
                     <input
-                        type  ="date"
+                        type  ="text"
                         name  ="vr_booking_date_checkout"
                         id    ="vr_booking_date_checkout"
-                        class ="rwmb-date hasDatepicker"
-                        data-options="{ 'dateFormat':'dd-mm-yy',
-                                        'showButtonPanel':false,
-                                        'appendText':' (Day-Month-Year)',
-                                        'autoSize':true,
-                                        'numberOfMonths':2
-                                        }"
                     />
                 </div>
 
-                <!-- Hidden Meta -->
                 <div>
                     <label for="vr_booking_date_checkout">
                         <?php _e('Guests:', 'VRC'); ?>
@@ -91,23 +77,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                         id    ="vr_booking_guests"
                         step  ="1"
                         class ="rwmb-number"
-                    />
-                </div>
-
-
-                <div>
-                    <input
-                        type  ="hidden"
-                        name  ="vr_booking_name"
-                        id    ="vr_booking_name"
-                        value  ="<?php echo $current_user->display_name; ?>"
-                    />
-
-                    <input
-                        type  ="hidden"
-                        name  ="vr_booking_email"
-                        id    ="vr_booking_email"
-                        value  ="<?php echo esc_attr( $current_user->user_email ); ?>"
                     />
                 </div>
 
@@ -137,6 +106,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                     type  ="hidden"
                     name  ="action"
                     value ="vr_submit_booking_action"
+                />
+
+                <input
+                    type  ="hidden"
+                    name  ="rental_id_for_booking"
+                    value ="<?php echo $rental_id_for_booking; ?>"
                 />
 
                 <?php wp_nonce_field( 'vr_submit_booking', 'vr_submit_booking_nonce' ); ?>
