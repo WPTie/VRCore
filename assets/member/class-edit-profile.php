@@ -105,15 +105,9 @@ class VR_Edit_Profile {
      * @param array $fields_array   | array of meta keys and user input data.
      * @since 1.0.0
      */
-    public function set_all_fields( $fields_array ) {
+    public function set_all_fields( $fields_array, $user ) {
 
-        // Get user info.
-        global $current_user;
-        get_currentuserinfo();
-
-        $user = $current_user->ID;
-
-        foreach ($fields_array as $key => $data) {
+        foreach ( $fields_array as $key => $data ) {
             $this->set_profile_field( $key, $data, $user );
         }
 
@@ -163,7 +157,7 @@ class VR_Edit_Profile {
 
                 );
 
-            $check_errors = $this->set_all_fields( $fields_array );
+            $check_errors = $this->set_all_fields( $fields_array, $user_id );
 
 
 

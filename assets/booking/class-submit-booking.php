@@ -65,12 +65,12 @@ class VR_Submit_Booking {
         $errors = array();
 
 
-
 		// Verify the nonce.
         if( wp_verify_nonce( $_POST['vr_submit_booking_nonce'], 'vr_submit_booking' ) ) {
 
             // Let's set the booking title.
             $booking_title = VR_Booking::booking_title();
+
 
             // Check In date via `vr_booking_date_checkin`.
             if ( ! empty( $_POST['vr_booking_date_checkin'] ) ) {
@@ -87,9 +87,9 @@ class VR_Submit_Booking {
             }
 
             // Guest via `vr_booking_guests`.
-            if ( ! empty( $_POST['vr_booking_date_checkin'] ) ) {
+            if ( ! empty( $_POST['vr_booking_guests'] ) ) {
 
-                $user_vr_booking_date_checkin = sanitize_text_field( $_POST['vr_booking_date_checkin'] );
+                $user_vr_booking_guests = inval( $_POST['vr_booking_guests'] );
 
             }
 
@@ -139,19 +139,36 @@ class VR_Submit_Booking {
 
 
     /**
-     * Santize a field and setup a variable.
+     * Check and Sanitize Data.
      *
-     * @since 1.0.0
+     * If there is $data, then sanitize it and return
+     * else return 0
+     *
+     * @param  string   $key    | meta key.
+     * @param  string   $data   | $_POST[ 'stuff' ]
+     * @since  1.0.0
      */
-    public function set_booking_field( $variable, $data) {
+    public function check_and_sanitize_data( $key, $data ) {
 
-        if ( ! empty( $_POST[ $data ] ) ) {
+        if ( ! empty( $data ) ) {
 
-            $user_vr_booking_date_checkin = sanitize_text_field( $_POST['vr_booking_date_checkin'] );
+            if( $key == 'profile_image_id' ) {
 
-        }
+                $value = intval( $data );
 
-    }
+            } else {
+
+                $value = sanitize_text_field( $data );
+
+            }
+
+
+        } else {
+
+            return 0;
+        } // if/else ended.
+
+    } // function ended.
 
 
 } // Class ended.
