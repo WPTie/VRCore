@@ -44,6 +44,27 @@ class VR_Functions {
     }
 
 
+    /**
+     * Delete all posts.
+     *
+     * Manual unit testing.
+     *
+     * @since 1.0.0
+     */
+    public function delete_posts( $post_type = NULL, $post_status = 'draft' ) {
+
+        $args = array(
+            'post_type'   => $post_type,
+            'post_status' => $post_status
+            );
+        $posts = get_posts( $args );
+        foreach( $posts as $post ) {
+         wp_delete_post( $post->ID, true);
+        }
+
+    }
+
+
 
     /**
      * Output hierarchical select options with selection based on term id

@@ -58,6 +58,17 @@ if ( file_exists( VRC_DIR . '/assets/booking/booking-custom-columns.php' ) ) {
 
 
 /**
+ * Class: VR_Submit_Booking.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/booking/class-submit-booking.php' ) ) {
+    require_once( VRC_DIR . '/assets/booking/class-submit-booking.php' );
+}
+
+
+
+/**
  * Actions/Filters for booking.
  *
  * Classes:
@@ -84,6 +95,25 @@ if ( class_exists( 'VR_Booking' ) ) {
 	// Generate and Set the booking title.
 	add_action( 'edit_form_after_title', array( $vr_booking_init, 'generate_title' ) );
 
+	// Register the shortcode [vr_submit_booking]
+	add_action( 'init', array( $vr_booking_init, 'submit_booking' ) );
+
+	// Submit a booking for logged in user.
+	add_action( 'wp_ajax_vr_submit_booking_action', array( $vr_booking_init, 'submit' ) );
+
+	// Swap `Published` with `Confirmed`.
+	add_filter( "views_edit-vr_booking",  array( $vr_booking_init, 'published_to_confirmed' ) );
+
+
+	// Unit Testing
+	$args = array(
+	    'post_type'   => 'vr_booking',
+	    'post_status' => 'pending'
+	    );
+	$posts = get_posts( $args );
+	foreach( $posts as $post ) {
+		// wp_delete_post( $post->ID, true);
+	}
 
 }
 

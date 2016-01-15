@@ -114,6 +114,26 @@ class VR_Scripts {
 
 
 
+	    		// Submit Booking JS.
+	    		// Usage: booking
+	    		wp_enqueue_script(
+	    		    'vr_submit_bookingJS',
+	    		    VRC_URL . '/assets/js/custom/submit-booking.js',
+	    		    array( 'jquery', 'plupload' ),
+	    		    VRC_VERSION,
+	    		    true
+	    		);
+
+	    		$submit_booking_data = array(
+					'ajaxURL'       => admin_url( 'admin-ajax.php' ),
+					'uploadNonce'   => wp_create_nonce ( 'vr_allow_submit_booking_image' ),
+					'fileTypeTitle' => __( 'Valid file formats.', 'VRC' ),
+	    		);
+
+	    		wp_localize_script( 'vr_submit_bookingJS', 'submitBooking', $submit_booking_data );
+
+
+
 	    		// Submit Post JS.
 	    		// Usage: member
 	    		wp_enqueue_script(

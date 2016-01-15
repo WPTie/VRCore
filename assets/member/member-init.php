@@ -138,7 +138,6 @@ if ( class_exists( 'VR_Member' ) ) {
     add_action( 'wp_ajax_vr_profile_image_upload', array( $vr_member_init, 'upload_profile_image' ) );
 
 
-
 	// Register the shortcode [vr_submit_post]
 	add_action( 'init', array( $vr_member_init, 'submit_post' ) );
 

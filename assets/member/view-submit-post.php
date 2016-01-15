@@ -2,7 +2,7 @@
 /**
  * View: Post File
  *
- * VR membership edit-profile view.
+ * VR membership submit-post view.
  *
  * @since 	1.0.0
  * @package VRC
