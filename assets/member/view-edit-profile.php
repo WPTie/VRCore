@@ -218,7 +218,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         // WordPress Nonce for Security Check
                         wp_nonce_field( 'vr_update_profile', 'vr_update_profile_nonce' );
                         ?>
-                        <input type="hidden" name="action" value="vr_update_profile" />
+                        <input type="hidden" name="action" value="vr_update_profile_action" />
                     </div>
                 </div>
 

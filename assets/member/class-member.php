@@ -62,14 +62,24 @@ class VR_Member {
 
 
 	/**
+	 * VR_Submit_Post Object.
+	 *
+	 * @var 	object
+	 * @since 	1.0.0
+	 */
+	public $submit_post;
+
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
 
-		$this->login          = new VR_Login();
-		$this->register       = new VR_Register();
-		$this->reset          = new VR_Reset();
-		$this->edit_profile   = new VR_Edit_Profile();
+		$this->login        = new VR_Login();
+		$this->register     = new VR_Register();
+		$this->reset        = new VR_Reset();
+		$this->edit_profile = new VR_Edit_Profile();
+		$this->submit_post  = new VR_Submit_Post();
 
 	}
 
@@ -189,6 +199,27 @@ class VR_Member {
 	 */
 	public function get_profile_image_url() {
 		$this->edit_profile->get_profile_image_url();
+	}
+
+
+	/**
+	 * Shortcode for Submit Post.
+	 *
+	 * Shortcode: `[vr_submit_post]`.
+	 *
+	 * @since  1.0.0
+	 */
+	public function submit_post() {
+		$this->submit_post->vr_submit_post();
+	}
+
+	/**
+	 * Submit Post.
+	 *
+	 * @since  1.0.0
+	 */
+	public function submit() {
+		$this->submit_post->submit();
 	}
 
 

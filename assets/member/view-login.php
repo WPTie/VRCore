@@ -33,6 +33,8 @@ if ( is_user_logged_in() ) {
             You are already logged in. Go back to <a href="/">Home!</a> or <a href="<?php echo wp_logout_url( home_url() ); ?>">Logout!</a>
         </p>
         <!-- /.message -->
+        <h3>Edit Your Profile!</h3>
+        <?php do_shortcode( '[vr_edit_profile]' ); ?>
 
     </div>
 

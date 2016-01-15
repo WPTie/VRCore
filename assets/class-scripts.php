@@ -107,10 +107,30 @@ class VR_Scripts {
 	    		$edit_profile_data = array(
 					'ajaxURL'       => admin_url( 'admin-ajax.php' ),
 					'uploadNonce'   => wp_create_nonce ( 'vr_allow_upload_profile_image' ),
-					'fileTypeTitle' => __( 'Valid file formats.', 'inspiry' ),
+					'fileTypeTitle' => __( 'Valid file formats.', 'VRC' ),
 	    		);
 
 	    		wp_localize_script( 'vr_edit_profileJS', 'editProfile', $edit_profile_data );
+
+
+
+	    		// Submit Post JS.
+	    		// Usage: member
+	    		wp_enqueue_script(
+	    		    'vr_submit_postJS',
+	    		    VRC_URL . '/assets/js/custom/submit-post.js',
+	    		    array( 'jquery', 'plupload' ),
+	    		    VRC_VERSION,
+	    		    true
+	    		);
+
+	    		$submit_post_data = array(
+					'ajaxURL'       => admin_url( 'admin-ajax.php' ),
+					'uploadNonce'   => wp_create_nonce ( 'vr_allow_submit_post_image' ),
+					'fileTypeTitle' => __( 'Valid file formats.', 'VRC' ),
+	    		);
+
+	    		wp_localize_script( 'vr_submit_postJS', 'submitPost', $submit_post_data );
 
 
 	    		// Rental Submit/Edit
@@ -164,7 +184,7 @@ class VR_Scripts {
 	    		    $property_submit_data = array(
 						'ajaxURL'       => admin_url( 'admin-ajax.php' ),
 						'uploadNonce'   => wp_create_nonce ( 'inspiry_allow_upload' ),
-						'fileTypeTitle' => __( 'Valid file formats', 'inspiry' ),
+						'fileTypeTitle' => __( 'Valid file formats', 'VRC' ),
 	    		    );
 	    		    wp_localize_script( 'inspiry-property-submit', 'propertySubmit', $property_submit_data );
 
