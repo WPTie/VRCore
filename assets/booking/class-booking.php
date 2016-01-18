@@ -131,7 +131,7 @@ class VR_Booking {
 	 *
 	 * @since 1.0.0
 	 */
-	public function booking_title() {
+	public static function booking_title() {
 
 		// Generate a random number with 8 length.
 		$id_length = 8;

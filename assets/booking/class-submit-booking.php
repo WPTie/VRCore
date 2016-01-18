@@ -60,7 +60,6 @@ class VR_Submit_Booking {
 	 */
 	public function submit() {
 
-
         // Errors array.
         $errors = array();
 
@@ -92,7 +91,7 @@ class VR_Submit_Booking {
             // Guest via `vr_booking_guests`.
             if ( ! empty( $_POST['vr_booking_guests'] ) ) {
 
-                $user_vr_booking_guests = inval( $_POST['vr_booking_guests'] );
+                $user_vr_booking_guests = intval( $_POST['vr_booking_guests'] );
 
             }
 
@@ -100,9 +99,20 @@ class VR_Submit_Booking {
             // Guest via `rental_id_for_booking`.
             if ( ! empty( $_POST['rental_id_for_booking'] ) ) {
 
-                $user_rental_id_for_booking = inval( $_POST['rental_id_for_booking'] );
+                $user_rental_id_for_booking = intval( $_POST['rental_id_for_booking'] );
 
             }
+
+
+            // Booking Status `vr_booking_is_confirmed`.
+            if ( ! empty( $_POST['vr_booking_is_confirmed'] ) ) {
+
+                $user_vr_booking_is_confirmed = intval( $_POST['vr_booking_is_confirmed'] );
+
+            }
+
+            // Rental Booking User's Name.
+            $vr_booking_name = $current_user->first_name . ' ' . $current_user->last_name . '(' . $current_user->user_login . ')';
 
 
             // If everything is fine.
@@ -111,14 +121,11 @@ class VR_Submit_Booking {
                 $meta_array = array(
                     'vr_booking_date_checkin'  => $user_vr_booking_date_checkin,
                     'vr_booking_date_checkout' => $user_vr_booking_date_checkout,
-                    'vr_booking_guests'           => $user_vr_booking_guests,
-                    'vr_booking_name'             => $current_user->user_login,
-                    'vr_booking_email'            => $current_user->user_email,
-                    'vr_booking_rental_id'        => $user_rental_id_for_booking,
-                    // 'vr_booking_the_rental'       => user_rental_id_for_booking,
-                    // 'vr_booking_the_rental'    => $current_user->user_email,
-                    // 'vr_booking_email'         => $current_user->user_email,
-                    // 'vr_booking_email'         => $current_user->user_email,
+                    'vr_booking_guests'        => $user_vr_booking_guests,
+                    'vr_booking_rental_id'     => $user_rental_id_for_booking,
+                    'vr_booking_name'          => $vr_booking_name,
+                    'vr_booking_email'         => $current_user->user_email,
+                    'vr_booking_is_confirmed'  => $user_vr_booking_is_confirmed
                     );
 
                 $submitted_booking = array(

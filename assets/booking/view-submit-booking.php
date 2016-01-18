@@ -29,11 +29,10 @@ if ( ! defined( 'ABSPATH' ) ) {
         // Get user information.
         global $current_user;
         get_currentuserinfo();
-        $current_user_meta = get_user_meta( $current_user->ID );
-
+        $current_user_meta     = get_user_meta( $current_user->ID );
         $rental_id_for_booking = get_the_ID();
-        ?>
-        <?php echo 'Post Type: ' . get_post_type( get_the_ID() ) .'<br>Post ID: '. get_the_ID() ; ?>
+
+    ?>
         <form
             id      ="vr-submit-booking"
             method  ="post"
@@ -84,7 +83,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                         name  ="vr_booking_guests"
                         id    ="vr_booking_guests"
                         step  ="1"
-                        class ="rwmb-number"
                     />
                 </div>
 
@@ -111,6 +109,18 @@ if ( ! defined( 'ABSPATH' ) ) {
                     type  ="hidden"
                     name  ="action"
                     value ="vr_submit_booking_action"
+                />
+
+                <input
+                    type  ="hidden"
+                    name  ="vr_booking_is_confirmed"
+                    value ="<?php
+                                // Pending.
+                                echo '0';
+
+                                // Confirmed.
+                                // echo '1';
+                            ?>"
                 />
 
                 <input
