@@ -129,7 +129,7 @@ class VR_Scripts {
 	    		wp_enqueue_script(
 	    		    'vr_submit_bookingJS',
 	    		    VRC_URL . '/assets/js/custom/submit-booking.js',
-	    		    array( 'jquery', 'plupload' ),
+	    		    array( 'jquery', 'plupload', 'jquery-ui-datepicker' ),
 	    		    VRC_VERSION,
 	    		    true
 	    		);

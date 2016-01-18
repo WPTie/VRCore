@@ -78,7 +78,7 @@ class VR_Submit_Booking {
             // Check In date via `vr_booking_date_checkin`.
             if ( ! empty( $_POST['vr_booking_date_checkin'] ) ) {
 
-                $user_vr_booking_date_checkin = sanitize_text_field ( $_POST['vr_booking_date_checkin'] );
+                $user_vr_booking_date_checkin = sanitize_text_field( $_POST['vr_booking_date_checkin'] );
 
             }
 
@@ -109,12 +109,12 @@ class VR_Submit_Booking {
             if ( count( $errors ) == 0 ) {
 
                 $meta_array = array(
-                    // 'vr_booking_date_checkin'  => $user_vr_booking_date_checkin,
-                    // 'vr_booking_date_checkout' => $user_vr_booking_date_checkout,
+                    'vr_booking_date_checkin'  => $user_vr_booking_date_checkin,
+                    'vr_booking_date_checkout' => $user_vr_booking_date_checkout,
                     'vr_booking_guests'           => $user_vr_booking_guests,
                     'vr_booking_name'             => $current_user->user_login,
                     'vr_booking_email'            => $current_user->user_email,
-                    // 'vr_booking_rental_id'        => $user_rental_id_for_booking,
+                    'vr_booking_rental_id'        => $user_rental_id_for_booking,
                     // 'vr_booking_the_rental'       => user_rental_id_for_booking,
                     // 'vr_booking_the_rental'    => $current_user->user_email,
                     // 'vr_booking_email'         => $current_user->user_email,

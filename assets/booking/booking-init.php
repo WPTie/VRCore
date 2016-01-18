@@ -101,10 +101,6 @@ if ( class_exists( 'VR_Booking' ) ) {
 	// Submit a booking for logged in user.
 	add_action( 'wp_ajax_vr_submit_booking_action', array( $vr_booking_init, 'submit' ) );
 
-	// Swap `Published` with `Confirmed`.
-	add_filter( "views_edit-vr_booking",  array( $vr_booking_init, 'published_to_confirmed' ) );
-
-
 	// Unit Testing
 	$args = array(
 	    'post_type'   => 'vr_booking',
@@ -114,6 +110,10 @@ if ( class_exists( 'VR_Booking' ) ) {
 	foreach( $posts as $post ) {
 		// wp_delete_post( $post->ID, true);
 	}
+
+
+	// Swap `Published` with `Confirmed`.
+	add_filter( "views_edit-vr_booking",  array( $vr_booking_init, 'published_to_confirmed' ) );
 
 }
 

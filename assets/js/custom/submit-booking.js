@@ -8,7 +8,13 @@
  */
 jQuery(document).ready(function($) {
 
+    "use strict";
 
+    /**
+     * jQuery DatePicker.
+     *
+     * @since  1.0.0
+     */
     $(function() {
         $( "#vr_booking_date_checkin" ).datepicker({
           defaultDate: "+1w",
@@ -30,8 +36,15 @@ jQuery(document).ready(function($) {
         });
       });
 
-    "use strict";
 
+
+    /**
+     * AJAX Handler & Validator.
+     *
+     * Uses jQuery Form and Validate Plugins.
+     *
+     * @since  1.0.0
+     */
     if ( typeof submitBooking !== "undefined" ) {
 
         var ajaxURL       = submitBooking.ajaxURL;

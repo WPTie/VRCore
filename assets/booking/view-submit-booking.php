@@ -56,6 +56,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                 </div>
 
+            </div>
+
+            <div class="form-option">
+
                 <div>
                     <label for="vr_booking_date_checkout">
                         <?php _e('Check Out:', 'VRC'); ?>
@@ -66,6 +70,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                         id    ="vr_booking_date_checkout"
                     />
                 </div>
+
+            </div>
+
+            <div class="form-option">
 
                 <div>
                     <label for="vr_booking_date_checkout">
@@ -82,10 +90,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             </div>
 
-
-
-
-            <!-- Form Hidden Data -->
             <div class="form-option">
 
                 <input
@@ -102,6 +106,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     alt ="Loading..."
                 />
 
+                <!-- Form Hidden Data -->
                 <input
                     type  ="hidden"
                     name  ="action"
