@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions.
+ * Functions
  *
  * Base usable functions.
  *

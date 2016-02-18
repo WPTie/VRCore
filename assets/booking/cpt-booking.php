@@ -143,7 +143,8 @@ if ( ! class_exists( 'VR_CPT_Booking' ) ) :
 					$("#title").prop("readonly", true); // Don't allow author/editor to adjust the title.
 
 					// Change th Publish button text.
-					// $("#publish").html('Confirm');
+					$("#publish").html('Save');
+					$("#publish").val('Save');
 				});
 			</script>
 			<?php

@@ -107,12 +107,12 @@ class VR_Submit_Booking {
             // Booking Status `vr_booking_is_confirmed`.
             if ( ! empty( $_POST['vr_booking_is_confirmed'] ) ) {
 
-                $user_vr_booking_is_confirmed = intval( $_POST['vr_booking_is_confirmed'] );
+                $user_vr_booking_is_confirmed = sanitize_text_field( $_POST['vr_booking_is_confirmed'] );
 
             }
 
             // Rental Booking User's Name.
-            $vr_booking_name = $current_user->first_name . ' ' . $current_user->last_name . '(' . $current_user->user_login . ')';
+            $vr_booking_name = $current_user->first_name . ' ' . $current_user->last_name . ' (' . $current_user->user_login . ')';
 
 
             // If everything is fine.

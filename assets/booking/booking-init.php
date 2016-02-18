@@ -101,18 +101,7 @@ if ( class_exists( 'VR_Booking' ) ) {
 	// Submit a booking for logged in user.
 	add_action( 'wp_ajax_vr_submit_booking_action', array( $vr_booking_init, 'submit' ) );
 
-	// Unit Testing
-	$args = array(
-	    'post_type'   => 'vr_booking',
-	    'post_status' => 'pending'
-	    );
-	$posts = get_posts( $args );
-	foreach( $posts as $post ) {
-		// wp_delete_post( $post->ID, true);
-	}
-
-
-	// Swap `Published` with `Confirmed`.
+	// Swap status bar at the top `Published` with `Confirmed`.
 	add_filter( "views_edit-vr_booking",  array( $vr_booking_init, 'published_to_confirmed' ) );
 
 }
@@ -128,10 +117,10 @@ if ( class_exists( 'VR_Booking_Custom_Columns' ) ) {
 	 */
 	$vr_booking_custom_columns = new VR_Booking_Custom_Columns();
 
-	// Rental Custom Columns Registered
+	// Rental Custom Columns Registered.
 	add_filter( 'manage_edit-vr_booking_columns', array( $vr_booking_custom_columns, 'register' ) ) ;
 
-	// Rental Custom Columns Display custom stuff
+	// Rental Custom Columns Display custom stuff.
 	add_action( 'manage_vr_booking_posts_custom_column', array( $vr_booking_custom_columns, 'display' ) ) ;
 
 }

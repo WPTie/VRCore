@@ -40,8 +40,9 @@ class VR_Booking_Meta_Boxes {
 
 	    // Meta box: The Booked Rental.
 	    $meta_boxes[] = array(
+
 			'id'       => 'vr_booking_meta_box_the_rental_id',
-			'title'    => __('Booked Rental Property', 'inspiry-real-estate'),
+			'title'    => __( 'Booked Rental Property', 'VRC' ),
 			'pages'    => array( 'vr_booking' ),
 			'context'  => 'normal',
 			'priority' => 'high',
@@ -138,7 +139,7 @@ class VR_Booking_Meta_Boxes {
 	    // Meta box: Confirmation.
 	    $meta_boxes[] = array(
 			'id'       => 'vr_booking_meta_box_confirmation_id',
-			'title'    => __('Booking', 'inspiry-real-estate'),
+			'title'    => __( 'Booking', 'VRC' ),
 			'pages'    => array( 'vr_booking' ),
 			'context'  => 'normal',
 			'priority' => 'high',
@@ -149,12 +150,12 @@ class VR_Booking_Meta_Boxes {
 					'id'      => "{$prefix}is_confirmed",
 					'type'    => 'radio',
 
-					'name'    => __('Confirmation:', 'VRC'),
+					'name'    => __( 'Confirmation:', 'VRC' ),
 
 					'std' => '0',
 					'options' => array(
-						'0' => __('Pending.', 'VRC'),
-						'1' => __('Confirmed.', 'VRC'),
+						'pending' => __( 'Pending.', 'VRC' ),
+						'confirmed' => __( 'Confirmed.', 'VRC' ),
 	                )
 	            ),
 
@@ -187,7 +188,7 @@ class VR_Booking_Meta_Boxes {
 	    // Meta box: Details.
 	    $meta_boxes[] = array(
 			'id'       => 'vr_booking_meta_box_details_id',
-			'title'    => __('Booking Information', 'inspiry-real-estate'),
+			'title'    => __( 'Booking Information', 'VRC' ),
 			'pages'    => array( 'vr_booking' ),
 			'context'  => 'normal',
 			'priority' => 'high',
@@ -246,7 +247,7 @@ class VR_Booking_Meta_Boxes {
 					'type' => 'number',
 
 					'name' => __( 'Guests', 'VRC' ),
-					'desc' => __('Example Value: 2', 'VRC'),
+					'desc' => __( 'Example Value: 2', 'VRC' ),
 
 					'std'     => "",
 					'columns' => 6
@@ -256,10 +257,10 @@ class VR_Booking_Meta_Boxes {
 				// Rental ID.
 				array(
 					'id'   => "{$prefix}rental_id",
-					'type' => 'text',
+					'type' => 'hidden',
 
 					'name' => __( 'Rental ID', 'VRC' ),
-					'desc' => __('Example Value: 2', 'VRC'),
+					'desc' => __( 'Example Value: 2', 'VRC' ),
 
 					'std'     => "",
 					'columns' => 6
@@ -279,7 +280,7 @@ class VR_Booking_Meta_Boxes {
 					'type' => 'text',
 
 					'name' => __( 'Name', 'VRC' ),
-					'desc' => __('Booked By, E.g. John', 'VRC'),
+					'desc' => __( 'Booked By, E.g. John', 'VRC' ),
 
 					'std'     => "",
 					'columns' => 6
@@ -292,7 +293,7 @@ class VR_Booking_Meta_Boxes {
 					'type' => 'email',
 
 					'name' => __( 'Email ID', 'VRC' ),
-					'desc' => __('Example Value: john@gmail.com', 'VRC'),
+					'desc' => __( 'Example Value: john@gmail.com', 'VRC' ),
 
 					'std'     => "",
 					'columns' => 6
@@ -311,8 +312,8 @@ class VR_Booking_Meta_Boxes {
 					'id'      => "{$prefix}private_note",
 					'type'    => 'textarea',
 
-					'name'    => __('Private Note', 'VRC'),
-					'desc'    => __('Keep a private note about this rental booking. This field will not be displayed anywhere else.', 'VRC'),
+					'name'    => __( 'Private Note', 'VRC' ),
+					'desc'    => __( 'Keep a private note about this rental booking. This field will not be displayed anywhere else.', 'VRC' ),
 
 					'std'     => "",
 					'columns' => 12,
@@ -322,6 +323,7 @@ class VR_Booking_Meta_Boxes {
 	        ) // fields array ended.
 
 	    ); // second meta_boxes array ended.
+
 
 	    return $meta_boxes;
 

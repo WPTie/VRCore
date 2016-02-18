@@ -116,10 +116,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                     name  ="vr_booking_is_confirmed"
                     value ="<?php
                                 // Pending.
-                                echo '0';
+                                echo 'pending';
 
                                 // Confirmed.
-                                // echo '1';
+                                // echo 'confirmed';
                             ?>"
                 />
 
