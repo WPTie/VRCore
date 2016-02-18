@@ -51,6 +51,7 @@ class RWMB_Group_Field extends RWMB_Field
 		{
 			$child_field['attributes']['name'] = $child_field['field_name'] = self::child_field_name( $field['field_name'], $child_field['field_name'] );
 			call_user_func( array( RW_Meta_Box::get_class_name( $child_field ), 'show' ), $child_field, RWMB_Group::$saved );
+			do_action( 'add_debug_info', $child_field['field_name'] );
 		}
 
 		// Remove filter to child field meta value and reset class's parent field's meta

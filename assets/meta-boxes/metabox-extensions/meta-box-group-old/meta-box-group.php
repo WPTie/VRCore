@@ -3,7 +3,7 @@
  * Plugin Name: Meta Box Group
  * Plugin URI: https://metabox.io/plugins/meta-box-group/
  * Description: Add-on for meta box plugin, allows you to add field type 'group' which put child fields into 1 group which are displayed/accessed easier and can be cloneable.
- * Version: 1.0.5
+ * Version: 1.0.4
  * Author: Rilwis
  * Author URI: http://metabox.io
  * License: GPL2+
@@ -30,6 +30,10 @@ class RWMB_Group
 	 */
 	public function __construct()
 	{
+		if ( ! is_admin() )
+			return;
+
+		// Make sure Meta Box files are loaded, because we extend base field class
 		add_action( 'plugins_loaded', array( $this, 'load_files' ) );
 
 		add_action( 'rwmb_before', array( $this, 'set_saved' ) );
@@ -51,9 +55,9 @@ class RWMB_Group
 	 * Check if current meta box is saved.
 	 * This variable is used inside group field to show child fields.
 	 *
-	 * @param object $obj Meta Box object
+	 * @param RW_Meta_Box $obj Meta Box object
 	 */
-	public function set_saved( $obj )
+	public function set_saved( RW_Meta_Box $obj )
 	{
 		self::$saved = $obj->is_saved();
 	}
