@@ -220,6 +220,15 @@ class VR_Scripts {
 
 	    		// }
 
+	    		// Favorite.js.
+	    		wp_enqueue_script(
+	    		    'vrc_favoriteJS',
+	    		    VRC_URL . '/assets/js/custom/favorite.js',
+	    		    array( 'jquery' ),
+	    		    VRC_VERSION,
+	    		    true
+	    		);
+
 
 			endif;
 
