@@ -79,15 +79,21 @@ class VR_Favorite {
 	 * @since 1.0.0
 	 */
 	public static function is_favorited( $user_id, $rental_id ) {
+
 		// The rentals array.
 		$user_favorites_array  = get_user_meta( $user_id, 'favorite_rentals' );
 
-		// Return true if the current rental is in user's favorites
-		if ( in_array( $rental_id, $user_favorites_array ) ) {
-			return true;
+		if ( is_array( $user_favorites_array ) ) {
+			// Return true if the current rental is in user's favorites
+			if ( in_array( $rental_id, $user_favorites_array ) ) {
+				return true;
+			} else {
+				return false;
+			}
 		} else {
 			return false;
 		}
+
 
 	}
 
