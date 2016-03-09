@@ -52,7 +52,7 @@ if ( ! function_exists( 'vr_favorited_class' ) ) {
 	function vr_favorited_class( $the_current_user_id, $rental_id ) {
 		// If favorited then add class.
 		if ( VR_Favorite::is_favorited( $the_current_user_id, $rental_id ) ) {
-			echo "vr_hearted vr_hearted_single";
+			return "vr_hearted vr_hearted_single";
 		}
 	}
 }
