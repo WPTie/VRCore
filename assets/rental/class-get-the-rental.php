@@ -14,16 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * VR_Get_The_Rental.
+ * VR_Get_The_Rental_Plugin.
  *
  * Get class for the rental post_type.
  *
  * @since 1.0.0
  */
 
-if ( ! class_exists( 'VR_Get_The_Rental' ) ) :
+if ( ! class_exists( 'VR_Get_The_Rental_Plugin' ) ) :
 
-class VR_Get_The_Rental {
+class VR_Get_The_Rental_Plugin {
 
 	/**
 	 * The Rental ID.

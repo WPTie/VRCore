@@ -68,6 +68,28 @@ if ( file_exists( VRC_DIR . '/assets/rental/class-rental-meta-boxes.php' ) ) {
 
 
 /**
+ * Class: VR_Get_The_Rental_Plugin.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/rental/class-get-the-rental.php' ) ) {
+    require_once( VRC_DIR . '/assets/rental/class-get-the-rental.php' );
+}
+
+
+/**
+ * Methods: `VR_Get_The_Rental_Plugin`.
+ *
+ * Since plugin class is not accessible in themes.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/rental/methods-get-rental.php' ) ) {
+    require_once( VRC_DIR . '/assets/rental/methods-get-rental.php' );
+}
+
+
+/**
  * Frontend Rental Iniatializer.
  *
  * @since 1.0.0
