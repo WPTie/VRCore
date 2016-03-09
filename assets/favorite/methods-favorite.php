@@ -32,8 +32,8 @@ if ( ! function_exists( 'vr_favorite' ) ) {
  * @since 1.0.0
  */
 if ( ! function_exists( 'vr_is_favorited' ) ) {
-	function vr_is_favorited( $rental_id ) {
-		VR_Favorite::is_favorited( $rental_id );
+	function vr_is_favorited( $user_id, $rental_id ) {
+		VR_Favorite::is_favorited( $user_id, $rental_id );
 	}
 }
 

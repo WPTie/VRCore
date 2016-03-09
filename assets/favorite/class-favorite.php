@@ -56,7 +56,7 @@ class VR_Favorite {
 	        // Localize the data.
 	        wp_localize_script( 'vrc_favoriteJS', 'favoriteData', $add_to_favorite_data );
 	    }
-	}
+	} // build_fav_data ended.
 
 
 	/**
@@ -94,8 +94,7 @@ class VR_Favorite {
 			return false;
 		}
 
-
-	}
+	} // is_favorited ended.
 
 
 	/**
@@ -138,7 +137,7 @@ class VR_Favorite {
         ));
         die;
 
-	}
+	} // add_to_favorites ended.
 
 
 
@@ -179,96 +178,9 @@ class VR_Favorite {
         ));
         die;
 
-    }
+    } // remove_from_favorites ended.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	// if ( !function_exists( 'is_added_to_favorite' ) ) {
-	//     /**
-	//      * Check if a property is already added to favorites properties of a user
-	//      * @param $user_id
-	//      * @param $rental_id
-	//      * @return bool
-	//      */
-	//     function is_added_to_favorite( $user_id, $rental_id ) {
-	//         global $wpdb;
-	//         $results = $wpdb->get_results( $wpdb->prepare(
-	//             "
-	//             SELECT  *
-	//             FROM    $wpdb->usermeta
-	//             WHERE   meta_key = %s
-	//                     AND meta_value = %d
-	//                     AND user_id = %d
-	//             ",
-	//             'favorite_rentals',
-	//             $rental_id,
-	//             $user_id
-	//         ) );
-
-	//         if( isset( $results[0]->meta_value ) && ( $results[0]->meta_value == $rental_id ) ) {
-	//             return true;
-	//         } else {
-	//             return false;
-	//         }
-
-	//     }
-	// }
-
-
-
-	// if ( !function_exists( 'VRC_remove_from_favorites' ) ) {
-	//     *
-	//      * Remove a property from favorites properties of current user
-
-	//     function VRC_remove_from_favorites() {
-
-	//         if ( isset( $_POST['rental_id'] ) && is_user_logged_in() ) {
-
-	//             $rental_id = intval( $_POST['rental_id'] );
-
-	//             if ( $rental_id > 0 ) {
-	//                 if( delete_user_meta( get_current_user_id(), 'favorite_rentals', $rental_id ) ) {
-	//                     echo wp_json_encode( array(
-	//                         'success' => true
-	//                     ));
-	//                     die;
-	//                 } else {
-	//                     echo wp_json_encode( array(
-	//                         'success' => false,
-	//                         'message' => __( 'Failed to remove!', 'VRC' )
-	//                     ));
-	//                     die;
-	//                 }
-	//             }
-	//         }
-
-	//         echo wp_json_encode( array(
-	//             'success' => false,
-	//             'message' => __( 'Invalid parameters!', 'VRC' )
-	//         ));
-	//         die;
-
-	//     }
-
-	//     add_action( 'wp_ajax_remove_from_favorites', 'VRC_remove_from_favorites' );
-	// }
-
-
-
-
-}
+} // class VR_Favorite() ended.
 
 endif;
