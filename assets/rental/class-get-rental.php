@@ -44,6 +44,15 @@ class VR_Get_Rental {
 
 
 	/**
+	 * Price.
+	 *
+	 * @var 	int
+	 * @since 	1.0.0
+	 */
+	 public $price;
+
+
+	/**
 	 * Meta Keys.
 	 *
 	 * @var 	array
@@ -154,7 +163,8 @@ class VR_Get_Rental {
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['price'] );
+		$this->$price = $this->get_rental_meta( $this->meta_keys['price'] );
+		return $this->$price;
 	}
 
 
