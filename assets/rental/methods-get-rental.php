@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 if ( ! function_exists( 'vr_get_rental_obj' ) ) {
-	function vr_get_rental_obj( $the_rental_ID, $the_rental_key ) {
+	function vr_get_rental_obj( $the_rental_ID ) {
 		// Bails if no ID.
 		if ( ! $the_rental_ID ){
 			return 'No Rental ID provided!';
