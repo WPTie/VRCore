@@ -14,16 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * VR_Get_The_Rental_Plugin.
+ * VR_Get_Rental.
  *
  * Get class for the rental post_type.
  *
  * @since 1.0.0
  */
 
-if ( ! class_exists( 'VR_Get_The_Rental_Plugin' ) ) :
+if ( ! class_exists( 'VR_Get_Rental' ) ) :
 
-class VR_Get_The_Rental_Plugin {
+class VR_Get_Rental {
 
 	/**
 	 * The Rental ID.
@@ -34,63 +34,61 @@ class VR_Get_The_Rental_Plugin {
 	 public $the_rental_ID;
 
 
-	 /**
-	  * The Meta Data.
-	  *
-	  * @var 	array
-	  * @since 	1.0.0
-	  */
-	  public $the_meta_data;
+	/**
+	 * The Meta Data.
+	 *
+	 * @var 	array
+	 * @since 	1.0.0
+	 */
+	public $the_meta_data;
 
 
-	  /**
-	   * Meta Keys.
-	   *
-	   * @var 	array
-	   * @since 1.0.0
-	   */
-	   private $meta_keys = array(
-			// TAB                 : Basic Information.
-			'price'                => 'vr_rental_price',
-			'price_postfix'        => 'vr_rental_price_postfix',
-			'beds'                 => 'vr_rental_bedrooms',
-			'baths'                => 'vr_rental_bathrooms',
-			'guests'               => 'vr_rental_guests',
-			'custom_id'            => 'vr_rental_customid',
-			'address'              => 'vr_rental_address',
-			'location'             => 'vr_rental_location',
+	/**
+	 * Meta Keys.
+	 *
+	 * @var 	array
+	 * @since 	1.0.0
+	 */
+	private $meta_keys = array(
+		// TAB                 : Basic Information.
+		'price'                => 'vr_rental_price',
+		'price_postfix'        => 'vr_rental_price_postfix',
+		'beds'                 => 'vr_rental_bedrooms',
+		'baths'                => 'vr_rental_bathrooms',
+		'guests'               => 'vr_rental_guests',
+		'custom_id'            => 'vr_rental_customid',
+		'address'              => 'vr_rental_address',
+		'location'             => 'vr_rental_location',
 
-			// TAB                 : Gallery Images.
-			'images'               => 'vr_rental_images',
+		// TAB                 : Gallery Images.
+		'images'               => 'vr_rental_images',
 
-			// TAB                 : Rental Video.
-			'video_url'            => 'vr_rental_tour_video_url',
-			'video_image'          => 'vr_rental_tour_video_image',
+		// TAB                 : Rental Video.
+		'video_url'            => 'vr_rental_tour_video_url',
+		'video_image'          => 'vr_rental_tour_video_image',
 
-			// TAB                 : Additional Amenities.
-			'group_amenities'      =>'vr_rental_group_amenities',
-			'group_amenities_name' =>'vr_rental_group_amenities_name',
-			'group_amenities_img'  =>'vr_rental_group_amenities_img',
+		// TAB                 : Additional Amenities.
+		'group_amenities'      =>'vr_rental_group_amenities',
+		'group_amenities_name' =>'vr_rental_group_amenities_name',
+		'group_amenities_img'  =>'vr_rental_group_amenities_img',
 
-			// TAB                 : Agent Information.
-			'agent_display_option' => 'vr_rental_agent_display_option',
-			'the_agent'            => 'vr_rental_the_agents',
+		// TAB                 : Agent Information.
+		'agent_display_option' => 'vr_rental_agent_display_option',
+		'the_agent'            => 'vr_rental_the_agents',
 
-			// TAB                 : Booking Information.
-			'is_booked'            => 'vr_rental_is_booked',
-			'the_booking'          => 'vr_rental_the_booking',
+		// TAB                 : Booking Information.
+		'is_booked'            => 'vr_rental_is_booked',
+		'the_booking'          => 'vr_rental_the_booking',
 
-			// TAB                 : Miscellaneous.
-			'featured'             => 'vr_rental_featured',
-			'attachments'          =>'vr_rental_attachments',
-			'private_note'         =>'vr_rental_private_note',
+		// TAB                 : Miscellaneous.
+		'featured'             => 'vr_rental_featured',
+		'attachments'          =>'vr_rental_attachments',
+		'private_note'         =>'vr_rental_private_note',
 
-			// TAB                 : Homepage Slider.
-			'is_add_in_slider'     =>'vr_rental_is_add_in_slider',
-			'slider_image'         => 'vr_rental_slider_image'
-		);
-
-
+		// TAB                 : Homepage Slider.
+		'is_add_in_slider'     =>'vr_rental_is_add_in_slider',
+		'slider_image'         => 'vr_rental_slider_image'
+	);
 
 
 	 /**

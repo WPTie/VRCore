@@ -72,8 +72,8 @@ if ( file_exists( VRC_DIR . '/assets/rental/class-rental-meta-boxes.php' ) ) {
  *
  * @since 1.0.0
  */
-if ( file_exists( VRC_DIR . '/assets/rental/class-get-the-rental.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/class-get-the-rental.php' );
+if ( file_exists( VRC_DIR . '/assets/rental/class-get-rental.php' ) ) {
+    require_once( VRC_DIR . '/assets/rental/class-get-rental.php' );
 }
 
 
@@ -182,5 +182,20 @@ if ( class_exists( 'VR_Rental_Meta_Boxes' ) ) {
     // Amenities Button.
 	add_filter( 'rwmb_group_add_clone_button_text', array( $vr_rental_meta_boxes, 'amenities_button' ), 10, 2 );
 
+
+}
+
+
+if ( class_exists( 'VR_Get_Rental' ) ) {
+
+	/**
+	 * Object: VR_Get_Rental class.
+	 *
+	 * @since 1.0.0
+	 */
+	$vr_get_rental_init = new VR_Get_Rental();
+
+	// Register rental meta boxes.
+    // add_action( 'plugins_loaded', array( $vr_get_rental_init, 'register' ) );
 
 }
