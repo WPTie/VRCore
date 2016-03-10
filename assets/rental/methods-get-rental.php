@@ -20,6 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 if ( ! function_exists( 'vr_get_rental_obj' ) ) {
 	function vr_get_rental_obj( $the_rental_ID ) {
-		return VR_Get_Rental( $the_rental_ID );
+		return new VR_Get_Rental( $the_rental_ID );
 	}
 }
