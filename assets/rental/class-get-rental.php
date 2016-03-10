@@ -116,10 +116,13 @@ class VR_Get_Rental {
 			$the_rental_ID = intval( $the_rental_ID );
 		}
 
-		    // Assign values to the class variables.
-		    if ( $the_rental_ID > 0 ) {
+	    // Assign values to the class variables.
+	    if ( $the_rental_ID > 0 ) {
 			$this->the_rental_ID = $the_rental_ID;
 			$this->the_meta_data = get_post_custom( $the_rental_ID );
+
+			// Price.
+			$this->price = $this->get_rental_price();
 		}
 	 }
 
@@ -163,8 +166,7 @@ class VR_Get_Rental {
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		$this->$price = $this->get_rental_meta( $this->meta_keys['price'] );
-		return $this->$price;
+		return $this->get_rental_meta( $this->meta_keys['price'] );
 	}
 
 
