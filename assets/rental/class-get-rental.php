@@ -44,15 +44,6 @@ class VR_Get_Rental {
 
 
 	/**
-	 * Price.
-	 *
-	 * @var 	int
-	 * @since 	1.0.0
-	 */
-	 public $price;
-
-
-	/**
 	 * Meta Keys.
 	 *
 	 * @var 	array
@@ -100,15 +91,15 @@ class VR_Get_Rental {
 	);
 
 
-	 /**
-	  * Constructor.
-	  *
-	  * Checks the rental ID and assigns
-	  * the meta data to $the_meta_data.
-	  *
-	  * @since 1.0.0
-	  */
-	 public function __construct( $the_rental_ID = NULL ) {
+	/**
+	 * Constructor.
+	 *
+	 * Checks the rental ID and assigns
+	 * the meta data to $the_meta_data.
+	 *
+	 * @since 1.0.0
+	 */
+	public function __construct( $the_rental_ID = NULL ) {
 		// Check if there is $the_rental_ID.
 		if ( ! $the_rental_ID ) {
 			$the_rental_ID = get_the_ID();
@@ -116,34 +107,31 @@ class VR_Get_Rental {
 			$the_rental_ID = intval( $the_rental_ID );
 		}
 
-	    // Assign values to the class variables.
-	    if ( $the_rental_ID > 0 ) {
+		// Assign values to the class variables.
+		if ( $the_rental_ID > 0 ) {
 			$this->the_rental_ID = $the_rental_ID;
 			$this->the_meta_data = get_post_custom( $the_rental_ID );
-
-			// Price.
-			$this->price = $this->get_rental_price();
 		}
-	 }
+	}
 
 
-	 /**
-	  * Get Rental: Meta.
-	  *
-	  * Gets the rental meta_value if passed
-	  * a meta_key through argument.
-	  *
-	  * @since 1.0.0
-	  */
-	 public function get_rental_meta( $meta_key ) {
+	/**
+	 * Get Rental: Meta.
+	 *
+	 * Gets the rental meta_value if passed
+	 * a meta_key through argument.
+	 *
+	 * @since 1.0.0
+	 */
+	public function get_meta( $meta_key ) {
 		// If meta is set then return value else return false.
-	 	if ( isset( $this->meta_data[ $meta_key ] ) ) {
+		if ( isset( $this->the_meta_data[ $meta_key ] ) ) {
 			// Returns the value of meta.
-			return $this->meta_data[ $meta_key ][0];
+			return $this->the_meta_data[ $meta_key ][0];
 		} else {
 		    return false;
 		}
-	 }
+	}
 
 
 	/**
@@ -151,7 +139,7 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_ID() {
+	public function get_ID() {
 		return $this->$the_rental_ID;
 	}
 
@@ -161,12 +149,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_price() {
+	public function get_price() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['price'] );
+		return $this->get_meta( $this->meta_keys['price'] );
 	}
 
 
@@ -175,12 +163,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_price_postfix() {
+	public function get_price_postfix() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['price_postfix'] );
+		return $this->get_meta( $this->meta_keys['price_postfix'] );
 	}
 
 
@@ -189,17 +177,17 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_price_with_postfix() {
+	public function get_price_with_postfix() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
 
 		// Float value of price.
-		$price_amount = floatval( get_rental_price() );
+		$price_amount = floatval( get_price() );
 
 		// The price postfix
-		$price_postfix = get_rental_price_postfix();
+		$price_postfix = get_price_postfix();
 
 		// TODO: Add currency selection.
 		// return $this->format_price( $price_amount, $price_postfix );
@@ -211,12 +199,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_beds() {
+	public function get_beds() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['beds'] );
+		return $this->get_meta( $this->meta_keys['beds'] );
 	}
 
 
@@ -225,12 +213,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_baths() {
+	public function get_baths() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['baths'] );
+		return $this->get_meta( $this->meta_keys['baths'] );
 	}
 
 
@@ -239,12 +227,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_guests() {
+	public function get_guests() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['guests'] );
+		return $this->get_meta( $this->meta_keys['guests'] );
 	}
 
 
@@ -253,12 +241,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_custom_id() {
+	public function get_custom_id() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['custom_id'] );
+		return $this->get_meta( $this->meta_keys['custom_id'] );
 	}
 
 
@@ -267,12 +255,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_address() {
+	public function get_address() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['address'] );
+		return $this->get_meta( $this->meta_keys['address'] );
 	}
 
 	/**
@@ -280,12 +268,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_location() {
+	public function get_location() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['location'] );
+		return $this->get_meta( $this->meta_keys['location'] );
 	}
 
 
@@ -294,9 +282,9 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_latitude() {
+	public function get_latitude() {
 	    // Get the location.
-	    $location = $this->get_rental_location();
+	    $location = $this->get_location();
 
 	    // if there is location then return 0th value.
 	    if ( $location ) {
@@ -314,9 +302,9 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_longitude() {
+	public function get_longitude() {
 	    // Get the location.
-	    $location = $this->get_rental_location();
+	    $location = $this->get_location();
 
 	    // if there is location then return 1th value.
 	    if ( $location ) {
@@ -334,12 +322,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_images() {
+	public function get_images() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['images'] );
+		return $this->get_meta( $this->meta_keys['images'] );
 	}
 
 
@@ -348,12 +336,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_video_url() {
+	public function get_video_url() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['video_url'] );
+		return $this->get_meta( $this->meta_keys['video_url'] );
 	}
 
 
@@ -362,12 +350,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_video_image() {
+	public function get_video_image() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['video_image'] );
+		return $this->get_meta( $this->meta_keys['video_image'] );
 	}
 
 
@@ -376,12 +364,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_group_amenities() {
+	public function get_group_amenities() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return maybe_unserialize( $this->get_rental_meta( $this->meta_keys['group_amenities'] ) );
+		return maybe_unserialize( $this->get_meta( $this->meta_keys['group_amenities'] ) );
 	}
 
 
@@ -390,12 +378,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_agent_display_option() {
+	public function get_agent_display_option() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['agent_display_option'] );
+		return $this->get_meta( $this->meta_keys['agent_display_option'] );
 	}
 
 
@@ -404,12 +392,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_the_agent() {
+	public function get_the_agent() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['the_agent'] );
+		return $this->get_meta( $this->meta_keys['the_agent'] );
 	}
 
 
@@ -418,12 +406,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_is_booked() {
+	public function get_is_booked() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['is_booked'] );
+		return $this->get_meta( $this->meta_keys['is_booked'] );
 	}
 
 
@@ -432,12 +420,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_the_booking() {
+	public function get_the_booking() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['the_booking'] );
+		return $this->get_meta( $this->meta_keys['the_booking'] );
 	}
 
 
@@ -446,12 +434,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_featured() {
+	public function get_featured() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['featured'] );
+		return $this->get_meta( $this->meta_keys['featured'] );
 	}
 
 
@@ -460,12 +448,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_attachments() {
+	public function get_attachments() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['attachments'] );
+		return $this->get_meta( $this->meta_keys['attachments'] );
 	}
 
 
@@ -474,12 +462,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_private_note() {
+	public function get_private_note() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['private_note'] );
+		return $this->get_meta( $this->meta_keys['private_note'] );
 	}
 
 
@@ -488,12 +476,12 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_is_add_in_slider() {
+	public function get_is_add_in_slider() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_rental_meta( $this->meta_keys['is_add_in_slider'] );
+		return $this->get_meta( $this->meta_keys['is_add_in_slider'] );
 	}
 
 
@@ -502,7 +490,7 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_rental_slider_image() {
+	public function get_slider_image() {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
@@ -522,7 +510,7 @@ class VR_Get_Rental {
 	 *
 	 * @return bool|null|string
 	 */
-	public function get_rental_type_terms() {
+	public function get_type_terms() {
 	    return $this->get_taxonomy_terms( 'vr_rental-type' );
 	}
 
@@ -532,7 +520,7 @@ class VR_Get_Rental {
 	 *
 	 * @return bool|null|string
 	 */
-	public function get_rental_destination_terms() {
+	public function get_destination_terms() {
 	    return $this->get_taxonomy_terms( 'vr_rental-destination' );
 	}
 
@@ -542,7 +530,7 @@ class VR_Get_Rental {
 	 *
 	 * @return bool|null|string
 	 */
-	public function get_rental_feature_terms() {
+	public function get_feature_terms() {
 	    return $this->get_taxonomy_terms( 'vr_rental-feature' );
 	}
 
