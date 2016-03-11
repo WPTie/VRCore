@@ -205,7 +205,8 @@ class VR_Booking_Meta_Boxes {
 
 					// jQuery date picker options. See here http://jqueryui.com/demos/datepicker
 					'js_options' => array(
-						'dateFormat'      => __( 'dd-mm-yy', 'VRC' ),
+						// 'dateFormat'      => __( 'dd-mm-yy', 'VRC' ),
+						'dateFormat'      => __( 'yy-mm-dd', 'VRC' ),
 						'appendText'      => __( ' (Day-Month-Year)', 'VRC' ),
 						'autoSize'        => true,
 						'numberOfMonths'  => 2,
@@ -225,7 +226,8 @@ class VR_Booking_Meta_Boxes {
 
 					// jQuery date picker options. See here http://jqueryui.com/demos/datepicker
 					'js_options' => array(
-						'dateFormat'      => __( 'dd-mm-yy', 'VRC' ),
+						// 'dateFormat'      => __( 'dd-mm-yy', 'VRC' ),
+						'dateFormat'      => __( 'yy-mm-dd', 'VRC' ),
 						'appendText'      => __( ' (Day-Month-Year)', 'VRC' ),
 						'autoSize'        => true,
 						'numberOfMonths'  => 2,
