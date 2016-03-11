@@ -75,7 +75,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div class="form-option">
 
                 <div>
-                    <label for="vr_booking_date_checkout">
+                    <label for="vr_booking_guests">
                         <?php _e('Guests:', 'VRC'); ?>
                     </label>
                     <input

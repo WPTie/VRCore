@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
         $( "#vr_booking_date_checkin" ).datepicker({
           defaultDate: "+1w",
           dateFormat:'dd-mm-yy',
-          numberOfMonths: 2,
+          numberOfMonths: 1,
           'autoSize':true,
           onClose: function( selectedDate ) {
             $( "#vr_booking_date_checkout" ).datepicker( "option", "minDate", selectedDate );
@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
         $( "#vr_booking_date_checkout" ).datepicker({
           defaultDate: "+1w",
           dateFormat:'dd-mm-yy',
-          numberOfMonths: 2,
+          numberOfMonths: 1,
           'autoSize':true,
           onClose: function( selectedDate ) {
             $( "#vr_booking_date_checkin" ).datepicker( "option", "maxDate", selectedDate );
