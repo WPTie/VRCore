@@ -207,7 +207,7 @@ class VR_Booking_Meta_Boxes {
 					'js_options' => array(
 						// 'dateFormat'      => __( 'dd-mm-yy', 'VRC' ),
 						'dateFormat'      => __( 'yy-mm-dd', 'VRC' ),
-						'appendText'      => __( ' (Day-Month-Year)', 'VRC' ),
+						'appendText'      => __( ' (Year-Month-Day) ', 'VRC' ),
 						'autoSize'        => true,
 						'numberOfMonths'  => 2,
 						'showButtonPanel' => false
@@ -228,7 +228,7 @@ class VR_Booking_Meta_Boxes {
 					'js_options' => array(
 						// 'dateFormat'      => __( 'dd-mm-yy', 'VRC' ),
 						'dateFormat'      => __( 'yy-mm-dd', 'VRC' ),
-						'appendText'      => __( ' (Day-Month-Year)', 'VRC' ),
+						'appendText'      => __( ' (Year-Month-Day) ', 'VRC' ),
 						'autoSize'        => true,
 						'numberOfMonths'  => 2,
 						'showButtonPanel' => false
