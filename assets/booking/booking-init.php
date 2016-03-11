@@ -67,6 +67,27 @@ if ( file_exists( VRC_DIR . '/assets/booking/class-submit-booking.php' ) ) {
 }
 
 
+/**
+ * Class: VR_Get_Booking.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/booking/class-get-booking.php' ) ) {
+    require_once( VRC_DIR . '/assets/booking/class-get-booking.php' );
+}
+
+
+/**
+ * Methods: For class `VR_Get_Booking`.
+ *
+ * Since plugin class is not accessible in themes.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/booking/methods-get-booking.php' ) ) {
+    require_once( VRC_DIR . '/assets/booking/methods-get-booking.php' );
+}
+
 
 /**
  * Actions/Filters for booking.
@@ -117,10 +138,10 @@ if ( class_exists( 'VR_Booking_Custom_Columns' ) ) {
 	 */
 	$vr_booking_custom_columns = new VR_Booking_Custom_Columns();
 
-	// Rental Custom Columns Registered.
+	// Booking Custom Columns Registered.
 	add_filter( 'manage_edit-vr_booking_columns', array( $vr_booking_custom_columns, 'register' ) ) ;
 
-	// Rental Custom Columns Display custom stuff.
+	// Booking Custom Columns Display custom stuff.
 	add_action( 'manage_vr_booking_posts_custom_column', array( $vr_booking_custom_columns, 'display' ) ) ;
 
 }
