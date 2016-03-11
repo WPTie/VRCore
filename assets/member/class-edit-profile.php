@@ -61,7 +61,7 @@ class VR_Edit_Profile {
      * value.
      *
      * @param  string   $key    | meta key.
-     * @param  string   $data   | $_POST[ 'stuff' ]
+     * @param  string   $data   | $_POST['stuff']
      * @param  int      $user   | $current_user->ID
      * @since  1.0.0
      */
@@ -130,7 +130,7 @@ class VR_Edit_Profile {
         $errors = array();
 
 		// Verify the nonce.
-        if( wp_verify_nonce( $_POST[ 'vr_update_profile_nonce' ], 'vr_update_profile' ) ) {
+        if( wp_verify_nonce( $_POST['vr_update_profile_nonce'], 'vr_update_profile' ) ) {
 
             // Update profile image via `profile-image-id`.
 
@@ -143,17 +143,17 @@ class VR_Edit_Profile {
              * @since 1.0.0
              */
             $fields_array = array(
-                'first_name'       => $_POST[ 'first-name' ],
-                'last_name'        => $_POST[ 'last-name' ],
-                'description'      => $_POST[ 'description' ],
-                'mobile_number'    => $_POST[ 'mobile-number' ],
-                'office_number'    => $_POST[ 'office-number' ],
-                'fax_number'       => $_POST[ 'fax-number' ],
-                'facebook_url'     => $_POST[ 'facebook-url' ],
-                'twitter_url'      => $_POST[ 'twitter-url' ],
-                'google_plus_url'  => $_POST[ 'google-plus-url' ],
-                'linkedin_url'     => $_POST[ 'linkedin-url' ],
-                'profile_image_id' => $_POST[ 'profile-image-id' ]
+                'first_name'       => $_POST['first-name'],
+                'last_name'        => $_POST['last-name'],
+                'description'      => $_POST['description'],
+                'mobile_number'    => $_POST['mobile-number'],
+                'office_number'    => $_POST['office-number'],
+                'fax_number'       => $_POST['fax-number'],
+                'facebook_url'     => $_POST['facebook-url'],
+                'twitter_url'      => $_POST['twitter-url'],
+                'google_plus_url'  => $_POST['google-plus-url'],
+                'linkedin_url'     => $_POST['linkedin-url'],
+                'profile_image_id' => $_POST['profile-image-id']
 
                 );
 
@@ -162,71 +162,71 @@ class VR_Edit_Profile {
 
 
 
-            // if ( ! empty( $_POST[ 'profile-image-id' ] ) ) {
-            //     $profile_image_id = intval( $_POST[ 'profile-image-id' ] );
+            // if ( ! empty( $_POST['profile-image-id'] ) ) {
+            //     $profile_image_id = intval( $_POST['profile-image-id'] );
             //     update_user_meta( $user_id, 'profile_image_id', $profile_image_id );
             // } else {
             //     delete_user_meta( $user_id, 'profile_image_id' );
             // }
             // Update user description.
-            // if ( ! empty( $_POST[ 'description' ] ) ) {
-            //     $user_description = sanitize_text_field( $_POST[ 'description' ] );
+            // if ( ! empty( $_POST['description'] ) ) {
+            //     $user_description = sanitize_text_field( $_POST['description'] );
             //     update_user_meta( $user_id, 'description', $user_description );
             // } else {
             //     delete_user_meta( $user_id, 'description' );
             // }
 
             // Update mobile number.
-            // if ( ! empty( $_POST[ 'mobile-number' ] ) ) {
-            //     $user_mobile_number = sanitize_text_field( $_POST[ 'mobile-number' ] );
+            // if ( ! empty( $_POST['mobile-number'] ) ) {
+            //     $user_mobile_number = sanitize_text_field( $_POST['mobile-number'] );
             //     update_user_meta( $user_id, 'mobile_number', $user_mobile_number );
             // } else {
             //     delete_user_meta( $user_id, 'mobile_number' );
             // }
 
             // Update office number.
-            // if ( ! empty( $_POST[ 'office-number' ] ) ) {
-            //     $user_office_number = sanitize_text_field( $_POST[ 'office-number' ] );
+            // if ( ! empty( $_POST['office-number'] ) ) {
+            //     $user_office_number = sanitize_text_field( $_POST['office-number'] );
             //     update_user_meta( $user_id, 'office_number', $user_office_number );
             // } else {
             //     delete_user_meta( $user_id, 'office_number' );
             // }
 
             // Update fax number.
-            // if ( ! empty( $_POST[ 'fax-number' ] ) ) {
-            //     $user_fax_number = sanitize_text_field( $_POST[ 'fax-number' ] );
+            // if ( ! empty( $_POST['fax-number'] ) ) {
+            //     $user_fax_number = sanitize_text_field( $_POST['fax-number'] );
             //     update_user_meta( $user_id, 'fax_number', $user_fax_number );
             // } else {
             //     delete_user_meta( $user_id, 'fax_number' );
             // }
 
             // Update facebook url.
-            // if ( ! empty( $_POST[ 'facebook-url' ] ) ) {
-            //     $facebook_url = esc_url_raw( sanitize_text_field( $_POST[ 'facebook-url' ] ) );
+            // if ( ! empty( $_POST['facebook-url'] ) ) {
+            //     $facebook_url = esc_url_raw( sanitize_text_field( $_POST['facebook-url'] ) );
             //     update_user_meta( $user_id, 'facebook_url', $facebook_url );
             // } else {
             //     delete_user_meta( $user_id, 'facebook_url' );
             // }
 
             // Update twitter url.
-            // if ( ! empty( $_POST[ 'twitter-url' ] ) ) {
-            //     $twitter_url = esc_url_raw( sanitize_text_field( $_POST[ 'twitter-url' ] ) );
+            // if ( ! empty( $_POST['twitter-url'] ) ) {
+            //     $twitter_url = esc_url_raw( sanitize_text_field( $_POST['twitter-url'] ) );
             //     update_user_meta( $user_id, 'twitter_url', $twitter_url );
             // } else {
             //     delete_user_meta( $user_id, 'twitter_url' );
             // }
 
             // Update google plus url.
-            // if ( ! empty( $_POST[ 'google-plus-url' ] ) ) {
-            //     $google_plus_url = esc_url_raw( sanitize_text_field( $_POST[ 'google-plus-url' ] ) );
+            // if ( ! empty( $_POST['google-plus-url'] ) ) {
+            //     $google_plus_url = esc_url_raw( sanitize_text_field( $_POST['google-plus-url'] ) );
             //     update_user_meta( $user_id, 'google_plus_url', $google_plus_url );
             // } else {
             //     delete_user_meta( $user_id, 'google_plus_url' );
             // }
 
             // Update linkedIn url.
-            // if ( ! empty( $_POST[ 'linkedin-url' ] ) ) {
-            //     $linkedin_url = esc_url_raw( sanitize_text_field( $_POST[ 'linkedin-url' ] ) );
+            // if ( ! empty( $_POST['linkedin-url'] ) ) {
+            //     $linkedin_url = esc_url_raw( sanitize_text_field( $_POST['linkedin-url'] ) );
             //     update_user_meta( $user_id, 'linkedin_url', $linkedin_url );
             // } else {
             //     delete_user_meta( $user_id, 'linkedin_url' );
@@ -236,8 +236,8 @@ class VR_Edit_Profile {
 
 
             // Update display name.
-            if ( ! empty( $_POST[ 'display-name' ] ) ) {
-                $user_display_name = sanitize_text_field( $_POST[ 'display-name' ] );
+            if ( ! empty( $_POST['display-name'] ) ) {
+                $user_display_name = sanitize_text_field( $_POST['display-name'] );
                 $return = wp_update_user( array(
                     'ID'           => $user_id,
                     'display_name' => $user_display_name
@@ -248,8 +248,8 @@ class VR_Edit_Profile {
             }
 
             // Update user email.
-            if ( ! empty( $_POST[ 'email' ] ) ){
-                $user_email = is_email( sanitize_email ( $_POST[ 'email' ] ) );
+            if ( ! empty( $_POST['email'] ) ){
+                $user_email = is_email( sanitize_email ( $_POST['email'] ) );
                 if ( ! $user_email )
                     $errors[] = __( 'Provided email address is invalid.', 'inspiry' );
                 else {
@@ -271,11 +271,11 @@ class VR_Edit_Profile {
             } // if ended.
 
             // Update user password
-            if ( ! empty($_POST[ 'pass1' ] ) && ! empty( $_POST[ 'pass2' ] ) ) {
-                if ( $_POST[ 'pass1' ] == $_POST[ 'pass2' ] ) {
+            if ( ! empty($_POST['pass1'] ) && ! empty( $_POST['pass2'] ) ) {
+                if ( $_POST['pass1'] == $_POST['pass2'] ) {
                     $return = wp_update_user( array(
 						'ID'        => $user_id,
-						'user_pass' => $_POST[ 'pass1' ]
+						'user_pass' => $_POST['pass1']
                     ) );
                     if ( is_wp_error( $return ) ) {
                         $errors[] = $return->get_error_message();
@@ -324,7 +324,7 @@ class VR_Edit_Profile {
 	public function upload_profile_image() {
 
         // Verify Nonce
-        $nonce = $_REQUEST[ 'nonce' ];
+        $nonce = $_REQUEST['nonce'];
         if ( ! wp_verify_nonce( $nonce, 'vr_allow_upload_profile_image' ) ) {
             $ajax_response = array(
 				'success' => false ,
@@ -334,35 +334,35 @@ class VR_Edit_Profile {
             die;
         }
 
-        $submitted_file = $_FILES[ 'vr_upload_file_name' ];
+        $submitted_file = $_FILES['vr_upload_file_name'];
 
         // Handle PHP uploads in WordPress, sanitizing file names, checking extensions for mime type,
         // and moving the file to the appropriate directory within the uploads directory.
         $uploaded_image = wp_handle_upload( $submitted_file, array( 'test_form' => false ) ); // TODO: What?
 
-        if ( isset( $uploaded_image[ 'file' ] ) ) {
+        if ( isset( $uploaded_image['file'] ) ) {
 
         	// File's name.
-            $file_name = basename( $submitted_file[ 'name' ] );
+            $file_name = basename( $submitted_file['name'] );
 
             // Retrieve the file type from the file name.
-            $file_type = wp_check_filetype( $uploaded_image[ 'file' ] );
+            $file_type = wp_check_filetype( $uploaded_image['file'] );
 
             // Prepare an array of post data for the attachment.
             $attachment_details = array(
-                'guid'           => $uploaded_image[ 'url' ],
-                'post_mime_type' => $file_type[ 'type' ],
+                'guid'           => $uploaded_image['url'],
+                'post_mime_type' => $file_type['type'],
                 'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $file_name ) ), // TODO: What?
                 'post_content'   => '',
                 'post_status'    => 'inherit'
             );
 
             // This function inserts an attachment into the media library.
-            $attach_id = wp_insert_attachment( $attachment_details, $uploaded_image[ 'file' ] );
+            $attach_id = wp_insert_attachment( $attachment_details, $uploaded_image['file'] );
 
             // This function generates metadata for an image attachment. It also creates a thumbnail
             // and other intermediate sizes of the image attachment based on the sizes defined.
-            $attach_data = wp_generate_attachment_metadata( $attach_id, $uploaded_image[ 'file' ] );
+            $attach_data = wp_generate_attachment_metadata( $attach_id, $uploaded_image['file'] );
 
             // Update metadata for an attachment.
             wp_update_attachment_metadata( $attach_id, $attach_data );
@@ -403,18 +403,18 @@ class VR_Edit_Profile {
 
 		// TODO: What?
 		$upload_dir       = wp_upload_dir();
-		$image_path_array = explode( '/', $attach_data[ 'file' ] );
+		$image_path_array = explode( '/', $attach_data['file'] );
 		$image_path_array = array_slice( $image_path_array, 0, count( $image_path_array ) - 1 );
 		$image_path       = implode( '/', $image_path_array );
 		$thumbnail_name   = null;
 
 	    // TODO: Image sizes.
-	    if ( isset( $attach_data[ 'sizes' ][ 'inspiry-agent-thumbnail' ] ) ) {
-	        $thumbnail_name     =   $attach_data[ 'sizes' ][ 'inspiry-agent-thumbnail' ][ 'file' ];
+	    if ( isset( $attach_data['sizes']['inspiry-agent-thumbnail'] ) ) {
+	        $thumbnail_name     =   $attach_data['sizes']['inspiry-agent-thumbnail']['file'];
 	    } else {
-	        $thumbnail_name     =   $attach_data[ 'sizes' ][ 'thumbnail' ][ 'file' ];
+	        $thumbnail_name     =   $attach_data['sizes']['thumbnail']['file'];
 	    }
-	    return esc_url( $upload_dir[ 'baseurl' ] . '/' . $image_path . '/' . $thumbnail_name );
+	    return esc_url( $upload_dir['baseurl'] . '/' . $image_path . '/' . $thumbnail_name );
 
 	} // Function ended.
 
