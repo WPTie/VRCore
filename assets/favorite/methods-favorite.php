@@ -64,8 +64,9 @@ if ( ! function_exists( 'vr_favorited_class' ) ) {
  * @since 1.0.0
  */
 if ( ! function_exists( 'vr_dump' ) ) {
-	function vr_dump( $rental_id ) {
+	function vr_dump() {
 
+		echo VR_THEME_DIR;
 
 	}
 }

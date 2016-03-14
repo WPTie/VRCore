@@ -1,8 +1,8 @@
 <?php
 /**
- * Class for Agent meta boexes
+ * Class for Homepage meta boexes
  *
- * Meta boxes for `vr_agent` post type.
+ * Meta boxes for homepage template.
  *
  * @since 	1.0.0
  * @package VRC
@@ -14,20 +14,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * VR_Agent_Meta_Boxes.
+ * VR_Homepage_Meta_Boxes.
  *
- * Class for `vr_agent` meta boxes.
+ * Class for `vr_homepage` meta boxes.
  *
  * @since 1.0.0
  */
 
-if ( ! class_exists( 'VR_Agent_Meta_Boxes' ) ) :
+if ( ! class_exists( 'VR_Homepage_Meta_Boxes' ) ) :
 
-class VR_Agent_Meta_Boxes {
+class VR_Homepage_Meta_Boxes {
 
 
 	/**
-	 * Register meta boxes related to `vr_agent` post type
+	 * Register meta boxes related to homepage template
 	 *
 	 * @param   array   $meta_boxes
 	 * @return  array   $meta_boxes
@@ -35,16 +35,21 @@ class VR_Agent_Meta_Boxes {
 	 */
 	public function register( $meta_boxes ) {
 
-	    $prefix = 'vr_agent_';
+	    $prefix = 'vr_homepage_';
 
 	    $meta_boxes[] = array(
-			'id'         => 'vr_agent_meta_box_details_id',
+			'id'         => 'vr_homepage_meta_box_details_id',
 			'title'      => __('Contact Details', 'VRC'),
 
-			'post_types' => array( 'vr_agent' ),
+			'post_types' => array( 'page' ),
 
 			'context'    => 'normal',
 			'priority'   => 'high',
+
+			'show'   => array(
+				// List of page templates (used for page only). Array. Optional.
+				'template'    => array( 'page-templates/contact.php' ),
+			)
 
 			'fields'     => array(
 
@@ -71,7 +76,7 @@ class VR_Agent_Meta_Boxes {
 	                'type'  => 'email',
 
 	                'name'  => __( 'Email Address', 'VRC' ),
-	                'desc'  => __( "Agent related messages from contact form on rental details page, will be sent to this email address.", "VRC" )
+	                'desc'  => __( "Homepage related messages from contact form on rental details page, will be sent to this email address.", "VRC" )
 	            ),
 
 
@@ -249,10 +254,10 @@ class VR_Agent_Meta_Boxes {
 
 
 		$meta_boxes[] = array(
-			'id'         => 'vr_agent_meta_box_rental_id',
+			'id'         => 'vr_homepage_meta_box_rental_id',
 			'title'      => __('Rental Properties Owner', 'VRC'),
 
-			'post_types' => array( 'vr_agent' ),
+			'post_types' => array( 'vr_homepage' ),
 
 			'context'    => 'normal',
 			'priority'   => 'high',
@@ -268,12 +273,12 @@ class VR_Agent_Meta_Boxes {
 
 						global $post;
 
-						// Get the rentals where `vr_rental_the_agent` is this agent.
-						// That is get the rentals where this agent is the owner.
+						// Get the rentals where `vr_rental_the_homepage` is this homepage.
+						// That is get the rentals where this homepage is the owner.
 						$args = array(
 							'post_type'  => 'vr_rental',
 							'orderby'    => 'meta_value_num',
-							'meta_key'   => 'vr_rental_the_agent',
+							'meta_key'   => 'vr_rental_the_homepage',
 							'meta_value' => $post->ID
 						);
 
@@ -296,7 +301,7 @@ class VR_Agent_Meta_Boxes {
 								}
 								echo '</ol>';
 							} else {
-								echo "No rental property owned by this agent.";
+								echo "No rental property owned by this homepage.";
 							}
 
 						echo '</div>';
