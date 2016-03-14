@@ -48,7 +48,7 @@ class VR_Homepage_Meta_Boxes {
 
 			'show'   => array(
 				// List of page templates (used for page only). Array. Optional.
-				'template'    => array( 'page-templates/contact.php' ),
+				'template'    => array( 'page-homepage.php' ),
 			)
 
 			'fields'     => array(
