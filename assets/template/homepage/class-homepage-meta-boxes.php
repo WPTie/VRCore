@@ -46,10 +46,10 @@ class VR_Homepage_Meta_Boxes {
 			'context'    => 'normal',
 			'priority'   => 'high',
 
-			'show'   => array(
-				// List of page templates (used for page only). Array. Optional.
-				'template'    => array( 'page-homepage.php' ),
-			)
+			// 'show'   => array(
+			// 	// List of page templates (used for page only). Array. Optional.
+			// 	'template'    => array( 'page-homepage.php' ),
+			// )
 
 			'fields'     => array(
 
