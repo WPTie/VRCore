@@ -83,6 +83,16 @@ if ( file_exists( VRC_DIR . '/assets/favorite/favorite-init.php' ) ) {
 
 
 /**
+ * Tempalte: Homepage initializer.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/template/homepage/homepage-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/homepage/homepage-init.php' );
+}
+
+
+/**
  * Admin Menu Order.
  *
  * @since 1.0.0

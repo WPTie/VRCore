@@ -124,14 +124,26 @@ class VR_Get_Rental {
 	 * @since 1.0.0
 	 */
 	public function get_meta( $meta_key ) {
-		// If meta is set then return value else return false.
-		if ( isset( $this->the_meta_data[ $meta_key ] ) ) {
-			// Returns the value of meta.
-			return $this->the_meta_data[ $meta_key ][0];
+		// Array or not?
+		if ( is_array( $this->the_meta_data[ $meta_key ] ) ) {
+			// Check 0th element of array
+			// If meta is set then return value else return false.
+			if ( isset( $this->the_meta_data[ $meta_key ][0] ) ) {
+				// Returns the value of meta.
+				return $this->the_meta_data[ $meta_key ][0];
+			} else {
+			    return false;
+			}
 		} else {
-		    return false;
+			// If meta is set then return value else return false.
+			if ( isset( $this->the_meta_data[ $meta_key ] ) ) {
+				// Returns the value of meta.
+				return $this->the_meta_data[ $meta_key ][0];
+			} else {
+			    return false;
+			}
 		}
-	}
+	} // get_meta() ended.
 
 
 	/**
@@ -497,8 +509,8 @@ class VR_Get_Rental {
 		}
 
 		// Slider Image ID.
-		$slider_image_id = $this->get_property_meta( $this->meta_keys['slider_image'] );
-		if ( $slider_image_id ) {
+		$slider_image_id = $this->get_meta( $this->meta_keys['slider_image'] );
+		if ( 0 != $slider_image_id ) {
 		    return wp_get_attachment_url( $slider_image_id );
 		}
 		return false;

@@ -26,6 +26,16 @@ if ( file_exists( VRC_DIR . '/assets/template/homepage/class-homepage-meta-boxes
 
 
 /**
+ * Class: `VR_Homepage_Booking_Metabox`.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/template/homepage/class-booking-metabox.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/homepage/class-booking-metabox.php' );
+}
+
+
+/**
  * Actions/Filters for homepage.
  *
  * Classes:
