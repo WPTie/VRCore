@@ -707,18 +707,6 @@ class VR_Rental_Meta_Boxes {
 
 	} // Register function End.
 
-
-
-	/**
-	 * Add More Amenities Button.
-	 *
-	 * @since 1.0.0
-	 */
-	public function amenities_button( $text, $field ) {
-		    return __( '+ Add New Amenity', 'VRC' );
-	}
-
-
 } // Class end.
 
 endif;

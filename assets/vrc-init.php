@@ -83,12 +83,12 @@ if ( file_exists( VRC_DIR . '/assets/favorite/favorite-init.php' ) ) {
 
 
 /**
- * Tempalte: Homepage initializer.
+ * Tempalte initializer.
  *
  * @since 1.0.0
  */
-if ( file_exists( VRC_DIR . '/assets/template/homepage/homepage-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/template/homepage/homepage-init.php' );
+if ( file_exists( VRC_DIR . '/assets/template/template-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/template-init.php' );
 }
 
 
