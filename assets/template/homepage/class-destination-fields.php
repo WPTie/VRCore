@@ -109,6 +109,7 @@ class VR_Homepage_Destination_Fields {
 			// 	'query_args'     => array(),
 			// ),
 
+
 			// array(
 			// 	'id'          => "{$prefix}destination_1",
 			// 	'type'        => 'post',
