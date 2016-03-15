@@ -49,6 +49,15 @@ class VR_Homepage_Feature_Fields {
 			    'columns' => 12,
 			    'tab'     => 'feature'
 			),
+
+			// Divider.
+			array(
+				'id'      => "{$prefix}divider_id0", // Not used, but needed.
+				'type'    => 'divider',
+				'columns' => 12,
+				'tab'     => 'feature'
+			),
+
 			// Feature Section Title.
 			array(
 				'id'      => "{$prefix}feature_section_title",
@@ -62,7 +71,7 @@ class VR_Homepage_Feature_Fields {
 
 			// Divider.
 			array(
-				'id'      => "{$prefix}divider_id0", // Not used, but needed.
+				'id'      => "{$prefix}divider_id1", // Not used, but needed.
 				'type'    => 'divider',
 				'columns' => 12,
 				'tab'     => 'feature'
@@ -80,13 +89,11 @@ class VR_Homepage_Feature_Fields {
 
 			// Divider.
 			array(
-				'id'      => "{$prefix}divider_id1", // Not used, but needed.
+				'id'      => "{$prefix}divider_id2", // Not used, but needed.
 				'type'    => 'divider',
 				'columns' => 12,
 				'tab'     => 'feature'
 			),
-
-
 
 			// Repeatable features.
             // Group.
@@ -129,7 +136,15 @@ class VR_Homepage_Feature_Fields {
 
             ), // Field Group ended.
 
-            // Button Title.
+            // Divider.
+            array(
+            	'id'      => "{$prefix}divider_id3", // Not used, but needed.
+            	'type'    => 'divider',
+            	'columns' => 12,
+            	'tab'     => 'feature'
+            ),
+
+            // Button Text.
             array(
             	'id'      => "{$prefix}feature_btn_txt",
             	'type'    => 'text',
@@ -140,10 +155,18 @@ class VR_Homepage_Feature_Fields {
             	'tab'     => 'feature'
             ),
 
-            // Button Title.
+            // Divider.
+            array(
+            	'id'      => "{$prefix}divider_id4", // Not used, but needed.
+            	'type'    => 'divider',
+            	'columns' => 12,
+            	'tab'     => 'feature'
+            ),
+
+            // Button URL.
             array(
             	'id'      => "{$prefix}feature_btn_url",
-            	'type'    => 'text',
+            	'type'    => 'url',
             	'name'    => __( 'Feature Section Button URL', 'VRC' ),
             	'desc'    => 'Example Value: http://Google.com/',
             	'columns' => 12,

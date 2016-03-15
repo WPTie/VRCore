@@ -115,7 +115,7 @@ class VR_Get_Page_Meta {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_page_meta( $meta_key, $maybe_unserialize = NULL ) {
+	public function get_page_meta( $meta_key, $maybe_unserialize = NULL, $is_image = FALSE ) {
 		// Returns false if ID is not present.
 		if ( ! $this->the_page_ID ) {
 		    return false;
@@ -124,6 +124,11 @@ class VR_Get_Page_Meta {
 		// If maybe_unserialize is true.
 		if ( true == $maybe_unserialize ) {
 			return maybe_unserialize( $this->get_meta( $meta_key ) );
+		}
+
+		// If image then return URL.
+		if ( true == $is_image ) {
+			return wp_get_attachment_url( $this->get_meta( $meta_key ) );
 		}
 
 		// General.

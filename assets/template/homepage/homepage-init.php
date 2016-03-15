@@ -46,6 +46,25 @@ if ( file_exists( VRC_DIR . '/assets/template/homepage/class-feature-fields.php'
 
 
 /**
+ * Class: `VR_Homepage_CTA_Fields`.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/template/homepage/class-cta-fields.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/homepage/class-cta-fields.php' );
+}
+
+/**
+ * Class: `VR_Homepage_Destination_Fields`.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/template/homepage/class-destination-fields.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/homepage/class-destination-fields.php' );
+}
+
+
+/**
  * Actions/Filters for homepage.
  *
  * Classes:

@@ -45,6 +45,24 @@ class VR_Homepage_Meta_Boxes {
 
 
 	/**
+	 * CTA Fields.
+	 *
+	 * @var 	object
+	 * @since 	1.0.0
+	 */
+	private $cta_fields;
+
+
+	/**
+	 * Destination Fields.
+	 *
+	 * @var 	object
+	 * @since 	1.0.0
+	 */
+	private $destination_fields;
+
+
+	/**
 	 * Constructor.
 	 *
 	 * Gets the metabox classes and assigns
@@ -58,6 +76,12 @@ class VR_Homepage_Meta_Boxes {
 
 		// Features.
 		$this->feature_fields           = new VR_Homepage_Feature_Fields();
+
+		// CTA.
+		$this->cta_fields               = new VR_Homepage_CTA_Fields();
+
+		// Destination.
+		$this->destination_fields       = new VR_Homepage_Destination_Fields();
 	}
 
 
@@ -73,15 +97,24 @@ class VR_Homepage_Meta_Boxes {
 		// Now inside the metabox classes.
 	    // $prefix = 'vr_homepage_';
 
-	    // Booking Form.
-	    $vr_booking_fields = $this->bookingform_fields_array->get_fields();
+		// Booking Form.
+		$vr_booking_fields     = $this->bookingform_fields_array->get_fields();
 
-	    // Feature Form.
-	    $vr_feature_fields = $this->feature_fields->get_fields();
+		// Feature Form.
+		$vr_feature_fields     = $this->feature_fields->get_fields();
 
+		// CTA Form.
+		$vr_cta_fields         = $this->cta_fields->get_fields();
+
+		// Destination Form.
+		$vr_destination_fields = $this->destination_fields->get_fields();
+
+		// Temporary array to be merged later.
 	    $vr_tmp_array = array(
 			$vr_booking_fields,
-			$vr_feature_fields
+			$vr_feature_fields,
+			$vr_cta_fields,
+			$vr_destination_fields
 	    );
 
 	    // Fields array.
@@ -95,7 +128,7 @@ class VR_Homepage_Meta_Boxes {
 	    // For Debugging.
 	    // $debug_var = $vr_homepage_fields;
 	    // echo "<pre>";
-	    // var_dump($debug_var);
+	    // var_dump( $debug_var );
 	    // echo "</pre>";
 	    // exit();
 
@@ -109,11 +142,19 @@ class VR_Homepage_Meta_Boxes {
 			'priority'    => 'high',
 			'tabs'        => array(
 				'bookingform' => array(
-					'label'   => __('Booking Form', 'VRC'),
-					'icon' => 'dashicons-admin-home'
+					'label' => __('Booking Form', 'VRC'),
+					'icon'  => 'dashicons-admin-home'
 				),
 				'feature'     => array(
 					'label' => __('Feature Section', 'VRC'),
+					'icon'  => 'dashicons-format-gallery'
+				),
+				'cta'     => array(
+					'label' => __('CTA Section', 'VRC'),
+					'icon'  => 'dashicons-format-gallery'
+				),
+				'destination'     => array(
+					'label' => __('Destination Section', 'VRC'),
 					'icon'  => 'dashicons-format-gallery'
 				)
 			),
