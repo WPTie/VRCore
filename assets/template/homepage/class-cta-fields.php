@@ -81,6 +81,11 @@ class VR_Homepage_CTA_Fields {
 			array(
 				'id'      => "{$prefix}cta_section_dsc",
 				'type'    => 'wysiwyg',
+				'raw'     => true,
+				'options' => array(
+								'media_buttons' => false,
+								// 'teeny'=> true
+							 ),
 				'name'    => __( 'CTA Section Descripton', 'VRC' ),
 				'columns' => 12,
 				'tab'     => 'cta'

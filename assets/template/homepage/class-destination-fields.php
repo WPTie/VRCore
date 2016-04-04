@@ -81,6 +81,11 @@ class VR_Homepage_Destination_Fields {
 			array(
 				'id'      => "{$prefix}destination_section_dsc",
 				'type'    => 'wysiwyg',
+				'raw'     => true,
+				'options' => array(
+								'media_buttons' => false,
+								// 'teeny'=> true
+							 ),
 				'name'    => __( 'Destination Section Descripton', 'VRC' ),
 				'columns' => 12,
 				'tab'     => 'destination'
@@ -95,40 +100,39 @@ class VR_Homepage_Destination_Fields {
 			),
 
 			// Select Popular Destionat #1
-			// array(
-			// 	'id'      => "{$prefix}divider_destination",
-			// 	'type'    => 'taxonomy_advanced',
-			// 	'name'    => __( 'Popular Destination #1', 'VRC' ),
-			// 	// Taxonomy name
-			// 	'taxonomy' => 'vr_rental-destination',
+			array(
+				'id'                   => "{$prefix}the_destinations",
+				'type'                 => 'taxonomy_advanced',
+				'name'                 => __( 'Select Popular Destinations', 'VRC' ),
+				'desc'                 => 'Note: Looks best when 4 or 7 destinations are selected.',
+				// Taxonomy name.
+				'taxonomy'             => 'vr_rental-destination',
 
-			// 	// How to show taxonomy: 'checkbox_list' (default) or 'checkbox_tree', 'select_tree', select_advanced or 'select'. Optional
-			// 	'field_type'     => 'select_advanced',
+				// How to show taxonomy: 'checkbox_list' (default) or 'checkbox_tree', 'select_tree', select_advanced or 'select'. Optional.
+				'field_type'           => 'checkbox_list',
 
-			// 	// Additional arguments for get_terms() function. Optional
-			// 	'query_args'     => array(),
-			// ),
+				// Additional arguments for get_terms() function. Optional.
+				'query_args'           => array(),
+				'columns'              => 12,
+				'tab'                  => 'destination'
+			),
 
-
-			// array(
-			// 	'id'          => "{$prefix}destination_1",
-			// 	'type'        => 'post',
-
-			// 	'post_type'   => 'vr_agent',
-			// 	'field_type'  => 'select_advanced',
-
-			// 	'name'        => __( 'Select the Agent', 'VRC' ),
-			// 	'placeholder' => __( 'Select the agent', 'VRC' ),
-
-			// 	// Query arguments (optional). No settings means get all published posts.
-			// 	'query_args'  => array(
-			// 		'post_status'    => 'publish',
-			// 		'posts_per_page' => - 1,
-			// 	),
-
-			// 	'columns' => 12,
-			//     'tab'     => 'agent'
-			// ),
+			array(
+				'id'      => "{$prefix}destination_note_for_images",
+				'type'    => 'custom_html',
+				'columns' => 12,
+				'tab'     => 'destination',
+				// HTML content.
+				'std'     => '<p
+							style="
+								padding: 1rem;
+								background: #dedede;
+							">
+							You can add images to the destinations via <a href="/wp-admin/edit-tags.php?taxonomy=vr_rental-destination&post_type=vr_rental">Destinations Page</a>.
+							</br>
+							Make sure you have added feature images to these desitnations you selected here.
+						</p>',
+			), // Field ended.
 		); // Fields array ended.
 	} // Function ended.
 

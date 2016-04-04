@@ -61,6 +61,14 @@ class VR_Homepage_Meta_Boxes {
 	 */
 	private $destination_fields;
 
+	/**
+	 * Steps Fields.
+	 *
+	 * @var 	object
+	 * @since 	1.0.0
+	 */
+	private $steps_fields;
+
 
 	/**
 	 * Constructor.
@@ -82,6 +90,9 @@ class VR_Homepage_Meta_Boxes {
 
 		// Destination.
 		$this->destination_fields       = new VR_Homepage_Destination_Fields();
+
+		// Steps.
+		$this->steps_fields             = new VR_Homepage_Steps_Fields();
 	}
 
 
@@ -109,12 +120,17 @@ class VR_Homepage_Meta_Boxes {
 		// Destination Form.
 		$vr_destination_fields = $this->destination_fields->get_fields();
 
+		// Steps Form.
+		$vr_steps_fields       = $this->steps_fields->get_fields();
+
+
 		// Temporary array to be merged later.
 	    $vr_tmp_array = array(
 			$vr_booking_fields,
 			$vr_feature_fields,
 			$vr_cta_fields,
-			$vr_destination_fields
+			$vr_destination_fields,
+			$vr_steps_fields
 	    );
 
 	    // Fields array.
@@ -155,6 +171,10 @@ class VR_Homepage_Meta_Boxes {
 				),
 				'destination'     => array(
 					'label' => __('Destination Section', 'VRC'),
+					'icon'  => 'dashicons-format-gallery'
+				),
+				'steps'     => array(
+					'label' => __('Steps Section', 'VRC'),
 					'icon'  => 'dashicons-format-gallery'
 				)
 			),

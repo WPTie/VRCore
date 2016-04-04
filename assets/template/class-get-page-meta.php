@@ -115,7 +115,7 @@ class VR_Get_Page_Meta {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_page_meta( $meta_key, $maybe_unserialize = NULL, $is_image = FALSE ) {
+	public function get_page_meta( $meta_key, $maybe_unserialize = FALSE, $is_image = FALSE, $is_string_to_array = FALSE ) {
 		// Returns false if ID is not present.
 		if ( ! $this->the_page_ID ) {
 		    return false;
@@ -129,6 +129,22 @@ class VR_Get_Page_Meta {
 		// If image then return URL.
 		if ( true == $is_image ) {
 			return wp_get_attachment_url( $this->get_meta( $meta_key ) );
+		}
+
+		// If string to array by exploding `,` is true.
+		if ( true == $is_string_to_array ) {
+			// Comma separated string values.
+			$the_string = $this->get_meta( $meta_key );
+			// Conversion to an array.
+			if ( $the_string ) {
+			    // Explode at `,` comma.
+			    $the_array = explode( ',', $the_string );
+
+			    // Returns the array.
+			    return $the_array;
+			}
+			// Returns false if no value in the string.
+			return false;
 		}
 
 		// General.

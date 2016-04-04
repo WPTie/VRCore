@@ -120,3 +120,14 @@ if ( file_exists( VRC_DIR . '/assets/class-scripts.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/class-functions.php' ) ) {
     require_once( VRC_DIR . '/assets/class-functions.php' );
 }
+
+
+
+/**
+ * Plugin: Cateogry Images.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/plugin/category-images/category-images.php' ) ) {
+    require_once( VRC_DIR . '/assets/plugin/category-images/category-images.php' );
+}

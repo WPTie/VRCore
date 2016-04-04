@@ -652,12 +652,12 @@ class VR_Rental_Meta_Boxes {
 
 			'fields'     => array(
 
-								 // Display the rental of this booking.
+				 // Display the rental of this booking.
 				array(
 					'id'   => "{$prefix}bookings_list",
 					'type' => 'custom_html',
 
-					'callback' => function (){
+					'callback' => function () {
 
 						global $post;
 

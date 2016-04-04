@@ -63,6 +63,15 @@ if ( file_exists( VRC_DIR . '/assets/template/homepage/class-destination-fields.
     require_once( VRC_DIR . '/assets/template/homepage/class-destination-fields.php' );
 }
 
+/**
+ * Class: `VR_Homepage_Steps_Fields`.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/template/homepage/class-steps-fields.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/homepage/class-steps-fields.php' );
+}
+
 
 /**
  * Actions/Filters for homepage.
