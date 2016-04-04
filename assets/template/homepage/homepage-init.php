@@ -72,6 +72,33 @@ if ( file_exists( VRC_DIR . '/assets/template/homepage/class-steps-fields.php' )
     require_once( VRC_DIR . '/assets/template/homepage/class-steps-fields.php' );
 }
 
+/**
+ * Class: `VR_Homepage_FRentals_Fields`.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/template/homepage/class-frentals-fields.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/homepage/class-frentals-fields.php' );
+}
+
+/**
+ * Class: `VR_Homepage_TandN_Fields`.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/template/homepage/class-tandn-fields.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/homepage/class-tandn-fields.php' );
+}
+
+/**
+ * Class: `VR_Homepage_FCTA_Fields`.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/template/homepage/class-fcta-fields.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/homepage/class-fcta-fields.php' );
+}
+
 
 /**
  * Actions/Filters for homepage.

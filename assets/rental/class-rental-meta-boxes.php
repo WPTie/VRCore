@@ -8,6 +8,7 @@
  * @package VRC
  */
 
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -36,37 +37,9 @@ class VR_Rental_Meta_Boxes {
 	 */
 	public function register( $meta_boxes ) {
 
+		// TODO: Recommended image dimensions.
+
 	    $prefix = 'vr_rental_';
-
-	// TODO: Ask SBhai why this way?
-	    // Agent posts and ID to title conversion.
-	  //   $agent_array = array( -1 => __( 'None', 'VRC' ) );
-	  //   $agent_posts = get_posts( array (
-			// 'post_type'        => 'vr_agent',
-			// 'posts_per_page'   => -1,
-			// 'suppress_filters' => 0
-	  //       ) );
-	  //   if ( ! empty ( $agent_posts ) ) {
-	  //       foreach ( $agent_posts as $agent_post ) {
-	  //           $agent_array[ $agent_post->ID ] = $agent_post->post_title;
-	  //       }
-	  //   }
-
-
-	    // Booking posts and ID to title conversion.
-	  //   $booking_array = array( -1 => __( 'None', 'VRC' ) );
-	  //   $booking_posts = get_posts( array (
-			// 'post_type'        => 'vr_booking',
-			// 'posts_per_page'   => -1,
-			// 'suppress_filters' => 0
-	  //       ) );
-	  //   if ( ! empty ( $booking_posts ) ) {
-	  //       foreach ( $booking_posts as $booking_post ) {
-	  //           $booking_array[ $booking_post->ID ] = $booking_post->post_title;
-	  //       }
-	  //   }
-
-
 
 	    $meta_boxes[] = array(
 			'id'         => 'vr_rental_meta_box_details_id',
@@ -107,12 +80,8 @@ class VR_Rental_Meta_Boxes {
 					'icon'  => 'dashicons-calendar'
 	            ),
 	            'misc' => array(
-					'label' => __('Miscellaneous', 'VRC'),
+					'label' => __('Miscellaneous Settings', 'VRC'),
 					'icon'  => 'dashicons-lightbulb'
-	            ),
-	            'home-slider' => array(
-					'label' => __('Homepage Slider', 'VRC'),
-					'icon'  => 'dashicons-images-alt'
 	            )
 	        ),
 			'tab_style' => 'left',
@@ -523,17 +492,46 @@ class VR_Rental_Meta_Boxes {
 	             * @since 1.0.0
 	             */
 
+
+                // Homepage Slider
+                array(
+    				'id'      => "{$prefix}is_add_in_slider",
+    				'type'    => 'radio',
+
+    				'name'    => __('Do you want to add this rental in the Homepage Slider?', 'VRC'),
+    				'desc'    => __('Remember you need set a `Featured Image` for this property from the right sidebar.', 'VRC'),
+
+    				'std'     => '0',
+    				'options' => array(
+    					'1' => __('Yes ', 'VRC'),
+    					'0' => __('No', 'VRC')
+                    ),
+
+    				'columns' => 12,
+	            	'tab'     => 'misc'
+                ),
+
+
+                // Divider.
+                array(
+                	'id'      => "{$prefix}slider_divider", // Not used, but needed.
+                	'type'    => 'divider',
+                	'columns' => 12,
+	            	'tab'     => 'misc'
+                ),
+
 	            // Featured rental.
 	            array(
-					'id'      => "{$prefix}featured",
+					'id'      => "{$prefix}is_featured",
 					'type'    => 'radio',
 
 					'name'    => __('Mark this rental as featured?', 'VRC'),
+    				'desc'    => __('Remember you need set a `Featured Image` for this property from the right sidebar.', 'VRC'),
 
 					'std'     => 0,
 					'options' => array(
-						1 => __('Yes ', 'VRC'),
-						0 => __('No', 'VRC')
+						'1' => __('Yes ', 'VRC'),
+						'0' => __('No', 'VRC')
 	                ),
 
 					'columns' => 12,
@@ -548,7 +546,6 @@ class VR_Rental_Meta_Boxes {
 	            	'columns' => 12,
 	            	'tab'     => 'misc'
 	            ),
-
 
 	            // Attachments.
 	            array(
@@ -587,53 +584,10 @@ class VR_Rental_Meta_Boxes {
 	            ),
 
 
-	            /**
-	             * Tab: `home-slider`
-	             * 		Home Slider
-	             *
-	             * @since 1.0.0
-	             */
-
-	            // Homepage Slider
-	            array(
-					'id'      => "{$prefix}is_add_in_slider",
-					'type'    => 'radio',
-
-					'name'    => __('Do you want to add this rental in the Homepage Slider?', 'VRC'),
-					'desc'    => __('If yes, then you need to provide a slider image below.', 'VRC'),
-
-					'std'     => 'no',
-					'options' => array(
-						'1' => __('Yes ', 'VRC'),
-						'0' => __('No', 'VRC')
-	                ),
-
-					'columns' => 12,
-					'tab'     => 'home-slider'
-	            ),
 
 
-	            // Divider.
-	            array(
-	            	'id'      => "{$prefix}slider_divider", // Not used, but needed.
-	            	'type'    => 'divider',
-	            	'columns' => 12,
-	            	'tab'     => 'home-slider'
-	            ),
 
 
-	            // Slider Image.
-	            array(
-					'id'               => "{$prefix}slider_image",
-					'type'             => 'image_advanced',
-
-					'name'             => __('Slider Image', 'VRC'),
-					'desc'             => __( 'Consult theme documentation for required image size.', 'VRC' ),
-
-					'max_file_uploads' => 1,
-					'columns'          => 12,
-					'tab'              => 'home-slider'
-	            )
 
 
 

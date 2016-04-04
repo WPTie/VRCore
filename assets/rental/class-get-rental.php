@@ -81,7 +81,7 @@ class VR_Get_Rental {
 		'the_booking'          => 'vr_rental_the_booking',
 
 		// TAB                 : Miscellaneous.
-		'featured'             => 'vr_rental_featured',
+		'featured'             => 'vr_rental_is_featured',
 		'attachments'          =>'vr_rental_attachments',
 		'private_note'         =>'vr_rental_private_note',
 

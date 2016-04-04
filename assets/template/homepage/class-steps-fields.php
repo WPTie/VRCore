@@ -58,6 +58,29 @@ class VR_Homepage_Steps_Fields {
 				'tab'     => 'steps'
 			),
 
+			// Enable/Disable Steps Section BG.
+			array(
+				'id'      => "{$prefix}is_steps_bg",
+				'type'    => 'radio',
+				'name'    => __( 'Enable Steps section background (arrow passing through the steps)?', 'VRC' ),
+				'desc'    => __( 'Looks good if you have 3 steps only!', 'VRC' ),
+				'std'     => 'yes',
+				'options' => array(
+					'yes' => __('Yes.', 'VRC'),
+					'no'  => __('No.', 'VRC'),
+			    ),
+			    'columns' => 12,
+			    'tab'     => 'steps'
+			),
+
+			// Divider.
+			array(
+				'id'      => "{$prefix}divider_id0", // Not used, but needed.
+				'type'    => 'divider',
+				'columns' => 12,
+				'tab'     => 'steps'
+			),
+
 			// Steps Section Title.
 			array(
 				'id'      => "{$prefix}steps_section_title",

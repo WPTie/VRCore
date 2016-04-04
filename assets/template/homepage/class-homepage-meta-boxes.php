@@ -24,8 +24,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'VR_Homepage_Meta_Boxes' ) ) :
 
 class VR_Homepage_Meta_Boxes {
-
-
 	/**
 	 * Booking form fields.
 	 *
@@ -33,7 +31,6 @@ class VR_Homepage_Meta_Boxes {
 	 * @since 	1.0.0
 	 */
 	private $bookingform_fields_array;
-
 
 	/**
 	 * Feature Fields.
@@ -43,7 +40,6 @@ class VR_Homepage_Meta_Boxes {
 	 */
 	private $feature_fields;
 
-
 	/**
 	 * CTA Fields.
 	 *
@@ -51,7 +47,6 @@ class VR_Homepage_Meta_Boxes {
 	 * @since 	1.0.0
 	 */
 	private $cta_fields;
-
 
 	/**
 	 * Destination Fields.
@@ -68,6 +63,30 @@ class VR_Homepage_Meta_Boxes {
 	 * @since 	1.0.0
 	 */
 	private $steps_fields;
+
+	/**
+	 * Featured Rentals Fields.
+	 *
+	 * @var 	object
+	 * @since 	1.0.0
+	 */
+	private $frentals_fields;
+
+	/**
+	 * Testimonial and News Fields.
+	 *
+	 * @var 	object
+	 * @since 	1.0.0
+	 */
+	private $tandn_fields;
+
+	/**
+	 * FCTA Fields.
+	 *
+	 * @var 	object
+	 * @since 	1.0.0
+	 */
+	private $fcta_fields;
 
 
 	/**
@@ -93,6 +112,15 @@ class VR_Homepage_Meta_Boxes {
 
 		// Steps.
 		$this->steps_fields             = new VR_Homepage_Steps_Fields();
+
+		// Featured Rentals.
+		$this->frentals_fields          = new VR_Homepage_FRentals_Fields();
+
+		// TandN Rentals.
+		$this->tandn_fields             = new VR_Homepage_TandN_Fields();
+
+		// FCTA Rentals.
+		$this->fcta_fields              = new VR_Homepage_FCTA_Fields();
 	}
 
 
@@ -123,6 +151,15 @@ class VR_Homepage_Meta_Boxes {
 		// Steps Form.
 		$vr_steps_fields       = $this->steps_fields->get_fields();
 
+		// FRentals Form.
+		$vr_frentals_fields    = $this->frentals_fields->get_fields();
+
+		// TandN Form.
+		$vr_tandn_fields       = $this->tandn_fields->get_fields();
+
+		// FCTA Form.
+		$vr_fcta_fields       = $this->fcta_fields->get_fields();
+
 
 		// Temporary array to be merged later.
 	    $vr_tmp_array = array(
@@ -130,7 +167,10 @@ class VR_Homepage_Meta_Boxes {
 			$vr_feature_fields,
 			$vr_cta_fields,
 			$vr_destination_fields,
-			$vr_steps_fields
+			$vr_steps_fields,
+			$vr_frentals_fields,
+			$vr_tandn_fields,
+			$vr_fcta_fields,
 	    );
 
 	    // Fields array.
@@ -175,6 +215,18 @@ class VR_Homepage_Meta_Boxes {
 				),
 				'steps'     => array(
 					'label' => __('Steps Section', 'VRC'),
+					'icon'  => 'dashicons-format-gallery'
+				),
+				'frentals'     => array(
+					'label' => __('Featured Rentals Section', 'VRC'),
+					'icon'  => 'dashicons-format-gallery'
+				),
+				'tandn'     => array(
+					'label' => __('Testimonial & News Section', 'VRC'),
+					'icon'  => 'dashicons-format-gallery'
+				),
+				'fcta'     => array(
+					'label' => __('Footer CTA Section', 'VRC'),
 					'icon'  => 'dashicons-format-gallery'
 				)
 			),
