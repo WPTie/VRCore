@@ -4,7 +4,7 @@
  * @since 1.0.0
  * @package VRC
  */
-( function( $ ){
+( function( $ ) {
     "use strict";
 
     // console.log( 'Outside if' );
@@ -20,7 +20,7 @@
 
         $( '.vr_add_to_favorites' ).on( 'click', function( e ) {
 
-            console.log( 'Clicked Heart!' );
+            // console.log( 'Clicked Heart!' );
 
             // No click. Nada.
             e.preventDefault();
@@ -31,7 +31,7 @@
 
             // The Rental ID.
             var the_rental_id_fav_custom = $this.data( 'rentalid' )
-            console.log( "Custom rental ID:", the_rental_id_fav_custom);
+            // console.log( "Custom rental ID:", the_rental_id_fav_custom);
 
             // User ID who favorited.
             var the_user_id_fav = favoriteData.userID;
@@ -60,36 +60,36 @@
                     //     star.addClass('fa-spin');
                     // }
                 });
-                console.log('POST req sent. the if was ', the_rental_id_fav_custom);
+                // console.log('POST req sent. the ID was ', the_rental_id_fav_custom);
 
 
                 addToFavorite.done( function( response ) {
                     // star.removeClass('fa-spin');
                     if ( response.success ) {
-                        console.log('Success');
+                        // console.log('Success');
                         $this.addClass( 'vr_hearted vr_hearted_single' );
                         // star.removeClass( 'fa-star-o').addClass( 'fa-star' );
                         // favoriteTitle.removeClass( 'failed' );
                         // favoriteTitle.html( response.message );
                     } else {
                         var msg = response.message;
-                        console.log('Failed', msg);
+                        // console.log('Failed', msg);
                         // favoriteTitle.addClass('failed');
                         // favoriteTitle.html( response.message );
                     }
                 });
 
                 addToFavorite.fail( function( jqXHR, textStatus ) {
-                    console.log('Request Failed');
+                    // console.log('Request Failed');
                     alert( "Request Failed: " + textStatus );
                 });
             }
 
-            console.log('Already favorited!')
+            // console.log('Already favorited!')
         });
 
     } else {
-        console.log( 'The typeof favoriteData is undefined.' );
+        // console.log( 'The typeof favoriteData is undefined.' );
     }
 
 
@@ -100,7 +100,7 @@
      */
     $( '.vr_remove_from_favorites' ).on( 'click', function( event ) {
 
-        console.log('Clicked Remove!')
+        // console.log('Clicked Remove!')
 
         // No click. Nada.
         event.preventDefault();
@@ -116,7 +116,7 @@
         var the_rental_id_fav_remove = $this.data( 'rentalid' );
 
         var rental_card = $this.closest('.vr_list');
-        console.log('Card:', rental_card);
+        // console.log('Card:', rental_card);
         // var loader = $this.siblings('.loader');
 
         var removeFromFavorites = $.ajax({
@@ -133,25 +133,24 @@
             }
         });
 
-        console.log('POST req sent. the if was ', the_rental_id_fav_remove);
+        // console.log('POST req sent. the ID was ', the_rental_id_fav_remove);
 
         removeFromFavorites.done( function( response ) {
             if ( response.success ) {
-                console.log('Removed!')
+                // console.log('Removed!')
                 rental_card.remove();
             } else {
-                console.log('Not Removed!')
+                // console.log('Not Removed!')
                 loader.hide();
                 alert( response.message );
             }
         });
 
         removeFromFavorites.fail( function( jqXHR, textStatus ) {
-            console.log('Request failed')
+            // console.log('Request failed')
             alert( "Request Failed: " + textStatus );
         });
 
     });
-
 
 })(jQuery);
