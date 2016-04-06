@@ -250,7 +250,7 @@ class VR_Rental_Meta_Boxes {
 					'id'               => "{$prefix}images",
 					'type'             => 'image_advanced',
 
-					'name'             => __('Rental Gallery Images', 'VRC'),
+					'name'             => __('Rental Gallery/Slider Images', 'VRC'),
 					'desc'             => __('Check documentation for image sizes', 'VRC'),
 
 					'max_file_uploads' => 48,

@@ -334,12 +334,34 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_images() {
+	public function get_images( $size = 'full' ) {
 		// Returns false if ID is not present.
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_meta( $this->meta_keys['images'] );
+
+		// Get the slider images of this rental.
+		$vr_images = $this->the_meta_data[ $this->meta_keys['images'] ];
+
+		// Will contain URLs of Images.
+		$vr_images_urls_array = array();
+
+		// Array or not?
+		if ( is_array( $vr_images ) ) {
+			// Return all
+			foreach ( $vr_images as $key => $value) {
+				// Array of image attachment.
+				$vr_image_array = wp_get_attachment_image_src( $value , $size );
+
+				// Add image URL present at 0th index to the returning array.
+				$vr_images_urls_array[] = $vr_image_array[0];
+			}
+
+			// Return the array of URLs of images.
+			return $vr_images_urls_array;
+		} else {
+			return false;
+		}
 	}
 
 
