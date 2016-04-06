@@ -355,31 +355,31 @@ class VR_Rental_Meta_Boxes {
 	             * @since 1.0.0
 	             */
 
-	            // Dispaly Agents or Not.
-	            array(
-					'id'      => "{$prefix}agent_display_option",
-					'type'    => 'radio',
+	            // TODO: Future feature. Dispaly Agents or Not.
+	    //         array(
+					// 'id'      => "{$prefix}agent_display_option",
+					// 'type'    => 'radio',
 
-					'name'    => __('What should be displayed in the Agent Information box?', 'VRC'),
+					// 'name'    => __('What should be displayed in the Agent Information box?', 'VRC'),
 
-					'std'     => 'none',
-					'options' => array(
-						'my_profile_info' => __('Author of this rental.', 'VRC'),
-						'agent_info'      => __('Agent Information. ( Select the agent below )', 'VRC'),
-						'none'            => __('Nothing. ( Hide information box )', 'VRC'),
-	                ),
-					'columns' => 12,
-					'tab'     => 'agent'
-	            ),
+					// 'std'     => 'none',
+					// 'options' => array(
+					// 	'my_profile_info' => __('Author of this rental.', 'VRC'),
+					// 	'agent_info'      => __('Agent Information. ( Select the agent below )', 'VRC'),
+					// 	'none'            => __('Nothing. ( Hide information box )', 'VRC'),
+	    //             ),
+					// 'columns' => 12,
+					// 'tab'     => 'agent'
+	    //         ),
 
 
                 // Divider.
-                array(
-    				'id'      => "{$prefix}agent_divider", // Not used, but needed.
-    				'type'    => 'divider',
-    				'columns' => 12,
-    				'tab'     => 'agent'
-                ),
+        //         array(
+    				// 'id'      => "{$prefix}agent_divider", // Not used, but needed.
+    				// 'type'    => 'divider',
+    				// 'columns' => 12,
+    				// 'tab'     => 'agent'
+        //         ),
 
 
 	            // Select the agent.
@@ -547,18 +547,18 @@ class VR_Rental_Meta_Boxes {
 	            	'tab'     => 'misc'
 	            ),
 
-	            // Attachments.
-	            array(
-					'id'        => "{$prefix}attachments",
-					'type'      => 'file_advanced',
+	            // TODO: Future Attachments.
+	    //         array(
+					// 'id'        => "{$prefix}attachments",
+					// 'type'      => 'file_advanced',
 
-					'name'      => __('Attachments', 'VRC'),
-					'desc'      => __('You can attach PDF files, Map images OR other documents to provide further details related to this rental property.', 'VRC'),
+					// 'name'      => __('Attachments', 'VRC'),
+					// 'desc'      => __('You can attach PDF files, Map images OR other documents to provide further details related to this rental property.', 'VRC'),
 
-					'mime_type' => '',
-					'columns'   => 12,
-					'tab'       => 'misc'
-	            ),
+					// 'mime_type' => '',
+					// 'columns'   => 12,
+					// 'tab'       => 'misc'
+	    //         ),
 
 
 	            // Divider.

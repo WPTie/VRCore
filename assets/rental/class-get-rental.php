@@ -74,7 +74,7 @@ class VR_Get_Rental {
 
 		// TAB                 : Agent Information.
 		'agent_display_option' => 'vr_rental_agent_display_option',
-		'the_agent'            => 'vr_rental_the_agents',
+		'the_agent'            => 'vr_rental_the_agent',
 
 		// TAB                 : Booking Information.
 		'is_booked'            => 'vr_rental_is_booked',
@@ -389,7 +389,10 @@ class VR_Get_Rental {
 		if ( ! $this->the_rental_ID ) {
 		    return false;
 		}
-		return $this->get_meta( $this->meta_keys['video_image'] );
+
+		// Video image ID.
+		$video_image_id = $this->get_meta( $this->meta_keys['video_image'] );
+		return wp_get_attachment_url( $video_image_id );
 	}
 
 
@@ -412,13 +415,13 @@ class VR_Get_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_agent_display_option() {
-		// Returns false if ID is not present.
-		if ( ! $this->the_rental_ID ) {
-		    return false;
-		}
-		return $this->get_meta( $this->meta_keys['agent_display_option'] );
-	}
+	// public function get_agent_display_option() {
+	// 	// Returns false if ID is not present.
+	// 	if ( ! $this->the_rental_ID ) {
+	// 	    return false;
+	// 	}
+	// 	return $this->get_meta( $this->meta_keys['agent_display_option'] );
+	// }
 
 
 	/**

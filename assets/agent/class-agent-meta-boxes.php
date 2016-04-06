@@ -135,8 +135,8 @@ class VR_Agent_Meta_Boxes {
 
 				// Office Address.
 	            array(
-	                'id'    => "{$prefix}_office_address",
-	                'type'  => 'text',
+	                'id'    => "{$prefix}office_address",
+	                'type'  => 'textarea',
 
 	                'name'  => __( 'Office Address', 'VRC' )
 	            ),
@@ -148,6 +148,23 @@ class VR_Agent_Meta_Boxes {
 	            	'type'    => 'divider',
 	            	'columns' => 12
 	            ),
+
+
+    			// Message.
+                array(
+                    'id'    => "{$prefix}summary",
+                    'type'  => 'textarea',
+
+                    'name'  => __( 'Profile Summary (Optional)', 'VRC' )
+                ),
+
+
+                // Divider.
+                array(
+                	'id'      => "{$prefix}divider_id5", // Not used, but needed.
+                	'type'    => 'divider',
+                	'columns' => 12
+                ),
 
 
 				// Fb URL.
@@ -220,10 +237,11 @@ class VR_Agent_Meta_Boxes {
 
 	            // Pin URL
 	            array(
-	                'id'    => "{$prefix}pin_url",
-	                'type'  => 'url',
+	                'id'    => "{$prefix}skype_username",
+	                'type'  => 'text',
 
-	                'name'  => __('Pinterest URL', 'VRC')
+	                'name'  => __('Skype Username', 'VRC'),
+	                'desc'  => __('Example Value: myskypeID', 'VRC'),
 	            ),
 
 
@@ -241,6 +259,24 @@ class VR_Agent_Meta_Boxes {
 	                'type'  => 'url',
 
 	                'name'  => __('Instagram URL', 'VRC')
+
+	            ),
+
+
+	            // Divider.
+	            array(
+	            	'id'      => "{$prefix}divider_id10", // Not used, but needed.
+	            	'type'    => 'divider',
+	            	'columns' => 12
+	            ),
+
+
+	            // Insta URL
+	            array(
+	                'id'    => "{$prefix}ytube_url",
+	                'type'  => 'url',
+
+	                'name'  => __('Youtube URL', 'VRC')
 	            )
 
 	        ) // Fields array ended.

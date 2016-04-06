@@ -59,6 +59,16 @@ if ( file_exists( VRC_DIR . '/assets/agent/agent-custom-columns.php' ) ) {
 
 
 /**
+ * Class: `VR_Get_Agent_Meta`.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/agent/class-get-agent-meta.php' ) ) {
+    require_once( VRC_DIR . '/assets/agent/class-get-agent-meta.php' );
+}
+
+
+/**
  * Actions/Filters for agent.
  *
  * Classes:
