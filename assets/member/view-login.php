@@ -63,7 +63,7 @@ if ( is_user_logged_in() ) {
         </div>
 
         <div class="vr_form__element vr_btn vr_btn--block">
-            <input type="submit" id="login-button" class="vr_btn--secondary vr_btn--homePad" value="<?php _e( 'Login', 'VRC' ); ?>" />
+            <input type="submit" id="login-button" class="vr_btn--primary vr_btn--homePad" value="<?php _e( 'Login', 'VRC' ); ?>" />
             <input type="hidden" name="action" value="vr_ajax_login" />
             <input type="hidden" name="user-cookie" value="1" />
             <?php
@@ -90,19 +90,24 @@ if ( is_user_logged_in() ) {
 
     </form>
 
-    <div class="clearfix">
-        <?php
-        if( get_option( 'users_can_register' ) ) :
-            ?>
-            <span class="sign-up pull-left">
-                <?php _e( 'Not a Member?', 'VRC' ); ?>
-                <a href="#" class="activate-section" data-section="register-section"><?php _e( 'Sign up now', 'VRC' ); ?></a>
+    <div class="vr_form__element">
+
+            <span class="vr_btn">
+                <a
+                    href="#"
+                    class="vr_btn--secondary vr_btn--homePad"
+                >
+                    <?php _e( 'Sign up now', 'VRC' ); ?>
+                </a>
             </span>
-            <?php
-        endif;
-        ?>
-        <span class="forgot-password pull-right">
-            <a href="#" class="activate-section" data-section="password-section"><?php _e( 'Forgot Password?', 'VRC' ); ?></a>
+
+        <span class="vr_btn">
+            <a
+                href="#"
+                class="vr_btn--secondary vr_btn--homePad"
+            >
+                <?php _e( 'Forgot Password?', 'VRC' ); ?>
+            </a>
         </span>
     </div>
 

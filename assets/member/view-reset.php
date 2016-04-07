@@ -55,7 +55,7 @@ if ( is_user_logged_in() ) {
         </div>
 
         <div class="vr_form__element  vr_btn vr_btn--block ">
-            <input type="submit" id="forgot-button" name="user-submit" class="vr_btn--secondary vr_btn--homePad" value="<?php _e( 'Reset Password', 'VRC' ); ?>">
+            <input type="submit" id="forgot-button" name="user-submit" class="vr_btn--primary vr_btn--homePad" value="<?php _e( 'Reset Password', 'VRC' ); ?>">
             <input type="hidden" name="action" value="vr_ajax_reset" />
             <input type="hidden" name="user-cookie" value="1" />
             <?php wp_nonce_field( 'vr-ajax-forgot-nonce', 'vr-secure-reset' ); ?>

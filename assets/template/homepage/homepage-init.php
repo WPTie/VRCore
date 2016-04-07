@@ -120,40 +120,5 @@ if ( class_exists( 'VR_Homepage_Meta_Boxes' ) ) {
     add_filter( 'rwmb_meta_boxes', array( $vr_homepage_meta_boxes_init, 'register' ) );
 
 
-    /**
-     * Hide Editor on Homepage Template.
-     *
-     * @since 1.0.0
-     */
-    add_action('admin_head', 'vr_hide_homepage_editor');
-    if ( ! function_exists( 'vr_hide_homepage_editor' ) ) {
-    	function vr_hide_homepage_editor() {
-			// Get the pagenow.
-			global $pagenow;
-
-			// Bail if post.php
-		    if( ! ( 'post.php' == $pagenow ) ) {
-				return;
-			}
-
-			// Get the Post ID.
-			$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
-
-			// Bail if no post_id.
-			if( ! isset( $post_id ) ) {
-				return;
-			}
-
-			// Hide the editor on a page with a homepage template.
-			$template_filename = get_post_meta( $post_id, '_wp_page_template', true );
-
-			// Remove the editor.
-			if( $template_filename == 'page-homepage.php' ) {
-				remove_post_type_support('page', 'editor');
-			}
-    	} // vr_hide_homepage_editor() ended.
-    } // function_exists() ended.
-
-
 } // actions/filters ended.
 

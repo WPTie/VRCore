@@ -38,6 +38,7 @@ jQuery(document).ready(function($) {
                 dataType    : 'json',
                 timeout     : 30000,
                 beforeSubmit: function( formData, jqForm, options ){
+                    form_loader.removeClass( 'vr_dn' );
                     form_loader.fadeIn();
                     form_message.empty().fadeOut();
                     errors_container.empty().fadeOut();
@@ -45,11 +46,13 @@ jQuery(document).ready(function($) {
                 success: function( response, status, xhr, $form ){
                     form_loader.fadeOut();
                     if ( response.success ) {
+                        form_message.removeClass( 'vr_dn' );
                         form_message.html( response.message).fadeIn();
                     } else {
                         for ( var i=0; i < response.errors.length; i++ ) {
                             errors_container.append( '<li>' + response.errors[i] + '</li>' );
                         }
+                        errors_container.removeClass( 'vr_dn' );
                         errors_container.fadeIn();
                     }
                 }

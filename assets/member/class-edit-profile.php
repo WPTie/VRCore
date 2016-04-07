@@ -251,13 +251,13 @@ class VR_Edit_Profile {
             if ( ! empty( $_POST['email'] ) ){
                 $user_email = is_email( sanitize_email ( $_POST['email'] ) );
                 if ( ! $user_email )
-                    $errors[] = __( 'Provided email address is invalid.', 'inspiry' );
+                    $errors[] = __( 'Provided email address is invalid.', 'VRC' );
                 else {
                     // email_exists returns a user id if a user exists against it.
                     $email_exists = email_exists( $user_email );
                     if( $email_exists ) {
                         if( $email_exists != $user_id ){
-                            $errors[] = __('Provided email is already in use by another user. Try a different one.', 'inspiry');
+                            $errors[] = __('Provided email is already in use by another user. Try a different one.', 'VRC');
                         } else {
                             // no need to update the email as it is already current user's email.
                         }
@@ -281,7 +281,7 @@ class VR_Edit_Profile {
                         $errors[] = $return->get_error_message();
                     }
                 } else {
-                    $errors[] = __('The passwords you entered do not match.  Your password is not updated.', 'inspiry');
+                    $errors[] = __('The passwords you entered do not match.  Your password is not updated.', 'VRC');
                 }
             }
 
@@ -293,14 +293,14 @@ class VR_Edit_Profile {
 
                 $response = array(
                     'success' => true,
-                    'message' => __( 'Yay! Your profile information was  successfully updated!', 'inspiry' ),
+                    'message' => __( 'Submitted! <br/> Your profile information was successfully updated!', 'VRC' ),
                 );
                 echo json_encode( $response );
                 die;
             }
 
         } else {
-            $errors[] = __('Security check failed!', 'inspiry');
+            $errors[] = __('Security check failed!', 'VRC');
         } // if nonce ended.
 
         // In case of errors
@@ -328,7 +328,7 @@ class VR_Edit_Profile {
         if ( ! wp_verify_nonce( $nonce, 'vr_allow_upload_profile_image' ) ) {
             $ajax_response = array(
 				'success' => false ,
-				'reason'  => __( 'Security check failed!', 'inspiry' )
+				'reason'  => __( 'Security check failed!', 'VRC' )
             );
             echo json_encode( $ajax_response );
             die;
@@ -381,7 +381,7 @@ class VR_Edit_Profile {
         } else {
             $ajax_response = array(
 				'success' => false,
-				'reason'  => __( 'Image upload failed!', 'inspiry' )
+				'reason'  => __( 'Image upload failed!', 'VRC' )
             );
             echo json_encode( $ajax_response );
             die;

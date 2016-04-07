@@ -76,7 +76,7 @@ if ( is_user_logged_in() ) {
         </div>
 
         <div class="vr_form__element  vr_btn vr_btn--block">
-            <input type="submit" id="register-button" name="user-submit" class="vr_btn--secondary vr_btn--homePad" value="<?php _e( 'Register', 'VRC' ); ?>" />
+            <input type="submit" id="register-button" name="user-submit" class="vr_btn--primary vr_btn--homePad" value="<?php _e( 'Register', 'VRC' ); ?>" />
             <input type="hidden" name="action" value="vr_ajax_register" />
             <?php  // nonce for security
             wp_nonce_field( 'vr-ajax-register-nonce', 'vr-secure-register' );
@@ -97,12 +97,22 @@ if ( is_user_logged_in() ) {
 
     </form>
 
-    <div class="clearfix">
-        <span class="login-link pull-left">
-            <a href="#" class="activate-section" data-section="login-section"><?php _e( 'Login', 'VRC' ); ?></a>
+    <div class="vr_form__element">
+        <span class="vr_btn">
+            <a
+                href="#"
+                class="vr_btn--secondary vr_btn--homePad"
+            >
+                <?php _e( 'Login', 'VRC' ); ?>
+            </a>
         </span>
-        <span class="forgot-password pull-right">
-            <a href="#" class="activate-section" data-section="password-section"><?php _e( 'Forgot Password?', 'VRC' ); ?></a>
+        <span class="vr_btn">
+            <a
+                href="#"
+                class="vr_btn--secondary vr_btn--homePad"
+            >
+                <?php _e( 'Forgot Password?', 'VRC' ); ?>
+            </a>
         </span>
     </div>
 

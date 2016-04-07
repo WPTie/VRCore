@@ -27,6 +27,15 @@ if ( file_exists( VRC_DIR . '/assets/template/class-get-page-meta.php' ) ) {
 
 
 /**
+ * Hide Page Editor.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/template/hide-page-editor.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/hide-page-editor.php' );
+}
+
+/**
  * Tempalte: Homepage initializer.
  *
  * @since 1.0.0
