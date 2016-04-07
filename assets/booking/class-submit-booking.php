@@ -81,6 +81,7 @@ class VR_Submit_Booking {
 
             } else {
 
+                $errors[] = __( 'ERROR!', 'VRC' );
                 $errors[] = __( 'Check In date cannot be empty', 'VRC' );
 
             }
@@ -92,6 +93,7 @@ class VR_Submit_Booking {
 
             } else {
 
+                $errors[] = __( 'ERROR!', 'VRC' );
                 $errors[] = __( 'Check out date cannot be empty', 'VRC' );
 
             }
@@ -103,6 +105,7 @@ class VR_Submit_Booking {
 
             } else {
 
+                $errors[] = __( 'ERROR!', 'VRC' );
                 $errors[] = __( 'Guests cannot be empty', 'VRC' );
 
             }
@@ -115,6 +118,7 @@ class VR_Submit_Booking {
 
             } else {
 
+                $errors[] = __( 'ERROR!', 'VRC' );
                 $errors[] = __( 'Rental ID cannot be empty. Refresh the page and try again.', 'VRC' );
 
             }
@@ -152,7 +156,7 @@ class VR_Submit_Booking {
                     'meta_input'   => $meta_array,
                 );
 
-                $output_message = __( 'Yay! Your booking was successfully submitted! Awaiting confirmation!', 'VRC' );
+                $output_message = __( 'Submited! <br/> Your booking was successfully submitted and it is awaiting confirmation!', 'VRC' );
 
                 // Insert the booking into the database.
                 // wp_insert_booking( $submitted_booking );
@@ -183,6 +187,7 @@ class VR_Submit_Booking {
 
         } else {
 
+            $errors[] = __( 'ERROR!', 'VRC' );
             $errors[] = __( 'Security check failed!', 'VRC' );
 
         } // if/else nonce ended.
