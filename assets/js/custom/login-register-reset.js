@@ -23,10 +23,10 @@ jQuery( function( $ ) {
 			// No loader to begin with.
             loginAjaxLoader.fadeOut(); // TODO: WHY?
 
-
 	    var loginOptions = {
 	        beforeSubmit: function () {
 	            loginButton.attr('disabled', 'disabled');
+	            loginAjaxLoader.removeClass( 'vr_dn' );
 	            loginAjaxLoader.fadeIn('fast');
 	            loginMessage.fadeOut('fast');
 	            loginError.fadeOut('fast');
@@ -36,9 +36,11 @@ jQuery( function( $ ) {
 	            loginAjaxLoader.fadeOut('fast');
 	            loginButton.removeAttr('disabled');
 	            if ( response.success ) {
+	                loginMessage.removeClass( 'vr_dn' );
 	                loginMessage.html( response.message ).fadeIn('fast');
 	                document.location.href = response.redirect;
 	            } else {
+	                loginError.removeClass( 'vr_dn' );
 	                loginError.html( response.message ).fadeIn('fast');
 	            }
 	        }
@@ -67,6 +69,7 @@ jQuery( function( $ ) {
 	    var registerOptions = {
 	        beforeSubmit: function () {
 	            registerButton.attr('disabled', 'disabled');
+	            registerAjaxLoader.removeClass( 'vr_dn' );
 	            registerAjaxLoader.fadeIn('fast');
 	            registerMessage.fadeOut('fast');
 	            registerError.fadeOut('fast');
@@ -76,9 +79,11 @@ jQuery( function( $ ) {
 	            registerAjaxLoader.fadeOut('fast');
 	            registerButton.removeAttr('disabled');
 	            if ( response.success ) {
+	                registerMessage.removeClass( 'vr_dn' );
 	                registerMessage.html( response.message ).fadeIn('fast');
 	                document.location.href = response.redirect;
 	            } else {
+	                registerError.removeClass( 'vr_dn' );
 	                registerError.html( response.message ).fadeIn('fast');
 	            }
 	        }
@@ -117,11 +122,15 @@ jQuery( function( $ ) {
 			forgotMessage    = $('#forgot-message');
 
             forgotAjaxLoader.fadeOut('fast'); // TODO: WHY?
+            forgotMessage.fadeOut('fast');
+            forgotError.fadeOut('fast');
 
 
 	    var forgotOptions = {
 	        beforeSubmit: function () {
 	            forgotButton.attr('disabled', 'disabled');
+
+	            forgotAjaxLoader.removeClass( 'vr_dn' );
 	            forgotAjaxLoader.fadeIn('fast');
 	            forgotMessage.fadeOut('fast');
 	            forgotError.fadeOut('fast');
@@ -131,9 +140,11 @@ jQuery( function( $ ) {
 	            forgotAjaxLoader.fadeOut('fast');
 	            forgotButton.removeAttr('disabled');
 	            if ( response.success ) {
+	                forgotMessage.removeClass( 'vr_dn' );
 	                forgotMessage.html( response.message ).fadeIn('fast');
 	                $form.resetForm();
 	            } else {
+	                forgotError.removeClass( 'vr_dn' );
 	                forgotError.html( response.message ).fadeIn('fast');
 	            }
 	        }

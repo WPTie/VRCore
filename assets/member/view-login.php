@@ -46,29 +46,24 @@ if ( is_user_logged_in() ) {
 
 <div class="form-wrapper">
 
-    <div class="form-heading clearfix">
-        <span><i class="fa fa-sign-in"></i><?php _e( 'Login', 'VRC' ); ?></span>
-        <button type="button" class="close close-modal-dialog " data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
-    </div>
-
     <form id="login-form" action="<?php echo admin_url('admin-ajax.php'); ?>" method="post" enctype="multipart/form-data">
 
-        <div class="form-element">
+        <div class="vr_form__element">
             <label class="login-form-label" for="login-username"><?php _e( 'Username', 'VRC' ); ?></label>
             <input id="login-username" name="log" type="text" class="login-form-input login-form-input-common required"
                    title="<?php _e( '* Provide your username', 'VRC' ); ?>"
                    placeholder="<?php _e( 'Username', 'VRC' ); ?>" />
         </div>
 
-        <div class="form-element">
+        <div class="vr_form__element">
             <label class="login-form-label" for="password"><?php _e( 'Password', 'VRC' ); ?></label>
             <input id="password" name="pwd" type="password" class="login-form-input login-form-input-common required"
                    title="<?php _e( '* Provide your password', 'VRC' ); ?>"
                    placeholder="<?php _e( 'Password', 'VRC' ); ?>" />
         </div>
 
-        <div class="form-element clearfix">
-            <input type="submit" id="login-button" class="login-form-submit login-form-input-common" value="<?php _e( 'Login', 'VRC' ); ?>" />
+        <div class="vr_form__element vr_btn vr_btn--block">
+            <input type="submit" id="login-button" class="vr_btn--secondary vr_btn--homePad" value="<?php _e( 'Login', 'VRC' ); ?>" />
             <input type="hidden" name="action" value="vr_ajax_login" />
             <input type="hidden" name="user-cookie" value="1" />
             <?php
@@ -87,9 +82,9 @@ if ( is_user_logged_in() ) {
 
             ?>
             <div class="text-center">
-                <div id="login-message" class="modal-message"></div>
-                <div id="login-error" class="modal-error"></div>
-                <img id="login-loader" class="modal-loader" src="<?php echo VRC_URL; ?>/assets/img/ajax-loader.gif" alt="Working...">
+                <div id="login-message" class="modal-message vr_notice vr_notice--success vr_dn"></div>
+                <div id="login-error" class="modal-error vr_notice vr_notice--error vr_dn"></div>
+                <img id="login-loader" class="modal-loader vr_dn" src="<?php echo VRC_URL; ?>/assets/img/ajax-loader.gif" alt="Working...">
             </div>
         </div>
 

@@ -79,12 +79,20 @@ class VR_Submit_Booking {
 
                 $user_vr_booking_date_checkin = sanitize_text_field( $_POST['vr_booking_date_checkin'] );
 
+            } else {
+
+                $errors[] = __( 'Check In date cannot be empty', 'VRC' );
+
             }
 
             // Check Out date via `vr_booking_date_checkout`.
             if ( ! empty( $_POST['vr_booking_date_checkout'] ) ) {
 
                 $user_vr_booking_date_checkout = sanitize_text_field( $_POST['vr_booking_date_checkout'] );
+
+            } else {
+
+                $errors[] = __( 'Check out date cannot be empty', 'VRC' );
 
             }
 
@@ -93,6 +101,10 @@ class VR_Submit_Booking {
 
                 $user_vr_booking_guests = intval( $_POST['vr_booking_guests'] );
 
+            } else {
+
+                $errors[] = __( 'Guests cannot be empty', 'VRC' );
+
             }
 
 
@@ -100,6 +112,10 @@ class VR_Submit_Booking {
             if ( ! empty( $_POST['rental_id_for_booking'] ) ) {
 
                 $user_rental_id_for_booking = intval( $_POST['rental_id_for_booking'] );
+
+            } else {
+
+                $errors[] = __( 'Rental ID cannot be empty. Refresh the page and try again.', 'VRC' );
 
             }
 
@@ -130,7 +146,7 @@ class VR_Submit_Booking {
 
                 $submitted_booking = array(
                     'post_title'   => $booking_title,
-                    'post_status'  => 'pending', // publish|Pending|draft.
+                    'post_status'  => 'pending', // publish|pending|draft.
                     'post_type'    => 'vr_booking',
                     'post_author'  => $current_user->ID,
                     'meta_input'   => $meta_array,
@@ -151,7 +167,19 @@ class VR_Submit_Booking {
                 );
                 echo json_encode( $response );
                 die;
+
+            } else {
+
+                // In case of errors.
+                $response = array(
+                    'success' => false,
+                    'errors'  => $errors
+                );
+
+                echo json_encode( $response );
+                die;
             }
+
 
         } else {
 
