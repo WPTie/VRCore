@@ -65,9 +65,12 @@ if ( ! class_exists( 'VR_CPT_Booking' ) ) :
 				'show_in_admin_bar'   => true,
 				'show_in_nav_menus'   => true,
 				'can_export'          => true,
-				'has_archive'         => true,
-				'exclude_from_search' => false,
-				'publicly_queryable'  => true,
+				// 'publicly_queryable'  => true, // TODO Future Feature
+				// 'exclude_from_search' => false,
+				// 'has_archive'         => true,
+				'exclude_from_search' => true,
+				'has_archive'         => false,
+				'publicly_queryable'  => false,
 				'rewrite'             => $rewrite,
 				'capability_type'     => 'post'
 				);
