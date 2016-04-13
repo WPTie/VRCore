@@ -124,21 +124,24 @@ class VR_Get_Rental {
 	 * @since 1.0.0
 	 */
 	public function get_meta( $meta_key ) {
+		// Solves undefined index problem.
+		$the_meta = isset( $this->the_meta_data[ $meta_key ] ) ? $this->the_meta_data[ $meta_key ] : false;
+
 		// Array or not?
-		if ( is_array( $this->the_meta_data[ $meta_key ] ) ) {
+		if ( is_array( $the_meta ) ) {
 			// Check 0th element of array
 			// If meta is set then return value else return false.
-			if ( isset( $this->the_meta_data[ $meta_key ][0] ) ) {
+			if ( isset( $the_meta[0] ) ) {
 				// Returns the value of meta.
-				return $this->the_meta_data[ $meta_key ][0];
+				return $the_meta[0];
 			} else {
 			    return false;
 			}
 		} else {
 			// If meta is set then return value else return false.
-			if ( isset( $this->the_meta_data[ $meta_key ] ) ) {
+			if ( isset( $the_meta ) ) {
 				// Returns the value of meta.
-				return $this->the_meta_data[ $meta_key ][0];
+				return $the_meta[0];
 			} else {
 			    return false;
 			}
