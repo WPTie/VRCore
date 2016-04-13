@@ -125,6 +125,11 @@ if ( class_exists( 'VR_Booking' ) ) {
 	// Swap status bar at the top `Published` with `Confirmed`.
 	add_filter( "views_edit-vr_booking",  array( $vr_booking_init, 'published_to_confirmed' ) );
 
+	// Send booking confirmation email.
+	// add_action( 'transition_post_status',  array( $vr_booking_init, 'booking_confirmation_email' ), 10, 3 );
+	add_action( 'save_post',  array( $vr_booking_init, 'booking_confirmation_email' ), 10, 3 );
+	// add_action( 'updated_postmeta',  array( $vr_booking_init, 'booking_confirmation_email' ) );
+
 }
 
 

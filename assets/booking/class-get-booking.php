@@ -98,14 +98,29 @@ class VR_Get_Booking {
 	 * @since 1.0.0
 	 */
 	public function get_meta( $meta_key ) {
-		// If meta is set then return value else return false.
-		if ( isset( $this->the_meta_data[ $meta_key ] ) ) {
-			// Returns the value of meta.
-			return $this->the_meta_data[ $meta_key ][0];
+		// Solves undefined index problem.
+		$the_meta = isset( $this->the_meta_data[ $meta_key ] ) ? $this->the_meta_data[ $meta_key ] : false;
+
+		// Array or not?
+		if ( isset( $the_meta ) && is_array( $the_meta ) ) {
+			// Check 0th element of array
+			// If meta is set then return value else return false.
+			if ( isset( $the_meta[0] ) ) {
+				// Returns the value of meta.
+				return $the_meta[0];
+			} else {
+			    return false;
+			}
 		} else {
-		    return false;
+			// If meta is set then return value else return false.
+			if ( isset( $the_meta ) ) {
+				// Returns the value of meta.
+				return $the_meta[0];
+			} else {
+			    return false;
+			}
 		}
-	}
+	} // get_meta() ended.
 
 
 	/**
@@ -120,6 +135,12 @@ class VR_Get_Booking {
 
 	/**
 	 * Get Booking: Is Confirmed.
+	 *
+	 * Returns (string)
+	 * 		1. pending
+	 * 		2. confirmed
+	 * 		OR
+	 * 		3. false
 	 *
 	 * @since 1.0.0
 	 */
@@ -247,3 +268,23 @@ class VR_Get_Booking {
 } // class `VR_Get_Booking`  ended.
 
 endif;
+
+
+/**
+ * METHOD: Get an object of VR_Get_Booking class.
+ *
+ * Add for themes to recognize the class and help
+ * instantiate an object without any hooks.
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'vr_get_booking_meta_obj' ) ) {
+	function vr_get_booking_meta_obj( $the_booking_ID ) {
+		// Bails if no ID.
+		if ( ! $the_booking_ID ){
+			return 'No Booking ID provided!';
+		}
+
+		return new VR_Get_Booking( $the_booking_ID );
+	}
+}

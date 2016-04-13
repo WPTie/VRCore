@@ -126,7 +126,7 @@ endif;
 
 
 /**
- * METHOD: Get an object of VR_Get_Rental class.
+ * METHOD: Get an object of VR_Get_Agent_Meta class.
  *
  * Add for themes to recognize the class and help
  * instantiate an object without any hooks.
