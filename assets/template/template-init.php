@@ -43,3 +43,13 @@ if ( file_exists( VRC_DIR . '/assets/template/hide-page-editor.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/template/homepage/homepage-init.php' ) ) {
     require_once( VRC_DIR . '/assets/template/homepage/homepage-init.php' );
 }
+
+
+/**
+ * Tempalte: Rental List initializer.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/template/rental/list/list-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/rental/list/list-init.php' );
+}

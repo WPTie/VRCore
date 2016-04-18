@@ -47,7 +47,7 @@ if ( ! function_exists( 'vr_hide_homepage_editor' ) ) {
 			|| $template_filename == 'page-login.php'
 			|| $template_filename == 'page-rest.php'
 			|| $template_filename == 'page-register.php'
-			|| $template_filename == 'page-listing.php'
+			|| $template_filename == 'page-rental-list.php'
 			|| $template_filename == 'page-rental-search.php'
 			|| $template_filename == 'page-edit-profile.php' ) {
 			remove_post_type_support('page', 'editor');

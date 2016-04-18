@@ -31,9 +31,9 @@ class VR_Functions {
      * @param string $heading
      * @param string $message
      */
-    public function message( $heading = '', $message = '' ) {
+    public static function message( $heading = '', $message = '' ) {
 
-        echo '<div class="inspiry-message">';
+        echo '<div class="message">';
         if ( !empty( $heading ) ) {
             echo '<h3>' . $heading . '</h3>';
         }
@@ -51,7 +51,7 @@ class VR_Functions {
      *
      * @since 1.0.0
      */
-    public function delete_posts( $post_type = NULL, $post_status = 'draft' ) {
+    public static function delete_posts( $post_type = NULL, $post_status = 'draft' ) {
 
         $args = array(
             'post_type'   => $post_type,
@@ -65,65 +65,61 @@ class VR_Functions {
     }
 
 
+    /**
+     * Get terms array for Rental List Meta.
+     *
+     * Returns terms array for a given taxonomy
+     * containing key(slug) value(name) pair.
+     *
+     * @param string $tax_name
+     * @param variable that is returned $terms_array
+     * @since  1.0.0
+     */
+    public static function get_terms_array( $tax_name, &$terms_array ) {
+        $tax_terms = get_terms( $tax_name, array (
+            'hide_empty' => false,
+        ) );
+        VR_Functions::add_term_children( 0, $tax_terms, $terms_array );
+    }
 
     /**
-     * Output hierarchical select options with selection based on term id
-     * @param $taxonomy_name
-     * @param $taxonomy_terms
-     * @param $target_term_id
-     * @param string $prefix
+     * Add term children to array.
+     *
+     * A recursive function to add children terms to given array.
+     *
+     * @param   int $parent_id
+     * @param   array $tax_terms
+     * @param   array variable $terms_array
+     * @param   string $prefix
+     * @since   1.0.0
      */
-    function inspiry_hierarchical_id_options($taxonomy_name, $taxonomy_terms, $target_term_id, $prefix = " " ){
-
-        if ( ! empty( $taxonomy_terms ) && ! is_wp_error( $taxonomy_terms ) ){
-
-            foreach ( $taxonomy_terms as $term ) {
-                if ( $target_term_id == $term->term_id ) {
-                    echo '<option value="' . $term->term_id . '" selected="selected">' . $prefix . $term->name . '</option>';
-                } else {
-                    echo '<option value="' . $term->term_id . '">' . $prefix . $term->name . '</option>';
-                }
-                $child_terms = get_terms( $taxonomy_name, array(
-                    'orderby'    => 'name',
-                    'order'      => 'ASC',
-                    'hide_empty' => false,
-                    'parent'     => $term->term_id
-                ) );
-
-                if ( ! empty( $child_terms ) && !is_wp_error( $child_terms ) ){
-                    /* Recursive Call */
-                    inspiry_hierarchical_id_options( $taxonomy_name, $child_terms, $target_term_id, "- ".$prefix );
+    public static function add_term_children( $parent_id, $tax_terms, &$terms_array, $prefix = '' ) {
+        if ( ! empty( $tax_terms ) && ! is_wp_error( $tax_terms ) ) {
+            foreach ( $tax_terms as $term ) {
+                if ( $term->parent ==  $parent_id ) {
+                    $terms_array[ $term->slug ] = $prefix . $term->name;
+                    VR_Functions::add_term_children( $term->term_id, $tax_terms, $terms_array, $prefix . '- ' );
                 }
             }
-
         }
-
-    } // Function ended.
-
-
-    /**
-     * Inspiry generate options based on given query arguments or CPT name
-     *
-     * @param $post_args
-     * @param int $selected
-     */
-    function inspiry_generate_cpt_options( $post_args, $selected = 0 ) {
-
-        $defaults = array( 'posts_per_page' => -1 );
-
-        if ( is_array( $post_args ) ) {
-            $post_args = wp_parse_args( $post_args, $defaults );
-        } else {
-            $post_args = wp_parse_args( array( 'post_type' => $post_args ), $defaults );
-        }
-
-        $posts = get_posts( $post_args );
-        foreach ( $posts as $post ) :
-            ?><option value="<?php echo esc_attr( $post->ID ); ?>" <?php if( isset( $selected ) && ( $selected == $post->ID ) ) { echo "selected"; } ?>><?php echo esc_html( $post->post_title ); ?></option><?php
-        endforeach;
-    } // Function ended.
-
+    }
 
 } // Class ended.
 
 endif;
+
+
+/**
+ * METHOD: Get an object of VR_Functions class.
+ *
+ * Add for themes to recognize the class and help
+ * instantiate an object without any hooks.
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'vr_get_function_obj' ) ) {
+    function vr_get_function_obj() {
+        return new VR_Functions();
+    }
+}
+
