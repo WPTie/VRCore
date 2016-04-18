@@ -90,8 +90,37 @@ class VR_Rental_List_Meta {
 			$this->vr_function_obj->get_terms_array( 'vr_rental-type', $this->type_array );
 		}
 
+		// Summary.
 		$meta_boxes[]  = array(
-			'id'         => 'vr_rental_list_metabox_id',
+			'id'         => 'vr_rental_list_metabox_summary_id',
+			'title'      => __('Summary', 'VRC'),
+			'post_types' => array( 'page' ),
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show'       => array(
+				// List of page templates (used for page only). Array. Optional.
+				// Page template file name. (if in the root)
+				'template'   => array( 'page-rental-list.php' ),
+			),
+			'fields'     => array(
+				// Summary.
+				array(
+					'id'      => "{$prefix}summary",
+					'type'    => 'textarea',
+					// 'type'    => 'wysiwyg',
+					// 'raw'     => true,
+					// 'options' => array(
+					// 				'media_buttons' => false,
+					// 				'teeny'=> true
+					// 			 ),
+					'name'    => __( 'Descripton', 'VRC' )
+				),
+			)
+		);
+
+		// Rental List.
+		$meta_boxes[]  = array(
+			'id'         => 'vr_rental_list_metabox_list_id',
 			'title'      => __('Rental List', 'VRC'),
 			'post_types' => array( 'page' ),
 			'context'    => 'normal',
@@ -102,6 +131,7 @@ class VR_Rental_List_Meta {
 				'template'   => array( 'page-rental-list.php' ),
 			),
 			'fields'     => array(
+				// Per page rentals.
 				array(
 					'id'   => "{$prefix}per_page",
 					'name' => __( 'Number of Rentals Per Page', 'VRC' ),
@@ -119,7 +149,7 @@ class VR_Rental_List_Meta {
 
 				// Order by.
 				array(
-					'id'          => "{$prefix}order",
+					'id'          => "{$prefix}orderby",
 					'name'        => __( 'Order Rentals By', 'VRC' ),
 					'type'        => 'select',
 					'options'     => array(
@@ -138,54 +168,6 @@ class VR_Rental_List_Meta {
 					'type'    => 'divider',
 				),
 
-				// Destination.
-				array(
-				    'id'          => "{$prefix}destination",
-				    'name'        => __( 'Destination', 'VRC' ),
-				    'type'        => 'select',
-				    'options'     => $this->destinations_array,
-				    'multiple'    => true,
-				),
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
-
-				// Feature.
-				array(
-				    'id'          => "{$prefix}feature",
-				    'name'        => __( 'Feature', 'VRC' ),
-				    'type'        => 'select',
-				    'options'     => $this->feature_array,
-				    'multiple'    => true,
-				),
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
-
-				// Type.
-				array(
-				    'id'          => "{$prefix}type",
-				    'name'        => __( 'Type', 'VRC' ),
-				    'type'        => 'select',
-				    'options'     => $this->type_array,
-				    'multiple'    => true,
-				),
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
-
 				// Min beds.
 				array(
 					'id'   => "{$prefix}min_beds",
@@ -202,11 +184,26 @@ class VR_Rental_List_Meta {
 					'type'    => 'divider',
 				),
 
-
 				// Min baths.
 				array(
 					'id'   => "{$prefix}min_baths",
 				    'name'  => __( 'Minimum Baths', 'VRC' ),
+				    'type'  => 'number',
+				    'step'  => 1,
+				    'min'   => 0,
+				    'std'   => 0
+				),
+
+				// Divider.
+				array(
+					'id'      => "{$prefix}divider", // Not used, but needed.
+					'type'    => 'divider',
+				),
+
+				// Min baths.
+				array(
+					'id'   => "{$prefix}min_guests",
+				    'name'  => __( 'Minimum Guests', 'VRC' ),
 				    'type'  => 'number',
 				    'step'  => 1,
 				    'min'   => 0,
@@ -234,7 +231,6 @@ class VR_Rental_List_Meta {
 					'type'    => 'divider',
 				),
 
-
 				// Max price.
 				array(
 					'id'   => "{$prefix}max_price",
@@ -242,11 +238,56 @@ class VR_Rental_List_Meta {
 				    'type'  => 'number',
 				    'min'   => 0,
 				),
-				// array(
-				// 	'id'      => "{$prefix}note",
-				// 	'type'    => 'custom_html',
-				// 	'std'     => $data,
-				// ), // Field ended.
+
+				// Divider.
+				array(
+					'id'      => "{$prefix}divider", // Not used, but needed.
+					'type'    => 'divider',
+				),
+
+				// Destination.
+				array(
+					'id'              => "{$prefix}destination",
+					'name'            => __( 'Destination', 'VRC' ),
+					'type'            => 'select',
+					'options'         => $this->destinations_array,
+					'multiple'        => true,
+					'select_all_none' => true
+				),
+
+				// Divider.
+				array(
+					'id'      => "{$prefix}divider", // Not used, but needed.
+					'type'    => 'divider',
+				),
+
+
+				// Feature.
+				array(
+					'id'              => "{$prefix}feature",
+					'name'            => __( 'Feature', 'VRC' ),
+					'type'            => 'select',
+					'options'         => $this->feature_array,
+					'multiple'        => true,
+					'select_all_none' => true
+				),
+
+				// Divider.
+				array(
+					'id'      => "{$prefix}divider", // Not used, but needed.
+					'type'    => 'divider',
+				),
+
+
+				// Type.
+				array(
+					'id'              => "{$prefix}type",
+					'name'            => __( 'Type', 'VRC' ),
+					'type'            => 'select',
+					'options'         => $this->type_array,
+					'multiple'        => true,
+					'select_all_none' => true
+				)
 			)
 		);
 

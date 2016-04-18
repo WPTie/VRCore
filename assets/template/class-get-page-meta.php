@@ -75,7 +75,7 @@ class VR_Get_Page_Meta {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_meta( $meta_key ) {
+	public function get_meta( $meta_key, $return_array = FALSE ) {
 		// Solves undefined index problem.
 		$the_meta = isset( $this->the_meta_data[ $meta_key ] ) ? $this->the_meta_data[ $meta_key ] : false;
 
@@ -83,9 +83,12 @@ class VR_Get_Page_Meta {
 		if ( is_array( $the_meta ) ) {
 			// Check 0th element of array
 			// If meta is set then return value else return false.
-			if ( isset( $the_meta[0] ) ) {
+			if ( isset( $the_meta[0] ) && false == $return_array ) {
 				// Returns the value of meta.
 				return $the_meta[0];
+			} elseif ( isset( $the_meta[0] ) && true == $return_array ){
+				// Returns the value of meta.
+				return $the_meta;
 			} else {
 			    return false;
 			}
@@ -118,7 +121,7 @@ class VR_Get_Page_Meta {
 	 *
 	 * @since 1.0.0
 	 */
-	public function get_page_meta( $meta_key, $maybe_unserialize = FALSE, $is_image = FALSE, $is_string_to_array = FALSE ) {
+	public function get_page_meta( $meta_key, $maybe_unserialize = FALSE, $is_image = FALSE, $is_string_to_array = FALSE, $is_return_array = FALSE ) {
 		// Returns false if ID is not present.
 		if ( ! $this->the_page_ID ) {
 		    return false;
@@ -148,6 +151,11 @@ class VR_Get_Page_Meta {
 			}
 			// Returns false if no value in the string.
 			return false;
+		}
+
+		if ( true == $is_return_array ) {
+			// return the array.
+			return $this->get_meta( $meta_key, $is_return_array );
 		}
 
 		// General.
