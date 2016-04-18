@@ -67,10 +67,11 @@ class VR_Rental_Meta_Boxes {
 					'label' => __('Rental Video', 'VRC'),
 					'icon'  => 'dashicons-format-video'
 	            ),
-                'amenities' => array(
-    				'label' => __('Additional Amenities', 'VRC'),
-    				'icon'  => 'dashicons-palmtree'
-                ),
+	            // TODO: Future Feature
+        //         'amenities' => array(
+    				// 'label' => __('Additional Amenities', 'VRC'),
+    				// 'icon'  => 'dashicons-palmtree'
+        //         ),
 	            'agent' => array(
 					'label' => __('Agent Information', 'VRC'),
 					'icon'  => 'dashicons-businessman'
@@ -309,43 +310,45 @@ class VR_Rental_Meta_Boxes {
                  * @since 1.0.0
                  */
 
+                // TODO: Future Feature
+
                 // Group.
-                array(
-					'id'         => "{$prefix}group_amenities",
-					'type'       => 'group',
+     //            array(
+					// 'id'         => "{$prefix}group_amenities",
+					// 'type'       => 'group',
 
-					'clone'      => true,
-					// 'sort_clone' => true,
+					// 'clone'      => true,
+					// // 'sort_clone' => true,
 
-					'tab'        => 'amenities',
-					'fields'     => array(
+					// 'tab'        => 'amenities',
+					// 'fields'     => array(
 
-            			// Name of the amenity.
-            			array(
-							'id'   => "{$prefix}group_amenities_name",
-							'type' => 'text',
+     //        			// Name of the amenity.
+     //        			array(
+					// 		'id'   => "{$prefix}group_amenities_name",
+					// 		'type' => 'text',
 
-							'name' => __( 'Name', 'rwmb' ),
-							'desc' => 'Example Value: Pool',
+					// 		'name' => __( 'Name', 'rwmb' ),
+					// 		'desc' => 'Example Value: Pool',
 
-							'columns' => 6
-            			),
+					// 		'columns' => 6
+     //        			),
 
-						// Image Icon.
-            			array(
-							'id'               => "{$prefix}group_amenities_img",
-							'type'             => 'image_advanced',
+					// 	// Image Icon.
+     //        			array(
+					// 		'id'               => "{$prefix}group_amenities_img",
+					// 		'type'             => 'image_advanced',
 
-							'name'             => __( 'Icon Image', 'rwmb' ),
-							'desc'             => "Add amenity's Icon image.",
+					// 		'name'             => __( 'Icon Image', 'rwmb' ),
+					// 		'desc'             => "Add amenity's Icon image.",
 
-							'columns'          => 6,
-							'max_file_uploads' => 1
-            			)
+					// 		'columns'          => 6,
+					// 		'max_file_uploads' => 1
+     //        			)
 
-            		) // Sub-Fields ended.
+     //        		) // Sub-Fields ended.
 
-                ), // Field Group ended.
+     //            ), // Field Group ended.
 
 
                 /**
