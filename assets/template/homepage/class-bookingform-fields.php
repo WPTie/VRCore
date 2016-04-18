@@ -110,6 +110,33 @@ class VR_Homepage_BookingForm_Fields {
 				'columns' => 12,
 				'tab'     => 'bookingform'
 			),
+
+			// Divider.
+			array(
+				'id'      => "{$prefix}divider_id2", // Not used, but needed.
+				'type'    => 'divider',
+				'columns' => 12,
+				'tab'     => 'bookingform'
+			),
+
+
+			// Search Page URL.
+			array(
+				'id'             => "{$prefix}search_page_id",
+				'type'           => 'post',
+				'post_type'      => 'page',
+				'field_type'     => 'select_advanced',
+				'name'           => __( 'Select Rental Search Page', 'VRC' ),
+				'desc'           => __( 'Select Rental Search Page that you have published with Renta Search VR page template.', 'VRC' ),
+				'placeholder'    => __( 'Select Rental Search Page', 'VRC' ),
+				'columns' => 12,
+				'tab'     => 'bookingform',
+				// Query arguments (optional). No settings means get all published posts.
+				'query_args'     => array(
+					'post_status'    => 'publish',
+					'posts_per_page' => - 1,
+				)
+			)
 		); // Fields array ended.
 	} // Function ended.
 
