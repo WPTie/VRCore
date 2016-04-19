@@ -133,7 +133,6 @@ if ( file_exists( VRC_DIR . '/assets/class-functions.php' ) ) {
 }
 
 
-
 /**
  * Plugin: Cateogry Images.
  *
@@ -142,7 +141,6 @@ if ( file_exists( VRC_DIR . '/assets/class-functions.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/plugin/category-images/category-images.php' ) ) {
     require_once( VRC_DIR . '/assets/plugin/category-images/category-images.php' );
 }
-
 
 
 /**
