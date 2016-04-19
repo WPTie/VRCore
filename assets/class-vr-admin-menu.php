@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+
 /**
  * VR_Admin_Menu.
  *
@@ -97,20 +98,20 @@ class VR_Admin_Menu {
 		function add_to_cpt_menu() {
 
 		}
-		// Create sub_menus array
-		$sub_menus = array(
-			'settings' => array(
-				'vacation_rentals',
-				__( 'Settings', 'VRC' ),
-				__( 'Settings', 'VRC' ),
-				$this->menu_capability,
-				'vacation_rentals_settings',
-				''
-			)
-		);
+		// // Create sub_menus array
+		// $sub_menus = array(
+		// 	'settings' => array(
+		// 		'vacation_rentals',
+		// 		__( 'Settings', 'VRC' ),
+		// 		__( 'Settings', 'VRC' ),
+		// 		$this->menu_capability,
+		// 		'vacation_rentals_settings',
+		// 		''
+		// 	)
+		// );
 
 		// Third-party can be add more sub_menus
-		$sub_menu = apply_filters( 'vr_sub_menus', $sub_menus );
+		// $sub_menu = apply_filters( 'vr_sub_menus', $sub_menus );
 
 		/**
 		 * Add Submenu.
@@ -123,9 +124,9 @@ class VR_Admin_Menu {
 		 * @param callable $function = ''
 		 * @since  1.0.0
 		 */
-		if ( $sub_menu ) foreach ( $sub_menus as $sub_menu ) {
-			call_user_func_array( 'add_submenu_page', $sub_menu );
-		}
+		// if ( $sub_menu ) foreach ( $sub_menus as $sub_menu ) {
+		// 	call_user_func_array( 'add_submenu_page', $sub_menu );
+		// }
 	}
 
 
@@ -215,7 +216,7 @@ class VR_Admin_Menu {
 		if ( ! empty( $vr_rental_tabs_on_page[ $current_page_id ] ) && count( $vr_rental_tabs_on_page[ $current_page_id ] ) ) {
 
 			// Heading for VR.
-			echo "<h1 class='vr-heading-1'>" . __( 'Vacation Rentals', 'VRC' ) . " <span>" . VRC_VERSION . "</span></h1>";
+			echo "<h1 class='vr-heading-1'>" . __( 'Vacation Rentals', 'VRC' ) . " <span> v" . VRC_VERSION . "</span></h1>";
 
 			// Default admin tab wrapper via wp-admin/about.php page.
 			echo '<h2 class="nav-tab-wrapper vr-nav-tab-wrapper">';
