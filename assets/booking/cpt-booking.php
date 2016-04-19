@@ -31,7 +31,7 @@ if ( ! class_exists( 'VR_CPT_Booking' ) ) :
 				'menu_name'          => __( 'Bookings', 'VRC' ),
 				'name_admin_bar'     => __( 'Booking', 'VRC' ),
 				'parent_item_colon'  => __( 'Parent Booking:', 'VRC' ),
-				'all_items'          => __( 'All Bookings', 'VRC' ),
+				'all_items'          => __( 'Bookings', 'VRC' ),
 				'add_new_item'       => __( 'Add New Booking', 'VRC' ),
 				'add_new'            => __( 'Add New', 'VRC' ),
 				'new_item'           => __( 'New Booking', 'VRC' ),
@@ -59,7 +59,8 @@ if ( ! class_exists( 'VR_CPT_Booking' ) ) :
 				'hierarchical'        => true,
 				'public'              => false, // Mark true when build it.
 				'show_ui'             => true,
-				'show_in_menu'        => true,
+				'show_in_menu'        => 'vacation_rentals',
+				// 'show_in_menu'        => true,
 				'menu_position'       => 5,
 				'menu_icon'           => 'dashicons-calendar-alt',
 				'show_in_admin_bar'   => true,

@@ -112,6 +112,17 @@ if ( file_exists( VRC_DIR . '/assets/class-scripts.php' ) ) {
 }
 
 
+
+/**
+ * CLASS: VR_Styles.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/class-styles.php' ) ) {
+    require_once( VRC_DIR . '/assets/class-styles.php' );
+}
+
+
 /**
  * CLASS: VR_Functions.
  *
@@ -130,4 +141,15 @@ if ( file_exists( VRC_DIR . '/assets/class-functions.php' ) ) {
  */
 if ( file_exists( VRC_DIR . '/assets/plugin/category-images/category-images.php' ) ) {
     require_once( VRC_DIR . '/assets/plugin/category-images/category-images.php' );
+}
+
+
+
+/**
+ * Class `VR_Admin_Menu.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/class-vr-admin-menu.php' ) ) {
+    require_once( VRC_DIR . '/assets/class-vr-admin-menu.php' );
 }
