@@ -25,6 +25,16 @@ if ( file_exists( VRC_DIR . '/assets/settings/class-vr-settings.php' ) ) {
 
 
 /**
+ * Class `VR_Get_Settings`.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/settings/class-vr-get-settings.php' ) ) {
+    require_once( VRC_DIR . '/assets/settings/class-vr-get-settings.php' );
+}
+
+
+/**
  * Actions/Filters
  *
  * Related to all settings API.
@@ -106,7 +116,7 @@ if ( class_exists( 'VR_Settings' ) ) {
 		'vr_general_settings',
 		array(
 			'id'      => 'no_of_decimals',
-			'type'    => 'text',
+			'type'    => 'number',
 			'name'    => __( 'Number of Decimals', 'VRC' ),
 			'desc'    => __( "Default: 0 | Leave as is if you don't know what it is.", 'VRC' ),
 			'default' => '0'
