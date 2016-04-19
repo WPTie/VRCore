@@ -98,7 +98,7 @@ if ( file_exists( VRC_DIR . '/assets/template/template-init.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/admin/admin-menu-order.php' ) ) {
-    require_once( VRC_DIR . '/assets/admin/admin-menu-order.php' );
+    // require_once( VRC_DIR . '/assets/admin/admin-menu-order.php' );
 }
 
 
