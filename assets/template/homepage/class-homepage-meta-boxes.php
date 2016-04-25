@@ -86,7 +86,7 @@ class VR_Homepage_Meta_Boxes {
 	 * @var 	object
 	 * @since 	1.0.0
 	 */
-	private $fcta_fields;
+	// private $fcta_fields;
 
 
 	/**
@@ -120,7 +120,7 @@ class VR_Homepage_Meta_Boxes {
 		$this->tandn_fields             = new VR_Homepage_TandN_Fields();
 
 		// FCTA Rentals.
-		$this->fcta_fields              = new VR_Homepage_FCTA_Fields();
+		// $this->fcta_fields              = new VR_Homepage_FCTA_Fields();
 	}
 
 
@@ -158,7 +158,7 @@ class VR_Homepage_Meta_Boxes {
 		$vr_tandn_fields       = $this->tandn_fields->get_fields();
 
 		// FCTA Form.
-		$vr_fcta_fields       = $this->fcta_fields->get_fields();
+		// $vr_fcta_fields       = $this->fcta_fields->get_fields();
 
 
 		// Temporary array to be merged later.
@@ -170,7 +170,7 @@ class VR_Homepage_Meta_Boxes {
 			$vr_steps_fields,
 			$vr_frentals_fields,
 			$vr_tandn_fields,
-			$vr_fcta_fields,
+			// $vr_fcta_fields,
 	    );
 
 	    // Fields array.
@@ -225,10 +225,10 @@ class VR_Homepage_Meta_Boxes {
 					'label' => __('Testimonial & News Section', 'VRC'),
 					'icon'  => 'dashicons-format-gallery'
 				),
-				'fcta'     => array(
-					'label' => __('Footer CTA Section', 'VRC'),
-					'icon'  => 'dashicons-format-gallery'
-				)
+				// 'fcta'     => array(
+				// 	'label' => __('Footer CTA Section', 'VRC'),
+				// 	'icon'  => 'dashicons-format-gallery'
+				// )
 			),
 			'tab_style'   => 'left',
 			'show'        => array(

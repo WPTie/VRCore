@@ -96,7 +96,7 @@ if ( file_exists( VRC_DIR . '/assets/template/homepage/class-tandn-fields.php' )
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/template/homepage/class-fcta-fields.php' ) ) {
-    require_once( VRC_DIR . '/assets/template/homepage/class-fcta-fields.php' );
+    // require_once( VRC_DIR . '/assets/template/homepage/class-fcta-fields.php' );
 }
 
 
