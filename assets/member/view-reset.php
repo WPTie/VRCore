@@ -13,6 +13,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Array of pages.
+ *
+ * Array for multiple similar settings and controls.
+ *
+ * @since  1.0.0
+ */
+$vr_pages_array = array(
+    'login',
+    'register',
+    'reset'
+);
+
+// Save page links here.
+$vr_page_links = array();
+
+// Looping through.
+foreach ( $vr_pages_array as $page ) {
+    $vr_page = get_option( 'vr_page_' . $page );
+    $vr_page_links[ $page ] = isset( $vr_page ) && '' != $vr_page && false != $vr_page
+                                ? get_permalink( $vr_page ) : '/';
+}
 
 /**
  * Display a message if user is already logged in.
@@ -27,13 +49,16 @@ if ( is_user_logged_in() ) {
 
     <div>
 
-        <h2>Hey, <?php echo $name; ?>!</h2>
+        <h3><?php _e( 'Hey, ' . $name . '!', 'VRC' ); ?></h3>
 
         <p class="message">
-            You are already logged in. Go back to <a href="/">Home!</a> or <a href="<?php echo wp_logout_url( home_url() ); ?>">Logout!</a>
-
+            <?php
+                _e( 'You are already logged in.', 'VRC' );
+                _e( 'Go to to <a href="/">Homepage!</a> or <a href="' . wp_logout_url( home_url() ) . '">Logout!</a>', 'VRC' );
+            ?>
         </p>
         <!-- /.message -->
+
 
     </div>
 
@@ -45,7 +70,7 @@ if ( is_user_logged_in() ) {
 
 <div class="form-wrapper">
 
-    <form id="forgot-form" action="<?php echo admin_url('admin-ajax.php'); ?>" method="post" enctype="multipart/form-data">
+    <form id="forgot-form" class="vr_forgot_form" action="<?php echo admin_url('admin-ajax.php'); ?>" method="post" enctype="multipart/form-data">
 
         <div class="vr_form__element">
             <label class="login-form-label" for="reset_username_or_email"><?php _e( 'Username or Email', 'VRC' ); ?><span>*</span></label>
@@ -68,22 +93,31 @@ if ( is_user_logged_in() ) {
 
     </form>
 
-    <div class="clearfix">
+    <div class="clearfix clear">
 
-        <?php
-        if( get_option( 'users_can_register' ) ) :
-            ?>
-            <span class="sign-up pull-left">
-                <?php _e( 'Not a Member?', 'VRC' ); ?>
-                <a href="#" class="activate-section" data-section="register-section"><?php _e( 'Sign up now', 'VRC' ); ?></a>
-            </span>
-        <?php
-        endif;
-        ?>
+        <?php if( get_option( 'users_can_register' ) ) : ?>
 
-        <span class="login-link pull-right">
-            <a href="#" class="activate-section" data-section="login-section"><?php _e( 'Login', 'VRC' ); ?></a>
-        </span>
+            <div class="vr_form__element">
+                <span class="vr_btn ">
+                    <a
+                        href="<?php echo $vr_page_links['login']; ?>"
+                        class="vr_btn--secondary vr_btn--homePad vr_open_login_form"
+                    >
+                        <?php _e( 'Login', 'VRC' ); ?>
+                    </a>
+                </span>
+
+                <span class="vr_btn">
+                    <a
+                        href="<?php echo $vr_page_links['register']; ?>"
+                        class="vr_btn--secondary vr_btn--homePad vr_open_register_form"
+                    >
+                        <?php _e( 'Register', 'VRC' ); ?>
+                    </a>
+                </span>
+
+            </div>
+        <?php endif; ?>
 
     </div>
 

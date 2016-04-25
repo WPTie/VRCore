@@ -20,11 +20,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <?php
 
-    if( ! is_user_logged_in() ) {
+    if( ! is_user_logged_in() ) { ?>
 
-        echo "Login Required! You need to login to be able edit your profile!";
+        <div class="vr_404__wrap">
+            <p class="vr_notice vr_notice--error"><?php _e( 'Login required! You need to login to be able edit your profile!', 'VR' ); ?></p>
 
-    } else {
+            <?php do_shortcode( '[vr_login]' ); ?>
+        </div>
+
+    <?php } else {
 
         // Get user information.
         global $current_user;
@@ -77,7 +81,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 
-                            <div id="errors-log"></div>
+                            <div id="errors-log" class=""></div>
                             <div id="plupload-container"></div>
 
                         </div>

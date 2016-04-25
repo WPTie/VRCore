@@ -20,11 +20,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <?php
 
-    if( ! is_user_logged_in() ) {
+    if( ! is_user_logged_in() ) {?>
 
-        echo "Login Required! You need to login to be able post!";
+        <div class="vr_404__wrap">
+            <h2><?php _e( 'Login Required!', 'VR' ); ?></h2>
+            <p class="vr_notice vr_notice--error"><?php _e( 'You need to login to be able to submit post!', 'VR' ); ?></p>
 
-    } else { ?>
+            <?php do_shortcode( '[vr_login]' ); ?>
+        </div>
+
+    <?php } else { ?>
 
         <form
             id      ="vr-submit-post"

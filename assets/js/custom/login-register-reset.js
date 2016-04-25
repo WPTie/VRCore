@@ -9,6 +9,26 @@
 
 jQuery( function( $ ) {
 
+		// TODO: Future Feature.
+		// $( '.vr_open_login_form' ).on( 'click', function() {
+		// 	$( '.vr_login_section' ).toggle( 'slow' );
+		// 	$( '.vr_register_section' ).slideUp( 'slow' );
+		// 	$( '.vr_reset_section' ).slideUp( 'slow' );
+		// });
+
+		// $( '.vr_open_register_form' ).on( 'click', function() {
+		// 	$( '.vr_register_section' ).toggle( 'slow' );
+		// 	$( '.vr_login_section' ).slideUp( 'slow' );
+		// 	$( '.vr_reset_section' ).slideUp( 'slow' );
+		// });
+
+		// $( '.vr_open_reset_form' ).on( 'click', function() {
+		// 	$( '.vr_reset_section' ).toggle( 'slow' );
+		// 	$( '.vr_login_section' ).slideUp( 'slow' );
+		// 	$( '.vr_register_section' ).slideUp( 'slow' );
+
+		// });
+
 
 	    /**
 	     * AJAX Login Form Handling.

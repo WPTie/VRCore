@@ -13,6 +13,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Array of pages.
+ *
+ * Array for multiple similar settings and controls.
+ *
+ * @since  1.0.0
+ */
+$vr_pages_array = array(
+    'login',
+    'register',
+    'reset'
+);
+
+// Save page links here.
+$vr_page_links = array();
+
+// Looping through.
+foreach ( $vr_pages_array as $page ) {
+    $vr_page = get_option( 'vr_page_' . $page );
+    $vr_page_links[ $page ] = isset( $vr_page ) && '' != $vr_page && false != $vr_page
+                                ? get_permalink( $vr_page ) : '/';
+}
 
 /**
  * Display a message if user is already logged in.
@@ -27,13 +49,16 @@ if ( is_user_logged_in() ) {
 
     <div>
 
-        <h2>Hey, <?php echo $name; ?>!</h2>
+        <h3><?php _e( 'Hey, ' . $name . '!', 'VRC' ); ?></h3>
 
         <p class="message">
-            You are already logged in. Go back to <a href="/">Home!</a> or <a href="<?php echo wp_logout_url( home_url() ); ?>">Logout!</a>
+            <?php
+                _e( 'You are already logged in.', 'VRC' );
+                _e( 'Go to to <a href="/">Homepage!</a> or <a href="' . wp_logout_url( home_url() ) . '">Logout!</a>', 'VRC' );
+            ?>
         </p>
         <!-- /.message -->
-        <h3>Edit Your Profile!</h3>
+        <h3><?php _e( 'Edit Your Profile!', 'VRC' ); ?></h3>
         <?php do_shortcode( '[vr_edit_profile]' ); ?>
 
     </div>
@@ -90,25 +115,26 @@ if ( is_user_logged_in() ) {
 
     </form>
 
-    <div class="vr_form__element">
+    <div class="vr_form__element vr_login_seconday_buttons">
 
             <span class="vr_btn">
                 <a
-                    href="#"
-                    class="vr_btn--secondary vr_btn--homePad"
+                    href="<?php echo $vr_page_links['register']; ?>"
+                    class="vr_btn--secondary vr_btn--homePad vr_open_register_form"
                 >
-                    <?php _e( 'Sign up now', 'VRC' ); ?>
+                    <?php _e( 'Register Now', 'VRC' ); ?>
                 </a>
             </span>
 
         <span class="vr_btn">
             <a
-                href="#"
-                class="vr_btn--secondary vr_btn--homePad"
+                href="<?php echo $vr_page_links['reset']; ?>"
+                class="vr_btn--secondary vr_btn--homePad vr_open_reset_form"
             >
                 <?php _e( 'Forgot Password?', 'VRC' ); ?>
             </a>
         </span>
+
     </div>
 
 </div>

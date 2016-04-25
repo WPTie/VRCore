@@ -13,6 +13,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Array of pages.
+ *
+ * Array for multiple similar settings and controls.
+ *
+ * @since  1.0.0
+ */
+$vr_pages_array = array(
+    'login',
+    'register',
+    'reset'
+);
+
+// Save page links here.
+$vr_page_links = array();
+
+// Looping through.
+foreach ( $vr_pages_array as $page ) {
+    $vr_page = get_option( 'vr_page_' . $page );
+    $vr_page_links[ $page ] = isset( $vr_page ) && '' != $vr_page && false != $vr_page
+                                ? get_permalink( $vr_page ) : '/';
+}
 
 /**
  * Display a message if user is already logged in.
@@ -27,11 +49,13 @@ if ( is_user_logged_in() ) {
 
     <div>
 
-        <h2>Hey, <?php echo $name; ?>!</h2>
+        <h3><?php _e( 'Hey, ' . $name . '!', 'VRC' ); ?></h3>
 
         <p class="message">
-            You are already registered and logged in. Go back to <a href="/">Home!</a> or <a href="<?php echo wp_logout_url( home_url() ); ?>">Logout!</a>
-
+            <?php
+                _e( 'You are already logged in.', 'VRC' );
+                _e( 'Go to to <a href="/">Homepage!</a> or <a href="' . wp_logout_url( home_url() ) . '">Logout!</a>', 'VRC' );
+            ?>
         </p>
         <!-- /.message -->
 
@@ -100,20 +124,21 @@ if ( is_user_logged_in() ) {
     <div class="vr_form__element">
         <span class="vr_btn">
             <a
-                href="#"
-                class="vr_btn--secondary vr_btn--homePad"
+                href="<?php echo $vr_page_links['login']; ?>"
+                class="vr_btn--secondary vr_btn--homePad vr_open_login_form"
             >
                 <?php _e( 'Login', 'VRC' ); ?>
             </a>
         </span>
         <span class="vr_btn">
             <a
-                href="#"
-                class="vr_btn--secondary vr_btn--homePad"
+                href="<?php echo $vr_page_links['reset']; ?>"
+                class="vr_btn--secondary vr_btn--homePad vr_open_reset_form"
             >
                 <?php _e( 'Forgot Password?', 'VRC' ); ?>
             </a>
         </span>
+
     </div>
 
 </div>

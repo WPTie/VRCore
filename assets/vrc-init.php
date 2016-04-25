@@ -171,3 +171,13 @@ if ( file_exists( VRC_DIR . '/assets/settings/settings-init.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/shortcode/shortcode-init.php' ) ) {
     require_once( VRC_DIR . '/assets/shortcode/shortcode-init.php' );
 }
+
+
+/**
+ * Customizer initializer.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/customizer/customizer-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/customizer/customizer-init.php' );
+}
