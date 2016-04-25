@@ -12,7 +12,7 @@
  * Text Domain categories-images
  */
 
-define(  'VRC_IMAGE_PLACEHOLDER', "//placehold.it/1000x500/03a9f5?text=No%20Image%20Selected"  );
+define(  'VRC_IMAGE_PLACEHOLDER', "//placehold.it/1000x300/03a9f5?text=No%20Image%20Selected"  );
 
 add_action( 'admin_init', 'vr_init' );
 function vr_init() {
@@ -222,10 +222,10 @@ function vr_quick_edit_custom_box( $column_name, $screen, $name ) {
  */
 function vr_taxonomy_columns(  $columns  ) {
 	$new_columns = array();
-	$new_columns['cb'] = $columns['cb'];
+	// $new_columns['cb'] = $columns['cb'];
 	$new_columns['thumb'] = __( 'Image', 'categories-images' );
 
-	unset(  $columns['cb']  );
+	// unset(  $columns['cb']  );
 
 	return array_merge(  $new_columns, $columns  );
 }
