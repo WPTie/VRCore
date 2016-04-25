@@ -63,3 +63,13 @@ if ( file_exists( VRC_DIR . '/assets/template/rental/list/list-init.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/template/rental/search/search-init.php' ) ) {
     require_once( VRC_DIR . '/assets/template/rental/search/search-init.php' );
 }
+
+
+/**
+ * Tempalte: Rental Favorite initializer.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/template/rental/favorite/favorite-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/rental/favorite/favorite-init.php' );
+}
