@@ -103,6 +103,13 @@ class VR_Rental_List_Meta {
 				'template'   => array( 'page-rental-list.php' ),
 			),
 			'fields'     => array(
+	            // Header BG Image.
+	            array(
+					'id'               => "{$prefix}header_bg_image",
+					'type'             => 'image_advanced',
+					'name'             => __('Header Background Image', 'VRC'),
+					'desc'             => __( 'Consult the documentation for required image size.', 'VRC' ),
+	            ),
 				// Summary.
 				array(
 					'id'      => "{$prefix}summary",

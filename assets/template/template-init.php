@@ -53,3 +53,13 @@ if ( file_exists( VRC_DIR . '/assets/template/homepage/homepage-init.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/template/rental/list/list-init.php' ) ) {
     require_once( VRC_DIR . '/assets/template/rental/list/list-init.php' );
 }
+
+
+/**
+ * Tempalte: Rental Search initializer.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/template/rental/search/search-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/template/rental/search/search-init.php' );
+}

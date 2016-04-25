@@ -40,32 +40,9 @@ class VR_Rental_Search_Meta {
 	 */
 	public $vr_function_obj;
 
-	/**
-	 * Destination array.
-	 *
-	 * @var 	array
-	 * @since 	1.0.0
-	 */
-	public $destinations_array = array();
 
 	/**
-	 * Feature array.
-	 *
-	 * @var 	array
-	 * @since 	1.0.0
-	 */
-	public $feature_array = array();
-
-	/**
-	 * Type array.
-	 *
-	 * @var 	array
-	 * @since 	1.0.0
-	 */
-	public $type_array = array();
-
-	/**
-	 * Register meta boxes related to `page-rental-search`.
+	 * Register meta boxes related to `page-rental-search.php`.
 	 *
 	 * @param   array   $meta_boxes
 	 * @return  array   $meta_boxes
@@ -75,24 +52,10 @@ class VR_Rental_Search_Meta {
 		// Prefix.
 		$prefix = 'vr_rental_search_';
 
-		// Destinations array.
-		if ( function_exists( 'vr_get_function_obj' ) ) {
-			// Get the VR_Functions object.
-			$this->vr_function_obj = vr_get_function_obj();
-
-			// Destination.
-			$this->vr_function_obj->get_terms_array( 'vr_rental-destination', $this->destinations_array );
-
-			// Feature.
-			$this->vr_function_obj->get_terms_array( 'vr_rental-feature', $this->feature_array );
-
-			// Type.
-			$this->vr_function_obj->get_terms_array( 'vr_rental-type', $this->type_array );
-		}
 
 		// Summary.
 		$meta_boxes[]  = array(
-			'id'         => 'vr_rental_search_metabox_summary_id',
+			'id'         => 'vr_rental_search_metabox_desc_id',
 			'title'      => __('Summary', 'VRC'),
 			'post_types' => array( 'page' ),
 			'context'    => 'normal',
@@ -105,18 +68,22 @@ class VR_Rental_Search_Meta {
 			'fields'     => array(
 				// Summary.
 				array(
-					'id'      => "{$prefix}summary",
-					'type'    => 'textarea',
-					// 'type'    => 'wysiwyg',
-					// 'raw'     => true,
-					// 'options' => array(
-					// 				'media_buttons' => false,
-					// 				'teeny'=> true
-					// 			 ),
-					'name'    => __( 'Descripton', 'VRC' )
+					'id'   => "{$prefix}desc",
+					'type' => 'textarea',
+					'name' => __( 'Descripton', 'VRC' ),
+					'std'  => __( 'Find the best bread and breakfast place.', 'VRC')
+				),
+
+				// Sort by text.
+				array(
+					'id'   => "{$prefix}sortby",
+					'type' => 'text',
+					'name' => __( 'Sortby Text', 'VRC' ),
+					'std'  => __( 'Sort By', 'VRC')
 				),
 			)
 		);
+
 
 		// Rental Search.
 		$meta_boxes[]  = array(
@@ -131,14 +98,13 @@ class VR_Rental_Search_Meta {
 				'template'   => array( 'page-rental-search.php' ),
 			),
 			'fields'     => array(
-				// Per page rentals.
+				// Hide Map.
 				array(
-					'id'   => "{$prefix}per_page",
-					'name' => __( 'Number of Rentals Per Page', 'VRC' ),
-					'type' => 'number',
-					'step' => 1,
-					'min'  => 3,
-					'std'  => 6
+					'id'   => "{$prefix}hide_map",
+					'type' => 'checkbox',
+					'std'  => '0',
+					'name' => __( 'Hide Map?', 'VRC' ),
+					'desc' => __( 'Check to hide Map on this search page?', 'VRC' ),
 				),
 
 				// Divider.
@@ -147,19 +113,13 @@ class VR_Rental_Search_Meta {
 					'type'    => 'divider',
 				),
 
-				// Order by.
+				// Hide Destination.
 				array(
-					'id'          => "{$prefix}orderby",
-					'name'        => __( 'Order Rentals By', 'VRC' ),
-					'type'        => 'select',
-					'options'     => array(
-						'date_desc'     => __( 'Date Recent to Old', 'VRC' ),
-						'date_asc'      => __( 'Date Old to Recent', 'VRC' ),
-						'price_asc'     => __( 'Price Low to High', 'VRC' ),
-						'price_desc'    => __( 'Price High to Low', 'VRC' ),
-					),
-					'multiple'    => false,
-					'std'         => 'date_desc'
+					'id'   => "{$prefix}hide_destination",
+					'type' => 'checkbox',
+					'std'  => '0',
+					'name' => __( 'Hide Destination?', 'VRC' ),
+					'desc' => __( 'Check to hide Destination on this search page?', 'VRC' ),
 				),
 
 				// Divider.
@@ -168,14 +128,13 @@ class VR_Rental_Search_Meta {
 					'type'    => 'divider',
 				),
 
-				// Min beds.
+				// Hide Type.
 				array(
-					'id'   => "{$prefix}min_beds",
-					'name' => __( 'Minimum Beds', 'VRC' ),
-					'type' => 'number',
-					'step' => 1,
-					'min'  => 0,
-					'std'  => 0
+					'id'   => "{$prefix}hide_type",
+					'type' => 'checkbox',
+					'std'  => '0',
+					'name' => __( 'Hide Type?', 'VRC' ),
+					'desc' => __( 'Check to hide Type on this search page?', 'VRC' ),
 				),
 
 				// Divider.
@@ -184,14 +143,13 @@ class VR_Rental_Search_Meta {
 					'type'    => 'divider',
 				),
 
-				// Min baths.
+				// Hide Feature.
 				array(
-					'id'   => "{$prefix}min_baths",
-				    'name'  => __( 'Minimum Baths', 'VRC' ),
-				    'type'  => 'number',
-				    'step'  => 1,
-				    'min'   => 0,
-				    'std'   => 0
+					'id'   => "{$prefix}hide_feature",
+					'type' => 'checkbox',
+					'std'  => '0',
+					'name' => __( 'Hide Feature?', 'VRC' ),
+					'desc' => __( 'Check to hide Feature on this search page?', 'VRC' ),
 				),
 
 				// Divider.
@@ -200,14 +158,13 @@ class VR_Rental_Search_Meta {
 					'type'    => 'divider',
 				),
 
-				// Min baths.
+				// Hide Check In & Check Out.
 				array(
-					'id'   => "{$prefix}min_guests",
-				    'name'  => __( 'Minimum Guests', 'VRC' ),
-				    'type'  => 'number',
-				    'step'  => 1,
-				    'min'   => 0,
-				    'std'   => 0
+					'id'   => "{$prefix}hide_check_in_out",
+					'type' => 'checkbox',
+					'std'  => '0',
+					'name' => __( 'Hide Check In & Check Out?', 'VRC' ),
+					'desc' => __( 'Check to hide Check In & Check Out? on this search page?', 'VRC' ),
 				),
 
 				// Divider.
@@ -216,13 +173,13 @@ class VR_Rental_Search_Meta {
 					'type'    => 'divider',
 				),
 
-				// Min price.
+				// Hide Description.
 				array(
-					'id'   => "{$prefix}min_price",
-				    'name'  => __( 'Minimum Price', 'VRC' ),
-				    'type'  => 'number',
-				    'min'   => 0,
-				    'std'   => 0
+					'id'   => "{$prefix}hide_desc",
+					'type' => 'checkbox',
+					'std'  => '0',
+					'name' => __( 'Hide Description?', 'VRC' ),
+					'desc' => __( 'Check to hide Description? on this search page?', 'VRC' ),
 				),
 
 				// Divider.
@@ -231,64 +188,16 @@ class VR_Rental_Search_Meta {
 					'type'    => 'divider',
 				),
 
-				// Max price.
+				// Hide Sorting.
 				array(
-					'id'   => "{$prefix}max_price",
-				    'name'  => __( 'Maximum Price', 'VRC' ),
-				    'type'  => 'number',
-				    'min'   => 0,
+					'id'   => "{$prefix}hide_sorting",
+					'type' => 'checkbox',
+					'std'  => '0',
+					'name' => __( 'Hide Sorting?', 'VRC' ),
+					'desc' => __( 'Check to hide Sorting? on this search page?', 'VRC' ),
 				),
 
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
-				// Destination.
-				array(
-					'id'              => "{$prefix}destination",
-					'name'            => __( 'Destination', 'VRC' ),
-					'type'            => 'select',
-					'options'         => $this->destinations_array,
-					'multiple'        => true,
-					'select_all_none' => true
-				),
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
-
-				// Feature.
-				array(
-					'id'              => "{$prefix}feature",
-					'name'            => __( 'Feature', 'VRC' ),
-					'type'            => 'select',
-					'options'         => $this->feature_array,
-					'multiple'        => true,
-					'select_all_none' => true
-				),
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
-
-				// Type.
-				array(
-					'id'              => "{$prefix}type",
-					'name'            => __( 'Type', 'VRC' ),
-					'type'            => 'select',
-					'options'         => $this->type_array,
-					'multiple'        => true,
-					'select_all_none' => true
-				)
-			)
+			) // fields ended.
 		);
 
 		// Return.
@@ -298,3 +207,4 @@ class VR_Rental_Search_Meta {
 }
 
 endif;
+
