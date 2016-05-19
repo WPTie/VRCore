@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: VR Core
+ * Plugin Name: VacationRentals Core
  * Plugin URI: http://WPTie.com/
- * Description: VR Core.
+ * Description: Add vacation rentals to your WordPress site with membership, agents, partners, search, and frontend booking features.
  * Author: mrahmadawais, WPTie
  * Author URI: http://WPTie.com/
  * Text Domain: VR
@@ -67,9 +67,7 @@ if ( ! defined('VRC_URL' ) ) {
 }
 
 /**
- * AA Main File
- *
- * This is the main file of AA which controls everything in this plugin
+ * Main File.
  *
  * @since 0.0.1
  */
@@ -77,13 +75,16 @@ if ( file_exists( VRC_DIR . '/assets/vrc-init.php' ) ) {
     require_once( VRC_DIR . '/assets/vrc-init.php' );
 }
 
-/**
- * Plugin Activation
- *
- * @since 0.0.1
- *
-register_activation_hook( __FILE__, 'aa_welcome_screen_activate' );
-function aa_welcome_screen_activate() {
-  set_transient( '_welcome_redirect', true );
+if ( ! function_exists( 'vr_load_plugin_textdomain' ) ) {
+    /**
+     * Load Text Domain.
+     *
+     * @since 0.0.8
+     */
+    function vr_load_plugin_textdomain() {
+      load_plugin_textdomain( 'VRC', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+    }
+
+    // Add the function when `plugins_loaded`.
+    add_action( 'plugins_loaded', 'vr_load_plugin_textdomain' );
 }
-*/
