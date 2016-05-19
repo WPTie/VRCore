@@ -32,6 +32,14 @@ var project              = 'vrwp'; // Project Name.
 var projectURL           = 'vrwp.dev'; // Project URL. Could be something like localhost:8888.
 var productURL           = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
+// Translation related.
+var text_domain          = 'VRC';
+var destFile             = 'VRC.pot';
+var package              = 'VRC';
+var bugReport            = 'http://WPTie.com/contact/';
+var lastTranslator       = 'Ahmad Awais <support@WPTie.com>';
+var team                 = 'WPTie <support@WPTie.com>';
+var translatePath        = './languages'
 
 var styleSRC             = './assets/css/style.scss'; // Path to main .scss file.
 var styleDestination     = './assets/css/'; // Path to place the compiled CSS file.
@@ -106,6 +114,8 @@ var sourcemaps   = require('gulp-sourcemaps'); // Maps code in a compressed file
 var notify       = require('gulp-notify'); // Sends message notification to you
 var browserSync  = require('browser-sync').create(); // Reloads browser and injects CSS. Time-saving synchronised browser testing.
 var reload       = browserSync.reload; // For manual browser reload.
+var wpPot        = require('gulp-wp-pot'); // Generate pot-files for WordPress localization.
+var sort         = require('gulp-sort'); // The package gulp-sort is recommended to prevent unnecessary changes in pot-file.
 
 
 /**
@@ -276,11 +286,36 @@ gulp.task( 'browser-sync', function() {
 
 
  /**
+  * WP POT Translation File Generator.
+  *
+  * * This task does the following:
+  *     1. Gets the source of all the PHP files
+  *     2. Sort files in stream by path or any custom sort comparator
+  *     3. Applies wpPot with the variable set at the top of this file
+  *     4. Generate a .pot file of i18n that can be used for l10n to build .mo file
+  */
+ gulp.task( 'translate', function () {
+     return gulp.src( projectPHPWatchFiles )
+         .pipe(sort())
+         .pipe(wpPot( {
+             domain        : text_domain,
+             destFile      : destFile,
+             package       : package,
+             bugReport     : bugReport,
+             lastTranslator: lastTranslator,
+             team          : team
+         } ))
+        .pipe(gulp.dest(translatePath))
+        .pipe( notify( { message: 'TASK: "translate" Completed! 💯', onLast: true } ) )
+
+ });
+
+ /**
   * Watch Tasks.
   *
   * Watches for file changes and runs specific tasks.
   */
- gulp.task( 'default', ['styles', 'vendorsJs', 'customJS', 'images', 'browser-sync'], function () {
+ gulp.task( 'default', ['styles', 'vendorsJs', 'customJS', 'images', 'translate', 'browser-sync'], function () {
  	gulp.watch( projectPHPWatchFiles, reload ); // Reload on PHP file changes.
  	gulp.watch( styleWatchFiles, [ 'styles' ] ); // Reload on SCSS file changes.
  	gulp.watch( vendorJSWatchFiles, [ 'vendorsJs', reload ] ); // Reload on vendorsJs file changes.

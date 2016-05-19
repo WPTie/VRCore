@@ -1,10 +1,12 @@
 === Vacation Rentals ===
-Contributors: mrahmadawais,wptie
+Contributors: mrahmadawais, wptie
 Donate link: http://AhmadAwais.com/
 Tags: vacation, rentals, VacationRentals, Bread and Breakfast, Rent, property, rental search, booking, membership, check in, check out
 Requires at least: 0.0.8
 Tested up to: 4.5.2
 Stable tag: 0.0.8
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Add vacation rentals to your WordPress site with membership, agents, partners, search, and frontend booking features.
 
