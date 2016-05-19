@@ -6,13 +6,13 @@
  * Author: mrahmadawais, WPTie
  * Author URI: http://WPTie.com/
  * Text Domain: VR
- * Version: 1.0.0
+ * Version: 0.0.8
  * License: GPL v2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
  * @package VRC
  *
- * GitHub Theme URI: https://github.com/WPTie/VRCore/
+ * GitHub Plugin URI: https://github.com/WPTie/VRCore/
  * GitHub Branch: master
  */
 
@@ -48,7 +48,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 // VRC Version.
 if ( ! defined( 'VRC_VERSION' ) ) {
-    define( 'VRC_VERSION', '1.0.0' );
+    define( 'VRC_VERSION', '0.0.8' );
 }
 
 // VRC Name.
@@ -81,8 +81,9 @@ if ( file_exists( VRC_DIR . '/assets/vrc-init.php' ) ) {
  * Plugin Activation
  *
  * @since 0.0.1
- */
-// register_activation_hook( __FILE__, 'aa_welcome_screen_activate' );
-// function aa_welcome_screen_activate() {
-//   set_transient( '_welcome_redirect', true );
-// }
+ *
+register_activation_hook( __FILE__, 'aa_welcome_screen_activate' );
+function aa_welcome_screen_activate() {
+  set_transient( '_welcome_redirect', true );
+}
+*/

@@ -1,6 +1,5 @@
-#VRCore
-Work in progress!
-
+#VRCore `v0.0.8`
+[Work in progress!] Add vacation rentals to your WordPress site with membership, agents, partners, search, and frontend booking features.
 
 ##Architecture
 - `vr-core.php`: Main plugin file that includes `vrc.php`
@@ -12,7 +11,7 @@ Let's assume we are building a functionality called `feature`
 - File: `feature-init.php` includes everything classes and actions/filters
 - File: `class-feature.php` main class that interacts with other small classes
 - File: `cpt-feature.php` class for the Custom Post Type
-- File: `ct-feature-taxanomy.php` class for the custom taxanomy
+- File: `ct-feature-taxonomy.php` class for the custom taxonomy
 - File: `feature-custom` a custom class for a sub-feature
 - File: `class-feature-meta-boxes` class for related meta boxes
 
