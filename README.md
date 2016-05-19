@@ -1,6 +1,8 @@
 #VRCore `v0.0.8`
 [Work in progress!] Add vacation rentals to your WordPress site with membership, agents, partners, search, and frontend booking features.
 
+![](https://i.imgur.com/hV31YF3.png)
+
 ##Architecture
 - `vr-core.php`: Main plugin file that includes `vrc.php`
 - `vrc.php`: Main initializer for everything
