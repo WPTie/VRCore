@@ -66,8 +66,8 @@ class VR_CPT_Agent {
 		    'hierarchical'        => false, // Just like `post`.
 		    'public'              => true,
 		    'show_ui'             => true,
-			'show_in_menu'        => 'vacation_rentals',
-		    // 'show_in_menu'        => true,
+			// 'show_in_menu'        => 'vacation_rentals',
+		    'show_in_menu'        => false,
 		    // 'menu_position'       => 5,
 		    'menu_icon'           => 'dashicons-businessman',
 		    'show_in_admin_bar'   => true,

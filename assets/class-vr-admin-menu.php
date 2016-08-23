@@ -59,7 +59,8 @@ class VR_Admin_Menu {
 	 */
 	function __construct() {
 		// Admin menu.
-		add_action( 'admin_menu', array( $this, 'vr_menu' ) );
+		add_action( 'admin_menu', array( $this, 'vr_menu' ), 11 );
+		// add_action( 'admin_menu', array( $this, 'vr_menu' ) );
 
 		// vr_rental tabs.
 		add_action( 'all_admin_notices', array( $this, 'vr_rental_custom_tabs' ) );
@@ -93,25 +94,55 @@ class VR_Admin_Menu {
 			'dashicons-building',
 			'3.08'
 		);
-		add_action('admin_menu' , 'add_to_cpt_menu');
 
-		function add_to_cpt_menu() {
+		// Add all sub menus
+		$sub_menus = array(
+			'destinations' => array(
+				'vacation_rentals',
+				__( 'Destinations', 'VRC' ),
+				__( '⇲  Destinations', 'VRC' ),
+				'manage_options',
+				'edit-tags.php?taxonomy=vr_rental-destination&post_type=vr_rental',
+			),
+			'feautres' => array(
+				'vacation_rentals',
+				__( 'Features', 'VRC' ),
+				__( '⦿  Features', 'VRC' ),
+				'manage_options',
+				'edit-tags.php?taxonomy=vr_rental-feature&post_type=vr_rental',
+			),
+			'types' => array(
+				'vacation_rentals',
+				__( 'Types', 'VRC' ),
+				__( '♆  Types', 'VRC' ),
+				'manage_options',
+				'edit-tags.php?taxonomy=vr_rental-type&post_type=vr_rental',
+			),
+			'bookings' => array(
+				'vacation_rentals',
+				__( 'Bookings', 'VRC' ),
+				__( '⎃  Bookings', 'VRC' ),
+				'manage_options',
+				'edit.php?post_type=vr_booking',
+			),
+			'agents' => array(
+				'vacation_rentals',
+				__( 'Agents', 'VRC' ),
+				__( '⑆  Agents', 'VRC' ),
+				'manage_options',
+				'edit.php?post_type=vr_agent',
+			),
+			'partners' => array(
+				'vacation_rentals',
+				__( 'Partners', 'VRC' ),
+				__( '⌭  Partners', 'VRC' ),
+				'manage_options',
+				'edit.php?post_type=vr_partner',
+			),
+		);
 
-		}
-		// // Create sub_menus array
-		// $sub_menus = array(
-		// 	'settings' => array(
-		// 		'vacation_rentals',
-		// 		__( 'Settings', 'VRC' ),
-		// 		__( 'Settings', 'VRC' ),
-		// 		$this->menu_capability,
-		// 		'vacation_rentals_settings',
-		// 		''
-		// 	)
-		// );
-
-		// Third-party can be add more sub_menus
-		// $sub_menu = apply_filters( 'vr_sub_menus', $sub_menus );
+		// Third-party can add more sub_menus
+		$sub_menu = apply_filters( 'vr_sub_menus', $sub_menus );
 
 		/**
 		 * Add Submenu.
@@ -124,9 +155,9 @@ class VR_Admin_Menu {
 		 * @param callable $function = ''
 		 * @since  1.0.0
 		 */
-		// if ( $sub_menu ) foreach ( $sub_menus as $sub_menu ) {
-		// 	call_user_func_array( 'add_submenu_page', $sub_menu );
-		// }
+		if ( $sub_menu ) foreach ( $sub_menus as $sub_menu ) {
+			call_user_func_array( 'add_submenu_page', $sub_menu );
+		}
 	}
 
 
@@ -156,14 +187,14 @@ class VR_Admin_Menu {
 
 				// Destination.
 				20 => array(
-					"name" => __( "Destination", "VRC" ),
+					"name" => __( "Destinations", "VRC" ),
 					"id"   => "edit-vr_rental-destination", // Via Screen ID reference.
 					"link" => "edit-tags.php?taxonomy=vr_rental-destination&post_type=vr_rental",
 				),
 
 				// Features.
 				30 => array(
-					"name" => __( "Feature", "VRC" ),
+					"name" => __( "Features", "VRC" ),
 					"id"   => "edit-vr_rental-feature", // Via Screen ID reference.
 					"link" => "edit-tags.php?taxonomy=vr_rental-feature&post_type=vr_rental",
 				),
@@ -243,17 +274,21 @@ class VR_Admin_Menu {
 		if ( isset( $_GET['post_type'] ) && $_GET['post_type'] == 'vr_rental' ) {
 			?>
 			<script type="text/javascript">
+					jQuery("body").removeClass("sticky-menu");
+					jQuery("#toplevel_page_vacation_rentals").addClass('wp-has-current-submenu wp-menu-open').removeClass('wp-not-current-submenu');
+					jQuery("#toplevel_page_vacation_rentals > a").addClass('wp-has-current-submenu wp-menu-open').removeClass('wp-not-current-submenu');
+					jQuery("#toplevel_page_vacation_rentals .wp-first-item").addClass('current');
 				jQuery(window).load(function ($) {
 					<?php
 					if ( isset ( $_GET['taxonomy'] ) ) {
 					?>
-					jQuery("body").removeClass("sticky-menu");
-					jQuery("#toplevel_page_vacation_rentals").addClass('wp-has-current-submenu wp-menu-open').removeClass('wp-not-current-submenu');
-					jQuery("#toplevel_page_vacation_rentals > a").addClass('wp-has-current-submenu wp-menu-open').removeClass('wp-not-current-submenu');
+						// jQuery("body").removeClass("sticky-menu");
+						jQuery("#toplevel_page_vacation_rentals").addClass('wp-has-current-submenu wp-menu-open').removeClass('wp-not-current-submenu');
+						jQuery("#toplevel_page_vacation_rentals > a").addClass('wp-has-current-submenu wp-menu-open').removeClass('wp-not-current-submenu');
 					<?php
 					}
 					?>
-					jQuery("#toplevel_page_vacation_rentals .wp-first-item").addClass('current');
+						jQuery("#toplevel_page_vacation_rentals .wp-first-item").addClass('current');
 				});
 			</script>
 			<?php

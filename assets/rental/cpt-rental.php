@@ -72,11 +72,9 @@ class VR_CPT_Rental {
 			'rewrite'             => $rewrite,
 			'capability_type'     => 'post',
 			'taxonomies'          => array( 'vr_rental-destination', 'vr_rental-feature', 'vr_rental-type' )
-
 	    );
 
 	    register_post_type( 'vr_rental', $args );
-
 	}
 
 

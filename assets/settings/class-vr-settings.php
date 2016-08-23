@@ -55,7 +55,7 @@ class VR_Settings {
 	    add_action( 'admin_init', array( $this, 'admin_init' ) );
 
 	    // Menu.
-	    add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+	    add_action( 'admin_menu', array( $this, 'admin_menu' ), 12 );
 
 	}
 
@@ -676,18 +676,18 @@ class VR_Settings {
 	// public function admin_menu( $page_title = 'Page Title', $menu_title = 'Menu Title', $capability = 'manage_options', $menu_slug = 'settings_page', $callable = 'plugin_page' ) {
 	public function admin_menu() {
 		// add_options_page( $page_title, $menu_title, $capability, $menu_slug, array( $this, $callable ) );
-	// add_options_page(
-	// 	'VR Settings',
-	// 	'VR Settings',
-	// 	'manage_options',
-	// 	'wp_osa_settings',
-	// 	array( $this, 'plugin_page' )
-	// );
+		// add_options_page(
+		// 	'VR Settings',
+		// 	'VR Settings',
+		// 	'manage_options',
+		// 	'wp_osa_settings',
+		// 	array( $this, 'plugin_page' )
+		// );
 
     	add_submenu_page(
 			'vacation_rentals',
 			__( 'Settings', 'VRC' ),
-			__( 'Settings', 'VRC' ),
+			__( '⚙ Settings', 'VRC' ),
 			'manage_options',
 			'vacation_rentals_settings',
 			array( $this, 'plugin_page' )

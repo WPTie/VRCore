@@ -20,16 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-
 if ( ! class_exists( 'VR_Rental_Destination' ) ) :
-
 class VR_Rental_Destination {
-
 	/**
 	 * Custom Taxonomy: `rental-destination`.
 	 */
 	public function register() {
-
+		// Labels.
 	    $labels = array(
 	        'name'                       => _x( 'Rental Destination', 'Taxonomy General Name', 'VRC' ),
 	        'singular_name'              => _x( 'Rental Destination', 'Taxonomy Singular Name', 'VRC' ),
@@ -58,22 +55,18 @@ class VR_Rental_Destination {
 	    );
 
 	    $args = array(
-	        'labels'                     => $labels,
-	        'hierarchical'               => true,
-	        'public'                     => true,
-	        'show_ui'                    => true,
-	        'show_in_menu'        => 'vr_rental',
-	        'show_admin_column'          => true,
-	        'show_in_nav_menus'          => true,
-	        'show_tagcloud'              => true,
-	        'rewrite'                    => $rewrite
+			'labels'            => $labels,
+			'hierarchical'      => true,
+			'public'            => true,
+			'show_ui'           => true,
+			'show_in_menu'      => 'vr_rental',
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'show_tagcloud'     => true,
+			'rewrite'           => $rewrite
 	    );
 
 	    register_taxonomy( 'vr_rental-destination', array( 'vr_rental' ), $args );
-
 	}
-
-
 }
-
 endif;
