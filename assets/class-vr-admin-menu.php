@@ -97,6 +97,13 @@ class VR_Admin_Menu {
 
 		// Add all sub menus
 		$sub_menus = array(
+			'addnew' => array(
+				'vacation_rentals',
+				__( 'Add New Rental', 'VRC' ),
+				__( '↩︎  Add New', 'VRC' ),
+				'manage_options',
+				'post-new.php?post_type=vr_rental',
+			),
 			'destinations' => array(
 				'vacation_rentals',
 				__( 'Destinations', 'VRC' ),

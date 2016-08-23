@@ -101,7 +101,7 @@ class VR_Rental_Meta_Boxes {
 					'id'      => "{$prefix}price", // use double quotes with {$prefix}
 					'type'    => 'number',
 
-					'name'    => __('Price: Rent  ( Only digits )', 'VRC'),
+					'name'    => __('Rent Price:  (Digits Only)', 'VRC'),
 					'desc'    => __('Example Value: 450', 'VRC'),
 
 					'std'     => "",
@@ -117,9 +117,9 @@ class VR_Rental_Meta_Boxes {
 					'type'    => 'text',
 
 					'name'    => __('Price Postfix', 'VRC'),
-					'desc'    => __('Example Value: Per Day', 'VRC'),
+					'desc'    => __('Example Value: Per Night', 'VRC'),
 
-					'std'     => "",
+					'std'     => "Per Night",
 					'columns' => 6,
 					'tab'     => 'details'
 				),
