@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
+if ( ! class_exists( 'VR_Styles' ) ) :
+
 /**
  * VR_Styles.
  *
@@ -21,9 +23,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-
-if ( ! class_exists( 'VR_Styles' ) ) :
-
 class VR_Styles {
 
 		/**
@@ -32,7 +31,6 @@ class VR_Styles {
 		 * Static public function. Object has no access to it
 		 * and a call from an object can lead to a Fatal error
 		 * in $this context.
-		 *
 		 *
 		 * @since 1.0.0
 		 */
@@ -74,7 +72,7 @@ if ( class_exists( 'VR_Styles' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-	add_action( 'admin_enqueue_scripts', array( 'VR_Styles' , 'styles' ) );
+	add_action( 'admin_enqueue_scripts', array( 'VR_Styles', 'styles' ) );
 
 
 endif;

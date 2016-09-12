@@ -49,7 +49,6 @@ class VR_Rental_Meta_Boxes {
 			/**
 			 * TABS.
 			 */
-
 			'tabs'  => array(
 	            'details' => array(
 					'label' => __('Basic Information', 'VRC'),
@@ -121,15 +120,6 @@ class VR_Rental_Meta_Boxes {
 				),
 
 
-				// Divider.
-				array(
-					'id'      => "{$prefix}price_divider", // Not used, but needed.
-					'type'    => 'divider',
-					'columns' => 12,
-					'tab'     => 'details'
-				),
-
-
 				// Bedrooms.
 				array(
 					'id'      => "{$prefix}bedrooms",
@@ -154,15 +144,6 @@ class VR_Rental_Meta_Boxes {
 
 					'std'     => "",
 					'columns' => 6,
-					'tab'     => 'details'
-				),
-
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}bed_bath_divider", // Not used, but needed.
-					'type'    => 'divider',
-					'columns' => 12,
 					'tab'     => 'details'
 				),
 
@@ -194,14 +175,6 @@ class VR_Rental_Meta_Boxes {
 					'tab'     => 'details'
 				),
 
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}google_map_divider", // Not used, but needed.
-					'type'    => 'divider',
-					'columns' => 12,
-					'tab'     => 'details'
-				),
 
 
 				// Address on Google Maps.
@@ -275,14 +248,6 @@ class VR_Rental_Meta_Boxes {
 					'tab'     => 'video'
 	            ),
 
-
-	            // Divider.
-	            array(
-					'id'      => "{$prefix}video_divider", // Not used, but needed.
-					'type'    => 'divider',
-					'columns' => 12,
-					'tab'     => 'video'
-	            ),
 
 
 	            // Video Image.
@@ -440,14 +405,6 @@ class VR_Rental_Meta_Boxes {
 	            ),
 
 
-                // Divider.
-                array(
-    				'id'      => "{$prefix}booking_divider", // Not used, but needed.
-    				'type'    => 'divider',
-    				'columns' => 12,
-    				'tab'     => 'booking'
-                ),
-
 
 	            // Select the booking.
 	       //      array(
@@ -511,14 +468,6 @@ class VR_Rental_Meta_Boxes {
                 ),
 
 
-                // Divider.
-                array(
-                	'id'      => "{$prefix}slider_divider", // Not used, but needed.
-                	'type'    => 'divider',
-                	'columns' => 12,
-	            	'tab'     => 'misc'
-                ),
-
 	            // Featured rental.
 	            array(
 					'id'      => "{$prefix}is_featured",
@@ -537,35 +486,18 @@ class VR_Rental_Meta_Boxes {
 					'tab'     => 'misc'
 	            ),
 
+				// TODO: Future Attachments.
+				//         array(
+				// 'id'        => "{$prefix}attachments",
+				// 'type'      => 'file_advanced',
 
-	            // Divider.
-	            array(
-	            	'id'      => "{$prefix}misc_one_divider", // Not used, but needed.
-	            	'type'    => 'divider',
-	            	'columns' => 12,
-	            	'tab'     => 'misc'
-	            ),
+				// 'name'      => __('Attachments', 'VRC'),
+				// 'desc'      => __('You can attach PDF files, Map images OR other documents to provide further details related to this rental property.', 'VRC'),
 
-	            // TODO: Future Attachments.
-	    //         array(
-					// 'id'        => "{$prefix}attachments",
-					// 'type'      => 'file_advanced',
-
-					// 'name'      => __('Attachments', 'VRC'),
-					// 'desc'      => __('You can attach PDF files, Map images OR other documents to provide further details related to this rental property.', 'VRC'),
-
-					// 'mime_type' => '',
-					// 'columns'   => 12,
-					// 'tab'       => 'misc'
-	    //         ),
-
-	            // Divider.
-	            array(
-	            	'id'      => "{$prefix}misc_two_divider", // Not used, but needed.
-	            	'type'    => 'divider',
-	            	'columns' => 12,
-	            	'tab'     => 'misc'
-	            ),
+				// 'mime_type' => '',
+				// 'columns'   => 12,
+				// 'tab'       => 'misc'
+				//         ),
 
 	            // Private Notes.
 	            array(
@@ -617,12 +549,12 @@ class VR_Rental_Meta_Boxes {
 
 						echo '<div class="rwmb-field">';
 
-							echo '<p style="padding: 1rem;background: #f1f1f1;">';
+							echo '<p>';
 								_e( 'All the bookings (Both confirmed and not confirmed bookings) added for this rental are shown above. ', 'VRC' );
 							echo '</p>';
 
 							if ( $the_rentals->have_posts() ) {
-								echo '<ol>';
+								echo '<ol class="vr_booking__ol">';
 								while ( $the_rentals->have_posts() ) {
 									$the_rentals->the_post();
 

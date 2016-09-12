@@ -43,6 +43,7 @@ var translatePath        = './languages'
 
 var styleSRC             = './assets/css/style.scss'; // Path to main .scss file.
 var styleDestination     = './assets/css/'; // Path to place the compiled CSS file.
+var rootPath             = './'
 // Defualt set to root folder.
 
 
@@ -183,7 +184,7 @@ gulp.task( 'browser-sync', function() {
  		.pipe( sourcemaps.init( { loadMaps: true } ) )
  		.pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
 
- 		.pipe( sourcemaps.write ( styleDestination ) )
+ 		.pipe( sourcemaps.write ( rootPath ) )
  		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
  		.pipe( gulp.dest( styleDestination ) )
 
