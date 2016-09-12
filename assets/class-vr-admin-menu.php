@@ -100,7 +100,7 @@ class VR_Admin_Menu {
 			'addnew' => array(
 				'vacation_rentals',
 				__( 'Add New Rental', 'VRC' ),
-				__( '↩︎  Add New', 'VRC' ),
+				__( '→  Add New', 'VRC' ),
 				'manage_options',
 				'post-new.php?post_type=vr_rental',
 			),

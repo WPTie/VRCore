@@ -687,7 +687,7 @@ class VR_Settings {
     	add_submenu_page(
 			'vacation_rentals',
 			__( 'Settings', 'VRC' ),
-			__( '⚙ Settings', 'VRC' ),
+			__( '⏣  Settings', 'VRC' ),
 			'manage_options',
 			'vacation_rentals_settings',
 			array( $this, 'plugin_page' )
