@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( ! class_exists( 'VR_Homepage_Destination_Fields' ) ) :
+
 /**
  * VR_Homepage_Destination_Fields.
  *
@@ -20,9 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-
-if ( ! class_exists( 'VR_Homepage_Destination_Fields' ) ) :
-
 class VR_Homepage_Destination_Fields {
 
 	/**
@@ -99,7 +98,7 @@ class VR_Homepage_Destination_Fields {
 				'tab'     => 'destination'
 			),
 
-			// Select Popular Destionat #1
+			// Select Popular Destionat #1.
 			array(
 				'id'                   => "{$prefix}the_destinations",
 				'type'                 => 'taxonomy_advanced',
@@ -123,15 +122,11 @@ class VR_Homepage_Destination_Fields {
 				'columns' => 12,
 				'tab'     => 'destination',
 				// HTML content.
-				'std'     => '<p
-							style="
-								padding: 1rem;
-								background: #dedede;
-							">
-							You can add images to the destinations via <a href="/wp-admin/edit-tags.php?taxonomy=vr_rental-destination&post_type=vr_rental">Destinations Page</a>.
-							</br>
-							Make sure you have added feature images to these desitnations you selected here.
-						</p>',
+				'std'     => '<p style="padding: 1rem;background: #f1f1f1;">
+								You can add images to the destinations via <a href="/wp-admin/edit-tags.php?taxonomy=vr_rental-destination&post_type=vr_rental">Destinations Page</a>.
+								</br>
+								Make sure you have added feature images to these desitnations you selected here.
+							</p>',
 			), // Field ended.
 		); // Fields array ended.
 	} // Function ended.

@@ -8,11 +8,12 @@
  * @package VRC
  */
 
-
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+if ( ! class_exists( 'VR_Rental_Meta_Boxes' ) ) :
 
 /**
  * VR_Rental_Meta_Boxes.
@@ -21,9 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-
-if ( ! class_exists( 'VR_Rental_Meta_Boxes' ) ) :
-
 class VR_Rental_Meta_Boxes {
 
 	/**
@@ -31,14 +29,12 @@ class VR_Rental_Meta_Boxes {
 	 *
 	 * TODO: Needs major refactoring!
 	 *
-	 * @param   array   $meta_boxes
+	 * @param 	array   $meta_boxes Metaboxes array.
 	 * @return  array   $meta_boxes
 	 * @since   1.0.0
 	 */
 	public function register( $meta_boxes ) {
-
 		// TODO: Recommended image dimensions.
-
 	    $prefix = 'vr_rental_';
 
 	    $meta_boxes[] = array(
@@ -68,10 +64,10 @@ class VR_Rental_Meta_Boxes {
 					'icon'  => 'dashicons-format-video'
 	            ),
 	            // TODO: Future Feature
-        //         'amenities' => array(
-    				// 'label' => __('Additional Amenities', 'VRC'),
-    				// 'icon'  => 'dashicons-palmtree'
-        //         ),
+				// 'amenities' => array(
+				// 'label' => __('Additional Amenities', 'VRC'),
+				// 'icon'  => 'dashicons-palmtree'
+				//  ),
 	            'agent' => array(
 					'label' => __('Agent Information', 'VRC'),
 					'icon'  => 'dashicons-businessman'
@@ -563,7 +559,6 @@ class VR_Rental_Meta_Boxes {
 					// 'tab'       => 'misc'
 	    //         ),
 
-
 	            // Divider.
 	            array(
 	            	'id'      => "{$prefix}misc_two_divider", // Not used, but needed.
@@ -571,7 +566,6 @@ class VR_Rental_Meta_Boxes {
 	            	'columns' => 12,
 	            	'tab'     => 'misc'
 	            ),
-
 
 	            // Private Notes.
 	            array(
@@ -585,14 +579,6 @@ class VR_Rental_Meta_Boxes {
 					'columns' => 12,
 					'tab'     => 'misc'
 	            ),
-
-
-
-
-
-
-
-
 
 	        ) // Fields ended.
 
@@ -631,6 +617,10 @@ class VR_Rental_Meta_Boxes {
 
 						echo '<div class="rwmb-field">';
 
+							echo '<p style="padding: 1rem;background: #f1f1f1;">';
+								_e( 'All the bookings (Both confirmed and not confirmed bookings) added for this rental are shown above. ', 'VRC' );
+							echo '</p>';
+
 							if ( $the_rentals->have_posts() ) {
 								echo '<ol>';
 								while ( $the_rentals->have_posts() ) {
@@ -646,7 +636,7 @@ class VR_Rental_Meta_Boxes {
 								}
 								echo '</ol>';
 							} else {
-								echo "No rental property owned by this agent.";
+								echo "No bookings for this rental property.";
 							}
 
 						echo '</div>';
