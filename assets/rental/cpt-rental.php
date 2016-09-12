@@ -28,7 +28,7 @@ class VR_CPT_Rental {
 	    $labels = array(
 			'name'               => _x( 'Rentals', 'Post Type General Name', 'VRC' ),
 			'singular_name'      => _x( 'Rental', 'Post Type Singular Name', 'VRC' ),
-			'menu_name'          => __( 'Rentals', 'VRC' ),
+			'menu_name'          => __( '1 Rentals', 'VRC' ),
 			'name_admin_bar'     => __( 'Rental', 'VRC' ),
 			'parent_item_colon'  => __( 'Parent Rental:', 'VRC' ),
 			'all_items'          => __( 'Rentals', 'VRC' ),

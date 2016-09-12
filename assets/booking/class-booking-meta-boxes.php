@@ -78,39 +78,6 @@ class VR_Booking_Meta_Boxes {
 
 						if ( $rental_id != 0 ) {
 
-							if ( function_exists( 'vr_get_settings_obj' ) ) {
-								// Instantiate the VR_Get_Page_Meta object.
-								$vr_get_settings_obj = vr_get_settings_obj();
-
-								// Get settings.
-								$currency_symbol    = '<span style="font-size:80%;">' . $vr_get_settings_obj->currency_symbol . '</span>';
-								$currency_position  = $vr_get_settings_obj->currency_position;
-								$thousand_separator = $vr_get_settings_obj->thousand_separator;
-								$decimal_separator  = $vr_get_settings_obj->decimal_separator;
-								$no_of_decimals     = $vr_get_settings_obj->no_of_decimals;
-								$empty_price_text   = $vr_get_settings_obj->empty_price_text;
-
-								// Get price.
-								$vr_get_price          = get_post_meta( $rental_id, 'vr_rental_price', true );
-								$vr_get_price          = ( isset( $vr_get_price ) && false != $vr_get_price )
-															? $vr_get_price : $empty_price_text;
-
-								// Format the price.
-								if ( $empty_price_text != $vr_get_price ) {
-									// Formatted price.
-									$vr_formatted_price = number_format( $vr_get_price, $no_of_decimals, $decimal_separator, $thousand_separator );
-
-									// Where to add the currency.
-									if ( 'before' == $currency_position ) {
-										$vr_price_currency = $currency_symbol . $vr_formatted_price;
-									} else {
-										$vr_price_currency = $vr_formatted_price . $currency_symbol;
-									}
-								} else {
-									$vr_price_currency = $empty_price_text;
-								}
-
-							}
 
 							// Get WP_Post object from the ID.
 							$rental_post = get_post( $rental_id );
@@ -118,44 +85,57 @@ class VR_Booking_Meta_Boxes {
 							// Rental Post Data.
 							$rental_title         = $rental_post->post_title;
 							$rental_img           = get_the_post_thumbnail( $rental_id, 'thumbnail' );
-							// $rental_price         = get_post_meta( $rental_id, 'vr_rental_price', true );
 							$rental_agent_id      = get_post_meta( $rental_id, 'vr_rental_the_agent', true );
 							$rental_price_postfix = get_post_meta( $rental_id, 'vr_rental_price_postfix', true );
 
-							$div_title = 	'
-											<div class="rwmb-field">
-												<h1>%s: %s
-													<a href="/wp-admin/post.php?post=%s&action=edit">
-														 <span class="dashicons dashicons-edit"></span>
-													</a>
-												</h1>
-											</div>
+							// Price and format.
+							$rental_price         = get_post_meta( $rental_id, 'vr_rental_price', true );
+							$vr_price_currency    = VR_Functions::rental_price_currency( $rental_price );
+
+							// Output.
+							$vr_output_title = '
+											<h3>%s:
+												<a href="/wp-admin/post.php?post=%s&action=edit">
+													 %s
+												</a>
+											</h3>
 										';
 
-							$div_one = '<div class="rwmb-field"> %s </div>';
-							$div_two = '<div class="rwmb-field"> %s %s </div>';
+							$vr_output_img = '%s';
+							$vr_output_price = '<span>Price: %s %s</span>';
 
+							$rental_title = sprintf( $vr_output_title, 'Rental', $rental_id, $rental_title );
+							$rental_img   = sprintf( $vr_output_img, $rental_img );
+							$rental_price = sprintf( $vr_output_price, $vr_price_currency , $rental_price_postfix );
 
-							echo sprintf( $div_title, 'Rental', $rental_title, $rental_id );
-							echo sprintf( $div_one, $rental_img );
-							echo sprintf( $div_two, $vr_price_currency , $rental_price_postfix );
-
-							if ( $rental_agent_id != 0 ) {
-
+							if ( 0 != $rental_agent_id ) {
 								// Rental The Agent.
 								$rental_the_agent  = get_post( $rental_agent_id );
 								$rental_agent_name = $rental_the_agent->post_title;
-								echo sprintf( $div_title, 'Agent', $rental_agent_name, $rental_agent_id );
+								$rental_agent = sprintf( $vr_output_title, 'Agent', $rental_agent_id, $rental_agent_name );
 							} else {
-
-								echo '<div class="rwmb-field">No Agent selected!</div>';
-
+								$rental_agent = '<div class="rwmb-field">No Agent selected!</div>';
 							} // if/else ended.
 
+							// Build Output.
+							?>
+							<div class="vr_booking">
+								<div class="vr_booking__img">
+									<?php echo $rental_img; ?>
+								</div>
+								<div class="vr_booking__data">
+									<?php
+										echo $rental_title;
+										echo $rental_price;
+										echo $rental_agent;
+									?>
+								</div>
+							</div>
+
+						<?php
+
 						} else {
-
 							echo '<div class="rwmb-field">No rental property selected!</div>';
-
 						} // if/else ended.
 
 					} // Callback annonymous funtion ended.
@@ -181,9 +161,7 @@ class VR_Booking_Meta_Boxes {
 	            array(
 					'id'      => "{$prefix}is_confirmed",
 					'type'    => 'radio',
-
 					'name'    => __( 'Confirmation:', 'VRC' ),
-
 					'std' => '0',
 					'options' => array(
 						'pending' => __( 'Pending.', 'VRC' ),
@@ -195,27 +173,19 @@ class VR_Booking_Meta_Boxes {
 	            array(
 					'id'          => "{$prefix}the_rental",
 					'type'        => 'post',
-
 					'post_type'   => 'vr_rental',
 					'field_type'  => 'select_advanced',
-
 					'name'        => __( 'The Rental', 'VRC' ),
 					'placeholder' => __( 'Selected Rental.', 'VRC' ),
 					'desc'        => __( 'This value cannot be changed once it is set either manually or automatically.', 'VRC' ),
-
 					// Query arguments (optional). No settings means get all published posts.
 					'query_args'  => array(
 						'post_status'    => 'publish',
 						'posts_per_page' => - 1,
 					)
-
 				)
-
-
 	        ) // fields array ended.
-
 	    ); // meta_boxes array ended.
-
 
 	    // Meta box: Details.
 	    $meta_boxes[] = array(
@@ -226,18 +196,14 @@ class VR_Booking_Meta_Boxes {
 			'priority' => 'high',
 			'fields'   => array(
 
-
 				// Arrival Date.
 	            array(
-					'id'         => "{$prefix}date_checkin",
-					'type'       => 'date',
-
-					'name'       => __( 'Checkin Date', 'VRC' ),
-					'columns'     => 6,
-
+					'id'      => "{$prefix}date_checkin",
+					'type'    => 'date',
+					'name'    => __( 'Checkin Date', 'VRC' ),
+					'columns' => 6,
 					// jQuery date picker options. See here http://jqueryui.com/demos/datepicker
 					'js_options' => array(
-						// 'dateFormat'      => __( 'dd-mm-yy', 'VRC' ),
 						'dateFormat'      => __( 'yy-mm-dd', 'VRC' ),
 						'appendText'      => __( ' (Year-Month-Day) ', 'VRC' ),
 						'autoSize'        => true,
@@ -245,20 +211,15 @@ class VR_Booking_Meta_Boxes {
 						'showButtonPanel' => false
 					)
 	            ),
-
-
 
 	            // Departure Date.
 	            array(
-					'id'         => "{$prefix}date_checkout",
-					'type'       => 'date',
-
-					'name'       => __( 'Checkout Date', 'VRC' ),
-					'columns'     => 6,
-
+					'id'      => "{$prefix}date_checkout",
+					'type'    => 'date',
+					'name'    => __( 'Checkout Date', 'VRC' ),
+					'columns' => 6,
 					// jQuery date picker options. See here http://jqueryui.com/demos/datepicker
 					'js_options' => array(
-						// 'dateFormat'      => __( 'dd-mm-yy', 'VRC' ),
 						'dateFormat'      => __( 'yy-mm-dd', 'VRC' ),
 						'appendText'      => __( ' (Year-Month-Day) ', 'VRC' ),
 						'autoSize'        => true,
@@ -266,103 +227,62 @@ class VR_Booking_Meta_Boxes {
 						'showButtonPanel' => false
 					)
 	            ),
-
-
-	            // Divider.
-				array(
-					'id'      => "{$prefix}divider1", // Not used, but needed.
-					'type'    => 'divider'
-				),
-
 
 				// Guests.
 				array(
 					'id'   => "{$prefix}guests",
 					'type' => 'number',
-
 					'name' => __( 'Guests', 'VRC' ),
 					'desc' => __( 'Example Value: 2', 'VRC' ),
-
 					'std'     => "",
 					'columns' => 6
 				),
-
 
 				// Rental ID.
 				array(
 					'id'   => "{$prefix}rental_id",
 					'type' => 'hidden',
-
 					'name' => __( 'Rental ID', 'VRC' ),
 					'desc' => __( 'Example Value: 2', 'VRC' ),
-
 					'std'     => "",
 					'columns' => 6
 				),
-
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider2", // Not used, but needed.
-					'type'    => 'divider'
-				),
-
 
 				// Name.
 				array(
 					'id'   => "{$prefix}name",
 					'type' => 'text',
-
 					'name' => __( 'Name', 'VRC' ),
 					'desc' => __( 'Booked By, E.g. John', 'VRC' ),
-
 					'std'     => "",
 					'columns' => 6
 				),
-
 
 				// Email ID.
 				array(
 					'id'   => "{$prefix}email",
 					'type' => 'email',
-
 					'name' => __( 'Email ID', 'VRC' ),
 					'desc' => __( 'Example Value: john@gmail.com', 'VRC' ),
-
 					'std'     => "",
 					'columns' => 6
 				),
-
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider2", // Not used, but needed.
-					'type'    => 'divider'
-				),
-
 
 				// Private Notes.
 	            array(
 					'id'      => "{$prefix}private_note",
 					'type'    => 'textarea',
-
 					'name'    => __( 'Private Note', 'VRC' ),
 					'desc'    => __( 'Keep a private note about this rental booking. This field will not be displayed anywhere else.', 'VRC' ),
-
 					'std'     => "",
 					'columns' => 12,
 					'tab'     => 'misc'
 	            )
-
 	        ) // fields array ended.
-
 	    ); // second meta_boxes array ended.
 
-
+	    // Return metaboxes array.
 	    return $meta_boxes;
-
 	} // Register function End.
-
 } // Class ended.
-
 endif;

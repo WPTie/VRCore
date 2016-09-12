@@ -3,6 +3,7 @@
 /* ---------------------------------------------------------------------------- Variables ------------------------------------------------------------------------- */
 /** Colors @package VRC @since 0.0.1 */
 /* ---------------------------------------------------------------------------- Colors ------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------- Admin Colors ------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------- Mixins, Reset ------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------- Partials ------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------- Admin related CSS ------------------------------------------------------------------------- */
@@ -12,6 +13,62 @@
 
 .vr-heading-1 span { font-size: 50%; }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGUuY3NzIiwic291cmNlcyI6WyJzdHlsZS5zY3NzIiwicGFydGlhbHMvX2NvbG9ycy5zY3NzIiwicGFydGlhbHMvX2FkbWluLnNjc3MiXSwibWFwcGluZ3MiOiJBQUFBLDREQU9HO0FBRUgsZ0NBQWdDO0FBRWhDLHNLQUUrRTtBQ2IvRSx1Q0FNRztBQUVILG1LQUUrRTtBRFEvRSwwS0FFK0U7QUFLL0UscUtBRStFO0FFM0IvRSw4S0FFK0U7QUFDL0UsbUJBQW1CLENBQUMsRUFDbkIsYUFBYSxFQUFFLGNBQWUsRUFDOUIsTUFBTSxFQUFTLENBQUUsRUFDakIsT0FBTyxFQUFRLFlBQWEsRUFDNUIsV0FBVyxFQUFJLE9BQVEsR0FDdkI7O0FBRUQsYUFBYSxDQUFDLEVBQ1YsT0FBTyxFQUFFLGVBQWdCLEdBSzVCOztBQU5ELGFBQWEsQ0FHVCxJQUFJLENBQUEsRUFDSCxTQUFTLEVBQUUsR0FBSSxHQUNmIiwibmFtZXMiOltdfQ== */
+/* ---------------------------------------------------------------------------- Booking! ------------------------------------------------------------------------- */
+.vr_booking { display: table; width: 100%; padding: 1rem; margin: 1rem 0 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+.vr_booking a { text-decoration: none; border-bottom: 0.5rem solid #f1f1f1; }
+
+.vr_booking .dashicon { font-size: 1rem; }
+
+.vr_booking__img { display: table-cell; width: 20%; vertical-align: middle; }
+
+.vr_booking__img img { border-radius: 500rem; }
+
+.vr_booking__data { display: table-cell; width: 80%; vertical-align: middle; }
+
+/* ---------------------------------------------------------------------------- Metaboxes Styles ------------------------------------------------------------------------- */
+#vr_rental_meta_box_booking_id, #vr_partner_meta_box_details_id, #vr_agent_meta_box_details_id, #vr_rental_meta_box_details_id, #vr_booking_meta_box_the_rental_id, #vr_booking_meta_box_confirmation_id, #vr_booking_meta_box_details_id { background: transparent; }
+
+#vr_rental_meta_box_booking_id h2, #vr_partner_meta_box_details_id h2, #vr_agent_meta_box_details_id h2, #vr_rental_meta_box_details_id h2, #vr_booking_meta_box_the_rental_id h2, #vr_booking_meta_box_confirmation_id h2, #vr_booking_meta_box_details_id h2 { background: #f5f5f5; padding: 2rem; text-transform: uppercase; letter-spacing: 1px; }
+
+#vr_rental_meta_box_booking_id .toggle-indicator:before, #vr_partner_meta_box_details_id .toggle-indicator:before, #vr_agent_meta_box_details_id .toggle-indicator:before, #vr_rental_meta_box_details_id .toggle-indicator:before, #vr_booking_meta_box_the_rental_id .toggle-indicator:before, #vr_booking_meta_box_confirmation_id .toggle-indicator:before, #vr_booking_meta_box_details_id .toggle-indicator:before { margin-top: 2rem !important; }
+
+#vr_rental_meta_box_booking_id input, #vr_rental_meta_box_booking_id textarea, #vr_partner_meta_box_details_id input, #vr_partner_meta_box_details_id textarea, #vr_agent_meta_box_details_id input, #vr_agent_meta_box_details_id textarea, #vr_rental_meta_box_details_id input, #vr_rental_meta_box_details_id textarea, #vr_booking_meta_box_the_rental_id input, #vr_booking_meta_box_the_rental_id textarea, #vr_booking_meta_box_confirmation_id input, #vr_booking_meta_box_confirmation_id textarea, #vr_booking_meta_box_details_id input, #vr_booking_meta_box_details_id textarea { padding: 0.5rem; margin: 0 0 0.5rem; height: initial; width: inherit; }
+
+#vr_rental_meta_box_booking_id input[type=radio], #vr_partner_meta_box_details_id input[type=radio], #vr_agent_meta_box_details_id input[type=radio], #vr_rental_meta_box_details_id input[type=radio], #vr_booking_meta_box_the_rental_id input[type=radio], #vr_booking_meta_box_confirmation_id input[type=radio], #vr_booking_meta_box_details_id input[type=radio] { height: 1rem; margin-right: 0.5rem; margin: 0.4rem 0.5rem 0.5rem; }
+
+#vr_rental_meta_box_booking_id .rwmb-field, #vr_partner_meta_box_details_id .rwmb-field, #vr_agent_meta_box_details_id .rwmb-field, #vr_booking_meta_box_confirmation_id .rwmb-field, .rwmb-row { background: #f5f5f5; padding: 1.5rem; margin: 1rem 0; }
+
+.rwmb-custom_html-wrapper { background: initial !important; padding: initial !important; margin: initial !important; }
+
+.rwmb-label { font-weight: bolder; padding: 0.5rem 0; text-transform: uppercase; }
+
+.rwmb-tabs-left .rwmb-tab-nav { background: transparent !important; }
+
+.rwmb-tabs-left .rwmb-tab-active { border-right-color: #ebebeb !important; background: #ebebeb !important; }
+
+.rwmb-tabs-left { background: #ebebeb; }
+
+.rwmb-tab-nav li { padding: 0.5rem 0; }
+
+.vr_booking__ol { font-size: 1rem; line-height: 1.6; margin-left: 0; list-style: none; counter-reset: counter; position: relative; }
+
+.vr_booking__ol > li:before { counter-increment: counter; content: counter(counter); }
+
+.vr_booking__ol li a { text-decoration: none; text-transform: uppercase; }
+
+.vr_booking__ol { overflow: hidden; }
+
+.vr_booking__ol > li { position: relative; left: 1.5rem; margin-bottom: 0.75rem; padding-left: 0.75rem; background-color: #f1f1f1; }
+
+.vr_booking__ol > li, .vr_booking__ol > li:before { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+
+.vr_booking__ol > li:before { position: absolute; top: 0; bottom: 0; left: -1.5rem; display: inline-block; width: 1.875rem; text-align: center; color: #0073aa; background-color: #ebebeb; }
+
+.vr_booking__ol > li:last-child { margin-bottom: 0; }
+
+#vr_rental_meta_box_details_id .rwmb-map-goto-address-button { margin: 2rem 0 1rem; width: 100%; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGUuY3NzIiwic291cmNlcyI6WyJzdHlsZS5zY3NzIiwicGFydGlhbHMvX2NvbG9ycy5zY3NzIiwicGFydGlhbHMvX2FkbWluLnNjc3MiLCJwYXJ0aWFscy9fbWV0YWJveGVzLnNjc3MiXSwibWFwcGluZ3MiOiJBQUFBLDREQU9HO0FBRUgsZ0NBQWdDO0FBRWhDLHNLQUUrRTtBQ2IvRSx1Q0FNRztBQUVILG1LQUUrRTtBQUcvRSx5S0FFK0U7QURHL0UsMEtBRStFO0FBSy9FLHFLQUUrRTtBRTNCL0UsOEtBRStFO0FBQy9FLG1CQUFtQixDQUFDLEVBQ25CLGFBQWEsRUFBRSxjQUFlLEVBQzlCLE1BQU0sRUFBUyxDQUFFLEVBQ2pCLE9BQU8sRUFBUSxZQUFhLEVBQzVCLFdBQVcsRUFBSSxPQUFRLEdBQ3ZCOztBQUVELGFBQWEsQ0FBQyxFQUNWLE9BQU8sRUFBRSxlQUFnQixHQUs1Qjs7QUFORCxhQUFhLENBR1QsSUFBSSxDQUFBLEVBQ0gsU0FBUyxFQUFFLEdBQUksR0FDZjs7QUFHTCxxS0FFK0U7QUFFL0UsV0FBVyxDQUFDLEVBQ1gsT0FBTyxFQUFFLEtBQU0sRUFDZixLQUFLLEVBQUUsSUFBSyxFQUNaLE9BQU8sRUFBRSxJQUFLLEVBQ2QsTUFBTSxFQUFFLFFBQVMsRUFFakIsZUFBZSxFQUFFLFVBQVcsRUFDNUIsVUFBVSxFQUFFLFVBQVcsRUFDdkIsc0JBQXNCLEVBQUUsV0FBWSxHQVVwQzs7QUFsQkQsV0FBVyxDQVVWLENBQUMsQ0FBQyxFQUNELGVBQWUsRUFBRSxJQUFLLEVBQ25CLGFBQWEsRUFBRSxvQkFBcUIsR0FDdkM7O0FBYkYsV0FBVyxDQWVWLFNBQVMsQ0FBQyxFQUNULFNBQVMsRUFBRSxJQUFLLEdBQ2hCOztBQUdGLGdCQUFnQixDQUFDLEVBQ2hCLE9BQU8sRUFBRSxVQUFXLEVBQ3BCLEtBQUssRUFBRSxHQUFJLEVBQ1gsY0FBYyxFQUFFLE1BQU8sR0FNdkI7O0FBVEQsZ0JBQWdCLENBS2YsR0FBRyxDQUFDLEVBQ0gscUJBQXFCLEVBQUUsTUFB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 */
 
 /*# sourceMappingURL=style.css.map */
