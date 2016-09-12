@@ -85,7 +85,7 @@ class VR_Homepage_TandN_Fields {
         			array(
         				'id'      => "{$prefix}ttml_img_url",
         				'type'    => 'url',
-        				'name'    => __( '(OPTIONAL) Testimonial User Image URL', 'VRC' ),
+        				'name'    => __( '(OPTIONAL) Testimonial URL LINK', 'VRC' ),
         				'desc'    => 'Example Value: http://Google.com/',
         				'columns' => 6,
         			),
