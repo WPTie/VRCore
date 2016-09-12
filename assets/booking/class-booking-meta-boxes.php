@@ -78,17 +78,49 @@ class VR_Booking_Meta_Boxes {
 
 						if ( $rental_id != 0 ) {
 
+							if ( function_exists( 'vr_get_settings_obj' ) ) {
+								// Instantiate the VR_Get_Page_Meta object.
+								$vr_get_settings_obj = vr_get_settings_obj();
+
+								// Get settings.
+								$currency_symbol    = '<span style="font-size:80%;">' . $vr_get_settings_obj->currency_symbol . '</span>';
+								$currency_position  = $vr_get_settings_obj->currency_position;
+								$thousand_separator = $vr_get_settings_obj->thousand_separator;
+								$decimal_separator  = $vr_get_settings_obj->decimal_separator;
+								$no_of_decimals     = $vr_get_settings_obj->no_of_decimals;
+								$empty_price_text   = $vr_get_settings_obj->empty_price_text;
+
+								// Get price.
+								$vr_get_price          = get_post_meta( $rental_id, 'vr_rental_price', true );
+								$vr_get_price          = ( isset( $vr_get_price ) && false != $vr_get_price )
+															? $vr_get_price : $empty_price_text;
+
+								// Format the price.
+								if ( $empty_price_text != $vr_get_price ) {
+									// Formatted price.
+									$vr_formatted_price = number_format( $vr_get_price, $no_of_decimals, $decimal_separator, $thousand_separator );
+
+									// Where to add the currency.
+									if ( 'before' == $currency_position ) {
+										$vr_price_currency = $currency_symbol . $vr_formatted_price;
+									} else {
+										$vr_price_currency = $vr_formatted_price . $currency_symbol;
+									}
+								} else {
+									$vr_price_currency = $empty_price_text;
+								}
+
+							}
+
 							// Get WP_Post object from the ID.
 							$rental_post = get_post( $rental_id );
 
 							// Rental Post Data.
 							$rental_title         = $rental_post->post_title;
 							$rental_img           = get_the_post_thumbnail( $rental_id, 'thumbnail' );
-							$rental_price         = get_post_meta( $rental_id, 'vr_rental_price', true );
+							// $rental_price         = get_post_meta( $rental_id, 'vr_rental_price', true );
 							$rental_agent_id      = get_post_meta( $rental_id, 'vr_rental_the_agent', true );
 							$rental_price_postfix = get_post_meta( $rental_id, 'vr_rental_price_postfix', true );
-
-
 
 							$div_title = 	'
 											<div class="rwmb-field">
@@ -106,7 +138,7 @@ class VR_Booking_Meta_Boxes {
 
 							echo sprintf( $div_title, 'Rental', $rental_title, $rental_id );
 							echo sprintf( $div_one, $rental_img );
-							echo sprintf( $div_two, $rental_price , $rental_price_postfix );
+							echo sprintf( $div_two, $vr_price_currency , $rental_price_postfix );
 
 							if ( $rental_agent_id != 0 ) {
 
