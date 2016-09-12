@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( ! class_exists( 'VR_Rental_List_Meta' ) ) :
+
 /**
  * VR_Rental_List_Meta.
  *
@@ -20,9 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-
-if ( ! class_exists( 'VR_Rental_List_Meta' ) ) :
-
 class VR_Rental_List_Meta {
 	/**
 	 * Metaboxes.
@@ -148,12 +147,6 @@ class VR_Rental_List_Meta {
 					'std'  => 6
 				),
 
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
 				// Order by.
 				array(
 					'id'          => "{$prefix}orderby",
@@ -169,12 +162,6 @@ class VR_Rental_List_Meta {
 					'std'         => 'date_desc'
 				),
 
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
 				// Min beds.
 				array(
 					'id'   => "{$prefix}min_beds",
@@ -183,12 +170,6 @@ class VR_Rental_List_Meta {
 					'step' => 1,
 					'min'  => 0,
 					'std'  => 0
-				),
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
 				),
 
 				// Min baths.
@@ -201,12 +182,6 @@ class VR_Rental_List_Meta {
 				    'std'   => 0
 				),
 
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
 				// Min baths.
 				array(
 					'id'   => "{$prefix}min_guests",
@@ -215,12 +190,6 @@ class VR_Rental_List_Meta {
 				    'step'  => 1,
 				    'min'   => 0,
 				    'std'   => 0
-				),
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
 				),
 
 				// Min price.
@@ -232,24 +201,12 @@ class VR_Rental_List_Meta {
 				    'std'   => 0
 				),
 
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
 				// Max price.
 				array(
 					'id'   => "{$prefix}max_price",
 				    'name'  => __( 'Maximum Price', 'VRC' ),
 				    'type'  => 'number',
 				    'min'   => 0,
-				),
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
 				),
 
 				// Destination.
@@ -262,13 +219,6 @@ class VR_Rental_List_Meta {
 					'select_all_none' => true
 				),
 
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
-
 				// Feature.
 				array(
 					'id'              => "{$prefix}feature",
@@ -278,13 +228,6 @@ class VR_Rental_List_Meta {
 					'multiple'        => true,
 					'select_all_none' => true
 				),
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
 
 				// Type.
 				array(

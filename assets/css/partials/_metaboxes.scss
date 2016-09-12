@@ -1,6 +1,11 @@
 /* ----------------------------------------------------------------------------
  * Metaboxes Styles
  * ------------------------------------------------------------------------- */
+#vr_rental_search_metabox_desc_id,
+#vr_rental_search_metabox_search_id,
+#vr_rental_list_metabox_list_id,
+#vr_rental_list_metabox_summary_id,
+#vr_rental_fav_metabox_desc_id,
 #vr_homepage_meta_box_id,
 #vr_rental_meta_box_booking_id,
 #vr_partner_meta_box_details_id,
@@ -34,9 +39,15 @@ background: transparent;
 			height: 1rem;
 			margin-right: 0.5rem;
 			margin: 0.4rem 0.5rem 0.5rem;
+			width: initial;
 	}
 }
 
+#vr_rental_fav_metabox_desc_id .rwmb-field,
+#vr_rental_search_metabox_desc_id .rwmb-field,
+#vr_rental_search_metabox_search_id .rwmb-field,
+#vr_rental_list_metabox_list_id .rwmb-field,
+#vr_rental_list_metabox_summary_id .rwmb-field,
 #vr_rental_meta_box_booking_id .rwmb-field,
 #vr_partner_meta_box_details_id .rwmb-field,
 #vr_agent_meta_box_details_id .rwmb-field,
@@ -140,4 +151,8 @@ background: transparent;
 
 #vr_homepage_meta_box_id .rwmb-textarea {
 	min-height: 13rem;
+}
+
+#vr_rental_list_metabox_list_id select {
+	min-width: 70%;
 }

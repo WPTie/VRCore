@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( ! class_exists( 'VR_Rental_Search_Meta' ) ) :
+
 /**
  * VR_Rental_Search_Meta.
  *
@@ -20,9 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-
-if ( ! class_exists( 'VR_Rental_Search_Meta' ) ) :
-
 class VR_Rental_Search_Meta {
 	/**
 	 * Metaboxes.
@@ -107,12 +106,6 @@ class VR_Rental_Search_Meta {
 					'desc' => __( 'Check to hide Map on this search page?', 'VRC' ),
 				),
 
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
 				// Hide Destination.
 				array(
 					'id'   => "{$prefix}hide_destination",
@@ -120,12 +113,6 @@ class VR_Rental_Search_Meta {
 					'std'  => '0',
 					'name' => __( 'Hide Destination?', 'VRC' ),
 					'desc' => __( 'Check to hide Destination on this search page?', 'VRC' ),
-				),
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
 				),
 
 				// Hide Type.
@@ -137,12 +124,6 @@ class VR_Rental_Search_Meta {
 					'desc' => __( 'Check to hide Type on this search page?', 'VRC' ),
 				),
 
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
 				// Hide Feature.
 				array(
 					'id'   => "{$prefix}hide_feature",
@@ -150,12 +131,6 @@ class VR_Rental_Search_Meta {
 					'std'  => '0',
 					'name' => __( 'Hide Feature?', 'VRC' ),
 					'desc' => __( 'Check to hide Feature on this search page?', 'VRC' ),
-				),
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
 				),
 
 				// Hide Check In & Check Out.
@@ -167,12 +142,6 @@ class VR_Rental_Search_Meta {
 					'desc' => __( 'Check to hide Check In & Check Out? on this search page?', 'VRC' ),
 				),
 
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
-				),
-
 				// Hide Description.
 				array(
 					'id'   => "{$prefix}hide_desc",
@@ -180,12 +149,6 @@ class VR_Rental_Search_Meta {
 					'std'  => '0',
 					'name' => __( 'Hide Description?', 'VRC' ),
 					'desc' => __( 'Check to hide Description? on this search page?', 'VRC' ),
-				),
-
-				// Divider.
-				array(
-					'id'      => "{$prefix}divider", // Not used, but needed.
-					'type'    => 'divider',
 				),
 
 				// Hide Sorting.

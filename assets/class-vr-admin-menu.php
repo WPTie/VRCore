@@ -301,13 +301,13 @@ class VR_Admin_Menu {
 					// jQuery("#toplevel_page_vacation_rentals .wp-first-item").addClass('current');
 
 			<?php
-				if (  'vr_rental-destination' == isset( $_GET['taxonomy'] ) && $_GET['taxonomy'] ) {
+				if ( isset( $_GET['taxonomy'] ) && ( 'vr_rental-destination' ==  $_GET['taxonomy'] ) ) {
 					echo 'jQuery("#toplevel_page_vacation_rentals ul li:nth-child(4)").addClass("current");';
 				}
-				if (  'vr_rental-feature' == isset( $_GET['taxonomy'] ) && $_GET['taxonomy'] ) {
+				if ( isset( $_GET['taxonomy'] ) && ( 'vr_rental-feature' ==  $_GET['taxonomy'] ) ) {
 					echo 'jQuery("#toplevel_page_vacation_rentals ul li:nth-child(5)").addClass("current");';
 				}
-				if (  'vr_rental-type' == isset( $_GET['taxonomy'] ) && $_GET['taxonomy'] ) {
+				if ( isset( $_GET['taxonomy'] ) && ( 'vr_rental-type' ==  $_GET['taxonomy'] ) ) {
 					echo 'jQuery("#toplevel_page_vacation_rentals ul li:nth-child(6)").addClass("current");';
 				}
 			?>
