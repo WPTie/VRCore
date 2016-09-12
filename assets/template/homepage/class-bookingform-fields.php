@@ -50,14 +50,6 @@ class VR_Homepage_BookingForm_Fields {
 			    'tab'     => 'bookingform'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id0", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'bookingform'
-			),
-
 			// Booking form Title.
 			array(
 				'id'      => "{$prefix}bookingform_title",
@@ -65,14 +57,6 @@ class VR_Homepage_BookingForm_Fields {
 				'name'    => __( 'Booking Form Title', 'VRC' ),
 				'desc'    => 'Example Value: Book Now',
 				'std'     => 'Book now',
-				'columns' => 12,
-				'tab'     => 'bookingform'
-			),
-
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id1", // Not used, but needed.
-				'type'    => 'divider',
 				'columns' => 12,
 				'tab'     => 'bookingform'
 			),
@@ -91,15 +75,6 @@ class VR_Homepage_BookingForm_Fields {
 			    'tab'     => 'bookingform'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id2", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'bookingform'
-			),
-
-
 			// Search Button Text.
 			array(
 				'id'      => "{$prefix}search_btn_txt",
@@ -110,15 +85,6 @@ class VR_Homepage_BookingForm_Fields {
 				'columns' => 12,
 				'tab'     => 'bookingform'
 			),
-
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id2", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'bookingform'
-			),
-
 
 			// Search Page URL.
 			array(

@@ -50,14 +50,6 @@ class VR_Homepage_CTA_Fields {
 			    'tab'     => 'cta'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_cta", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'cta'
-			),
-
 			// CTA Section Title.
 			array(
 				'id'      => "{$prefix}cta_section_title",
@@ -65,14 +57,6 @@ class VR_Homepage_CTA_Fields {
 				'name'    => __( 'CTA Section Title', 'VRC' ),
 				'desc'    => 'Example Value: Call to Action Section',
 				'std'     => 'Call to Action Section',
-				'columns' => 12,
-				'tab'     => 'cta'
-			),
-
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_cta", // Not used, but needed.
-				'type'    => 'divider',
 				'columns' => 12,
 				'tab'     => 'cta'
 			),
@@ -91,14 +75,6 @@ class VR_Homepage_CTA_Fields {
 				'tab'     => 'cta'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_cta", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'cta'
-			),
-
             // Button Text.
             array(
             	'id'      => "{$prefix}cta_btn_txt",
@@ -110,28 +86,12 @@ class VR_Homepage_CTA_Fields {
             	'tab'     => 'cta'
             ),
 
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_cta", // Not used, but needed.
-            	'type'    => 'divider',
-            	'columns' => 12,
-            	'tab'     => 'cta'
-            ),
-
             // Button URL.
             array(
             	'id'      => "{$prefix}cta_btn_url",
             	'type'    => 'url',
             	'name'    => __( 'CTA Section Button URL', 'VRC' ),
             	'desc'    => 'Example Value: http://Google.com/',
-            	'columns' => 12,
-            	'tab'     => 'cta'
-            ),
-
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_cta", // Not used, but needed.
-            	'type'    => 'divider',
             	'columns' => 12,
             	'tab'     => 'cta'
             ),
@@ -147,14 +107,6 @@ class VR_Homepage_CTA_Fields {
 				'max_file_uploads' => 1,
 				'columns'          => 12,
 				'tab'              => 'cta'
-            ),
-
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_cta", // Not used, but needed.
-            	'type'    => 'divider',
-            	'columns' => 12,
-            	'tab'     => 'cta'
             ),
 
 			// Icon Image.

@@ -50,14 +50,6 @@ class VR_Homepage_Steps_Fields {
 			    'tab'     => 'steps'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id0", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'steps'
-			),
-
 			// Enable/Disable Steps Section BG.
 			array(
 				'id'      => "{$prefix}is_steps_bg",
@@ -73,14 +65,6 @@ class VR_Homepage_Steps_Fields {
 			    'tab'     => 'steps'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id0", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'steps'
-			),
-
 			// Steps Section Title.
 			array(
 				'id'      => "{$prefix}steps_section_title",
@@ -88,14 +72,6 @@ class VR_Homepage_Steps_Fields {
 				'name'    => __( 'Steps Section Title', 'VRC' ),
 				'desc'    => 'Example Value: Steps',
 				'std'     => 'No Steps Section Title Added',
-				'columns' => 12,
-				'tab'     => 'steps'
-			),
-
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id1", // Not used, but needed.
-				'type'    => 'divider',
 				'columns' => 12,
 				'tab'     => 'steps'
 			),
@@ -115,32 +91,24 @@ class VR_Homepage_Steps_Fields {
 				'tab'     => 'steps'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id2", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'steps'
-			),
-
 			// Repeatable steps.
             // Group.
             array(
 				'id'         => "{$prefix}group_steps",
 				'type'       => 'group',
 				'clone'      => true,
-				// 'sort_clone' => true,
+				'sort_clone' => true,
 				'tab'        => 'steps',
 				'fields'     => array(
 					// Image Icon.
         			array(
 						'id'               => "{$prefix}step_img",
 						'type'             => 'image_advanced',
-						'name'             => __( 'Step Icon Image', 'VRC' ),
+						'name'             => __( 'Step Icon', 'VRC' ),
 						'desc'             => "Add step's Icon image.",
 						'std'              => '//placehold.it/100/03a9f5?text=!',
-						'columns'          => 6,
-						'max_file_uploads' => 1
+						'columns'          => 3,
+						'max_file_uploads' => 1,
         			),
 
 					// Name of the steps.
@@ -149,7 +117,7 @@ class VR_Homepage_Steps_Fields {
 						'type' => 'text',
 						'name' => __( 'Step Name', 'VRC' ),
 						'desc' => 'Example Value: Quality',
-						'columns' => 6
+						'columns' => 3,
 					),
 
 					// Description of the steps.
@@ -157,20 +125,12 @@ class VR_Homepage_Steps_Fields {
 						'id'      => "{$prefix}step_dsc",
 						'type'    => 'textarea',
 						'name'    => __( 'Step Descriptoin', 'VRC' ),
-						'columns' => 12
+						'columns' => 6,
 					),
 
         		) // Sub-Fields ended.
 
             ), // Field Group ended.
-
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_id3", // Not used, but needed.
-            	'type'    => 'divider',
-            	'columns' => 12,
-            	'tab'     => 'steps'
-            ),
 
             // Button Text.
             array(
@@ -179,14 +139,6 @@ class VR_Homepage_Steps_Fields {
             	'name'    => __( 'Steps Section Button Text', 'VRC' ),
             	'desc'    => 'Example Value: Read More',
             	'std'     => 'Read More',
-            	'columns' => 12,
-            	'tab'     => 'steps'
-            ),
-
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_id4", // Not used, but needed.
-            	'type'    => 'divider',
             	'columns' => 12,
             	'tab'     => 'steps'
             ),

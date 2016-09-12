@@ -50,14 +50,6 @@ class VR_Homepage_Feature_Fields {
 			    'tab'     => 'feature'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id0", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'feature'
-			),
-
 			// Feature Section Title.
 			array(
 				'id'      => "{$prefix}feature_section_title",
@@ -65,14 +57,6 @@ class VR_Homepage_Feature_Fields {
 				'name'    => __( 'Feature Section Title', 'VRC' ),
 				'desc'    => 'Example Value: Features',
 				'std'     => 'No Feature Section Title Added',
-				'columns' => 12,
-				'tab'     => 'feature'
-			),
-
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id1", // Not used, but needed.
-				'type'    => 'divider',
 				'columns' => 12,
 				'tab'     => 'feature'
 			),
@@ -92,14 +76,6 @@ class VR_Homepage_Feature_Fields {
 				'tab'     => 'feature'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id2", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'feature'
-			),
-
 			// Repeatable features.
             // Group.
             array(
@@ -113,7 +89,7 @@ class VR_Homepage_Feature_Fields {
         			array(
 						'id'               => "{$prefix}feature_img",
 						'type'             => 'image_advanced',
-						'name'             => __( 'Feature Icon Image', 'VRC' ),
+						'name'             => __( 'Feature Icon', 'VRC' ),
 						'desc'             => "Add feature's Icon image.",
 						'std'              => '//placehold.it/100/03a9f5?text=!',
 						'columns'          => 3,
@@ -141,14 +117,6 @@ class VR_Homepage_Feature_Fields {
 
             ), // Field Group ended.
 
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_id3", // Not used, but needed.
-            	'type'    => 'divider',
-            	'columns' => 12,
-            	'tab'     => 'feature'
-            ),
-
             // Button Text.
             array(
             	'id'      => "{$prefix}feature_btn_txt",
@@ -156,14 +124,6 @@ class VR_Homepage_Feature_Fields {
             	'name'    => __( 'Feature Section Button Text', 'VRC' ),
             	'desc'    => 'Example Value: Read More',
             	'std'     => 'Read More',
-            	'columns' => 12,
-            	'tab'     => 'feature'
-            ),
-
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_id4", // Not used, but needed.
-            	'type'    => 'divider',
             	'columns' => 12,
             	'tab'     => 'feature'
             ),

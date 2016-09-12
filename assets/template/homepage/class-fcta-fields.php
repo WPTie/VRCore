@@ -50,14 +50,6 @@ class VR_Homepage_FCTA_Fields {
 			    'tab'     => 'fcta'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_fcta", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'fcta'
-			),
-
 			// FCTA Section Title.
 			array(
 				'id'      => "{$prefix}fcta_section_title",
@@ -65,14 +57,6 @@ class VR_Homepage_FCTA_Fields {
 				'name'    => __( 'Footer CTA Section Title', 'VRC' ),
 				'desc'    => 'Example Value: Call to Action Section',
 				'std'     => 'Call to Action Section',
-				'columns' => 12,
-				'tab'     => 'fcta'
-			),
-
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_fcta", // Not used, but needed.
-				'type'    => 'divider',
 				'columns' => 12,
 				'tab'     => 'fcta'
 			),
@@ -91,14 +75,6 @@ class VR_Homepage_FCTA_Fields {
 				'tab'     => 'fcta'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_fcta", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'fcta'
-			),
-
             // Button Text.
             array(
             	'id'      => "{$prefix}fcta_btn_txt",
@@ -110,28 +86,12 @@ class VR_Homepage_FCTA_Fields {
             	'tab'     => 'fcta'
             ),
 
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_fcta", // Not used, but needed.
-            	'type'    => 'divider',
-            	'columns' => 12,
-            	'tab'     => 'fcta'
-            ),
-
             // Button URL.
             array(
             	'id'      => "{$prefix}fcta_btn_url",
             	'type'    => 'url',
             	'name'    => __( 'Footer CTA Section Button URL', 'VRC' ),
             	'desc'    => 'Example Value: http://Google.com/',
-            	'columns' => 12,
-            	'tab'     => 'fcta'
-            ),
-
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_fcta", // Not used, but needed.
-            	'type'    => 'divider',
             	'columns' => 12,
             	'tab'     => 'fcta'
             ),

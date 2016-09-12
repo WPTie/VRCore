@@ -50,14 +50,6 @@ class VR_Homepage_TandN_Fields {
 			    'tab'     => 'tandn'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id0", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'tandn'
-			),
-
 			// Testimonial Title.
 			array(
 				'id'      => "{$prefix}tandn_section_ttml_title",
@@ -65,14 +57,6 @@ class VR_Homepage_TandN_Fields {
 				'name'    => __( 'Testimonial Title', 'VRC' ),
 				'desc'    => 'Example Value: Testimonials',
 				'std'     => 'Testimonials',
-				'columns' => 12,
-				'tab'     => 'tandn'
-			),
-
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id2", // Not used, but needed.
-				'type'    => 'divider',
 				'columns' => 12,
 				'tab'     => 'tandn'
 			),
@@ -136,22 +120,6 @@ class VR_Homepage_TandN_Fields {
 
             ), // Field Group ended.
 
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_id1", // Not used, but needed.
-            	'type'    => 'divider',
-            	'columns' => 12,
-            	'tab'     => 'tandn'
-            ),
-
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_id1", // Not used, but needed.
-            	'type'    => 'divider',
-            	'columns' => 12,
-            	'tab'     => 'tandn'
-            ),
-
             // News Title.
             array(
             	'id'      => "{$prefix}tandn_section_news_title",
@@ -159,14 +127,6 @@ class VR_Homepage_TandN_Fields {
             	'name'    => __( 'News Title', 'VRC' ),
             	'desc'    => 'Example Value: News or Blog',
             	'std'     => 'News',
-            	'columns' => 12,
-            	'tab'     => 'tandn'
-            ),
-
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_id3", // Not used, but needed.
-            	'type'    => 'divider',
             	'columns' => 12,
             	'tab'     => 'tandn'
             ),

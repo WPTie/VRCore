@@ -49,14 +49,6 @@ class VR_Homepage_Destination_Fields {
 			    'tab'     => 'destination'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_destination", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'destination'
-			),
-
 			// Destination Section Title.
 			array(
 				'id'      => "{$prefix}destination_section_title",
@@ -64,14 +56,6 @@ class VR_Homepage_Destination_Fields {
 				'name'    => __( 'Destination Section Title', 'VRC' ),
 				'desc'    => 'Example Value: Popular Destination',
 				'std'     => 'Popular Destination',
-				'columns' => 12,
-				'tab'     => 'destination'
-			),
-
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_destination", // Not used, but needed.
-				'type'    => 'divider',
 				'columns' => 12,
 				'tab'     => 'destination'
 			),
@@ -86,14 +70,6 @@ class VR_Homepage_Destination_Fields {
 								// 'teeny'=> true
 							 ),
 				'name'    => __( 'Destination Section Descripton', 'VRC' ),
-				'columns' => 12,
-				'tab'     => 'destination'
-			),
-
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_destination", // Not used, but needed.
-				'type'    => 'divider',
 				'columns' => 12,
 				'tab'     => 'destination'
 			),

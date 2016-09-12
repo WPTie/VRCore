@@ -50,14 +50,6 @@ class VR_Homepage_FRentals_Fields {
 			    'tab'     => 'frentals'
 			),
 
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id0", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'frentals'
-			),
-
 			// FRentals Section Title.
 			array(
 				'id'      => "{$prefix}frentals_section_title",
@@ -65,14 +57,6 @@ class VR_Homepage_FRentals_Fields {
 				'name'    => __( 'Featured Rentals Section Title', 'VRC' ),
 				'desc'    => 'Example Value: Featured Rentals',
 				'std'     => 'Featured Rentals',
-				'columns' => 12,
-				'tab'     => 'frentals'
-			),
-
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id1", // Not used, but needed.
-				'type'    => 'divider',
 				'columns' => 12,
 				'tab'     => 'frentals'
 			),
@@ -91,22 +75,6 @@ class VR_Homepage_FRentals_Fields {
 				'columns' => 12,
 				'tab'     => 'frentals'
 			),
-
-			// Divider.
-			array(
-				'id'      => "{$prefix}divider_id2", // Not used, but needed.
-				'type'    => 'divider',
-				'columns' => 12,
-				'tab'     => 'frentals'
-			),
-
-            // Divider.
-            array(
-            	'id'      => "{$prefix}divider_id3", // Not used, but needed.
-            	'type'    => 'divider',
-            	'columns' => 12,
-            	'tab'     => 'frentals'
-            ),
 
             array(
 				'id'          => "{$prefix}no_of_frentals",
