@@ -13,6 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Add class if it is unique.
+if ( ! class_exists( 'VR_Homepage_Feature_Fields' ) ) :
+
 /**
  * VR_Homepage_Feature_Fields.
  *
@@ -20,9 +23,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-
-if ( ! class_exists( 'VR_Homepage_Feature_Fields' ) ) :
-
 class VR_Homepage_Feature_Fields {
 
 	/**
@@ -106,7 +106,7 @@ class VR_Homepage_Feature_Fields {
 				'id'         => "{$prefix}group_features",
 				'type'       => 'group',
 				'clone'      => true,
-				// 'sort_clone' => true,
+				'sort_clone' => true,
 				'tab'        => 'feature',
 				'fields'     => array(
 					// Image Icon.
@@ -116,8 +116,8 @@ class VR_Homepage_Feature_Fields {
 						'name'             => __( 'Feature Icon Image', 'VRC' ),
 						'desc'             => "Add feature's Icon image.",
 						'std'              => '//placehold.it/100/03a9f5?text=!',
-						'columns'          => 6,
-						'max_file_uploads' => 1
+						'columns'          => 3,
+						'max_file_uploads' => 1,
         			),
 
 					// Name of the feature.
@@ -126,7 +126,7 @@ class VR_Homepage_Feature_Fields {
 						'type' => 'text',
 						'name' => __( 'Feature Name', 'VRC' ),
 						'desc' => 'Example Value: Quality',
-						'columns' => 6
+						'columns' => 3,
 					),
 
 					// Description of the feature.
@@ -134,7 +134,7 @@ class VR_Homepage_Feature_Fields {
 						'id'      => "{$prefix}feature_dsc",
 						'type'    => 'textarea',
 						'name'    => __( 'Feature Descriptoin', 'VRC' ),
-						'columns' => 12
+						'columns' => 6,
 					),
 
         		) // Sub-Fields ended.
