@@ -156,7 +156,7 @@ class VR_Submit_Booking {
                     'meta_input'   => $meta_array,
                 );
 
-                $output_message = __( 'Submited! <br/> Your booking was successfully submitted and it is awaiting confirmation!', 'VRC' );
+                $output_message = __( 'Submited! <br/> Your booking is now awaiting confirmation!', 'VRC' );
 
                 // Insert the booking into the database.
                 // wp_insert_booking( $submitted_booking );

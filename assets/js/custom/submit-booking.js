@@ -39,9 +39,6 @@
         });
 
 
-
-
-
       /**
        * AJAX Handler & Validator.
        *
@@ -91,6 +88,8 @@
 
                       form_loader.fadeOut();
                       if ( response.success ) {
+                          // Reset the form.
+                          document.getElementById('vr-submit-booking').reset();
                           form_message.removeClass( 'vr_dn' );
                           form_message.html( response.message).fadeIn();
                       } else {
