@@ -6,7 +6,7 @@
  * Author: mrahmadawais, WPTie
  * Author URI: http://WPTie.com/
  * Text Domain: VR
- * Version: 0.0.8
+ * Version: 0.0.9
  * License: GPL v2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
