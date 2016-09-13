@@ -226,7 +226,7 @@ msgid "Rental ID cannot be empty. Refresh the page and try again."
 msgstr ""
 
 #: assets/booking/class-submit-booking.php:159
-msgid "Submited! <br/> Your booking was successfully submitted and it is awaiting confirmation!"
+msgid "Submited! <br/> Your booking is now awaiting confirmation!"
 msgstr ""
 
 #: assets/booking/class-submit-booking.php:191, assets/member/class-edit-profile.php:303, assets/member/class-edit-profile.php:331, assets/member/class-submit-post.php:128, assets/member/class-submit-post.php:156, assets/rental/frontend/logic-edit-rental.php:40
@@ -665,6 +665,18 @@ msgstr ""
 
 #: assets/partner/partner-custom-columns.php:55
 msgid "Partner"
+msgstr ""
+
+#: assets/plugin/category-images/customizer/section/cat-term.php:34
+msgid "Category/Term"
+msgstr ""
+
+#: assets/plugin/category-images/customizer/section/cat-term.php:35
+msgid "Category or Term related settings"
+msgstr ""
+
+#: assets/plugin/category-images/customizer/section/cat-term.php:53
+msgid "Upload a default image for category/term!"
 msgstr ""
 
 #: assets/rental/class-rental-meta-boxes.php:42
