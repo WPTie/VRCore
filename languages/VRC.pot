@@ -763,7 +763,7 @@ msgstr ""
 msgid "Virtual Tour Video Image"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:259, assets/template/rental/favorite/class-vr-rental-favorite-meta.php:74, assets/template/rental/list/class-vr-rental-list-meta.php:111
+#: assets/rental/class-rental-meta-boxes.php:259, assets/template/rental/favorite/class-vr-rental-favorite-meta.php:74, assets/template/rental/list/class-vr-rental-list-meta.php:110
 msgid "Consult the documentation for required image size."
 msgstr ""
 
@@ -919,7 +919,7 @@ msgctxt "Taxonomy Singular Name"
 msgid "Rental Destination"
 msgstr ""
 
-#: assets/rental/ct-rental-destination.php:33, assets/rental/frontend/view-submit-rental.php:94, assets/rental/rental-custom-columns.php:63, assets/template/rental/list/class-vr-rental-list-meta.php:258
+#: assets/rental/ct-rental-destination.php:33, assets/rental/frontend/view-submit-rental.php:94, assets/rental/rental-custom-columns.php:63, assets/template/rental/list/class-vr-rental-list-meta.php:215
 msgid "Destination"
 msgstr ""
 
@@ -1159,7 +1159,7 @@ msgstr ""
 msgid "Find Address"
 msgstr ""
 
-#: assets/rental/frontend/view-submit-rental.php:73, assets/template/rental/list/class-vr-rental-list-meta.php:292
+#: assets/rental/frontend/view-submit-rental.php:73, assets/template/rental/list/class-vr-rental-list-meta.php:235
 msgid "Type"
 msgstr ""
 
@@ -1347,31 +1347,31 @@ msgstr ""
 msgid "Enable booking form?"
 msgstr ""
 
-#: assets/template/homepage/class-bookingform-fields.php:46, assets/template/homepage/class-bookingform-fields.php:87, assets/template/homepage/class-cta-fields.php:46, assets/template/homepage/class-destination-fields.php:45, assets/template/homepage/class-fcta-fields.php:46, assets/template/homepage/class-feature-fields.php:46, assets/template/homepage/class-frentals-fields.php:46, assets/template/homepage/class-steps-fields.php:46, assets/template/homepage/class-steps-fields.php:69, assets/template/homepage/class-tandn-fields.php:46
+#: assets/template/homepage/class-bookingform-fields.php:46, assets/template/homepage/class-bookingform-fields.php:71, assets/template/homepage/class-cta-fields.php:46, assets/template/homepage/class-destination-fields.php:45, assets/template/homepage/class-fcta-fields.php:46, assets/template/homepage/class-feature-fields.php:46, assets/template/homepage/class-frentals-fields.php:46, assets/template/homepage/class-steps-fields.php:46, assets/template/homepage/class-steps-fields.php:61, assets/template/homepage/class-tandn-fields.php:46
 msgid "Yes."
 msgstr ""
 
-#: assets/template/homepage/class-bookingform-fields.php:47, assets/template/homepage/class-bookingform-fields.php:88, assets/template/homepage/class-cta-fields.php:47, assets/template/homepage/class-destination-fields.php:46, assets/template/homepage/class-fcta-fields.php:47, assets/template/homepage/class-feature-fields.php:47, assets/template/homepage/class-frentals-fields.php:47, assets/template/homepage/class-steps-fields.php:47, assets/template/homepage/class-steps-fields.php:70, assets/template/homepage/class-tandn-fields.php:47
+#: assets/template/homepage/class-bookingform-fields.php:47, assets/template/homepage/class-bookingform-fields.php:72, assets/template/homepage/class-cta-fields.php:47, assets/template/homepage/class-destination-fields.php:46, assets/template/homepage/class-fcta-fields.php:47, assets/template/homepage/class-feature-fields.php:47, assets/template/homepage/class-frentals-fields.php:47, assets/template/homepage/class-steps-fields.php:47, assets/template/homepage/class-steps-fields.php:62, assets/template/homepage/class-tandn-fields.php:47
 msgid "No."
 msgstr ""
 
-#: assets/template/homepage/class-bookingform-fields.php:65
+#: assets/template/homepage/class-bookingform-fields.php:57
 msgid "Booking Form Title"
 msgstr ""
 
-#: assets/template/homepage/class-bookingform-fields.php:84
+#: assets/template/homepage/class-bookingform-fields.php:68
 msgid "Enable search with Checkin/Checkout Date?"
 msgstr ""
 
-#: assets/template/homepage/class-bookingform-fields.php:107
+#: assets/template/homepage/class-bookingform-fields.php:82
 msgid "Search Button Text"
 msgstr ""
 
-#: assets/template/homepage/class-bookingform-fields.php:129, assets/template/homepage/class-bookingform-fields.php:131
+#: assets/template/homepage/class-bookingform-fields.php:95, assets/template/homepage/class-bookingform-fields.php:97
 msgid "Select Rental Search Page"
 msgstr ""
 
-#: assets/template/homepage/class-bookingform-fields.php:130
+#: assets/template/homepage/class-bookingform-fields.php:96
 msgid "Select Rental Search Page that you have published with Renta Search VR page template."
 msgstr ""
 
@@ -1379,35 +1379,35 @@ msgstr ""
 msgid "Enable CTA section?"
 msgstr ""
 
-#: assets/template/homepage/class-cta-fields.php:65
+#: assets/template/homepage/class-cta-fields.php:57
 msgid "CTA Section Title"
 msgstr ""
 
-#: assets/template/homepage/class-cta-fields.php:89
+#: assets/template/homepage/class-cta-fields.php:73
 msgid "CTA Section Descripton"
 msgstr ""
 
-#: assets/template/homepage/class-cta-fields.php:106
+#: assets/template/homepage/class-cta-fields.php:82
 msgid "CTA Section Button Text"
 msgstr ""
 
-#: assets/template/homepage/class-cta-fields.php:125
+#: assets/template/homepage/class-cta-fields.php:93
 msgid "CTA Section Button URL"
 msgstr ""
 
-#: assets/template/homepage/class-cta-fields.php:144
+#: assets/template/homepage/class-cta-fields.php:104
 msgid "CTA Section Background Image"
 msgstr ""
 
-#: assets/template/homepage/class-cta-fields.php:145, assets/template/homepage/class-fcta-fields.php:145
+#: assets/template/homepage/class-cta-fields.php:105, assets/template/homepage/class-fcta-fields.php:105
 msgid "Make sure it is not too small and not too big."
 msgstr ""
 
-#: assets/template/homepage/class-cta-fields.php:165
+#: assets/template/homepage/class-cta-fields.php:117
 msgid "CTA Section Icon Image"
 msgstr ""
 
-#: assets/template/homepage/class-cta-fields.php:166
+#: assets/template/homepage/class-cta-fields.php:118
 msgid "Make sure it is not too big. E.g. Keep it 50px x 50px"
 msgstr ""
 
@@ -1415,15 +1415,15 @@ msgstr ""
 msgid "Enable Destination section?"
 msgstr ""
 
-#: assets/template/homepage/class-destination-fields.php:64
+#: assets/template/homepage/class-destination-fields.php:56
 msgid "Destination Section Title"
 msgstr ""
 
-#: assets/template/homepage/class-destination-fields.php:88
+#: assets/template/homepage/class-destination-fields.php:72
 msgid "Destination Section Descripton"
 msgstr ""
 
-#: assets/template/homepage/class-destination-fields.php:105
+#: assets/template/homepage/class-destination-fields.php:81
 msgid "Select Popular Destinations"
 msgstr ""
 
@@ -1431,23 +1431,23 @@ msgstr ""
 msgid "Enable Footer CTA section?"
 msgstr ""
 
-#: assets/template/homepage/class-fcta-fields.php:65
+#: assets/template/homepage/class-fcta-fields.php:57
 msgid "Footer CTA Section Title"
 msgstr ""
 
-#: assets/template/homepage/class-fcta-fields.php:89
+#: assets/template/homepage/class-fcta-fields.php:73
 msgid "Footer CTA Section Descripton"
 msgstr ""
 
-#: assets/template/homepage/class-fcta-fields.php:106
+#: assets/template/homepage/class-fcta-fields.php:82
 msgid "Footer CTA Section Button Text"
 msgstr ""
 
-#: assets/template/homepage/class-fcta-fields.php:125
+#: assets/template/homepage/class-fcta-fields.php:93
 msgid "Footer CTA Section Button URL"
 msgstr ""
 
-#: assets/template/homepage/class-fcta-fields.php:144
+#: assets/template/homepage/class-fcta-fields.php:104
 msgid "Footer CTA Section Background Image"
 msgstr ""
 
@@ -1455,31 +1455,31 @@ msgstr ""
 msgid "Enable Feature section?"
 msgstr ""
 
-#: assets/template/homepage/class-feature-fields.php:65
+#: assets/template/homepage/class-feature-fields.php:57
 msgid "Feature Section Title"
 msgstr ""
 
-#: assets/template/homepage/class-feature-fields.php:89
+#: assets/template/homepage/class-feature-fields.php:73
 msgid "Feature Section Descripton"
 msgstr ""
 
-#: assets/template/homepage/class-feature-fields.php:116
-msgid "Feature Icon Image"
+#: assets/template/homepage/class-feature-fields.php:92
+msgid "Feature Icon"
 msgstr ""
 
-#: assets/template/homepage/class-feature-fields.php:127
+#: assets/template/homepage/class-feature-fields.php:103
 msgid "Feature Name"
 msgstr ""
 
-#: assets/template/homepage/class-feature-fields.php:136
+#: assets/template/homepage/class-feature-fields.php:112
 msgid "Feature Descriptoin"
 msgstr ""
 
-#: assets/template/homepage/class-feature-fields.php:156
+#: assets/template/homepage/class-feature-fields.php:124
 msgid "Feature Section Button Text"
 msgstr ""
 
-#: assets/template/homepage/class-feature-fields.php:175
+#: assets/template/homepage/class-feature-fields.php:135
 msgid "Feature Section Button URL"
 msgstr ""
 
@@ -1487,39 +1487,39 @@ msgstr ""
 msgid "Enable Fetured Rentals section?"
 msgstr ""
 
-#: assets/template/homepage/class-frentals-fields.php:65
+#: assets/template/homepage/class-frentals-fields.php:57
 msgid "Featured Rentals Section Title"
 msgstr ""
 
-#: assets/template/homepage/class-frentals-fields.php:89
+#: assets/template/homepage/class-frentals-fields.php:73
 msgid "Featured Rentals Section Descripton"
 msgstr ""
 
-#: assets/template/homepage/class-frentals-fields.php:113
+#: assets/template/homepage/class-frentals-fields.php:81
 msgid "Select Number of Featured Rentals to be displayed"
 msgstr ""
 
-#: assets/template/homepage/class-frentals-fields.php:116
+#: assets/template/homepage/class-frentals-fields.php:84
 msgid "2 - Two Featured Rentals"
 msgstr ""
 
-#: assets/template/homepage/class-frentals-fields.php:117
+#: assets/template/homepage/class-frentals-fields.php:85
 msgid "4 - Four Featured Rentals"
 msgstr ""
 
-#: assets/template/homepage/class-frentals-fields.php:118
+#: assets/template/homepage/class-frentals-fields.php:86
 msgid "6 - Six Featured Rentals"
 msgstr ""
 
-#: assets/template/homepage/class-frentals-fields.php:119
+#: assets/template/homepage/class-frentals-fields.php:87
 msgid "8 - Eight Featured Rentals"
 msgstr ""
 
-#: assets/template/homepage/class-frentals-fields.php:120
+#: assets/template/homepage/class-frentals-fields.php:88
 msgid "10 - Ten Featured Rentals"
 msgstr ""
 
-#: assets/template/homepage/class-frentals-fields.php:125
+#: assets/template/homepage/class-frentals-fields.php:93
 msgid "Select # of rentals"
 msgstr ""
 
@@ -1563,39 +1563,39 @@ msgstr ""
 msgid "Enable Steps section?"
 msgstr ""
 
-#: assets/template/homepage/class-steps-fields.php:65
+#: assets/template/homepage/class-steps-fields.php:57
 msgid "Enable Steps section background (arrow passing through the steps)?"
 msgstr ""
 
-#: assets/template/homepage/class-steps-fields.php:66
+#: assets/template/homepage/class-steps-fields.php:58
 msgid "Looks good if you have 3 steps only!"
 msgstr ""
 
-#: assets/template/homepage/class-steps-fields.php:88
+#: assets/template/homepage/class-steps-fields.php:72
 msgid "Steps Section Title"
 msgstr ""
 
-#: assets/template/homepage/class-steps-fields.php:112
+#: assets/template/homepage/class-steps-fields.php:88
 msgid "Steps Section Descripton"
 msgstr ""
 
-#: assets/template/homepage/class-steps-fields.php:139
-msgid "Step Icon Image"
+#: assets/template/homepage/class-steps-fields.php:107
+msgid "Step Icon"
 msgstr ""
 
-#: assets/template/homepage/class-steps-fields.php:150
+#: assets/template/homepage/class-steps-fields.php:118
 msgid "Step Name"
 msgstr ""
 
-#: assets/template/homepage/class-steps-fields.php:159
+#: assets/template/homepage/class-steps-fields.php:127
 msgid "Step Descriptoin"
 msgstr ""
 
-#: assets/template/homepage/class-steps-fields.php:179
+#: assets/template/homepage/class-steps-fields.php:139
 msgid "Steps Section Button Text"
 msgstr ""
 
-#: assets/template/homepage/class-steps-fields.php:198
+#: assets/template/homepage/class-steps-fields.php:150
 msgid "Steps Section Button URL"
 msgstr ""
 
@@ -1603,47 +1603,47 @@ msgstr ""
 msgid "Enable Testimonial And News section?"
 msgstr ""
 
-#: assets/template/homepage/class-tandn-fields.php:65
+#: assets/template/homepage/class-tandn-fields.php:57
 msgid "Testimonial Title"
 msgstr ""
 
-#: assets/template/homepage/class-tandn-fields.php:93
+#: assets/template/homepage/class-tandn-fields.php:77
 msgid "Testimonial User Image"
 msgstr ""
 
-#: assets/template/homepage/class-tandn-fields.php:104
-msgid "(OPTIONAL) Testimonial User Image URL"
+#: assets/template/homepage/class-tandn-fields.php:88
+msgid "(OPTIONAL) Testimonial URL LINK"
 msgstr ""
 
-#: assets/template/homepage/class-tandn-fields.php:113
+#: assets/template/homepage/class-tandn-fields.php:97
 msgid "Testimonial User's Name"
 msgstr ""
 
-#: assets/template/homepage/class-tandn-fields.php:122
+#: assets/template/homepage/class-tandn-fields.php:106
 msgid "Testimonial User's Details"
 msgstr ""
 
-#: assets/template/homepage/class-tandn-fields.php:131
+#: assets/template/homepage/class-tandn-fields.php:115
 msgid "Testimonial"
 msgstr ""
 
-#: assets/template/homepage/class-tandn-fields.php:159
+#: assets/template/homepage/class-tandn-fields.php:127
 msgid "News Title"
 msgstr ""
 
-#: assets/template/homepage/class-tandn-fields.php:178
+#: assets/template/homepage/class-tandn-fields.php:138
 msgid "News Button Text"
 msgstr ""
 
-#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:59, assets/template/rental/list/class-vr-rental-list-meta.php:96, assets/template/rental/search/class-vr-rental-search-meta.php:59
+#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:59, assets/template/rental/list/class-vr-rental-list-meta.php:95, assets/template/rental/search/class-vr-rental-search-meta.php:58
 msgid "Summary"
 msgstr ""
 
-#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:73, assets/template/rental/list/class-vr-rental-list-meta.php:110
+#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:73, assets/template/rental/list/class-vr-rental-list-meta.php:109
 msgid "Header Background Image"
 msgstr ""
 
-#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:80, assets/template/rental/list/class-vr-rental-list-meta.php:123, assets/template/rental/search/class-vr-rental-search-meta.php:73
+#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:80, assets/template/rental/list/class-vr-rental-list-meta.php:122, assets/template/rental/search/class-vr-rental-search-meta.php:72
 msgid "Descripton"
 msgstr ""
 
@@ -1651,126 +1651,126 @@ msgstr ""
 msgid "Explore your favorite vacation rentals."
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:131
+#: assets/template/rental/list/class-vr-rental-list-meta.php:130
 msgid "Rental List"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:144
+#: assets/template/rental/list/class-vr-rental-list-meta.php:143
 msgid "Number of Rentals Per Page"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:160
+#: assets/template/rental/list/class-vr-rental-list-meta.php:153
 msgid "Order Rentals By"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:163
+#: assets/template/rental/list/class-vr-rental-list-meta.php:156
 msgid "Date Recent to Old"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:164
+#: assets/template/rental/list/class-vr-rental-list-meta.php:157
 msgid "Date Old to Recent"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:165
+#: assets/template/rental/list/class-vr-rental-list-meta.php:158
 msgid "Price Low to High"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:166
+#: assets/template/rental/list/class-vr-rental-list-meta.php:159
 msgid "Price High to Low"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:181
+#: assets/template/rental/list/class-vr-rental-list-meta.php:168
 msgid "Minimum Beds"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:197
+#: assets/template/rental/list/class-vr-rental-list-meta.php:178
 msgid "Minimum Baths"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:213
+#: assets/template/rental/list/class-vr-rental-list-meta.php:188
 msgid "Minimum Guests"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:229
+#: assets/template/rental/list/class-vr-rental-list-meta.php:198
 msgid "Minimum Price"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:244
+#: assets/template/rental/list/class-vr-rental-list-meta.php:207
 msgid "Maximum Price"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:275
+#: assets/template/rental/list/class-vr-rental-list-meta.php:225
 msgid "Feature"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:74
+#: assets/template/rental/search/class-vr-rental-search-meta.php:73
 msgid "Find the best bread and breakfast place."
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:81
+#: assets/template/rental/search/class-vr-rental-search-meta.php:80
 msgid "Sortby Text"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:82
+#: assets/template/rental/search/class-vr-rental-search-meta.php:81
 msgid "Sort By"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:91
+#: assets/template/rental/search/class-vr-rental-search-meta.php:90
 msgid "Rental Search"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:106
+#: assets/template/rental/search/class-vr-rental-search-meta.php:105
 msgid "Hide Map?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:107
+#: assets/template/rental/search/class-vr-rental-search-meta.php:106
 msgid "Check to hide Map on this search page?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:121
+#: assets/template/rental/search/class-vr-rental-search-meta.php:114
 msgid "Hide Destination?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:122
+#: assets/template/rental/search/class-vr-rental-search-meta.php:115
 msgid "Check to hide Destination on this search page?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:136
+#: assets/template/rental/search/class-vr-rental-search-meta.php:123
 msgid "Hide Type?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:137
+#: assets/template/rental/search/class-vr-rental-search-meta.php:124
 msgid "Check to hide Type on this search page?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:151
+#: assets/template/rental/search/class-vr-rental-search-meta.php:132
 msgid "Hide Feature?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:152
+#: assets/template/rental/search/class-vr-rental-search-meta.php:133
 msgid "Check to hide Feature on this search page?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:166
+#: assets/template/rental/search/class-vr-rental-search-meta.php:141
 msgid "Hide Check In & Check Out?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:167
+#: assets/template/rental/search/class-vr-rental-search-meta.php:142
 msgid "Check to hide Check In & Check Out? on this search page?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:181
+#: assets/template/rental/search/class-vr-rental-search-meta.php:150
 msgid "Hide Description?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:182
+#: assets/template/rental/search/class-vr-rental-search-meta.php:151
 msgid "Check to hide Description? on this search page?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:196
+#: assets/template/rental/search/class-vr-rental-search-meta.php:159
 msgid "Hide Sorting?"
 msgstr ""
 
-#: assets/template/rental/search/class-vr-rental-search-meta.php:197
+#: assets/template/rental/search/class-vr-rental-search-meta.php:160
 msgid "Check to hide Sorting? on this search page?"
 msgstr ""

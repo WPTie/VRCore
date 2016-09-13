@@ -10,9 +10,21 @@
  * Author URI http://vrcahlan.net/
  * Domain Path /languages
  * Text Domain categories-images
+ *
+ * @package VRC
  */
 
-define(  'VRC_IMAGE_PLACEHOLDER', "//placehold.it/1000x300/03a9f5?text=No%20Image%20Selected"  );
+/**
+ * Customizer Init.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/plugin/category-images/customizer/customizer-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/plugin/category-images/customizer/customizer-init.php' );
+}
+
+// Get the default image.
+$vr_default_cat_term_img = get_theme_mod( 'vr_cat_term_img', VRC_URL . '/assets/plugin/category-images/assets/img/placeholder.png' );
 
 add_action( 'admin_init', 'vr_init' );
 function vr_init() {
@@ -62,6 +74,10 @@ function vr_add_texonomy_field() {
 
 // add image field in edit form
 function vr_edit_texonomy_field( $taxonomy ) {
+	// Get the default image.
+	$vr_default_cat_term_img = get_theme_mod( 'vr_cat_term_img', VRC_URL . '/assets/plugin/category-images/assets/img/placeholder.png' );
+
+
 	if ( get_bloginfo( 'version' ) >= 3.5 )
 		wp_enqueue_media();
 	else {
@@ -69,7 +85,7 @@ function vr_edit_texonomy_field( $taxonomy ) {
 		wp_enqueue_script( 'thickbox' );
 	}
 
-	if ( vr_taxonomy_image_url(  $taxonomy->term_id, NULL, TRUE  ) == VRC_IMAGE_PLACEHOLDER )
+	if ( vr_taxonomy_image_url(  $taxonomy->term_id, NULL, TRUE  ) == $vr_default_cat_term_img )
 		$image_url = "";
 	else
 		$image_url = vr_taxonomy_image_url(  $taxonomy->term_id, NULL, TRUE  );
@@ -84,6 +100,9 @@ function vr_edit_texonomy_field( $taxonomy ) {
 
 // upload using wordpress upload
 function vr_script() {
+	// Get the default image.
+	$vr_default_cat_term_img = get_theme_mod( 'vr_cat_term_img', VRC_URL . '/assets/plugin/category-images/assets/img/placeholder.png' );
+
 	return '<script type="text/javascript">
 	    jQuery( document ).ready( function( $ ) {
 			var wordpress_ver = "'.get_bloginfo( "version" ).'", upload_button;
@@ -117,9 +136,9 @@ function vr_script() {
 			} );
 
 			$( ".vr_remove_image_button" ).click( function() {
-				$( ".taxonomy-image" ).attr( "src", "'.VRC_IMAGE_PLACEHOLDER.'" );
+				$( ".taxonomy-image" ).attr( "src", "'. $vr_default_cat_term_img .'" );
 				$( "#taxonomy_image" ).val( "" );
-				$( this ).parent().siblings( ".title" ).children( "img" ).attr( "src","' . VRC_IMAGE_PLACEHOLDER . '" );
+				$( this ).parent().siblings( ".title" ).children( "img" ).attr( "src","' . $vr_default_cat_term_img . '" );
 				$( ".inline-edit-col :input[name=\'taxonomy_image\']" ).val( "" );
 				return false;
 			} );
@@ -141,7 +160,7 @@ function vr_script() {
 			    var tax_id = $( this ).parents( "tr" ).attr( "id" ).substr( 4 );
 			    var thumb = $( "#tag-"+tax_id+" .thumb img" ).attr( "src" );
 
-				if ( thumb != "' . VRC_IMAGE_PLACEHOLDER . '" ) {
+				if ( thumb != "' . $vr_default_cat_term_img . '" ) {
 					$( ".inline-edit-col :input[name=\'taxonomy_image\']" ).val( thumb );
 				} else {
 					$( ".inline-edit-col :input[name=\'taxonomy_image\']" ).val( "" );
@@ -171,6 +190,9 @@ function vr_get_attachment_id_by_url( $image_src ) {
 
 // get taxonomy image url for the given term_id ( Place holder image by default )
 function vr_taxonomy_image_url( $term_id = NULL, $size = 'full', $return_placeholder = FALSE ) {
+	// Get the default image.
+	$vr_default_cat_term_img = get_theme_mod( 'vr_cat_term_img', VRC_URL . '/assets/plugin/category-images/assets/img/placeholder.png' );
+
 	if ( !$term_id ) {
 		if ( is_category() )
 			$term_id = get_query_var( 'cat' );
@@ -192,7 +214,7 @@ function vr_taxonomy_image_url( $term_id = NULL, $size = 'full', $return_placeho
 	}
 
     if ( $return_placeholder )
-		return ( $taxonomy_image_url != '' ) ? $taxonomy_image_url : VRC_IMAGE_PLACEHOLDER;
+		return ( $taxonomy_image_url != '' ) ? $taxonomy_image_url : $vr_default_cat_term_img;
 	else
 		return $taxonomy_image_url;
 }
