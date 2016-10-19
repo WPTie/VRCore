@@ -55,7 +55,7 @@ class VR_Homepage_Destination_Fields {
 				'type'    => 'text',
 				'name'    => __( 'Destination Section Title', 'VRC' ),
 				'desc'    => __( 'Example Value: Popular Destinations', 'VRC' ),
-				'std'     => __( 'Popular Destinations', 'VRC' ),,
+				'std'     => __( 'Popular Destinations', 'VRC' ),
 				'columns' => 12,
 				'tab'     => 'destination'
 			),
