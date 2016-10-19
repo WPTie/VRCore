@@ -86,7 +86,7 @@ class VR_Homepage_Steps_Fields {
 								// 'teeny'=> true
 							 ),
 				'name'    => __( 'Steps Section Descripton', 'VRC' ),
-				'std'     => 'No Steps section descripton added!',
+				'std'     => 'No Steps section description added!',
 				'columns' => 12,
 				'tab'     => 'steps'
 			),

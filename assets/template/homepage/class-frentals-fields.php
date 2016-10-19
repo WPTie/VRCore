@@ -71,7 +71,7 @@ class VR_Homepage_FRentals_Fields {
 								// 'teeny'=> true
 							 ),
 				'name'    => __( 'Featured Rentals Section Descripton', 'VRC' ),
-				'std'     => 'No Featured Rentals section descripton added!',
+				'std'     => 'No Featured Rentals section description added!',
 				'columns' => 12,
 				'tab'     => 'frentals'
 			),
