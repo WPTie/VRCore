@@ -71,7 +71,7 @@ class VR_Homepage_Feature_Fields {
 								// 'teeny'=> true
 							 ),
 				'name'    => __( 'Feature Section Descripton', 'VRC' ),
-				'std'     => 'No Feature section descripton added!',
+				'std'     => 'No Feature section description added!',
 				'columns' => 12,
 				'tab'     => 'feature'
 			),

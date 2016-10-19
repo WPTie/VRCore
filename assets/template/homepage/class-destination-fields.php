@@ -54,8 +54,8 @@ class VR_Homepage_Destination_Fields {
 				'id'      => "{$prefix}destination_section_title",
 				'type'    => 'text',
 				'name'    => __( 'Destination Section Title', 'VRC' ),
-				'desc'    => 'Example Value: Popular Destination',
-				'std'     => 'Popular Destination',
+				'desc'    => __( 'Example Value: Popular Destinations', 'VRC' ),
+				'std'     => __( 'Popular Destinations', 'VRC' ),,
 				'columns' => 12,
 				'tab'     => 'destination'
 			),
@@ -99,9 +99,9 @@ class VR_Homepage_Destination_Fields {
 				'tab'     => 'destination',
 				// HTML content.
 				'std'     => '<p style="padding: 1rem;background: #f1f1f1;">
-								You can add images to the destinations via <a href="/wp-admin/edit-tags.php?taxonomy=vr_rental-destination&post_type=vr_rental">Destinations Page</a>.
+								If no desitnations are being displayed, then you need to add a few destinations via <a href="/wp-admin/edit-tags.php?taxonomy=vr_rental-destination&post_type=vr_rental">Destinations Page</a>.
 								</br>
-								Make sure you have added feature images to these desitnations you selected here.
+								Make sure you have added feature images to the desitnations you selected above.
 							</p>',
 			), // Field ended.
 		); // Fields array ended.
