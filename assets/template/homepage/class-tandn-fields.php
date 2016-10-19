@@ -67,7 +67,7 @@ class VR_Homepage_TandN_Fields {
 				'id'         => "{$prefix}group_ttml",
 				'type'       => 'group',
 				'clone'      => true,
-				// 'sort_clone' => true,
+				'sort_clone' => true,
 				'tab'        => 'tandn',
 				'fields'     => array(
 					// Image Icon.
