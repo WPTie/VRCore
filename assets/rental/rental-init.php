@@ -23,27 +23,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Custom Post Type: `vr_rental`.
 if ( file_exists( VRC_DIR . '/assets/rental/cpt-rental.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/cpt-rental.php' );
+	require_once( VRC_DIR . '/assets/rental/cpt-rental.php' );
 }
 
 // Custom Taxonomy: `rental-type`.
 if ( file_exists( VRC_DIR . '/assets/rental/ct-rental-type.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/ct-rental-type.php' );
+	require_once( VRC_DIR . '/assets/rental/ct-rental-type.php' );
 }
 
 // Custom Taxonomy: `rental-destination`.
 if ( file_exists( VRC_DIR . '/assets/rental/ct-rental-destination.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/ct-rental-destination.php' );
+	require_once( VRC_DIR . '/assets/rental/ct-rental-destination.php' );
 }
 
 // Custom Taxonomy: `rental-feature`.
 if ( file_exists( VRC_DIR . '/assets/rental/ct-rental-feature.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/ct-rental-feature.php' );
+	require_once( VRC_DIR . '/assets/rental/ct-rental-feature.php' );
 }
 
 // Custom columns for `rental` post type.
 if ( file_exists( VRC_DIR . '/assets/rental/rental-custom-columns.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/rental-custom-columns.php' );
+	require_once( VRC_DIR . '/assets/rental/rental-custom-columns.php' );
 }
 
 
@@ -53,7 +53,7 @@ if ( file_exists( VRC_DIR . '/assets/rental/rental-custom-columns.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/rental/class-rental.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/class-rental.php' );
+	require_once( VRC_DIR . '/assets/rental/class-rental.php' );
 }
 
 
@@ -63,7 +63,7 @@ if ( file_exists( VRC_DIR . '/assets/rental/class-rental.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/rental/class-rental-meta-boxes.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/class-rental-meta-boxes.php' );
+	require_once( VRC_DIR . '/assets/rental/class-rental-meta-boxes.php' );
 }
 
 
@@ -73,7 +73,7 @@ if ( file_exists( VRC_DIR . '/assets/rental/class-rental-meta-boxes.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/rental/class-get-rental.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/class-get-rental.php' );
+	require_once( VRC_DIR . '/assets/rental/class-get-rental.php' );
 }
 
 
@@ -85,7 +85,7 @@ if ( file_exists( VRC_DIR . '/assets/rental/class-get-rental.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/rental/methods-get-rental.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/methods-get-rental.php' );
+	require_once( VRC_DIR . '/assets/rental/methods-get-rental.php' );
 }
 
 
@@ -95,7 +95,7 @@ if ( file_exists( VRC_DIR . '/assets/rental/methods-get-rental.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/rental/frontend/frontend-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/frontend/frontend-init.php' );
+	require_once( VRC_DIR . '/assets/rental/frontend/frontend-init.php' );
 }
 
 
@@ -108,20 +108,14 @@ if ( file_exists( VRC_DIR . '/assets/rental/frontend/frontend-init.php' ) ) {
  * 			3. VR_Rental_Meta_Boxes
  */
 if ( class_exists( 'VR_Rental' ) ) {
-
-	/**
-	 * Object: VR_Rental class.
-	 *
-	 * @since 1.0.0
-	 */
+	// Object: VR_Rental class.
 	$vr_rental_init = new VR_Rental();
-
 
 	// Create rental post type
 	add_action( 'init', array( $vr_rental_init, 'create_rental' ) );
 
 	// Create fake rental content.
-	add_action( 'init', array( $vr_rental_init, 'fake_rental_content' ) );
+	// add_action( 'init', array( $vr_rental_init, 'fake_rental_content' ) );
 
 	// Create rental-type CT.
 	add_action( 'init', array( $vr_rental_init, 'create_rental_type' ) );
@@ -134,15 +128,9 @@ if ( class_exists( 'VR_Rental' ) ) {
 
 }
 
-
+// Custom columns.
 if ( class_exists( 'VR_Rental_Custom_Columns' ) ) {
-
-
-	/**
-	 * Object: VR_Rental_Custom_Columns class.
-	 *
-	 * @since 1.0.0
-	 */
+	// Object: VR_Rental_Custom_Columns class.
 	$vr_rental_custom_columns = new VR_Rental_Custom_Columns();
 
 	// Rental Custom Columns Registered
@@ -160,23 +148,13 @@ if ( class_exists( 'VR_Rental_Custom_Columns' ) ) {
 	// Add CT Filters in the admin and convert ID to term titles.
 	add_action('restrict_manage_posts', array( $vr_rental_custom_columns, 'filter_rentals_by_taxonomies' ) );
 	add_filter('parse_query', array( $vr_rental_custom_columns, 'convert_id_to_term_in_query' ) );
-
-
 }
 
-
-
+// Meta boxes.
 if ( class_exists( 'VR_Rental_Meta_Boxes' ) ) {
-
-
-	/**
-	 * Object: VR_Rental_Metaboxes class.
-	 *
-	 * @since 1.0.0
-	 */
+	// Object: VR_Rental_Metaboxes class.
 	$vr_rental_meta_boxes = new VR_Rental_Meta_Boxes();
 
 	// Register rental meta boxes.
-    add_filter( 'rwmb_meta_boxes', array( $vr_rental_meta_boxes, 'register' ) );
-
+	add_filter( 'rwmb_meta_boxes', array( $vr_rental_meta_boxes, 'register' ) );
 }

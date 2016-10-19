@@ -86,9 +86,9 @@ class VR_Rental {
 	 *
 	 * @since 1.0.0
 	 */
-	// public function fake_rental_content() {
-	// 	$this->rental->fake_content();
-	// }
+	public function fake_rental_content() {
+		$this->rental->fake_content();
+	}
 
 	/**
 	 * Create CT Rental Type.
