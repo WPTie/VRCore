@@ -77,7 +77,6 @@ class VR_CPT_Rental {
 	    register_post_type( 'vr_rental', $args );
 	}
 
-
 	/**
 	 * Create Fake Content.
 	 *
@@ -98,9 +97,6 @@ class VR_CPT_Rental {
            $i++;
        }
        update_option( 'vr_created_fake_content_rental', true );
-
    }
-
 }
-
 endif;

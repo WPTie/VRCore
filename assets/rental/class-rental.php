@@ -27,7 +27,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'VR_Rental' ) ) :
 
 class VR_Rental {
-
 	/**
 	 * VR Rentals Object.
 	 *
@@ -36,15 +35,13 @@ class VR_Rental {
 	 */
 	public $rental;
 
-
 	/**
 	 * Rental Type Object.
 	 *
 	 * @var 	object
 	 * @since 	1.0.0
 	 */
-	 public $rental_type;
-
+	public $rental_type;
 
 	/**
 	 * Rental Destination Object.
@@ -53,7 +50,6 @@ class VR_Rental {
 	 * @since 	1.0.0
 	 */
 	public $rental_destination;
-
 
 	/**
 	 * Rental Features Object.
@@ -64,19 +60,15 @@ class VR_Rental {
 	public $rental_feature;
 
 
-
 	/**
 	 * Constructor.
 	 */
 	public function __construct() {
-
 		$this->rental                = new VR_CPT_Rental();
 		$this->rental_type           = new VR_CT_Rental_Type();
 		$this->rental_destination    = new VR_Rental_Destination();
 		$this->rental_feature        = new VR_Rental_Feature();
-
 	}
-
 
 	/**
 	 * Create Rental.
@@ -89,16 +81,14 @@ class VR_Rental {
 		$this->rental->register();
 	}
 
-
 	/**
 	 * Fake Rental Content.
 	 *
 	 * @since 1.0.0
 	 */
-	public function fake_rental_content() {
-		$this->rental->fake_content();
-	}
-
+	// public function fake_rental_content() {
+	// 	$this->rental->fake_content();
+	// }
 
 	/**
 	 * Create CT Rental Type.
@@ -109,7 +99,6 @@ class VR_Rental {
 		$this->rental_type->register();
 	}
 
-
 	/**
 	 * Create CT Rental Destination.
 	 *
@@ -119,7 +108,6 @@ class VR_Rental {
 		$this->rental_destination->register();
 	}
 
-
 	/**
 	 * Create CT Rental Feature.
 	 *
@@ -128,7 +116,5 @@ class VR_Rental {
 	public function create_rental_feature() {
 		$this->rental_feature->register();
 	}
-
 }
-
 endif;
