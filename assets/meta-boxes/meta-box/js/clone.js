@@ -1,5 +1,4 @@
-/* global jQuery, rwmb_cloneable_editors */
-
+/* global jQuery */
 jQuery( function ( $ )
 {
 	'use strict';
@@ -19,7 +18,7 @@ jQuery( function ( $ )
 
 				// Name attribute
 				var name = $field.attr( 'name' );
-				if ( name )
+				if ( name && !$field.closest( '.rwmb-group-clone' ).length )
 				{
 					$field.attr( 'name', cloneIndex.replace( index, name, '[', ']', false ) );
 				}
@@ -109,10 +108,10 @@ jQuery( function ( $ )
 			}
 			else if ( $field.is( 'select' ) )
 			{
-				// Reset select to first
-				$field.prop( 'selectedIndex', 0 )
+				// Reset select
+				$field.prop( 'selectedIndex', -1 )
 			}
-			else if ( 'hidden' !== $field.attr( 'type' ) )
+			else if ( ! $field.hasClass( 'rwmb-hidden' ) )
 			{
 				// Reset value
 				$field.val( '' );
@@ -121,6 +120,10 @@ jQuery( function ( $ )
 
 		// Insert Clone
 		$clone.insertAfter( $last );
+
+		// Trigger custom event for the clone instance. Required for Group extension to update sub fields.
+		$clone.trigger( 'clone_instance', nextIndex );
+
 		// Set fields index. Must run before trigger clone event.
 		cloneIndex.set( $clone, nextIndex );
 
@@ -137,8 +140,14 @@ jQuery( function ( $ )
 	 */
 	function toggleRemoveButtons( $container )
 	{
-		var $button = $container.find( '.remove-clone' );
-		$button.toggle( $button.length > 1 );
+		var $clones = $container.children( '.rwmb-clone' );
+		$clones.children( '.remove-clone' ).toggle( $clones.length > 1 );
+
+		// Recursive for nested groups.
+		$container.find( '.rwmb-input' ).each( function ()
+		{
+			toggleRemoveButtons( $( this ) );
+		} );
 	}
 
 	/**
@@ -179,7 +188,7 @@ jQuery( function ( $ )
 				$container = $this.closest( '.rwmb-input' );
 
 			// Remove clone only if there are 2 or more of them
-			if ( $container.find( '.rwmb-clone' ).length < 2 )
+			if ( $container.children( '.rwmb-clone' ).length < 2 )
 			{
 				return;
 			}

@@ -58,6 +58,10 @@ jQuery( function ( $ )
 		$clones.each( function ()
 		{
 			var currentId = $( this ).find( '.rwmb-wysiwyg' ).attr( 'id' );
+			if ( /_\d+$/.test( currentId ) )
+			{
+				currentId = currentId.replace( /_\d+$/, '' );
+			}
 			if ( tinyMCEPreInit.mceInit.hasOwnProperty( currentId ) )
 			{
 				id = currentId;
@@ -95,6 +99,6 @@ jQuery( function ( $ )
 			.find( '.quicktags-toolbar' ).attr( 'id', 'qt_' + id + '_toolbar' ).html( '' );
 	}
 
-	$( ':input.rwmb-date' ).each( update );
+	$( ':input.rwmb-wysiwyg' ).each( update );
 	$( '.rwmb-input' ).on( 'clone', ':input.rwmb-wysiwyg', update );
 } );

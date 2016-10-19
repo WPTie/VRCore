@@ -249,16 +249,28 @@ jQuery( function ( $ )
 			if ( !localConditions.hasOwnProperty( by ) )
 				continue;
 
-			// Get selector for input_value type
-			var selector = 'input_value' == by ? localConditions[by][0] : null;
-
-			// Call callback function to check for each condition
-			addEventListenersCallbacks[by]( function ()
+			if ( 'input_value' != by )
 			{
-				maybeShowHide( type, conditions, $metaBox );
-			}, selector );
+				// Call callback function to check for each condition
+				addEventListenersCallbacks[by]( function ()
+				{
+					maybeShowHide( type, conditions, $metaBox );
+				} );
+				delete localConditions[by];
+				continue;
+			}
 
+			// Input values
+			for ( var selector in localConditions[by] )
+			{
+				// Call callback function to check for each condition
+				addEventListenersCallbacks[by]( function ()
+				{
+					maybeShowHide( type, conditions, $metaBox );
+				}, selector );
+			}
 			delete localConditions[by];
+
 		}
 
 		// By taxonomy, including category and post format

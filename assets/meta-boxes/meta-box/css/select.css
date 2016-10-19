@@ -1,8 +1,8 @@
-.rwmb-select{
+.rwmb-select {
 	min-width: 160px;
 }
 .rwmb-select option {
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
 }
 .rwmb-select-all-none {
 	display: block;

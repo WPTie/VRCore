@@ -24,7 +24,8 @@ class RWMB_Core
 		$plugin = 'meta-box/meta-box.php';
 		add_filter( "plugin_action_links_$plugin", array( $this, 'plugin_links' ) );
 		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
-		add_action( 'admin_init', array( $this, 'register_meta_boxes' ) );
+		add_action( 'init', array( $this, 'register_meta_boxes' ) );
+        add_action( 'init', array( $this, 'register_wpml_hooks' ) );
 		add_action( 'edit_page_form', array( $this, 'fix_page_template' ) );
 	}
 
@@ -81,6 +82,25 @@ class RWMB_Core
 		return self::$meta_boxes;
 	}
 
+    /**
+     * Get all registered fields.
+     *
+     * @return array
+     */
+    public static function get_fields() {
+        $fields = array();
+
+        foreach ( self::$meta_boxes as $meta_box ) {
+            foreach ( $meta_box['fields'] as $field ) {
+                if ( ! empty( $field['id'] ) ) {
+                    $fields[ $field['id'] ] = $field;
+                }
+            }
+        }
+
+        return $fields;
+    }
+
 	/**
 	 * WordPress will prevent post data saving if a page template has been selected that does not exist
 	 * This is especially a problem when switching to our theme, and old page templates are in the post data
@@ -101,42 +121,12 @@ class RWMB_Core
 		}
 	}
 
-	/**
-	 * Apply various filters based on field type, id.
-	 * Filters:
-	 * - rwmb_{$name}
-	 * - rwmb_{$field['type']}_{$name}
-	 * - rwmb_{$field['id']}_{$name}
-	 * @return mixed
-	 */
-	public static function filter()
-	{
-		$args = func_get_args();
-
-		// 3 first params must be: filter name, value, field. Other params will be used for filters.
-		$name  = array_shift( $args );
-		$value = array_shift( $args );
-		$field = array_shift( $args );
-
-		// List of filters
-		$filters = array(
-			'rwmb_' . $name,
-			'rwmb_' . $field['type'] . '_' . $name,
-		);
-		if ( isset( $field['id'] ) )
-		{
-			$filters[] = 'rwmb_' . $field['id'] . '_' . $name;
-		}
-
-		// Filter params: value, field, other params. Note: value is changed after each run.
-		array_unshift( $args, $field );
-		foreach ( $filters as $filter )
-		{
-			$filter_args = $args;
-			array_unshift( $filter_args, $value );
-			$value = apply_filters_ref_array( $filter, $filter_args );
-		}
-
-		return $value;
+    /**
+     * Register wpml compatibility hooks
+     */
+    public function register_wpml_hooks() {
+        if ( defined( 'ICL_SITEPRESS_VERSION' ) ) {
+            new RWMB_WPML;
+        }
 	}
 }

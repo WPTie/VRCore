@@ -1,10 +1,10 @@
 === Meta Box ===
 Contributors: metabox, rilwis, fitwp, f-j-kaiser, funkatronic, PerWiklander, ruanmer, Omnicia
-Donate link: http://www.deluxeblogtips.com/donate
+Donate link: http://paypal.me/anhtnt
 Tags: meta-box, custom fields, custom field, meta, meta-boxes, admin, advanced, custom, edit, field, file, image, magic fields, matrix, more fields, Post, repeater, simple fields, text, textarea, type, cms, fields post
 Requires at least: 4.1
-Tested up to: 4.4.2
-Stable tag: 4.8.5
+Tested up to: 4.6.1
+Stable tag: 4.9.6
 License: GPLv2 or later
 
 Meta Box plugin is a powerful, professional solution to create custom meta boxes and custom fields for WordPress websites.
@@ -33,6 +33,8 @@ See more documentation [here](https://metabox.io/docs/).
 
 ### Extensions
 
+- [MB User Meta](https://metabox.io/plugins/mb-user-meta/): Add custom fields to user profile (user meta) quickly with simple syntax.
+- [Meta Box Geolocation](https://metabox.io/plugins/meta-box-geolocation/): Automatically and instantly populate location data with the power of Google Maps Geolocation API.
 - [MB Admin Columns](https://metabox.io/plugins/mb-admin-columns/): Display custom fields in table columns in admin screens for All Posts (types).
 - [MB Term Meta](https://metabox.io/plugins/mb-term-meta/): Add meta data to categories, tags or any custom taxonomy with simple syntax.
 - [MB Settings Page](https://metabox.io/plugins/mb-settings-page/): Create settings pages for themes, plugins or websites with beautiful syntax.
@@ -77,6 +79,89 @@ To getting started with the plugin API, please read [this tutorial](https://meta
 1. Post Taxonomy Fields
 
 == Changelog ==
+
+= 4.9.6 =
+* Fix: Wrong CSS selector when cloning wysiwyg field
+* Fix: Remove preview for oembed field when cloning
+* Fix: 'std' for taxonomy field now works
+
+= 4.9.5 =
+* Fix: Quick fix for wrong field wrapper class which causes color field to render incorrectly
+
+= 4.9.4 =
+* Fix: Quick fix for cloning bug
+
+= 4.9.3 =
+* Fix: Quick fix saving datetime field
+
+= 4.9.2 =
+* Fix: Quick fix validation
+
+= 4.9.1 =
+* Fix: Quick fix for `rwmb_meta()` to be better backward compatible
+
+= 4.9 =
+* Improvement: Update Chinese language. Add Chinese Taiwan.
+* Improvement: Add support for Google Maps API key. Default API key is added, however users should replace it with their own key.
+* Improvement: Add additional methods for jQuery validation module which makes it understand HTML5 "pattern" attribute.
+* Improvement: Fully WPML compatibility (supported by WPML team)
+* Improvement: Add placeholders for `key_value` field
+* Fix: Toggle remove clone buttons for nested groups.
+* Fix: Error on date field, not save
+* Fix: Add fix for date/datetime when both inline and timestamp used
+* Fix: Set default language for date/time picker.
+* Fix: rwmb_meta for images returns incorrect width/height
+* Fix: PHP warning when uploading files in Settings Pages extension.
+* Fix: Blank space in the footer when using plupload_image.
+* Fix: Cloning wysiwyg when deleting the 1st clone
+
+= 4.8.7 =
+* Improvement: Refactor the code to reduce the complexity in the fields' inheritance
+* Improvement: All HTML 5 input types (week, month, etc.) are supported
+* Improvement: Optimize the_value function, use recursive call to reduce nested loop. Sub-fields need to define format_single_value only.
+* Improvement: Use 1 single localization file for jQuery date picker for simplicity
+* Improvement: Add support for custom marker for map field (param `marker_icon`) in rwmb_meta function
+* Improvement: Add `limit` option for media fields in `rwmb_meta` function when retrieving meta value.
+* Improvement: Add `rwmb_option_label` filter for choice fields (user, post, taxonomy) so users can choose which object field is used as label
+* Improvement: Use `WP_User_Query` for user field which supports more options for querying
+* Improvement: Optimize code for oembed, also use esc_html__ for better security
+* Improvement: Compatibility with Meta Box Geolocation
+* Fix: Fix first option is auto selected in select_advanced field.
+* Fix: Fix clone issue for color in Meta Box Group extension.
+* Fix: Fix clone issue for image advanced in Meta Box Group extension.
+* Fix: Fix not parsing $args to array in helper functions.
+
+= 4.8.6 =
+* Improvement: Edit link on media items now opens edit modal
+* Improvement: Refresh map when sorting meta boxes.
+* Improvement: Wrap checkbox's description into a <label> to make it clickable to activate/deactivate the checkbox.
+* Improvement: Remove Spanish language (ES) as it's already translated on translate.wordpress.org
+* Improvement: Add support for saving zoom in map
+* Improvement: Prevent output localized strings twice.
+* Improvement: Add fallback for autoload in PHP 5.2 in case it's disabled.
+* Improvement: No need to json_encode for custom attributes. User can pass an array to custom attribute
+* Improvement: Add style for `select2` library to match WordPress admin style
+* Improvement: Adds min width to select. @prop ahmadawais
+* Improvement: Added `max_status` option for media type fields. `true` to show status, `false` to hide
+* Improvement: Add attachment meta data to file info
+* Fix: Validation for non-Meta Box fields
+* Fix: advanced_image field after reload page F5 in Firefox
+* Fix: Cannot read property 'getFullYear' of null
+* Fix: Empty date converting to 0
+* Fix: Add missing class for image_select field which prevents setting input's name when cloning.
+* Fix: Fix bug with blank maps on the front end
+* Fix: Fix bug with cloning media fields
+* Fix: Remove empty values in clones and reset index.
+* Fix: Reset of cloned select fields
+* Fix: select_advanced with multiple=true adds empty selected option
+* Fix: No empty option for simple select field
+* Fix: Empty datetime field with timestamp => true returns January 1, 1970
+* Fix: For color picker when using with Columns extension
+* Fix: Fix bug with taxonomy advanced returns all taxonomy items for posts with no meta saved
+* Fix: Fix bug with taxonomy advanced not saving value when field isn't multiple
+* Fix: Make radio inline again
+* Fix: Wrong meta value when using helper function outside the loop
+* Fix: Validation now works for hidden elements in tabs
 
 = 4.8.5 =
 * Improvement: Add localization for Select2 library

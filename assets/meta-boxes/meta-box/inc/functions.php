@@ -16,12 +16,18 @@ if ( ! function_exists( 'rwmb_meta' ) )
 	 */
 	function rwmb_meta( $key, $args = array(), $post_id = null )
 	{
-		/**
+		$args = wp_parse_args( $args );
+		/*
 		 * If meta boxes is registered in the backend only, we can't get field's params
 		 * This is for backward compatibility with version < 4.8.0
 		 */
-		$field = RWMB_Helper::find_field( $key );
-		if ( false === $field || isset( $args['type'] ) )
+		$field = RWMB_Helper::find_field( $key, $post_id );
+
+		/*
+		 * If field is not found, which can caused by registering meta boxes for the backend only or conditional registration
+		 * Then fallback to the old method to retrieve meta (which uses get_post_meta() as the latest fallback)
+		 */
+		if ( false === $field )
 		{
 			return apply_filters( 'rwmb_meta', RWMB_Helper::meta( $key, $args, $post_id ) );
 		}
@@ -46,12 +52,13 @@ if ( ! function_exists( 'rwmb_get_value' ) )
 	 */
 	function rwmb_get_value( $field_id, $args = array(), $post_id = null )
 	{
-		$field = RWMB_Helper::find_field( $field_id );
+		$args  = wp_parse_args( $args );
+		$field = RWMB_Helper::find_field( $field_id, $post_id );
 
 		// Get field value
-		$value = $field ? call_user_func( array( RW_Meta_Box::get_class_name( $field ), 'get_value' ), $field, $args, $post_id ) : false;
+		$value = $field ? RWMB_Field::call( 'get_value', $field, $args, $post_id ) : false;
 
-		/**
+		/*
 		 * Allow developers to change the returned value of field
 		 * For version < 4.8.2, the filter name was 'rwmb_get_field'
 		 *
@@ -80,15 +87,15 @@ if ( ! function_exists( 'rwmb_the_value' ) )
 	 */
 	function rwmb_the_value( $field_id, $args = array(), $post_id = null, $echo = true )
 	{
-		// Find field
-		$field = RWMB_Helper::find_field( $field_id );
+		$args  = wp_parse_args( $args );
+		$field = RWMB_Helper::find_field( $field_id, $post_id );
 
 		if ( ! $field )
 			return '';
 
-		$output = call_user_func( array( RW_Meta_Box::get_class_name( $field ), 'the_value' ), $field, $args, $post_id );
+		$output = RWMB_Field::call( 'the_value', $field, $args, $post_id );
 
-		/**
+		/*
 		 * Allow developers to change the returned value of field
 		 * For version < 4.8.2, the filter name was 'rwmb_get_field'
 		 *
@@ -111,9 +118,7 @@ if ( ! function_exists( 'rwmb_meta_shortcode' ) )
 	/**
 	 * Shortcode to display meta value
 	 *
-	 * @param array $atts Shortcode attributes, same as meta() function, but has more "meta_key" parameter
-	 *
-	 * @see meta() function below
+	 * @param array $atts Shortcode attributes, same as rwmb_meta() function, but has more "meta_key" parameter
 	 *
 	 * @return string
 	 */

@@ -14,9 +14,9 @@ class RWMB_Select_Tree_Field extends RWMB_Select_Field
 	 *
 	 * @return string
 	 */
-	public static function walk( $options, $db_fields, $meta, $field )
+	public static function walk( $field, $options, $db_fields, $meta )
 	{
-		$walker = new RWMB_Select_Tree_Walker( $db_fields, $field, $meta );
+		$walker = new RWMB_Walker_Select_Tree( $db_fields, $field, $meta );
 		return $walker->walk( $options );
 	}
 

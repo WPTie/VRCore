@@ -16,9 +16,9 @@ class RWMB_Taxonomy_Advanced_Field extends RWMB_Taxonomy_Field
 	 *
 	 * @return string
 	 */
-	static function value( $new, $old, $post_id, $field )
+	public static function value( $new, $old, $post_id, $field )
 	{
-		return is_array( $new ) ? implode( ',', array_unique( $new ) ) : null;
+		return implode( ',', array_unique( (array) $new ) );
 	}
 
 	/**
@@ -28,10 +28,8 @@ class RWMB_Taxonomy_Advanced_Field extends RWMB_Taxonomy_Field
 	 * @param mixed $old
 	 * @param int   $post_id
 	 * @param array $field
-	 *
-	 * @return string
 	 */
-	static function save( $new, $old, $post_id, $field )
+	public static function save( $new, $old, $post_id, $field )
 	{
 		if ( $new )
 			update_post_meta( $post_id, $field['id'], $new );
@@ -48,10 +46,32 @@ class RWMB_Taxonomy_Advanced_Field extends RWMB_Taxonomy_Field
 	 *
 	 * @return array
 	 */
-	static function meta( $post_id, $saved, $field )
+	public static function meta( $post_id, $saved, $field )
 	{
 		$meta = get_post_meta( $post_id, $field['id'], true );
 		$meta = wp_parse_id_list( $meta );
+		$meta = array_filter( $meta );
+
+		// Use $field['std'] only when the meta box hasn't been saved (i.e. the first time we run)
+		$meta = ! $saved ? $field['std'] : $meta;
+
+		// Escape attributes
+		$meta = self::call( $field, 'esc_meta', $meta );
+
+		// Make sure meta value is an array for clonable and multiple fields
+		if ( $field['clone'] || $field['multiple'] )
+		{
+			if ( empty( $meta ) || ! is_array( $meta ) )
+			{
+				/**
+				 * Note: if field is clonable, $meta must be an array with values
+				 * so that the foreach loop in self::show() runs properly
+				 * @see self::show()
+				 */
+				$meta = $field['clone'] ? array( '' ) : array();
+			}
+		}
+
 		return $meta;
 	}
 
@@ -65,12 +85,14 @@ class RWMB_Taxonomy_Advanced_Field extends RWMB_Taxonomy_Field
 	 *
 	 * @return array List of post term objects
 	 */
-	static function get_value( $field, $args = array(), $post_id = null )
+	public static function get_value( $field, $args = array(), $post_id = null )
 	{
 		if ( ! $post_id )
 			$post_id = get_the_ID();
 
 		$value = self::meta( $post_id, '', $field );
+		if( empty( $value ) )
+			return null;
 
 		// Allow to pass more arguments to "get_terms"
 		$args  = wp_parse_args( array(
