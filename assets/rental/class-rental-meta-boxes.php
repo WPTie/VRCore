@@ -550,7 +550,7 @@ class VR_Rental_Meta_Boxes {
 						echo '<div class="rwmb-field">';
 
 							echo '<p>';
-								_e( 'All the bookings (Both confirmed and not confirmed bookings) added for this rental are shown above. ', 'VRC' );
+								_e( 'All the bookings added for this rental are displayed below (Both confirmed and not confirmed bookings). ', 'VRC' );
 							echo '</p>';
 
 							if ( $the_rentals->have_posts() ) {
