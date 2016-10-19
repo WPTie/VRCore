@@ -176,7 +176,7 @@ function vr_script() {
 add_action( 'edit_term','vr_save_taxonomy_image' );
 add_action( 'create_term','vr_save_taxonomy_image' );
 function vr_save_taxonomy_image( $term_id ) {
-    if( isset( $_POST['taxonomy_image'] ) )
+    if ( isset( $_POST['taxonomy_image'] ) )
         update_option( 'vr_taxonomy_image'.$term_id, $_POST['taxonomy_image'], NULL );
 }
 
@@ -185,7 +185,7 @@ function vr_get_attachment_id_by_url( $image_src ) {
     global $wpdb;
     $query = $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid = %s", $image_src );
     $id = $wpdb->get_var( $query );
-    return ( !empty( $id ) ) ? $id : NULL;
+    return ( ! empty( $id ) ) ? $id : NULL;
 }
 
 // get taxonomy image url for the given term_id ( Place holder image by default )
@@ -205,9 +205,9 @@ function vr_taxonomy_image_url( $term_id = NULL, $size = 'full', $return_placeho
 	}
 
     $taxonomy_image_url = get_option( 'vr_taxonomy_image'.$term_id );
-    if( !empty( $taxonomy_image_url ) ) {
+    if ( ! empty( $taxonomy_image_url ) ) {
 	    $attachment_id = vr_get_attachment_id_by_url( $taxonomy_image_url );
-	    if( !empty( $attachment_id ) ) {
+	    if ( ! empty( $attachment_id ) ) {
 	    	$taxonomy_image_url = wp_get_attachment_image_src( $attachment_id, $size );
 		    $taxonomy_image_url = $taxonomy_image_url[0];
 	    }
@@ -345,22 +345,22 @@ function vr_taxonomy_image( $term_id = NULL, $size = 'full', $attr = NULL, $echo
 	}
 
     $taxonomy_image_url = get_option( 'vr_taxonomy_image'.$term_id );
-    if( !empty( $taxonomy_image_url ) ) {
+    if ( ! empty( $taxonomy_image_url ) ) {
 	    $attachment_id = vr_get_attachment_id_by_url( $taxonomy_image_url );
-	    if( !empty( $attachment_id ) )
+	    if ( ! empty( $attachment_id ) )
 	    	$taxonomy_image = wp_get_attachment_image( $attachment_id, $size, FALSE, $attr );
 	    else {
 	    	$image_attr = '';
-	    	if( is_array( $attr ) ) {
-	    		if( !empty( $attr['class'] ) )
+	    	if ( is_array( $attr ) ) {
+	    		if ( ! empty( $attr['class'] ) )
 	    			$image_attr .= ' class="'.$attr['class'].'" ';
-	    		if( !empty( $attr['alt'] ) )
+	    		if ( ! empty( $attr['alt'] ) )
 	    			$image_attr .= ' alt="'.$attr['alt'].'" ';
-	    		if( !empty( $attr['width'] ) )
+	    		if ( ! empty( $attr['width'] ) )
 	    			$image_attr .= ' width="'.$attr['width'].'" ';
-	    		if( !empty( $attr['height'] ) )
+	    		if ( ! empty( $attr['height'] ) )
 	    			$image_attr .= ' height="'.$attr['height'].'" ';
-	    		if( !empty( $attr['title'] ) )
+	    		if ( ! empty( $attr['title'] ) )
 	    			$image_attr .= ' title="'.$attr['title'].'" ';
 	    	}
 	    	$taxonomy_image = '<img src="'.$taxonomy_image_url.'" '.$image_attr.'/>';

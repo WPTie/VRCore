@@ -99,7 +99,7 @@ class VR_Homepage_Destination_Fields {
 				'tab'     => 'destination',
 				// HTML content.
 				'std'     => '<p style="padding: 1rem;background: #f1f1f1;">
-								If no desitnations are being displayed, then you need to add a few destinations via <a href="/wp-admin/edit-tags.php?taxonomy=vr_rental-destination&post_type=vr_rental">Destinations Page</a>.
+								If no desitnations are being displayed, then you need to add a few destinations via <a href="/wp-admin/edit-tags.php?taxonomy=vr_rental-destination&post_type=vr_rental" target="_blank">Destinations Page</a>.
 								( Make sure you have added feature images to the desitnations you selected above ).
 							</p>',
 			), // Field ended.
