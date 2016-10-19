@@ -199,7 +199,7 @@ class VR_Rental_Meta_Boxes {
 					'name'          => __('Rental Location at Google Map*', 'VRC'),
 					'desc'          => __('Drag the google map marker to point your rental location. You can also use the address field above to search for your rental.', 'VRC'),
 
-					'std'           => '25.761680,-80.191790,14',   // 'latitude,longitude[,zoom]' (zoom is optional)
+					// 'std'           => '25.761680,-80.191790,14',   // 'latitude,longitude[,zoom]' (zoom is optional)
 					'style'         => 'width: 95%; height: 400px',
 
 					'address_field' => "{$prefix}address",

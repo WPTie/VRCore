@@ -344,9 +344,9 @@ class VR_Get_Rental {
 		}
 
 		// Get the slider images of this rental.
-		$vr_images = $this->the_meta_data[ $this->meta_keys['images'] ];
+		$vr_images = isset( $this->the_meta_data[ $this->meta_keys['images'] ] ) ? $this->the_meta_data[ $this->meta_keys['images'] ] : false;
 
-		// Will contain URLs of Images.
+		// Array that will contain URLs of Images.
 		$vr_images_urls_array = array();
 
 		// Array or not?
