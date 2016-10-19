@@ -197,7 +197,7 @@ msgstr ""
 msgid "Example Value: john@gmail.com"
 msgstr ""
 
-#: assets/booking/class-booking-meta-boxes.php:275, assets/rental/class-rental-meta-boxes.php:507
+#: assets/booking/class-booking-meta-boxes.php:275, assets/rental/class-rental-meta-boxes.php:508
 msgid "Private Note"
 msgstr ""
 
@@ -755,123 +755,123 @@ msgstr ""
 msgid "Drag the google map marker to point your rental location. You can also use the address field above to search for your rental."
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:223
+#: assets/rental/class-rental-meta-boxes.php:224
 msgid "Rental Gallery/Slider Images"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:224
+#: assets/rental/class-rental-meta-boxes.php:225
 msgid "Check documentation for image sizes"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:244, assets/rental/frontend/view-submit-rental.php:193
+#: assets/rental/class-rental-meta-boxes.php:245, assets/rental/frontend/view-submit-rental.php:193
 msgid "Virtual Tour Video URL"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:245
+#: assets/rental/class-rental-meta-boxes.php:246
 msgid "Provide virtual tour video URL. YouTube, Vimeo, SWF File and MOV File are supported"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:258
+#: assets/rental/class-rental-meta-boxes.php:259
 msgid "Virtual Tour Video Image"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:259, assets/template/rental/favorite/class-vr-rental-favorite-meta.php:74, assets/template/rental/list/class-vr-rental-list-meta.php:110
+#: assets/rental/class-rental-meta-boxes.php:260, assets/template/rental/favorite/class-vr-rental-favorite-meta.php:74, assets/template/rental/list/class-vr-rental-list-meta.php:110
 msgid "Consult the documentation for required image size."
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:327
+#: assets/rental/class-rental-meta-boxes.php:328
 msgid "What should be displayed in the Agent Information box?"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:331
+#: assets/rental/class-rental-meta-boxes.php:332
 msgid "Author of this rental."
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:332
+#: assets/rental/class-rental-meta-boxes.php:333
 msgid "Agent Information. ( Select the agent below )"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:333
+#: assets/rental/class-rental-meta-boxes.php:334
 msgid "Nothing. ( Hide information box )"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:354
+#: assets/rental/class-rental-meta-boxes.php:355
 msgid "Agent"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:369
+#: assets/rental/class-rental-meta-boxes.php:370
 msgid "Select the Agent"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:370
+#: assets/rental/class-rental-meta-boxes.php:371
 msgid "Select the agent"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:396
+#: assets/rental/class-rental-meta-boxes.php:397
 msgid "Is this property booked?"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:400
+#: assets/rental/class-rental-meta-boxes.php:401
 msgid "Not Booked."
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:401
+#: assets/rental/class-rental-meta-boxes.php:402
 msgid "Booked. (Select the booking below)"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:414
+#: assets/rental/class-rental-meta-boxes.php:415
 msgid "Select the Booking "
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:415
+#: assets/rental/class-rental-meta-boxes.php:416
 msgid "Select only if the rental is booked."
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:430
+#: assets/rental/class-rental-meta-boxes.php:431
 msgid "Select the Booking"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:431
+#: assets/rental/class-rental-meta-boxes.php:432
 msgid "Select a booking"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:457
+#: assets/rental/class-rental-meta-boxes.php:458
 msgid "Do you want to add this rental in the Homepage Slider?"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:458, assets/rental/class-rental-meta-boxes.php:477
+#: assets/rental/class-rental-meta-boxes.php:459, assets/rental/class-rental-meta-boxes.php:478
 msgid "Remember you need set a `Featured Image` for this property from the right sidebar."
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:462, assets/rental/class-rental-meta-boxes.php:481
+#: assets/rental/class-rental-meta-boxes.php:463, assets/rental/class-rental-meta-boxes.php:482
 msgid "Yes "
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:463, assets/rental/class-rental-meta-boxes.php:482
+#: assets/rental/class-rental-meta-boxes.php:464, assets/rental/class-rental-meta-boxes.php:483
 msgid "No"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:476
+#: assets/rental/class-rental-meta-boxes.php:477
 msgid "Mark this rental as featured?"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:494
+#: assets/rental/class-rental-meta-boxes.php:495
 msgid "Attachments"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:495
+#: assets/rental/class-rental-meta-boxes.php:496
 msgid "You can attach PDF files, Map images OR other documents to provide further details related to this rental property."
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:508
+#: assets/rental/class-rental-meta-boxes.php:509
 msgid "Keep a private note about this rental property. This field will not be displayed anywhere else."
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:521
+#: assets/rental/class-rental-meta-boxes.php:522
 msgid "Bookings for this Rental Property"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:553
+#: assets/rental/class-rental-meta-boxes.php:554
 msgid "All the bookings added for this rental are displayed below (Both confirmed and not confirmed bookings). "
 msgstr ""
 
