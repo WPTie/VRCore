@@ -872,7 +872,7 @@ msgid "Bookings for this Rental Property"
 msgstr ""
 
 #: assets/rental/class-rental-meta-boxes.php:553
-msgid "All the bookings (Both confirmed and not confirmed bookings) added for this rental are shown above. "
+msgid "All the bookings added for this rental are displayed below (Both confirmed and not confirmed bookings). "
 msgstr ""
 
 #: assets/rental/cpt-rental.php:29
@@ -1429,6 +1429,14 @@ msgstr ""
 
 #: assets/template/homepage/class-destination-fields.php:56
 msgid "Destination Section Title"
+msgstr ""
+
+#: assets/template/homepage/class-destination-fields.php:57
+msgid "Example Value: Popular Destinations"
+msgstr ""
+
+#: assets/template/homepage/class-destination-fields.php:58
+msgid "Popular Destinations"
 msgstr ""
 
 #: assets/template/homepage/class-destination-fields.php:72
