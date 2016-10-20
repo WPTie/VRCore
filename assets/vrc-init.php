@@ -11,7 +11,6 @@
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-
 /**
  * Meta boxes initializer.
  *
@@ -20,7 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 if ( file_exists( VRC_DIR . '/assets/meta-boxes/meta-box-init.php' ) ) {
     require_once( VRC_DIR . '/assets/meta-boxes/meta-box-init.php' );
 }
-
 
 /**
  * Rental initializer.
@@ -31,7 +29,6 @@ if ( file_exists( VRC_DIR . '/assets/rental/rental-init.php' ) ) {
     require_once( VRC_DIR . '/assets/rental/rental-init.php' );
 }
 
-
 /**
  * Booking initializer.
  *
@@ -40,7 +37,6 @@ if ( file_exists( VRC_DIR . '/assets/rental/rental-init.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/booking/booking-init.php' ) ) {
     require_once( VRC_DIR . '/assets/booking/booking-init.php' );
 }
-
 
 /**
  * Agent initializer.
@@ -51,7 +47,6 @@ if ( file_exists( VRC_DIR . '/assets/agent/agent-init.php' ) ) {
     require_once( VRC_DIR . '/assets/agent/agent-init.php' );
 }
 
-
 /**
  * Parnter initializer.
  *
@@ -60,7 +55,6 @@ if ( file_exists( VRC_DIR . '/assets/agent/agent-init.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/partner/partner-init.php' ) ) {
     require_once( VRC_DIR . '/assets/partner/partner-init.php' );
 }
-
 
 /**
  * Member initializer.
@@ -71,7 +65,6 @@ if ( file_exists( VRC_DIR . '/assets/member/member-init.php' ) ) {
     require_once( VRC_DIR . '/assets/member/member-init.php' );
 }
 
-
 /**
  * Favorite initializer.
  *
@@ -80,7 +73,6 @@ if ( file_exists( VRC_DIR . '/assets/member/member-init.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/favorite/favorite-init.php' ) ) {
     require_once( VRC_DIR . '/assets/favorite/favorite-init.php' );
 }
-
 
 /**
  * Tempalte initializer.
@@ -91,7 +83,6 @@ if ( file_exists( VRC_DIR . '/assets/template/template-init.php' ) ) {
     require_once( VRC_DIR . '/assets/template/template-init.php' );
 }
 
-
 /**
  * Admin Menu Order.
  *
@@ -100,7 +91,6 @@ if ( file_exists( VRC_DIR . '/assets/template/template-init.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/admin/admin-menu-order.php' ) ) {
     // require_once( VRC_DIR . '/assets/admin/admin-menu-order.php' );
 }
-
 
 /**
  * CLASS: VR_Scripts.
@@ -111,8 +101,6 @@ if ( file_exists( VRC_DIR . '/assets/class-scripts.php' ) ) {
     require_once( VRC_DIR . '/assets/class-scripts.php' );
 }
 
-
-
 /**
  * CLASS: VR_Styles.
  *
@@ -121,7 +109,6 @@ if ( file_exists( VRC_DIR . '/assets/class-scripts.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/class-styles.php' ) ) {
     require_once( VRC_DIR . '/assets/class-styles.php' );
 }
-
 
 /**
  * CLASS: VR_Functions.
@@ -132,7 +119,6 @@ if ( file_exists( VRC_DIR . '/assets/class-functions.php' ) ) {
     require_once( VRC_DIR . '/assets/class-functions.php' );
 }
 
-
 /**
  * Plugin: Cateogry Images.
  *
@@ -141,7 +127,6 @@ if ( file_exists( VRC_DIR . '/assets/class-functions.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/plugin/category-images/category-images.php' ) ) {
     require_once( VRC_DIR . '/assets/plugin/category-images/category-images.php' );
 }
-
 
 /**
  * Class `VR_Admin_Menu.
@@ -152,7 +137,6 @@ if ( file_exists( VRC_DIR . '/assets/class-vr-admin-menu.php' ) ) {
     require_once( VRC_DIR . '/assets/class-vr-admin-menu.php' );
 }
 
-
 /**
  * Setting initializer.
  *
@@ -162,7 +146,6 @@ if ( file_exists( VRC_DIR . '/assets/settings/settings-init.php' ) ) {
     require_once( VRC_DIR . '/assets/settings/settings-init.php' );
 }
 
-
 /**
  * Shortcode initializer.
  *
@@ -171,7 +154,6 @@ if ( file_exists( VRC_DIR . '/assets/settings/settings-init.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/shortcode/shortcode-init.php' ) ) {
     require_once( VRC_DIR . '/assets/shortcode/shortcode-init.php' );
 }
-
 
 /**
  * Customizer initializer.

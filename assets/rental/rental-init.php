@@ -112,19 +112,19 @@ if ( class_exists( 'VR_Rental' ) ) {
 	$vr_rental_init = new VR_Rental();
 
 	// Create rental post type
-	add_action( 'init', array( $vr_rental_init, 'create_rental' ) );
+	add_action( 'init', array( $vr_rental_init, 'create_rental' ), 0 );
 
 	// Create fake rental content.
 	// add_action( 'init', array( $vr_rental_init, 'fake_rental_content' ) );
 
-	// Create rental-type CT.
-	add_action( 'init', array( $vr_rental_init, 'create_rental_type' ) );
-
 	// Create rental-destination CT.
-	add_action( 'init', array( $vr_rental_init, 'create_rental_destination' ) );
+	add_action( 'init', array( $vr_rental_init, 'create_rental_destination' ), 0 );
+
+	// Create rental-type CT.
+	add_action( 'init', array( $vr_rental_init, 'create_rental_type' ), 0 );
 
 	// Create rental-feature CT.
-	add_action( 'init', array( $vr_rental_init, 'create_rental_feature' ) );
+	add_action( 'init', array( $vr_rental_init, 'create_rental_feature' ), 0 );
 
 }
 
