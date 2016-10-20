@@ -54,7 +54,7 @@ if ( is_user_logged_in() ) {
         <p class="message">
             <?php
                 _e( 'You are already logged in. ', 'VRC' );
-                _e( 'Go to to <a href="/">Homepage!</a> or <a href="' . wp_logout_url( home_url() ) . '">Logout!</a>', 'VRC' );
+                _e( 'Go to the <a href="/">Homepage!</a> or <a href="' . wp_logout_url( home_url() ) . '">Logout!</a>', 'VRC' );
             ?>
         </p>
         <!-- /.message -->
