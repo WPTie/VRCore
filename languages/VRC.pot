@@ -1663,11 +1663,11 @@ msgstr ""
 msgid "Header Background Image"
 msgstr ""
 
-#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:80, assets/template/rental/list/class-vr-rental-list-meta.php:122, assets/template/rental/search/class-vr-rental-search-meta.php:72
+#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:81, assets/template/rental/list/class-vr-rental-list-meta.php:122, assets/template/rental/search/class-vr-rental-search-meta.php:72
 msgid "Descripton"
 msgstr ""
 
-#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:81
+#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:82
 msgid "Explore your favorite vacation rentals."
 msgstr ""
 
