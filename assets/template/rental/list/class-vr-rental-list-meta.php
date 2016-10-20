@@ -108,6 +108,7 @@ class VR_Rental_List_Meta {
 					'type'             => 'image_advanced',
 					'name'             => __('Header Background Image', 'VRC'),
 					'desc'             => __( 'Consult the documentation for required image size.', 'VRC' ),
+					'max_file_uploads' => 1,
 	            ),
 				// Summary.
 				array(
