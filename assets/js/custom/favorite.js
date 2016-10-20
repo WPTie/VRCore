@@ -81,7 +81,7 @@
 
                 addToFavorite.fail( function( jqXHR, textStatus ) {
                     // console.log('Request Failed');
-                    alert( "Request Failed: " + textStatus );
+                    // alert( "Request Failed: " + textStatus );
                 });
             }
 
@@ -142,13 +142,13 @@
             } else {
                 // console.log('Not Removed!')
                 loader.hide();
-                alert( response.message );
+                // alert( response.message );
             }
         });
 
         removeFromFavorites.fail( function( jqXHR, textStatus ) {
             // console.log('Request failed')
-            alert( "Request Failed: " + textStatus );
+            // alert( "Request Failed: " + textStatus );
         });
 
     });
