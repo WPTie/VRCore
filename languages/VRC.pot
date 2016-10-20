@@ -560,7 +560,7 @@ msgid "Hey, .$name.!"
 msgstr ""
 
 #: assets/member/view-login.php:56, assets/member/view-register.php:56, assets/member/view-reset.php:56
-msgid "You are already logged in."
+msgid "You are already logged in. "
 msgstr ""
 
 #: assets/member/view-login.php:57, assets/member/view-register.php:57, assets/member/view-reset.php:57

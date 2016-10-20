@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $vr_pages_array = array(
     'login',
     'register',
-    'reset'
+    'reset',
 );
 
 // Save page links here.
@@ -53,7 +53,7 @@ if ( is_user_logged_in() ) {
 
         <p class="message">
             <?php
-                _e( 'You are already logged in.', 'VRC' );
+                _e( 'You are already logged in. ', 'VRC' );
                 _e( 'Go to to <a href="/">Homepage!</a> or <a href="' . wp_logout_url( home_url() ) . '">Logout!</a>', 'VRC' );
             ?>
         </p>

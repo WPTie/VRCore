@@ -64,7 +64,7 @@ if ( ! class_exists( 'VR_CPT_Booking' ) ) :
 				// 'menu_position'       => 5,
 				'menu_icon'           => 'dashicons-calendar-alt',
 				'show_in_admin_bar'   => true,
-				'show_in_nav_menus'   => true,
+				'show_in_nav_menus'   => false,
 				'can_export'          => true,
 				// 'publicly_queryable'  => true, // TODO Future Feature
 				// 'exclude_from_search' => false,
