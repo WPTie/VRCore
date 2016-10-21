@@ -127,7 +127,7 @@ if ( class_exists( 'VR_Rental' ) ) {
 	add_action( 'init', array( $vr_rental_init, 'create_rental_feature' ), 0 );
 
 	// Insert dummy rental-feature.
-	add_action( 'init', array( $vr_rental_init, 'insert_dummy_features' ), 11 );
+	// add_action( 'init', array( $vr_rental_init, 'insert_dummy_features' ), 11 );
 }
 
 // Custom columns.
