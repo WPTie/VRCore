@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/meta-boxes/meta-box-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/meta-boxes/meta-box-init.php' );
+	require_once( VRC_DIR . '/assets/meta-boxes/meta-box-init.php' );
 }
 
 /**
@@ -26,7 +26,7 @@ if ( file_exists( VRC_DIR . '/assets/meta-boxes/meta-box-init.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/rental/rental-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/rental-init.php' );
+	require_once( VRC_DIR . '/assets/rental/rental-init.php' );
 }
 
 /**
@@ -35,7 +35,7 @@ if ( file_exists( VRC_DIR . '/assets/rental/rental-init.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/booking/booking-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/booking/booking-init.php' );
+	require_once( VRC_DIR . '/assets/booking/booking-init.php' );
 }
 
 /**
@@ -44,7 +44,7 @@ if ( file_exists( VRC_DIR . '/assets/booking/booking-init.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/agent/agent-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/agent/agent-init.php' );
+	require_once( VRC_DIR . '/assets/agent/agent-init.php' );
 }
 
 /**
@@ -53,7 +53,7 @@ if ( file_exists( VRC_DIR . '/assets/agent/agent-init.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/partner/partner-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/partner/partner-init.php' );
+	require_once( VRC_DIR . '/assets/partner/partner-init.php' );
 }
 
 /**
@@ -62,7 +62,7 @@ if ( file_exists( VRC_DIR . '/assets/partner/partner-init.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/member/member-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/member/member-init.php' );
+	require_once( VRC_DIR . '/assets/member/member-init.php' );
 }
 
 /**
@@ -71,7 +71,7 @@ if ( file_exists( VRC_DIR . '/assets/member/member-init.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/favorite/favorite-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/favorite/favorite-init.php' );
+	require_once( VRC_DIR . '/assets/favorite/favorite-init.php' );
 }
 
 /**
@@ -80,7 +80,7 @@ if ( file_exists( VRC_DIR . '/assets/favorite/favorite-init.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/template/template-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/template/template-init.php' );
+	require_once( VRC_DIR . '/assets/template/template-init.php' );
 }
 
 /**
@@ -89,7 +89,7 @@ if ( file_exists( VRC_DIR . '/assets/template/template-init.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/admin/admin-menu-order.php' ) ) {
-    // require_once( VRC_DIR . '/assets/admin/admin-menu-order.php' );
+	// require_once( VRC_DIR . '/assets/admin/admin-menu-order.php' );
 }
 
 /**
@@ -98,7 +98,7 @@ if ( file_exists( VRC_DIR . '/assets/admin/admin-menu-order.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/class-scripts.php' ) ) {
-    require_once( VRC_DIR . '/assets/class-scripts.php' );
+	require_once( VRC_DIR . '/assets/class-scripts.php' );
 }
 
 /**
@@ -107,7 +107,7 @@ if ( file_exists( VRC_DIR . '/assets/class-scripts.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/class-styles.php' ) ) {
-    require_once( VRC_DIR . '/assets/class-styles.php' );
+	require_once( VRC_DIR . '/assets/class-styles.php' );
 }
 
 /**
@@ -116,7 +116,7 @@ if ( file_exists( VRC_DIR . '/assets/class-styles.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/class-functions.php' ) ) {
-    require_once( VRC_DIR . '/assets/class-functions.php' );
+	require_once( VRC_DIR . '/assets/class-functions.php' );
 }
 
 /**
@@ -125,7 +125,7 @@ if ( file_exists( VRC_DIR . '/assets/class-functions.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/plugin/category-images/category-images.php' ) ) {
-    require_once( VRC_DIR . '/assets/plugin/category-images/category-images.php' );
+	require_once( VRC_DIR . '/assets/plugin/category-images/category-images.php' );
 }
 
 /**
@@ -134,7 +134,7 @@ if ( file_exists( VRC_DIR . '/assets/plugin/category-images/category-images.php'
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/class-vr-admin-menu.php' ) ) {
-    require_once( VRC_DIR . '/assets/class-vr-admin-menu.php' );
+	require_once( VRC_DIR . '/assets/class-vr-admin-menu.php' );
 }
 
 /**
@@ -143,7 +143,7 @@ if ( file_exists( VRC_DIR . '/assets/class-vr-admin-menu.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/settings/settings-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/settings/settings-init.php' );
+	require_once( VRC_DIR . '/assets/settings/settings-init.php' );
 }
 
 /**
@@ -152,7 +152,7 @@ if ( file_exists( VRC_DIR . '/assets/settings/settings-init.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/shortcode/shortcode-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/shortcode/shortcode-init.php' );
+	require_once( VRC_DIR . '/assets/shortcode/shortcode-init.php' );
 }
 
 /**
@@ -161,5 +161,5 @@ if ( file_exists( VRC_DIR . '/assets/shortcode/shortcode-init.php' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/customizer/customizer-init.php' ) ) {
-    require_once( VRC_DIR . '/assets/customizer/customizer-init.php' );
+	require_once( VRC_DIR . '/assets/customizer/customizer-init.php' );
 }

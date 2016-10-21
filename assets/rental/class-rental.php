@@ -116,5 +116,14 @@ class VR_Rental {
 	public function create_rental_feature() {
 		$this->rental_feature->register();
 	}
+
+	/**
+	 * Insert Dummy Terms for Rental Feature.
+	 *
+	 * @since 1.0.1
+	 */
+	public function insert_dummy_features() {
+		$this->rental_feature->insert_dummy_terms();
+	}
 }
 endif;
