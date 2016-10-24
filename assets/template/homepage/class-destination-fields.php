@@ -84,10 +84,17 @@ class VR_Homepage_Destination_Fields {
 				'taxonomy'             => 'vr_rental-destination',
 
 				// How to show taxonomy: 'checkbox_list' (default) or 'checkbox_tree', 'select_tree', select_advanced or 'select'. Optional.
-				'field_type'           => 'checkbox_tree',
+				'field_type'           => 'checkbox_list',
+
+				'sort_clone'           => true,
 
 				// Additional arguments for get_terms() function. Optional.
-				'query_args'           => array(),
+				'query_args'           => array(
+					'hide_empty' => false,
+					// TODO: It works but user needs to set a value otherwise nothing shows up. Defualt ain't working.
+					// 'orderby'    => 'meta_value', // 'name', 'slug', 'term_group', 'term_id', 'id', 'description'
+					// 'meta_key'   => 'vr_destination_order',
+				),
 				'columns'              => 12,
 				'tab'                  => 'destination'
 			),
@@ -100,8 +107,13 @@ class VR_Homepage_Destination_Fields {
 				// HTML content.
 				'std'     => '<p style="padding: 1rem;background: #f1f1f1;">
 								If no desitnations are being displayed, then you need to add a few destinations via <a href="/wp-admin/edit-tags.php?taxonomy=vr_rental-destination&post_type=vr_rental" target="_blank">Destinations Page</a>.
-								( Make sure you have added feature images to the desitnations you selected above ).
-							</p>',
+								(Make sure you have added feature images to the desitnations you selected above).
+							</p>
+							<p style="padding: 1rem;background: #f1f1f1;">
+								To reorder how destinations get displayed on the homepage, edit a <a href="/wp-admin/edit-tags.php?taxonomy=vr_rental-destination&post_type=vr_rental" target="_blank">Destination</a> to add order.
+								(Lower value has more priority i.e. 10 order will get displayed before 20 order).
+							</p>
+							',
 			), // Field ended.
 		); // Fields array ended.
 	} // Function ended.

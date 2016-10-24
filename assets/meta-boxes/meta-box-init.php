@@ -46,31 +46,37 @@ if ( ! class_exists( 'RW_Meta_Box' ) ) {
  */
 
 // Columns extension.
-if ( ! class_exists( 'RWMB_Columns' ) ) {
+if ( ! class_exists( 'MB_Columns' ) ) {
 	if ( file_exists( VRC_DIR . '/assets/meta-boxes/metabox-extensions/meta-box-columns/meta-box-columns.php' ) ) {
 	    require_once( VRC_DIR . '/assets/meta-boxes/metabox-extensions/meta-box-columns/meta-box-columns.php' );
 	}
 }
 
 // Show Hide extension.
-if ( ! class_exists( 'RWMB_Show_Hide' ) ) {
+if ( ! class_exists( 'MB_Show_Hide' ) ) {
 	if ( file_exists( VRC_DIR . '/assets/meta-boxes/metabox-extensions/meta-box-show-hide/meta-box-show-hide.php' ) ) {
 	    require_once( VRC_DIR . '/assets/meta-boxes/metabox-extensions/meta-box-show-hide/meta-box-show-hide.php' );
 	}
 }
 
 // Tabs extension.
-if ( ! class_exists( 'RWMB_Tabs' ) ) {
+if ( ! class_exists( 'MB_Tabs' ) ) {
 	if ( file_exists( VRC_DIR . '/assets/meta-boxes/metabox-extensions/meta-box-tabs/meta-box-tabs.php' ) ) {
 	    require_once( VRC_DIR . '/assets/meta-boxes/metabox-extensions/meta-box-tabs/meta-box-tabs.php' );
 	}
 }
 
-
 // Groups extension.
 if ( ! class_exists( 'RWMB_Group' ) ) {
 	if ( file_exists( VRC_DIR . '/assets/meta-boxes/metabox-extensions/meta-box-group/meta-box-group.php' ) ) {
 	    require_once( VRC_DIR . '/assets/meta-boxes/metabox-extensions/meta-box-group/meta-box-group.php' );
+	}
+}
+
+// Term Meta extension.
+if ( ! class_exists( 'MB_Term_Meta_Box' ) ) {
+	if ( file_exists( VRC_DIR . '/assets/meta-boxes/metabox-extensions/mb-term-meta/mb-term-meta.php' ) ) {
+	    require_once( VRC_DIR . '/assets/meta-boxes/metabox-extensions/mb-term-meta/mb-term-meta.php' );
 	}
 }
 
@@ -80,7 +86,6 @@ if ( ! class_exists( 'RWMB_Group' ) ) {
  * @since 1.0.0
  */
 if ( file_exists( VRC_DIR . '/assets/meta-boxes/class-meta-boxes.php' ) ) {
-
     require_once( VRC_DIR . '/assets/meta-boxes/class-meta-boxes.php' );
 }
 

@@ -98,6 +98,14 @@ if ( file_exists( VRC_DIR . '/assets/rental/frontend/frontend-init.php' ) ) {
 	require_once( VRC_DIR . '/assets/rental/frontend/frontend-init.php' );
 }
 
+/**
+ * Rental Destination Meta.
+ *
+ * @since 1.0.1
+ */
+if ( file_exists( VRC_DIR . '/assets/rental/class-destination-meta-boxes.php' ) ) {
+    require_once( VRC_DIR . '/assets/rental/class-destination-meta-boxes.php' );
+}
 
 /**
  * Actions/Filters for rental.
@@ -159,4 +167,13 @@ if ( class_exists( 'VR_Rental_Meta_Boxes' ) ) {
 
 	// Register rental meta boxes.
 	add_filter( 'rwmb_meta_boxes', array( $vr_rental_meta_boxes, 'register' ) );
+}
+
+// Destination Class.
+if ( class_exists( 'VR_Destination_Meta_Boxes' ) ) {
+	// Object: VR_Rental_Metaboxes class.
+	$vr_destination_meta_boxes = new VR_Destination_Meta_Boxes();
+
+	// Register rental meta boxes.
+	add_filter( 'rwmb_meta_boxes', array( $vr_destination_meta_boxes, 'register' ) );
 }
