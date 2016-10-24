@@ -335,7 +335,7 @@ msgstr ""
 msgid "⇲  Destinations"
 msgstr ""
 
-#: assets/class-vr-admin-menu.php:106, assets/class-vr-admin-menu.php:197, assets/rental/ct-rental-feature.php:37, assets/rental/frontend/view-submit-rental.php:276, assets/rental/rental-custom-columns.php:64
+#: assets/class-vr-admin-menu.php:106, assets/class-vr-admin-menu.php:197, assets/rental/ct-rental-feature.php:36, assets/rental/frontend/view-submit-rental.php:276, assets/rental/rental-custom-columns.php:64
 msgid "Features"
 msgstr ""
 
@@ -564,7 +564,7 @@ msgid "You are already logged in. "
 msgstr ""
 
 #: assets/member/view-login.php:57, assets/member/view-register.php:57, assets/member/view-reset.php:57
-msgid "Go to to <a href=\"/\">Homepage!</a> or <a href=\".wp_logout_urlhome_url.\">Logout!</a>"
+msgid "Go to the <a href=\"/\">Homepage!</a> or <a href=\".wp_logout_urlhome_url.\">Logout!</a>"
 msgstr ""
 
 #: assets/member/view-login.php:61
@@ -775,7 +775,7 @@ msgstr ""
 msgid "Virtual Tour Video Image"
 msgstr ""
 
-#: assets/rental/class-rental-meta-boxes.php:260, assets/template/rental/favorite/class-vr-rental-favorite-meta.php:74, assets/template/rental/list/class-vr-rental-list-meta.php:110
+#: assets/rental/class-rental-meta-boxes.php:260, assets/template/rental/favorite/class-vr-rental-favorite-meta.php:74, assets/template/rental/list/class-vr-rental-list-meta.php:144
 msgid "Consult the documentation for required image size."
 msgstr ""
 
@@ -931,7 +931,7 @@ msgctxt "Taxonomy Singular Name"
 msgid "Rental Destination"
 msgstr ""
 
-#: assets/rental/ct-rental-destination.php:33, assets/rental/frontend/view-submit-rental.php:94, assets/rental/rental-custom-columns.php:63, assets/template/rental/list/class-vr-rental-list-meta.php:215
+#: assets/rental/ct-rental-destination.php:33, assets/rental/frontend/view-submit-rental.php:94, assets/rental/rental-custom-columns.php:63, assets/template/rental/list/class-vr-rental-list-meta.php:250
 msgid "Destination"
 msgstr ""
 
@@ -975,7 +975,7 @@ msgstr ""
 msgid "Add or remove Rental Destinations"
 msgstr ""
 
-#: assets/rental/ct-rental-destination.php:44, assets/rental/ct-rental-feature.php:48, assets/rental/ct-rental-type.php:48
+#: assets/rental/ct-rental-destination.php:44, assets/rental/ct-rental-feature.php:47, assets/rental/ct-rental-type.php:48
 msgid "Choose from the most used"
 msgstr ""
 
@@ -987,7 +987,7 @@ msgstr ""
 msgid "Search Rental Destinations"
 msgstr ""
 
-#: assets/rental/ct-rental-destination.php:47, assets/rental/ct-rental-feature.php:51, assets/rental/ct-rental-type.php:51
+#: assets/rental/ct-rental-destination.php:47, assets/rental/ct-rental-feature.php:50, assets/rental/ct-rental-type.php:51
 msgid "Not Found"
 msgstr ""
 
@@ -995,65 +995,65 @@ msgstr ""
 msgid "property-city"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:35
+#: assets/rental/ct-rental-feature.php:34
 msgctxt "Taxonomy General Name"
 msgid "Rental Features"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:36
+#: assets/rental/ct-rental-feature.php:35
 msgctxt "Taxonomy Singular Name"
 msgid "Rental Feature"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:38
+#: assets/rental/ct-rental-feature.php:37
 msgid "All Rental Features"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:39
+#: assets/rental/ct-rental-feature.php:38
 msgid "Parent Rental Feature"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:40
+#: assets/rental/ct-rental-feature.php:39
 msgid "Parent Rental Feature:"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:41
+#: assets/rental/ct-rental-feature.php:40
 msgid "New Rental Feature Name"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:42
+#: assets/rental/ct-rental-feature.php:41
 msgid "Add New Rental Feature"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:43
+#: assets/rental/ct-rental-feature.php:42
 msgid "Edit Rental Feature"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:44
+#: assets/rental/ct-rental-feature.php:43
 msgid "Update Rental Feature"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:45
+#: assets/rental/ct-rental-feature.php:44
 msgid "View Rental Feature"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:46
+#: assets/rental/ct-rental-feature.php:45
 msgid "Separate Rental Features with commas"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:47
+#: assets/rental/ct-rental-feature.php:46
 msgid "Add or remove Rental Features"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:49
+#: assets/rental/ct-rental-feature.php:48
 msgid "Popular Rental Features"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:50
+#: assets/rental/ct-rental-feature.php:49
 msgid "Search Rental Features"
 msgstr ""
 
-#: assets/rental/ct-rental-feature.php:55
+#: assets/rental/ct-rental-feature.php:54
 msgid "rental-feature"
 msgstr ""
 
@@ -1171,7 +1171,7 @@ msgstr ""
 msgid "Find Address"
 msgstr ""
 
-#: assets/rental/frontend/view-submit-rental.php:73, assets/template/rental/list/class-vr-rental-list-meta.php:235
+#: assets/rental/frontend/view-submit-rental.php:73, assets/template/rental/list/class-vr-rental-list-meta.php:271
 msgid "Type"
 msgstr ""
 
@@ -1655,15 +1655,15 @@ msgstr ""
 msgid "News Button Text"
 msgstr ""
 
-#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:59, assets/template/rental/list/class-vr-rental-list-meta.php:95, assets/template/rental/search/class-vr-rental-search-meta.php:58
+#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:59, assets/template/rental/list/class-vr-rental-list-meta.php:129, assets/template/rental/search/class-vr-rental-search-meta.php:58
 msgid "Summary"
 msgstr ""
 
-#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:73, assets/template/rental/list/class-vr-rental-list-meta.php:109
+#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:73, assets/template/rental/list/class-vr-rental-list-meta.php:143
 msgid "Header Background Image"
 msgstr ""
 
-#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:81, assets/template/rental/list/class-vr-rental-list-meta.php:122, assets/template/rental/search/class-vr-rental-search-meta.php:72
+#: assets/template/rental/favorite/class-vr-rental-favorite-meta.php:81, assets/template/rental/list/class-vr-rental-list-meta.php:157, assets/template/rental/search/class-vr-rental-search-meta.php:72
 msgid "Descripton"
 msgstr ""
 
@@ -1671,55 +1671,55 @@ msgstr ""
 msgid "Explore your favorite vacation rentals."
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:130
+#: assets/template/rental/list/class-vr-rental-list-meta.php:165
 msgid "Rental List"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:143
+#: assets/template/rental/list/class-vr-rental-list-meta.php:178
 msgid "Number of Rentals Per Page"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:153
+#: assets/template/rental/list/class-vr-rental-list-meta.php:188
 msgid "Order Rentals By"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:156
+#: assets/template/rental/list/class-vr-rental-list-meta.php:191
 msgid "Date Recent to Old"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:157
+#: assets/template/rental/list/class-vr-rental-list-meta.php:192
 msgid "Date Old to Recent"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:158
+#: assets/template/rental/list/class-vr-rental-list-meta.php:193
 msgid "Price Low to High"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:159
+#: assets/template/rental/list/class-vr-rental-list-meta.php:194
 msgid "Price High to Low"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:168
+#: assets/template/rental/list/class-vr-rental-list-meta.php:203
 msgid "Minimum Beds"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:178
+#: assets/template/rental/list/class-vr-rental-list-meta.php:213
 msgid "Minimum Baths"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:188
+#: assets/template/rental/list/class-vr-rental-list-meta.php:223
 msgid "Minimum Guests"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:198
+#: assets/template/rental/list/class-vr-rental-list-meta.php:233
 msgid "Minimum Price"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:207
+#: assets/template/rental/list/class-vr-rental-list-meta.php:242
 msgid "Maximum Price"
 msgstr ""
 
-#: assets/template/rental/list/class-vr-rental-list-meta.php:225
+#: assets/template/rental/list/class-vr-rental-list-meta.php:261
 msgid "Feature"
 msgstr ""
 
