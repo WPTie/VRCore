@@ -48,7 +48,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 // VRC Version.
 if ( ! defined( 'VRC_VERSION' ) ) {
-    define( 'VRC_VERSION', '0.0.9' );
+    define( 'VRC_VERSION', '1.0.0' );
 }
 
 // VRC Name.
