@@ -84,7 +84,7 @@ class VR_Homepage_Destination_Fields {
 				'taxonomy'             => 'vr_rental-destination',
 
 				// How to show taxonomy: 'checkbox_list' (default) or 'checkbox_tree', 'select_tree', select_advanced or 'select'. Optional.
-				'field_type'           => 'checkbox_list',
+				'field_type'           => 'checkbox_tree',
 
 				// Additional arguments for get_terms() function. Optional.
 				'query_args'           => array(),
