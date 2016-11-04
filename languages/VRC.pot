@@ -335,20 +335,20 @@ msgstr ""
 msgid "⇲  Destinations"
 msgstr ""
 
-#: assets/class-vr-admin-menu.php:106, assets/class-vr-admin-menu.php:197, assets/rental/ct-rental-feature.php:36, assets/rental/frontend/view-submit-rental.php:276, assets/rental/rental-custom-columns.php:64
-msgid "Features"
-msgstr ""
-
-#: assets/class-vr-admin-menu.php:107
-msgid "⦿  Features"
-msgstr ""
-
-#: assets/class-vr-admin-menu.php:113, assets/class-vr-admin-menu.php:204, assets/rental/ct-rental-type.php:37, assets/rental/rental-custom-columns.php:62
+#: assets/class-vr-admin-menu.php:106, assets/class-vr-admin-menu.php:204, assets/rental/ct-rental-type.php:37, assets/rental/rental-custom-columns.php:62
 msgid "Types"
 msgstr ""
 
-#: assets/class-vr-admin-menu.php:114
+#: assets/class-vr-admin-menu.php:107
 msgid "♆  Types"
+msgstr ""
+
+#: assets/class-vr-admin-menu.php:113, assets/class-vr-admin-menu.php:197, assets/rental/ct-rental-feature.php:36, assets/rental/frontend/view-submit-rental.php:276, assets/rental/rental-custom-columns.php:64
+msgid "Features"
+msgstr ""
+
+#: assets/class-vr-admin-menu.php:114
+msgid "⦿  Features"
 msgstr ""
 
 #: assets/class-vr-admin-menu.php:121
@@ -677,6 +677,18 @@ msgstr ""
 
 #: assets/plugin/category-images/customizer/section/cat-term.php:53
 msgid "Upload a default image for category/term!"
+msgstr ""
+
+#: assets/rental/class-destination-meta-boxes.php:41
+msgid "Destination Extra Settings"
+msgstr ""
+
+#: assets/rental/class-destination-meta-boxes.php:52
+msgid "Order"
+msgstr ""
+
+#: assets/rental/class-destination-meta-boxes.php:53
+msgid "Homepage Destination Order. Lower value has more priority i.e. 10 order will get displayed before 20 order."
 msgstr ""
 
 #: assets/rental/class-rental-meta-boxes.php:42
