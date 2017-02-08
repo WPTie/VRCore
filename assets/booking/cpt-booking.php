@@ -138,7 +138,7 @@ if ( ! class_exists( 'VR_CPT_Booking' ) ) :
 			$uniqueid = strtoupper( $uniqueid );
 
 			// Format the title.
-			$title = 'Booking: #' . $uniqueid . ' - ' . date( 'd-m-Y' );
+			$title = 'Booking: #' . $uniqueid . ' - ' . date( 'Y-m-d' );
 
 			?>
 			<script type="text/javascript">
