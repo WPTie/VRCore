@@ -129,13 +129,14 @@ class VR_Admin_Menu {
 				'manage_options',
 				'edit.php?post_type=vr_agent',
 			),
-			'partners' => array(
-				'vacation_rentals',
-				__( 'Partners', 'VRC' ),
-				__( '⌭  Partners', 'VRC' ),
-				'manage_options',
-				'edit.php?post_type=vr_partner',
-			),
+			// TODO.
+			// 'partners' => array(
+			// 	'vacation_rentals',
+			// 	__( 'Partners', 'VRC' ),
+			// 	__( '⌭  Partners', 'VRC' ),
+			// 	'manage_options',
+			// 	'edit.php?post_type=vr_partner',
+			// ),
 		);
 
 		// Third-party can add more sub_menus.
