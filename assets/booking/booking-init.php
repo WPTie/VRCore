@@ -111,7 +111,7 @@ if ( class_exists( 'VR_Booking' ) ) {
 	add_action( 'init', array( $vr_booking_init, 'create_booking' ) );
 
 	// Create fake booking content.
-	add_action( 'init', array( $vr_booking_init, 'fake_booking_content' ) );
+	// add_action( 'init', array( $vr_booking_init, 'fake_booking_content' ) );
 
 	// Generate and Set the booking title.
 	add_action( 'edit_form_after_title', array( $vr_booking_init, 'generate_title' ) );

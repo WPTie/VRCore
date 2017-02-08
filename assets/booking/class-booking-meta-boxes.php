@@ -177,7 +177,7 @@ class VR_Booking_Meta_Boxes {
 					'field_type'  => 'select_advanced',
 					'name'        => __( 'The Rental', 'VRC' ),
 					'placeholder' => __( 'Selected Rental.', 'VRC' ),
-					'desc'        => __( 'This value cannot be changed once it is set either manually or automatically.', 'VRC' ),
+					'desc'        => __( 'This value cannot be changed once it is set either manually or automatically. <a target="_blank" href="/wp-admin/post-new.php?post_type=vr_rental">Add a new RENTAL!</a>', 'VRC' ),
 					// Query arguments (optional). No settings means get all published posts.
 					'query_args'  => array(
 						'post_status'    => 'publish',
