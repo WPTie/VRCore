@@ -102,7 +102,7 @@ class VR_Homepage_CTA_Fields {
 				'type'             => 'image_advanced',
 
 				'name'             => __('CTA Section Background Image', 'VRC'),
-				'desc'             => __('Make sure it is not too small and not too big.', 'VRC'),
+				'desc'             => __('Make sure it is not too small and not too big. Recommended size is 1920px x 450px (Width x Height)', 'VRC'),
 
 				'max_file_uploads' => 1,
 				'columns'          => 12,
@@ -115,7 +115,7 @@ class VR_Homepage_CTA_Fields {
 				'type'             => 'image_advanced',
 
 				'name'             => __('CTA Section Icon Image', 'VRC'),
-				'desc'             => __('Make sure it is not too big. E.g. Keep it 50px x 50px', 'VRC'),
+				'desc'             => __('Make sure it is not too big. E.g. Recommended size is 50px x 50px (Width x Height)', 'VRC'),
 
 				'max_file_uploads' => 1,
 				'columns'          => 12,

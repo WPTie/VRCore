@@ -163,3 +163,12 @@ if ( file_exists( VRC_DIR . '/assets/shortcode/shortcode-init.php' ) ) {
 if ( file_exists( VRC_DIR . '/assets/customizer/customizer-init.php' ) ) {
 	require_once( VRC_DIR . '/assets/customizer/customizer-init.php' );
 }
+
+/**
+ * OCDI initializer.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( VRC_DIR . '/assets/admin/ocdi/ocdi-init.php' ) ) {
+    require_once( VRC_DIR . '/assets/admin/ocdi/ocdi-init.php' );
+}
