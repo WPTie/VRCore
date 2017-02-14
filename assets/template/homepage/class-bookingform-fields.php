@@ -23,6 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'VR_Homepage_BookingForm_Fields' ) ) :
 
+
 class VR_Homepage_BookingForm_Fields {
 
 	/**
@@ -31,6 +32,10 @@ class VR_Homepage_BookingForm_Fields {
 	 * @since 1.0.0
 	 */
 	public function get_fields() {
+		// ID of Search page in theme setup.
+		$vr_page_search = get_option( 'vr_id_rental-search', false );
+		$vr_page_search = ( $vr_page_search ) ? $vr_page_search : 1;
+
 		// Prefix.
 		$prefix = 'vr_homepage_';
 
@@ -88,17 +93,18 @@ class VR_Homepage_BookingForm_Fields {
 
 			// Search Page URL.
 			array(
-				'id'             => "{$prefix}search_page_id",
-				'type'           => 'post',
-				'post_type'      => 'page',
-				'field_type'     => 'select_advanced',
-				'name'           => __( 'Select Rental Search Page', 'VRC' ),
-				'desc'           => __( 'Select Rental Search Page that you have published with `Rental Search VR` page template.', 'VRC' ),
-				'placeholder'    => __( 'Select Rental Search Page', 'VRC' ),
-				'columns' => 12,
-				'tab'     => 'bookingform',
+				'id'          => "{$prefix}search_page_id",
+				'type'        => 'post',
+				'post_type'   => 'page',
+				'field_type'  => 'select_advanced',
+				'name'        => __( 'Select Rental Search Page', 'VRC' ),
+				'desc'        => __( 'Select Rental Search Page that you have published with `Rental Search VR` page template.', 'VRC' ),
+				'std'         => $vr_page_search,
+				'placeholder' => __( 'Select Rental Search Page', 'VRC' ),
+				'columns'     => 12,
+				'tab'         => 'bookingform',
 				// Query arguments (optional). No settings means get all published posts.
-				'query_args'     => array(
+				'query_args'  => array(
 					'post_status'    => 'publish',
 					'posts_per_page' => - 1,
 				)
