@@ -146,6 +146,10 @@ class VR_Get_Page_Meta {
 			    // Explode at `,` comma.
 			    $the_array = explode( ',', $the_string );
 
+			    // Don't return and empty array return false if array is empty.
+			    $the_array_filtered = array_filter( $the_array );
+			    $the_array = ( ! empty( $the_array_filtered ) ) ? $the_array_filtered : false;
+
 			    // Returns the array.
 			    return $the_array;
 			}

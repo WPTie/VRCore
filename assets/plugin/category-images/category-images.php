@@ -3,11 +3,11 @@
  * Removed `:` so that it doesn't get recognivrced as a plugin JIC.
  *
  * Plugin Name Categories Images
- * Plugin URI http://vrcahlan.net/blog/2012/06/categories-images/
+ * Plugin URI http://vrcahlan.net/blog/2012/06/categories-images/.
  * Description Categories Images Plugin allow you to add an image to category or any custom term.
  * Author Muhammad Said El Zahlan
  * Version 2.5.3
- * Author URI http://vrcahlan.net/
+ * Author URI http://vrcahlan.net/.
  * Domain Path /languages
  * Text Domain categories-images
  *
@@ -23,7 +23,7 @@ if ( file_exists( VRC_DIR . '/assets/plugin/category-images/customizer/customize
     require_once( VRC_DIR . '/assets/plugin/category-images/customizer/customizer-init.php' );
 }
 
-// Get the default image.
+// Get the default image..
 $vr_default_cat_term_img = get_theme_mod( 'vr_cat_term_img', VRC_URL . '/assets/plugin/category-images/assets/img/placeholder.png' );
 
 add_action( 'admin_init', 'vr_init' );
@@ -55,7 +55,7 @@ function vr_add_style() {
 	</style>';
 }
 
-// add image field in add form
+// add image field in add form.
 function vr_add_texonomy_field() {
 	if ( get_bloginfo( 'version' ) >= 3.5 )
 		wp_enqueue_media();
@@ -72,9 +72,9 @@ function vr_add_texonomy_field() {
 	</div>'.vr_script();
 }
 
-// add image field in edit form
+// add image field in edit form.
 function vr_edit_texonomy_field( $taxonomy ) {
-	// Get the default image.
+	// Get the default image..
 	$vr_default_cat_term_img = get_theme_mod( 'vr_cat_term_img', VRC_URL . '/assets/plugin/category-images/assets/img/placeholder.png' );
 
 
@@ -98,9 +98,9 @@ function vr_edit_texonomy_field( $taxonomy ) {
 	</tr>'.vr_script();
 }
 
-// upload using wordpress upload
+// upload using wordpress upload.
 function vr_script() {
-	// Get the default image.
+	// Get the default image..
 	$vr_default_cat_term_img = get_theme_mod( 'vr_cat_term_img', VRC_URL . '/assets/plugin/category-images/assets/img/placeholder.png' );
 
 	return '<script type="text/javascript">
@@ -117,7 +117,7 @@ function vr_script() {
 					}
 					frame = wp.media();
 					frame.on(  "select", function() {
-						// Grab the selected attachment.
+						// Grab the selected attachment..
 						var attachment = frame.state().get( "selection" ).first();
 						frame.close();
 						if ( upload_button.parent().prev().children().hasClass( "tax_list" ) ) {
@@ -172,15 +172,16 @@ function vr_script() {
 	</script>';
 }
 
-// save our taxonomy image while edit or save term
+// save our taxonomy image while edit or save term.
 add_action( 'edit_term','vr_save_taxonomy_image' );
 add_action( 'create_term','vr_save_taxonomy_image' );
 function vr_save_taxonomy_image( $term_id ) {
-    if ( isset( $_POST['taxonomy_image'] ) )
-        update_option( 'vr_taxonomy_image'.$term_id, $_POST['taxonomy_image'], NULL );
+    if ( isset( $_POST['taxonomy_image'] ) ) {
+        update_option( 'vr_taxonomy_image' . $term_id, $_POST['taxonomy_image'], NULL );
+    }
 }
 
-// get attachment ID by image url
+// get attachment ID by image url.
 function vr_get_attachment_id_by_url( $image_src ) {
     global $wpdb;
     $query = $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid = %s", $image_src );
@@ -188,9 +189,9 @@ function vr_get_attachment_id_by_url( $image_src ) {
     return ( ! empty( $id ) ) ? $id : NULL;
 }
 
-// get taxonomy image url for the given term_id ( Place holder image by default )
+// get taxonomy image url for the given term_id ( Place holder image by default ).
 function vr_taxonomy_image_url( $term_id = NULL, $size = 'full', $return_placeholder = FALSE ) {
-	// Get the default image.
+	// Get the default image..
 	$vr_default_cat_term_img = get_theme_mod( 'vr_cat_term_img', VRC_URL . '/assets/plugin/category-images/assets/img/placeholder.png' );
 
 	if ( !$term_id ) {
@@ -244,10 +245,10 @@ function vr_quick_edit_custom_box( $column_name, $screen, $name ) {
  */
 function vr_taxonomy_columns(  $columns  ) {
 	$new_columns = array();
-	// $new_columns['cb'] = $columns['cb'];
+	// $new_columns['cb'] = $columns['cb'];.
 	$new_columns['thumb'] = __( 'Image', 'categories-images' );
 
-	// unset(  $columns['cb']  );
+	// unset(  $columns['cb']  );.
 
 	return array_merge(  $new_columns, $columns  );
 }
@@ -268,38 +269,38 @@ function vr_taxonomy_column(  $columns, $column, $id  ) {
 	return $columns;
 }
 
-// Change 'insert into post' to 'use this image'
+// Change 'insert into post' to 'use this image'.
 function vr_change_insert_button_text( $safe_text, $text ) {
     return str_replace( "Insert into Post", "Use this image", $text );
 }
 
-// Style the image in category list
+// Style the image in category list.
 if (  strpos(  $_SERVER['SCRIPT_NAME'], 'edit-tags.php'  ) > 0  ) {
 	add_action(  'admin_head', 'vr_add_style'  );
 	add_action( 'quick_edit_custom_box', 'vr_quick_edit_custom_box', 10, 3 );
 	add_filter( "attribute_escape", "vr_change_insert_button_text", 10, 2 );
 }
 
-// New menu submenu for plugin options in Settings menu
+// New menu submenu for plugin options in Settings menu.
 add_action( 'admin_menu', 'vr_options_menu' );
 function vr_options_menu() {
 	add_options_page( __( 'Categories Images settings', 'categories-images' ), __( 'Categories Images', 'categories-images' ), 'manage_options', 'zci-options', 'vr_ci_options' );
 	add_action( 'admin_init', 'vr_register_settings' );
 }
 
-// Register plugin settings
+// Register plugin settings.
 function vr_register_settings() {
 	register_setting( 'vr_ci_options', 'vr_ci_options', 'vr_options_validate' );
 	add_settings_section( 'vr_ci_settings', __( 'Categories Images settings', 'categories-images' ), 'vr_section_text', 'zci-options' );
 	add_settings_field( 'vr_excluded_taxonomies', __( 'Excluded Taxonomies', 'categories-images' ), 'vr_excluded_taxonomies', 'zci-options', 'vr_ci_settings' );
 }
 
-// Settings section description
+// Settings section description.
 function vr_section_text() {
 	echo '<p>'.__( 'Please select the taxonomies you want to exclude it from Categories Images plugin', 'categories-images' ).'</p>';
 }
 
-// Excluded taxonomies checkboxs
+// Excluded taxonomies checkboxs.
 function vr_excluded_taxonomies() {
 	$options = get_option( 'vr_ci_options' );
 	$disabled_taxonomies = array( 'nav_menu', 'link_category', 'post_format' );
@@ -308,12 +309,12 @@ function vr_excluded_taxonomies() {
 	<?php endforeach;
 }
 
-// Validating options
+// Validating options.
 function vr_options_validate( $input ) {
 	return $input;
 }
 
-// Plugin option page
+// Plugin option page.
 function vr_ci_options() {
 	if ( !current_user_can( 'manage_options' ) )
 		wp_die( __(  'You do not have sufficient permissions to access this page.', 'categories-images' ) );
@@ -331,7 +332,7 @@ function vr_ci_options() {
 <?php
 }
 
-// display taxonomy image for the given term_id
+// display taxonomy image for the given term_id.
 function vr_taxonomy_image( $term_id = NULL, $size = 'full', $attr = NULL, $echo = TRUE ) {
 	if ( !$term_id ) {
 		if ( is_category() )

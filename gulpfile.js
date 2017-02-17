@@ -28,8 +28,8 @@
  * Edit the variables as per your project requirements.
  */
 
-var project              = 'vrwp'; // Project Name.
-var projectURL           = 'vrwp.dev'; // Project URL. Could be something like localhost:8888.
+var project              = 'VRC'; // Project Name.
+var projectURL           = 'vr.dev'; // Project URL. Could be something like localhost:8888.
 var productURL           = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
