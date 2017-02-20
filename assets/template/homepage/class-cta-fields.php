@@ -102,7 +102,7 @@ class VR_Homepage_CTA_Fields {
 				'type'             => 'image_advanced',
 
 				'name'             => __('CTA Section Background Image', 'VRC'),
-				'desc'             => __('Make sure it is not too small and not too big. Recommended size is 1920px x 450px (Width x Height)', 'VRC'),
+				'desc'             => __('Make sure the image is not too small and not too big. Recommended size is 1920px x 450px (Width x Height)', 'VRC'),
 
 				'max_file_uploads' => 1,
 				'columns'          => 12,

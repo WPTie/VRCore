@@ -102,7 +102,7 @@ class VR_Homepage_FCTA_Fields {
 				'type'             => 'image_advanced',
 
 				'name'             => __('Footer CTA Section Background Image', 'VRC'),
-				'desc'             => __('Make sure it is not too small and not too big.', 'VRC'),
+				'desc'             => __('Make sure the image is not too small and not too big.', 'VRC'),
 
 				'max_file_uploads' => 1,
 				'columns'          => 12,

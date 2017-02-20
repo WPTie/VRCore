@@ -67,8 +67,9 @@ function vr_add_texonomy_field() {
 	echo '<div class="form-field">
 		<label for="taxonomy_image">' . __( 'Image', 'categories-images' ) . '</label>
 		<input type="text" name="taxonomy_image" id="taxonomy_image" value="" />
-		<br/>
+		<br />
 		<button class="vr_upload_image_button button">' . __( 'Upload/Add image', 'categories-images' ) . '</button>
+		<p class="description">Make sure the image is not too small and not too big. Recommended size is 1920px x 450px (Width x Height).</p>
 	</div>'.vr_script();
 }
 
@@ -94,6 +95,7 @@ function vr_edit_texonomy_field( $taxonomy ) {
 		<td><img class="taxonomy-image" src="' . vr_taxonomy_image_url(  $taxonomy->term_id, 'medium', TRUE  ) . '"/><br/><input type="text" name="taxonomy_image" id="taxonomy_image" value="'.$image_url.'" /><br />
 		<button class="vr_upload_image_button button">' . __( 'Upload/Add image', 'categories-images' ) . '</button>
 		<button class="vr_remove_image_button button">' . __( 'Remove image', 'categories-images' ) . '</button>
+		<p class="description">Make sure the image is not too small and not too big. Recommended size is 1920px x 450px (Width x Height).</p>
 		</td>
 	</tr>'.vr_script();
 }
@@ -230,6 +232,7 @@ function vr_quick_edit_custom_box( $column_name, $screen, $name ) {
 				<span class="input-text-wrap">
 					<button class="vr_upload_image_button button">' . __( 'Upload/Add image', 'categories-images' ) . '</button>
 					<button class="vr_remove_image_button button">' . __( 'Remove image', 'categories-images' ) . '</button>
+					<p class="description">Make sure the image is not too small and not too big. Recommended size is 1920px x 450px (Width x Height).</p>
 				</span>
 			</label>
 		</div>

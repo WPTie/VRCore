@@ -1436,7 +1436,7 @@ msgid "CTA Section Background Image"
 msgstr ""
 
 #: assets/template/homepage/class-cta-fields.php:105
-msgid "Make sure it is not too small and not too big. Recommended size is 1920px x 450px (Width x Height)"
+msgid "Make sure the image is not too small and not too big. Recommended size is 1920px x 450px (Width x Height)"
 msgstr ""
 
 #: assets/template/homepage/class-cta-fields.php:117
@@ -1496,7 +1496,7 @@ msgid "Footer CTA Section Background Image"
 msgstr ""
 
 #: assets/template/homepage/class-fcta-fields.php:105
-msgid "Make sure it is not too small and not too big."
+msgid "Make sure the image is not too small and not too big."
 msgstr ""
 
 #: assets/template/homepage/class-feature-fields.php:43

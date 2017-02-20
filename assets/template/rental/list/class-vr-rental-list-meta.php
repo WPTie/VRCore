@@ -141,7 +141,7 @@ if ( ! class_exists( 'VR_Rental_List_Meta' ) ) :
 						'id'               => "{$prefix}header_bg_image",
 						'type'             => 'image_advanced',
 						'name'             => __('Header Background Image', 'VRC'),
-						'desc'             => __( 'Consult the documentation for required image size.', 'VRC' ),
+						'desc'             => __( 'Make sure the image is not too small and not too big. Recommended size is 1920px x 450px (Width x Height).', 'VRC' ),
 						'max_file_uploads' => 1,
 		            ),
 					// Summary.
