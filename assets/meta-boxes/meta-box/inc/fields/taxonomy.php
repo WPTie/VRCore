@@ -1,72 +1,70 @@
 <?php
 /**
+ * The taxonomy field which aims to replace the built-in WordPress taxonomy UI with more options.
+ *
+ * @package Meta Box
+ */
+
+/**
  * Taxonomy field class which set post terms when saving.
  */
-class RWMB_Taxonomy_Field extends RWMB_Object_Choice_Field
-{
+class RWMB_Taxonomy_Field extends RWMB_Object_Choice_Field {
 	/**
-	 * Add default value for 'taxonomy' field
+	 * Add default value for 'taxonomy' field.
 	 *
-	 * @param $field
+	 * @param array $field Field parameters.
 	 * @return array
 	 */
-	public static function normalize( $field )
-	{
-		/**
-		 * Backwards compatibility with field args
-		 */
-		if ( isset( $field['options']['args'] ) )
+	public static function normalize( $field ) {
+		// Backwards compatibility with field args.
+		if ( isset( $field['options']['args'] ) ) {
 			$field['query_args'] = $field['options']['args'];
-		if ( isset( $field['options']['taxonomy'] ) )
+		}
+		if ( isset( $field['options']['taxonomy'] ) ) {
 			$field['taxonomy'] = $field['options']['taxonomy'];
-		if ( isset( $field['options']['type'] ) )
+		}
+		if ( isset( $field['options']['type'] ) ) {
 			$field['field_type'] = $field['options']['type'];
+		}
 
-		/**
-		 * Set default field args
-		 */
+		// Set default field args.
 		$field = parent::normalize( $field );
 		$field = wp_parse_args( $field, array(
 			'taxonomy'   => 'category',
 		) );
 
-		/**
-		 * Set default query args
-		 */
+		// Set default query args.
 		$field['query_args'] = wp_parse_args( $field['query_args'], array(
 			'hide_empty' => false,
 		) );
 
-		/**
-		 * Set default placeholder
-		 * - If multiple taxonomies: show 'Select a term'
-		 * - If single taxonomy: show 'Select a %taxonomy_name%'
+		/*
+		 * Set default placeholder:
+		 * - If multiple taxonomies: show 'Select a term'.
+		 * - If single taxonomy: show 'Select a %taxonomy_name%'.
 		 */
-		if ( empty( $field['placeholder'] ) )
-		{
+		if ( empty( $field['placeholder'] ) ) {
 			$field['placeholder'] = __( 'Select a term', 'meta-box' );
-			if ( is_string( $field['taxonomy'] ) && taxonomy_exists( $field['taxonomy'] ) )
-			{
-				$taxonomy_object      = get_taxonomy( $field['taxonomy'] );
+			if ( is_string( $field['taxonomy'] ) && taxonomy_exists( $field['taxonomy'] ) ) {
+				$taxonomy_object = get_taxonomy( $field['taxonomy'] );
+
+				// Translators: %s is the taxonomy singular label.
 				$field['placeholder'] = sprintf( __( 'Select a %s', 'meta-box' ), $taxonomy_object->labels->singular_name );
 			}
 		}
 
-		/**
-		 * Prevent cloning for taxonomy field
-		 */
+		// Prevent cloning for taxonomy field.
 		$field['clone'] = false;
 
 		return $field;
 	}
 
 	/**
-	 * Get field names of object to be used by walker
+	 * Get field names of object to be used by walker.
 	 *
 	 * @return array
 	 */
-	public static function get_db_fields()
-	{
+	public static function get_db_fields() {
 		return array(
 			'parent' => 'parent',
 			'id'     => 'term_id',
@@ -75,105 +73,87 @@ class RWMB_Taxonomy_Field extends RWMB_Object_Choice_Field
 	}
 
 	/**
-	 * Get options for selects, checkbox list, etc via the terms
+	 * Get options for selects, checkbox list, etc via the terms.
 	 *
-	 * @param array $field Field parameters
+	 * @param array $field Field parameters.
 	 *
 	 * @return array
 	 */
-	public static function get_options( $field )
-	{
+	public static function get_options( $field ) {
 		$options = get_terms( $field['taxonomy'], $field['query_args'] );
 		return $options;
 	}
 
 	/**
-	 * Save meta value
+	 * Save meta value.
 	 *
-	 * @param mixed $new
-	 * @param mixed $old
-	 * @param int   $post_id
-	 * @param array $field
+	 * @param mixed $new     The submitted meta value.
+	 * @param mixed $old     The existing meta value.
+	 * @param int   $post_id The post ID.
+	 * @param array $field   The field parameters.
 	 */
-	public static function save( $new, $old, $post_id, $field )
-	{
+	public static function save( $new, $old, $post_id, $field ) {
 		$new = array_unique( array_map( 'intval', (array) $new ) );
 		$new = empty( $new ) ? null : $new;
 		wp_set_object_terms( $post_id, $new, $field['taxonomy'] );
 	}
 
 	/**
-	 * Standard meta retrieval
+	 * Get raw meta value.
 	 *
-	 * @param int   $post_id
-	 * @param bool  $saved
-	 * @param array $field
+	 * @param int   $post_id The post ID.
+	 * @param array $field   The field parameters.
 	 *
-	 * @return array
+	 * @return mixed
 	 */
-	public static function meta( $post_id, $saved, $field )
-	{
-		$meta = get_the_terms( $post_id, $field['taxonomy'] );
-		$meta = (array) $meta;
-		$meta = wp_list_pluck( $meta, 'term_id' );
-
-		// Use $field['std'] only when the meta box hasn't been saved (i.e. the first time we run)
-		$meta = ! $saved ? $field['std'] : $meta;
-
-		// Escape attributes
-		$meta = self::call( $field, 'esc_meta', $meta );
-
-		// Make sure meta value is an array for clonable and multiple fields
-		if ( $field['clone'] || $field['multiple'] )
-		{
-			if ( empty( $meta ) || ! is_array( $meta ) )
-			{
-				/**
-				 * Note: if field is clonable, $meta must be an array with values
-				 * so that the foreach loop in self::show() runs properly
-				 * @see self::show()
-				 */
-				$meta = $field['clone'] ? array( '' ) : array();
-			}
+	public static function raw_meta( $post_id, $field ) {
+		if ( empty( $field['id'] ) ) {
+			return '';
 		}
 
-		return $meta;
+		$meta = get_the_terms( $post_id, $field['taxonomy'] );
+
+		if ( ! is_array( $meta ) || empty( $meta ) ) {
+			return $field['multiple'] ? array() : '';
+		}
+
+		$meta = wp_list_pluck( $meta, 'term_id' );
+
+		return $field['multiple'] ? $meta : reset( $meta );
 	}
 
 	/**
-	 * Get the field value
-	 * Return list of post term objects
+	 * Get the field value.
+	 * Return list of post term objects.
 	 *
-	 * @param  array    $field   Field parameters
-	 * @param  array    $args    Additional arguments. Rarely used. See specific fields for details
+	 * @param  array    $field   Field parameters.
+	 * @param  array    $args    Additional arguments.
 	 * @param  int|null $post_id Post ID. null for current post. Optional.
 	 *
-	 * @return array List of post term objects
+	 * @return array List of post term objects.
 	 */
-	public static function get_value( $field, $args = array(), $post_id = null )
-	{
+	public static function get_value( $field, $args = array(), $post_id = null ) {
 		$value = get_the_terms( $post_id, $field['taxonomy'] );
 
-		// Get single value if necessary
-		if ( ! $field['clone'] && ! $field['multiple'] && is_array( $value ) )
-		{
+		// Get single value if necessary.
+		if ( ! $field['clone'] && ! $field['multiple'] && is_array( $value ) ) {
 			$value = reset( $value );
 		}
 		return $value;
 	}
 
 	/**
-	 * Get option label
+	 * Get option label.
 	 *
-	 * @param string   $value Option value
-	 * @param array    $field Field parameter
+	 * @param array  $field Field parameters.
+	 * @param object $value The term object.
 	 *
 	 * @return string
 	 */
-	public static function get_option_label( $field, $value )
-	{
+	public static function get_option_label( $field, $value ) {
 		return sprintf(
 			'<a href="%s" title="%s">%s</a>',
+			// @codingStandardsIgnoreLine
 			esc_url( get_term_link( $value ) ),
 			esc_attr( $value->name ),
 			$value->name

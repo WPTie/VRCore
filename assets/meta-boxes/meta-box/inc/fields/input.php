@@ -1,38 +1,40 @@
 <?php
+/**
+ * The abstract input field which is used for all <input> fields.
+ *
+ * @package Meta Box
+ */
 
 /**
- * Abstract input field class which is used for all <input> fields.
+ * Abstract input field class.
  */
-abstract class RWMB_Input_Field extends RWMB_Field
-{
+abstract class RWMB_Input_Field extends RWMB_Field {
 	/**
-	 * Get field HTML
+	 * Get field HTML.
 	 *
-	 * @param mixed $meta
-	 * @param array $field
+	 * @param mixed $meta  Meta value.
+	 * @param array $field Field parameters.
 	 * @return string
 	 */
-	public static function html( $meta, $field )
-	{
+	public static function html( $meta, $field ) {
 		$attributes = self::call( 'get_attributes', $field, $meta );
 		return sprintf( '<input %s>%s', self::render_attributes( $attributes ), self::datalist( $field ) );
 	}
 
 	/**
-	 * Normalize parameters for field
+	 * Normalize parameters for field.
 	 *
-	 * @param array $field
+	 * @param array $field Field parameters.
 	 * @return array
 	 */
-	public static function normalize( $field )
-	{
+	public static function normalize( $field ) {
 		$field = parent::normalize( $field );
 		$field = wp_parse_args( $field, array(
+			'size'        => 30,
 			'datalist' => false,
 			'readonly' => false,
 		) );
-		if ( $field['datalist'] )
-		{
+		if ( $field['datalist'] ) {
 			$field['datalist'] = wp_parse_args( $field['datalist'], array(
 				'id'      => $field['id'] . '_list',
 				'options' => array(),
@@ -42,14 +44,13 @@ abstract class RWMB_Input_Field extends RWMB_Field
 	}
 
 	/**
-	 * Get the attributes for a field
+	 * Get the attributes for a field.
 	 *
-	 * @param array $field
-	 * @param mixed $value
+	 * @param array $field Field parameters.
+	 * @param mixed $value Meta value.
 	 * @return array
 	 */
-	public static function get_attributes( $field, $value = null )
-	{
+	public static function get_attributes( $field, $value = null ) {
 		$attributes = parent::get_attributes( $field, $value );
 		$attributes = wp_parse_args( $attributes, array(
 			'list'        => $field['datalist'] ? $field['datalist']['id'] : false,
@@ -57,6 +58,7 @@ abstract class RWMB_Input_Field extends RWMB_Field
 			'value'       => $value,
 			'placeholder' => $field['placeholder'],
 			'type'        => $field['type'],
+			'size'        => $field['size'],
 		) );
 
 		return $attributes;
@@ -65,18 +67,17 @@ abstract class RWMB_Input_Field extends RWMB_Field
 	/**
 	 * Create datalist, if any.
 	 *
-	 * @param array $field
-	 * @return array
+	 * @param array $field Field parameters.
+	 * @return string
 	 */
-	protected static function datalist( $field )
-	{
-		if ( empty( $field['datalist'] ) )
+	protected static function datalist( $field ) {
+		if ( empty( $field['datalist'] ) ) {
 			return '';
+		}
 
 		$datalist = $field['datalist'];
 		$html     = sprintf( '<datalist id="%s">', $datalist['id'] );
-		foreach ( $datalist['options'] as $option )
-		{
+		foreach ( $datalist['options'] as $option ) {
 			$html .= sprintf( '<option value="%s"></option>', $option );
 		}
 		$html .= '</datalist>';

@@ -1,27 +1,29 @@
 <?php
+/**
+ * The image field which uploads images via HTML <input type="file">.
+ *
+ * @package Meta Box
+ */
 
 /**
  * Image field class which uses <input type="file"> to upload.
  */
-class RWMB_Image_Field extends RWMB_File_Field
-{
+class RWMB_Image_Field extends RWMB_File_Field {
 	/**
 	 * Enqueue scripts and styles.
 	 */
-	public static function admin_enqueue_scripts()
-	{
+	public static function admin_enqueue_scripts() {
 		parent::admin_enqueue_scripts();
 		wp_enqueue_style( 'rwmb-image', RWMB_CSS_URL . 'image.css', array(), RWMB_VER );
 	}
 
 	/**
-	 * Get HTML markup for ONE uploaded image
+	 * Get HTML markup for ONE uploaded image.
 	 *
-	 * @param int $image Image ID
+	 * @param int $image Image ID.
 	 * @return string
 	 */
-	public static function file_html( $image )
-	{
+	public static function file_html( $image ) {
 		list( $src ) = wp_get_attachment_image_src( $image, 'thumbnail' );
 		return sprintf(
 			'<li id="item_%s">
@@ -40,20 +42,18 @@ class RWMB_Image_Field extends RWMB_File_Field
 
 	/**
 	 * Format a single value for the helper functions.
-	 * @param array $field Field parameter
-	 * @param array $value The value
+	 *
+	 * @param array $field Field parameters.
+	 * @param array $value The value.
 	 * @return string
 	 */
-	public static function format_single_value( $field, $value )
-	{
+	public static function format_single_value( $field, $value ) {
 		$output = '<ul>';
-		foreach ( $value as $file )
-		{
+		foreach ( $value as $file ) {
 			$img = sprintf( '<img src="%s" alt="%s">', esc_url( $file['url'] ), esc_attr( $file['alt'] ) );
 
 			// Link thumbnail to full size image?
-			if ( isset( $args['link'] ) && $args['link'] )
-			{
+			if ( isset( $args['link'] ) && $args['link'] ) {
 				$img = sprintf( '<a href="%s" title="%s">%s</a>', esc_url( $file['full_url'] ), esc_attr( $file['title'] ), $img );
 			}
 			$output .= "<li>$img</li>";
@@ -63,17 +63,16 @@ class RWMB_Image_Field extends RWMB_File_Field
 	}
 
 	/**
-	 * Get uploaded file information
+	 * Get uploaded file information.
 	 *
 	 * @param int   $file Attachment image ID (post ID). Required.
 	 * @param array $args Array of arguments (for size).
 	 *
-	 * @return array|bool False if file not found. Array of image info on success
+	 * @return array|bool False if file not found. Array of image info on success.
 	 */
-	public static function file_info( $file, $args = array() )
-	{
-		if ( ! $path = get_attached_file( $file ) )
-		{
+	public static function file_info( $file, $args = array() ) {
+		$path = get_attached_file( $file );
+		if ( ! $path ) {
 			return false;
 		}
 
@@ -93,14 +92,13 @@ class RWMB_Image_Field extends RWMB_File_Field
 			'description' => $attachment->post_content,
 			'alt'         => get_post_meta( $file, '_wp_attachment_image_alt', true ),
 		);
-		if ( function_exists( 'wp_get_attachment_image_srcset' ) )
-		{
+		if ( function_exists( 'wp_get_attachment_image_srcset' ) ) {
 			$info['srcset'] = wp_get_attachment_image_srcset( $file );
 		}
 
 		$info = wp_parse_args( $info, wp_get_attachment_metadata( $file ) );
 
-		// Do not overwrite width and height by returned value of image meta
+		// Do not overwrite width and height by returned value of image meta.
 		$info['width']  = $image[1];
 		$info['height'] = $image[2];
 
