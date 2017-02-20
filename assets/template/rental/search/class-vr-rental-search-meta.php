@@ -139,7 +139,7 @@ class VR_Rental_Search_Meta {
 					'type' => 'checkbox',
 					'std'  => '0',
 					'name' => __( 'Hide Check In & Check Out?', 'VRC' ),
-					'desc' => __( 'Check to hide Check In & Check Out? on this search page?', 'VRC' ),
+					'desc' => __( 'Check to hide Check In & Check Out on this search page?', 'VRC' ),
 				),
 
 				// Hide Description.

@@ -101,19 +101,19 @@ class VR_Admin_Menu {
 				'manage_options',
 				'edit-tags.php?taxonomy=vr_rental-destination&post_type=vr_rental',
 			),
-			'types' => array(
-				'vacation_rentals',
-				__( 'Types', 'VRC' ),
-				__( '♆  Types', 'VRC' ),
-				'manage_options',
-				'edit-tags.php?taxonomy=vr_rental-type&post_type=vr_rental',
-			),
 			'feautres' => array(
 				'vacation_rentals',
 				__( 'Features', 'VRC' ),
 				__( '⦿  Features', 'VRC' ),
 				'manage_options',
 				'edit-tags.php?taxonomy=vr_rental-feature&post_type=vr_rental',
+			),
+			'types' => array(
+				'vacation_rentals',
+				__( 'Types', 'VRC' ),
+				__( '♆  Types', 'VRC' ),
+				'manage_options',
+				'edit-tags.php?taxonomy=vr_rental-type&post_type=vr_rental',
 			),
 			'bookings' => array(
 				'vacation_rentals',
