@@ -45,7 +45,7 @@ if ( ! function_exists( 'vr_hide_homepage_editor' ) ) {
 		// Remove the editor.
 		if( $template_filename == 'page-homepage.php'
 			|| $template_filename == 'page-login.php'
-			|| $template_filename == 'page-rest.php'
+			|| $template_filename == 'page-reset.php'
 			|| $template_filename == 'page-register.php'
 			|| $template_filename == 'page-rental-list.php'
 			|| $template_filename == 'page-rental-search.php'
