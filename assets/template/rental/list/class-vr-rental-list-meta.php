@@ -248,9 +248,10 @@ if ( ! class_exists( 'VR_Rental_List_Meta' ) ) :
 					array(
 						'id'              => "{$prefix}destination",
 						'name'            => __( 'Destination', 'VRC' ),
+						'desc'            => __( 'Press & hold ⌘ Command (on Mac) or CTRL (on Windows) to select multiple destinations.', 'VRC' ),
 						'type'            => 'select',
 						'options'         => $this->destination_array,
-						// 'options'         => $tax_terms,
+						// 'options'      => $tax_terms,
 						'multiple'        => true,
 						'select_all_none' => true,
 					),
@@ -259,6 +260,7 @@ if ( ! class_exists( 'VR_Rental_List_Meta' ) ) :
 					array(
 						'id'              => "{$prefix}feature",
 						'name'            => __( 'Feature', 'VRC' ),
+						'desc'            => __( 'Press & hold ⌘ Command (on Mac) or CTRL (on Windows) to select multiple features.', 'VRC' ),
 						'type'            => 'select',
 						'options'         => $this->feature_array,
 						'multiple'        => true,
@@ -269,6 +271,7 @@ if ( ! class_exists( 'VR_Rental_List_Meta' ) ) :
 					array(
 						'id'              => "{$prefix}type",
 						'name'            => __( 'Type', 'VRC' ),
+						'desc'            => __( 'Press & hold ⌘ Command (on Mac) or CTRL (on Windows) to select multiple types.', 'VRC' ),
 						'type'            => 'select',
 						'options'         => $this->type_array,
 						'multiple'        => true,
