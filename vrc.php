@@ -67,24 +67,18 @@ if ( ! defined( 'VRC_URL' ) ) {
 }
 
 /**
- * Main File.
+ * Load Text Domain.
  *
- * @since 0.0.1
+ * @since 0.0.8
  */
-if ( file_exists( VRC_DIR . '/assets/vrc-init.php' ) ) {
-	require_once( VRC_DIR . '/assets/vrc-init.php' );
+function vr_load_plugin_textdomain() {
+	load_plugin_textdomain( 'VRC', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
-if ( ! function_exists( 'vr_load_plugin_textdomain' ) ) {
-	/**
-	 * Load Text Domain.
-	 *
-	 * @since 0.0.8
-	 */
-	function vr_load_plugin_textdomain() {
-		load_plugin_textdomain( 'VRC', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-	}
+// Add the function when `plugins_loaded`.
+add_action( 'plugins_loaded', 'vr_load_plugin_textdomain' );
 
-	// Add the function when `plugins_loaded`.
-	add_action( 'plugins_loaded', 'vr_load_plugin_textdomain' );
-}
+/**
+ * Main File.
+ */
+require_once( VRC_DIR . '/assets/vrc-init.php' );

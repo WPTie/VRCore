@@ -4,7 +4,7 @@
  *
  * Initializes everything related to `rental` post type.
  *
- * @since 	1.0.0
+ * @since   1.0.0
  * @package VRC
  */
 
@@ -104,22 +104,22 @@ if ( file_exists( VRC_DIR . '/assets/rental/frontend/frontend-init.php' ) ) {
  * @since 1.0.1
  */
 if ( file_exists( VRC_DIR . '/assets/rental/class-destination-meta-boxes.php' ) ) {
-    require_once( VRC_DIR . '/assets/rental/class-destination-meta-boxes.php' );
+	require_once( VRC_DIR . '/assets/rental/class-destination-meta-boxes.php' );
 }
 
 /**
  * Actions/Filters for rental.
  *
  * Classes:
- * 			1. VR_Rental
- * 			2. VR_Rental_Custom_Columns
- * 			3. VR_Rental_Meta_Boxes
+ *        1. VR_Rental
+ *        2. VR_Rental_Custom_Columns
+ *        3. VR_Rental_Meta_Boxes
  */
 if ( class_exists( 'VR_Rental' ) ) {
 	// Object: VR_Rental class.
 	$vr_rental_init = new VR_Rental();
 
-	// Create rental post type
+	// Create rental post type.
 	add_action( 'init', array( $vr_rental_init, 'create_rental' ), 0 );
 
 	// Create fake rental content.
